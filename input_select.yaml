@@ -1,0 +1,6 @@
+home_mode:
+  name: Home Mode
+  options:
+   - Home
+   - Away
+   - Sleep

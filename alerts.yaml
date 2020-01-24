@@ -1,0 +1,27 @@
+#!---TODO: Rework with valid notification protocol.!---#
+#  ##################
+#  # Door Left Open #
+#  ##################
+# kitchen_patio_door_opened:
+#   name: Kitchen patio door left open.
+#   entity_id: binary_sensor.kitchen_patio_door_motion_sensor
+#   state: 'on'
+#   repeat:
+#     - 1
+#     - 1
+#     - 5
+#     - 15
+#     - 30
+#     - 60
+#   skip_first: True
+#   notifiers: notify.chrome_push_notification
+
+#  #####################
+#  # Moisture Detected #
+#  #####################
+# water_detected_utility_room:
+#   name: Water detected in utility room.
+#   entity_id: binary_sensor.utility_room_moisture_sensor
+#   state: 'on'
+#   repeat: 1
+#   notifiers: notify.chrome_push_notification

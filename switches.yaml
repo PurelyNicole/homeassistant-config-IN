@@ -1,0 +1,175 @@
+#################
+# MQTT Switches #
+#################
+# new 11/13/18 Holiday switch
+- platform: mqtt
+  name: "Audio Effects"
+  state_topic: "holidayLights/audio/state"
+  command_topic: "holidayLights/addEffects"
+  payload_on: "Audio On"
+  payload_off: "Audio Off"
+  retain: false
+- platform: mqtt
+  name: "Add Glitter"
+  state_topic: "holidayLights/glitter/state"
+  command_topic: "holidayLights/addEffects"
+  payload_on: "Glitter On"
+  payload_off: "Glitter Off"
+  retain: false
+- platform: mqtt
+  name: "Add Lightning"
+  state_topic: "holidayLights/lightning/state"
+  command_topic: "holidayLights/addEffects"
+  payload_on: "Lightning On"
+  payload_off: "Lightning Off"
+  retain: false
+  #holiday Sonoff switch
+- platform: mqtt
+  name: "Outdoor String Lights"
+  state_topic: "stat/xmaslight1/POWER"
+  command_topic: "cmnd/xmaslight1/POWER"
+  availability_topic: "tele/xmaslight1/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+  optimistic: false
+- platform: mqtt
+  name: "Humidifier 2"
+  state_topic: "stat/SonoffOutlet1_S31/POWER"
+  command_topic: "cmnd/SonoffOutlet1_S31/POWER"
+  availability_topic: "tele/SonoffOutlet1_S31/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+  optimistic: false
+- platform: mqtt
+  name: "Mirror Screen"
+  state_topic: "stat/TasmoMirror/POWER1"
+  command_topic: "cmnd/TasmoMirror/POWER1"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+  # Roomba Switch
+- platform: mqtt
+  name: "Roomba"
+  command_topic: "roomba/commands"
+  payload_on: "start"
+  payload_off: "stop"
+- platform: mqtt
+  name: "Main Water Valve"
+  state_topic: "stat/Main_Water_Valve/POWER"
+  command_topic: "cmnd/Main_Water_Valve/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Gutter Heater 1"
+  state_topic: "stat/Outdoor_Plug_Switch3/POWER1"
+  command_topic: "cmnd/Outdoor_Plug_Switch3/POWER1"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Gutter Heater 2"
+  state_topic: "stat/Outdoor_Plug_Switch3/POWER2"
+  command_topic: "cmnd/Outdoor_Plug_Switch3/POWER2"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Pond Heater"
+  state_topic: "stat/Outdoor_Plug_Switch3/POWER3"
+  command_topic: "cmnd/Outdoor_Plug_Switch3/POWER3"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+#####################
+# Template Switches #
+#####################
+- platform: template
+  switches:
+    # Volumio Switches Zone 1-3 for Dashboard
+    volumio_zone_1:
+      value_template: "{{ is_state_attr('remote.living_room', 'current_activity', 'HiFi Berry - Zone 1') }}"
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.living_room 
+        data:
+          activity: "25602317"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.living_room
+        data:
+          activity: "-1"
+    volumio_zone_2:
+      value_template: "{{ is_state_attr('remote.living_room', 'current_activity', 'HiFi Berry - Zone 2') }}"
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.living_room 
+        data:
+          activity: "25602392"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.living_room
+        data:
+          activity: "-1"
+    volumio_zone_3:
+      value_template: "{{ is_state_attr('remote.living_room', 'current_activity', 'HiFi Berry - Zone 3') }}"
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.living_room 
+        data:
+          activity: "25602437"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.living_room
+        data:
+          activity: "-1"
+    # iPOD Switches Zone 1-3 for Dashboard
+    ipod_zone_1:
+      value_template: "{{ is_state_attr('remote.living_room', 'current_activity', 'iPod - Zone 1') }}"
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.living_room 
+        data:
+          activity: "15427294"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.living_room
+        data:
+          activity: "-1"
+    ipod_zone_2:
+      value_template: "{{ is_state_attr('remote.living_room', 'current_activity', 'iPod - Zone 2') }}"
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.living_room 
+        data:
+          activity: "15427671"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.living_room
+        data:
+          activity: "-1"
+    ipod_zone_3:
+      value_template: "{{ is_state_attr('remote.living_room', 'current_activity', 'iPod - Zone 3') }}"
+      turn_on:
+        service: remote.turn_on
+        entity_id: remote.living_room 
+        data:
+          activity: "15427680"
+      turn_off:
+        service: remote.turn_off
+        entity_id: remote.living_room
+        data:
+          activity: "-1"

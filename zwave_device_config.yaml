@@ -1,0 +1,87 @@
+sensor.guest_room_nightstand_lamp_exporting:
+  ignored: true
+  polling_intensity: 0
+sensor.guest_room_nightstand_lamp_interval:
+  ignored: true
+  polling_intensity: 0
+sensor.guest_room_nightstand_lamp_interval_2:
+  ignored: true
+  polling_intensity: 0
+sensor.guest_room_nightstand_lamp_previous_reading:
+  ignored: true
+  polling_intensity: 0
+sensor.guest_room_nightstand_lamp_previous_reading_2:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_exporting:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_interval:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_interval_2:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_power_2:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_previous_reading:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_previous_reading_2:
+  ignored: true
+  polling_intensity: 0
+sensor.tetris_lamp_previous_reading:
+  ignored: true
+  polling_intensity: 0
+sensor.reading_lamp_previous_reading:
+  ignored: true
+  polling_intensity: 0
+sensor.reading_lamp_smart_plug_previous_reading:
+  ignored: true
+  polling_intensity: 0
+sensor.reading_lamp_previous_reading_2:
+  ignored: true
+  polling_intensity: 0
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_alarm_level:
+  ignored: true
+  polling_intensity: 0
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_alarm_type:
+  ignored: true
+  polling_intensity: 0
+binary_sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sensor:
+  ignored: true
+  polling_intensity: 0
+sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.guest_room_nightstand_lamp_power_2:
+  ignored: true
+  polling_intensity: 0
+sensor.record_console_alarm_level:
+  ignored: true
+  polling_intensity: 0
+sensor.record_console_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.record_console_burglar:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_door_lock_alarm_type:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_patio_door_motion_alarm_type:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_door_lock_alarm_level:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_patio_door_motion_alarm_level:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_patio_door_motion_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_patio_door_motion_burglar:
+  ignored: true
+  polling_intensity: 0

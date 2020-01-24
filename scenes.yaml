@@ -1,0 +1,101 @@
+- name: Away
+  entities:
+    group.bedroom_lights: false
+    group.living_room_lights: false
+    group.kitchen_lights: false
+    group.loft_lights: false
+    group.guest_room_lights: false
+    group.master_bedroom_lights: false
+    group.entry_hall_lights: false
+    switch.mirror_screen: false
+    lock.kitchen_door_lock_locked: locked
+    lock.workshop_door_lock_locked: locked
+    lock.front_door_lock_locked: locked
+  id: c3481ab7e6ad46c996739fdcfd89164a
+- name: Indoor Lights On
+  entities:
+    group.living_room_lights: true
+    group.kitchen_lights: true
+    group.entry_hall_lights: true
+  id: 9d83c933fcc942b48006920571ae5803
+- name: Outdoor Lights Off
+  entities:
+    group.outdoor_lights: false
+  id: 565dc597cafe4a84baabb94227920fda
+- name: Outdoor Lights On
+  entities:
+    group.outdoor_lights: true
+  id: 2c3878292ee64cc9a7d304c106e235f5
+- name: Sleep
+  id: 33bbe74c95a24b1a901f785a056edd70
+  entities:
+    fan.loft_ceiling_fan:
+      speed: medium
+      state: 'on'
+    group.guest_room_lights:
+      state: 'off'
+    group.kitchen_lights:
+      state: 'off'
+    group.living_room_lights:
+      state: 'off'
+    group.loft_lights:
+      state: 'off'
+    group.entry_hall_lights:
+      state: 'off'
+    group.master_bedroom_lights:
+      state: 'off'
+    input_select.home_mode:
+      state: Sleep
+    light.hallway_lights:
+      state: 'off'
+    lock.front_door_lock_locked:
+      state: locked
+    lock.kitchen_door_lock_locked:
+      state: locked
+    lock.workshop_door_lock_locked:
+      state: locked
+    switch.fish_light:
+      state: 'off'
+    switch.mirror_screen:
+      state: 'off'
+    switch.pier_lights_switch:
+      state: 'off'
+- name: Watch TV
+  entities:
+    switch.entryway_light_switch: false
+    switch.fireplace_lights_switch: false
+    switch.globe_lamp_switch: false
+    switch.table_lamps_switch: false
+    switch.peninsula_light_switch: false
+    light.dining_room_light: false
+    light.kitchen_overhead_lights: false
+    light.loft_fan_light: false
+    light.hallway_lights: false
+  id: 31056ae2d40b4531acdfb6709544e86f
+- name: Play Xbox
+  entities:
+    light.loft_fan_light: true
+    switch.reading_lamp_switch: false
+  id: de3e0d02a4ad49a492754c8209cd8c73
+- name: Read
+  entities:
+    light.loft_fan_light: 
+      state: off
+    switch.reading_lamp_switch:
+      state: on
+    light.alcove_light_switch: 
+      state: off
+  id: 43a17a2f033f46d191eed82ff5e91de4
+- name: Listen to Music
+  entities:
+    light.loft_fan_light: 
+      state: off
+    switch.reading_lamp_switch: 
+      state: on
+    light.alcove_light_switch: 
+      state: off
+    light.desk_light_switch: 
+      state: off
+    fan.loft_ceiling_fan: 
+      state: off
+  id: e03f08a8da2646f8baa94afa5409dd2b

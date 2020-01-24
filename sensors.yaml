@@ -1,0 +1,269 @@
+##################
+# Discogs Sensor #
+##################
+- platform: discogs
+  token: !secret discogs_token
+  monitored_conditions:
+    - collection
+
+##################
+# Energy Sensors #
+##################
+- platform: emoncms
+  api_key: !secret openenergy_api
+  url: https://emoncms.org
+  id: 1
+  unit_of_measurement: "W"
+  include_only_feed_id:
+    - 208205
+    - 208248
+    - 208210
+
+################    
+# MQTT Sensors #
+################
+- platform: mqtt
+  name: "Pool Temperature"
+  state_topic: 'tele/pooltemp1/SENSOR'
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
+- platform: mqtt
+  name: "Workshop Temperature"
+  state_topic: 'tele/AFSHT31/SENSOR'
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json["SHT3X-0x44"]["Temperature"] }}'
+- platform: mqtt
+  name: "Workshop Humidity"
+  state_topic: 'tele/AFSHT31/SENSOR'
+  unit_of_measurement: '%'
+  value_template: '{{ value_json["SHT3X-0x44"]["Humidity"] }}'
+- platform: mqtt
+  name: "Pond Water Temperature"
+  state_topic: "ha/pondtemp"
+  qos: 0
+- platform: mqtt
+  name: "Bedroom Temperature"
+  state_topic: 'tele/BedroomTemp/SENSOR'
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json["HTU21"]["Temperature"] }}'
+- platform: mqtt
+  name: "Bedroom Humidity"
+  state_topic: 'tele/BedroomTemp/SENSOR'
+  unit_of_measurement: '%'
+  value_template: '{{ value_json["HTU21"]["Humidity"] }}'
+  # Roomba Sensors
+- platform: mqtt
+  name: "Roomba Status"
+  state_topic: "roomba/currentStatus"
+- platform: mqtt
+  name: "Roomba Battery"
+  state_topic: "roomba/battery"
+- platform: mqtt
+  name: "Roomba Battery Filtered"
+  state_topic: "roomba/filterbattery"
+- platform: mqtt
+  name: "Roomba Check In"
+  state_topic: "checkIn/roomba"
+
+##################
+# Places Sesnors #  
+##################
+- platform: places
+  name: Nicole Places
+  devicetracker_id: device_tracker.pixel_3a_gps
+  options: zone,place
+  map_provider: google
+  map_zoom: 19
+  home_zone: zone.home
+  api_key: !secret nicole_email
+- platform: places
+  name: Eric Places
+  devicetracker_id: device_tracker.galaxy_s9_gps
+  options: zone,place
+  map_provider: google
+  map_zoom: 19
+  home_zone: zone.home
+  api_key: !secret nicole_email
+
+###################
+# RESTful Sensors #
+###################
+- platform: rest
+  resource: !secret mtb_project_url
+  method: GET
+  name: "Trail Status"
+  value_template: 'OK'
+  json_attributes:
+    - "0"
+    - "1"
+    - "2"
+- platform: rest
+  resource: !secret aw_url
+  method: GET
+  device_class: temperature
+  force_update: true
+  name: "ambient_weather_feels_like_indoor"
+  value_template: '{{value_json[0]["lastData"]["feelsLikein"]}}'
+  scan_interval: 180
+
+# - platform: mqtt_room
+#   device_id: 2f234454cf6d4a0fadf2f4911ba9ffa6-1986-6891
+#   away_timeout: 30
+#   name: 'Example iBeacon'
+
+##########################
+# System Monitor Sensors #
+##########################
+- platform: systemmonitor
+  resources:
+    - type: memory_use_percent
+    - type: processor_use
+    - type: last_boot
+    - type: disk_use_percent
+      arg: /
+
+####################
+# Template Sensors #
+####################
+- platform: template
+  sensors:
+    # Device Tracker
+    eric_phone_battery:
+      friendly_name: 'Eric Phone Battery'
+      value_template: '{{ states.device_tracker.galaxy_s9_gps.attributes.battery_level }}'
+      entity_id: device_tracker.galaxy_s9_gps
+      device_class: battery
+      unit_of_measurement: '%'
+    nicole_phone_battery:
+      friendly_name: 'Nicole Phone Battery'
+      value_template: '{{ states.device_tracker.pixel_3a_gps.attributes.battery_level }}'
+      entity_id: device_tracker.pixel_3a_gps
+      device_class: battery
+      unit_of_measurement: '%'
+    nicole_location:
+      friendly_name: 'Nicole Location'
+      value_template: >
+        {% if is_state_attr('sensor.nicole_places', 'devicetracker_zone', 'not_home') -%}
+          {{state_attr('sensor.nicole_places', 'place_name')}}
+        {%- else -%}
+          {{state_attr('sensor.nicole_places', 'devicetracker_zone')| capitalize}}
+        {%- endif %}
+    eric_location:
+      friendly_name: 'Eric Location'
+      value_template: >
+        {% if is_state_attr('sensor.eric_places', 'devicetracker_zone', 'not_home') -%}
+          {{state_attr('sensor.eric_places', 'place_name')}}
+        {%- else -%}
+          {{state_attr('sensor.eric_places', 'devicetracker_zone')| capitalize}}
+        {%- endif %}
+    # Front Door Lock
+    front_door_lock_status: 
+      friendly_name: 'Front Door Lock Status'
+      value_template: "{{ state_attr('lock.front_door_lock_locked', 'lock_status') }}"
+      entity_id: lock.front_door_lock_locked    
+    # Harmony Remote 
+    living_room:
+      friendly_name: 'Living Room Remote'
+      value_template: "{{ state_attr('remote.living_room', 'current_activity') }}"    
+    # Kitchen Door Lock
+    kitchen_door_lock_status: 
+      friendly_name: 'Kitchen Door Lock Status'
+      value_template: "{{ state_attr('lock.kitchen_door_lock_locked', 'lock_status') }}"
+      entity_id: lock.kitchen_door_lock_locked
+    # Trail Status
+    fort_harrison_trail_status:
+      friendly_name: "Fort Harrison Trail Status"
+      value_template: '{{ states.sensor.trail_status.attributes["0"]["conditionColor"]}}'
+    fort_harrison_last_update:
+      friendly_name: "Fort Harrison Last Update"
+      value_template: '{{ as_timestamp(strptime(states.sensor.trail_status.attributes["0"]["conditionDate"], "%Y-%m-%d %H:%M:%S")) | timestamp_custom("%D") }}'
+    town_run_trail_status:
+      friendly_name: "Town Run Trail Status"
+      value_template: '{{ states.sensor.trail_status.attributes["1"]["conditionColor"]}}'
+    town_run_last_update:
+      friendly_name: "Town Run Last Update"
+      value_template: '{{ as_timestamp(strptime(states.sensor.trail_status.attributes["1"]["conditionDate"], "%Y-%m-%d %H:%M:%S")) | timestamp_custom("%D") }}'
+    flat_fork_trail_status:
+      friendly_name: "Flat Fork Trail Status"
+      value_template: '{{ states.sensor.trail_status.attributes["2"]["conditionColor"]}}'
+    flat_fork_last_update:
+      friendly_name: "Flat Fork Last Update"
+      value_template: '{{ as_timestamp(strptime(states.sensor.trail_status.attributes["2"]["conditionDate"], "%Y-%m-%d %H:%M:%S")) | timestamp_custom("%D") }}'
+    # Workshop Door Lock
+    workshop_door_lock_status: 
+      friendly_name: 'Workshop Door Lock Status'
+      value_template: "{{ state_attr('lock.workshop_door_lock_locked', 'lock_status') }}"
+      entity_id: lock.workshop_door_lock_locked
+    # Workshop Smoke Detector
+    workshop_smoke_detector_status:
+      value_template: >-
+          {%- if is_state('sensor.workshop_smoke_detector_alarm_type', '13') %}
+              Idle
+          {%- elif is_state('sensor.workshop_smoke_detector_alarm_type', '1') %}
+              Fire Detected
+          {%- elif is_state('sensor.workshop_smoke_detector_alarm_type', '2') %}
+              Carbon Monoxide Detected
+          {%- elif is_state('sensor.workshop_smoke_detector_alarm_type', '12') %}
+              Alarm Testing
+          {% else %}
+              Unknown
+          {%- endif %}
+      friendly_name: "Workshop Smoke Detector Status"
+    workshop_smoke_detector_battery:
+      value_template: "{{ state_attr('zwave.workshop_smoke_detector', 'battery_level') }}"
+      friendly_name: 'Smoke/CO Alarm Battery'
+      device_class: battery
+
+#####################
+# Time Date Sensors #
+#####################
+- platform: time_date
+  display_options: date_time
+
+###################
+# Weather Sensors #
+###################
+- platform: darksky
+  api_key: !secret darksky_api
+  forecast:
+    - 0
+    - 1
+    - 2
+  monitored_conditions:
+    - summary
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - precip_accumulation
+    - temperature
+    - apparent_temperature
+    - dew_point
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+    - ozone
+    - minutely_summary
+    - hourly_summary
+    - daily_summary
+    - temperature_high
+    - temperature_low
+    - apparent_temperature_high
+    - apparent_temperature_low
+    - precip_intensity_max
+    - uv_index
+    - icon
+    - daily_summary
+    - alerts
+
+###############
+# Xbox Sensor #
+###############
+- platform: xbox_live
+  api_key: !secret xbox_api_key
+  xuid: 
+    - !secret xuid
+  scan_interval: 60
+# END

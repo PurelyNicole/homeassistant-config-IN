@@ -1,0 +1,68 @@
+####################
+# Presence Groups #
+####################    
+phones:
+  name: Phones
+  entities:
+    - person.eric
+    - person.nicole
+
+###################
+# Lighting Groups #
+###################
+entry_hall_lights:
+  name: Entry/Hall Lights
+  entities:
+    - switch.entryway_light_switch
+    - light.hallway_lights
+    - light.gym_light_switch
+    - light.hall_bath_switch
+guest_room_lights:
+  name: Guest Room Lights
+  entities:
+    - switch.guest_room_floor_lamp_switch
+    - switch.guest_room_nightstand_lamp_switch
+kitchen_lights:
+  name: Kitchen Lights
+  entities:
+    - switch.peninsula_light_switch
+    - switch.under_cabinet_lights_switch
+    - light.dining_room_light
+    - light.kitchen_overhead_lights
+    - light.half_bath_switch
+living_room_lights:
+  name: Living Room Lights
+  entities:
+    - switch.bar_lights_switch
+    - switch.fireplace_lights_switch
+    - switch.globe_lamp_switch
+    - switch.table_lamps_switch
+loft_lights:
+  name: Loft Lights
+  entities:
+    - switch.tetris_lamp_switch
+    - switch.reading_lamp_switch
+    - light.desk_light_switch
+    - light.alcove_light_switch
+    - light.loft_fan_light
+    - light.network_closet_light
+master_bedroom_lights:
+  name: Master Bedroom Lights
+  entities:
+    - light.bedroom_light_switch
+    - light.bathroom_mirror_led
+    - light.bathroom_vanity_light
+    - light.bedroom_entry_light
+    - light.bathroom_shower
+    - light.exhaust_fan
+outdoor_lights:
+  name: Outdoor Lights
+  entities:
+    - switch.deck_flood_lights_switch
+    - switch.deck_string_lights_switch
+    - switch.garage_flood_lights_switch
+    - switch.landscaping_lights_switch
+    - switch.patio_flood_lights_switch
+    - switch.pier_lights_switch
+    - switch.porch_light_switch
+    - switch.workshop_light_switch

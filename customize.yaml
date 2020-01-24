@@ -1,0 +1,204 @@
+group.living_room_lights:
+  icon: mdi:lightbulb
+group.kitchen_lights:
+  icon: mdi:lightbulb
+group.outdoor_lights:
+  icon: mdi:lightbulb
+group.master_bedroom_lights:
+  icon: mdi:lightbulb
+group.loft_lights:
+  icon: mdi:lightbulb
+group.guest_room_lights:
+  icon: mdi:lightbulb
+sensor.eric_phone_battery:
+  icon: mdi:battery-charging
+sensor.nicole_phone_battery:
+  icon: mdi:battery-charging
+device_tracker.nicole_phone:
+  friendly_name: Nicole
+input_select.home_mode:
+  icon: mdi:home
+input_select.time_of_day:
+  icon: mdi:clock-outline
+binary_sensor.kitchen_patio_door_motion_sensor:
+  device_class: door
+scene.away:
+  icon: mdi:walk
+scene.goodnight:
+  icon: mdi:weather-night
+scene.watch_tv:
+  icon: mdi:television-classic
+switch.bar_lights_switch:
+  icon: mdi:glass-cocktail
+switch.entryway_light_switch:
+  icon: mdi:lightbulb
+switch.fireplace_lights_switch:
+  icon: mdi:track-light
+switch.globe_lamp_switch:
+  icon: mdi:lightbulb
+switch.table_lamps_switch:
+  icon: mdi:lamp
+switch.peninsula_light_switch:
+  icon: mdi:lightbulb
+switch.under_cabinet_lights_switch:
+  icon: mdi:lightbulb
+switch.deck_flood_lights_switch:
+  icon: mdi:lightbulb
+switch.garage_flood_lights_switch:
+  icon: mdi:lightbulb
+switch.landscaping_lights_switch:
+  icon: mdi:lightbulb
+switch.patio_flood_lights_switch:
+  icon: mdi:lightbulb
+switch.pier_lights_switch:
+  icon: mdi:lightbulb
+switch.porch_light_switch:
+  icon: mdi:lightbulb
+switch.workshop_light_switch:
+  icon: mdi:lightbulb
+switch.deck_string_lights_switch:
+  icon: mdi:lightbulb
+light.exhaust_fan:
+  icon: mdi:fan
+light.bathroom_shower:
+  icon: mdi:shower-head
+light.desk_light_switch:
+  icon: mdi:track-light
+switch.tetris_lamp_switch:
+  icon: mdi:lightbulb
+switch.guest_room_floor_lamp_switch:
+  icon: mdi:lightbulb
+switch.guest_room_nightstand_lamp_switch:
+  icon: mdi:lightbulb
+switch.fish_light:
+  icon: mdi:fish
+sensor.front_door_lock_status:
+  icon: mdi:information
+sensor.bedroom_humidity:
+  icon: mdi:water-percent
+switch.humidifier_switch:
+  icon: mdi:cup-water
+light.bathroom_mirror_led:
+  icon: mdi:led-on
+switch.mirror_screen:
+  icon: mdi:cellphone
+sensor.kitchen_door_lock_status:
+  icon: mdi:information
+binary_sensor.utility_room_moisture_sensor:
+  icon: mdi:water
+sensor.workshop_door_lock_status:
+  icon: mdi:information
+sensor.workshop_smoke_detector_status:
+  icon: mdi:fire
+sensor.emoncms_total_power:
+  icon: mdi:power-plug
+sensor.emoncms_voltage:
+  icon: mdi:power-plug
+sensor.emoncms_kwh:
+  icon: mdi:power-plug
+sensor.living_room:
+  icon: mdi:remote
+switch.roomba:
+  icon: mdi:robot-vacuum
+sensor.roomba:
+  icon: mdi:robot-vacuum
+sensor.roomba_battery:
+  icon: mdi:battery-charging
+  unit_of_measurement: '%'
+sensor.roomba_status:
+  icon: mdi:format-list-bulleted
+binary_sensor.living_room_thermostat_fan:
+  icon: mdi:fan
+binary_sensor.living_room_thermostat_has_leaf:
+  icon: mdi:leaf
+zone.miso2:
+  icon: mdi:briefcase
+sensor.tetris_lamp_power:
+  hidden: true
+binary_sensor.utility_room_moisture_general:
+  device_class: moisture
+switch.humidifier_2:
+  icon: mdi:cup-water
+device_tracker.loft_tv:
+  icon: mdi:television
+scene.sleep:
+  friendly_name: Goodnight
+  icon: mdi:weather-night
+sensor.workshop_humidity:
+  icon: mdi:water-percent
+sensor.pool_temperature:
+  icon: mdi:pool
+sensor.pond_water_temperature:
+  icon: mdi:thermometer
+switch.reading_lamp_switch:
+  icon: mdi:desk-lamp
+binary_sensor.record_console_sensor:
+  icon: mdi:record-player
+person.nicole:
+  icon: mdi:alpha-n-box
+person.eric:
+  icon: mdi:alpha-e-box
+zwave.record_console:
+  node_id: 12
+sensor.roomba_battery_filtered:
+  icon: mdi:battery-charging
+  unit_of_measurement: '%'
+sensor.record_console_relative_humidity:
+  icon: mdi:water-percent
+sensor.town_run_last_update:
+  icon: mdi:calendar-edit
+sensor.flat_fork_last_update:
+  icon: mdi:calendar-edit
+sensor.fort_harrison_last_update:
+  icon: mdi:calendar-edit
+sensor.fort_harrison_trail_status:
+  icon: mdi:bike
+sensor.flat_fork_trail_status:
+  icon: mdi:bike
+sensor.town_run_trail_status:
+  icon: mdi:bike
+scene.play_xbox:
+  icon: mdi:xbox
+scene.read:
+  icon: mdi:book-open-page-variant
+scene.listen_to_music:
+  icon: mdi:record-player
+media_player.volumio:
+  icon: mdi:library-music
+switch.volumio_zone_1:
+  friendly_name: 'Volumio: Zone 1'
+  icon: mdi:library-music
+switch.volumio_zone_2:
+  friendly_name: 'Volumio: Zone 2'
+  icon: mdi:library-music
+switch.volumio_zone_3:
+  friendly_name: 'Volumio: Zone 3'
+  icon: mdi:library-music
+switch.ipod_zone_1:
+  friendly_name: 'iPod: Zone 1'
+  icon: mdi:ipod
+switch.ipod_zone_2:
+  friendly_name: 'iPod: Zone 2'
+  icon: mdi:ipod
+switch.ipod_zone_3:
+  friendly_name: 'iPod: Zone 3'
+  icon: mdi:ipod
+sensor.eric_location:
+  icon: mdi:alpha-e-box
+sensor.nicole_location:
+  icon: mdi:alpha-n-box
+group.entry_hall_lights:
+  icon: mdi:lightbulb
+zone.eric_parents:
+  icon: mdi:alpha-z-box
+sensor.ambient_weather_feels_like_indoor:
+  friendly_name: Ambient Weather Feels Like Indoor
+  unit_of_measurement: °F
+switch.fish_tank_light:
+  icon: mdi:fish
+input_boolean.fill_cd_changer:
+  icon: mdi:music-box-outline
+input_boolean.get_random_cd:
+  icon: fas:compact-disc
+input_boolean.get_random_record:
+  icon: fas:record-vinyl

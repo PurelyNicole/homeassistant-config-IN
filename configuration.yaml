@@ -1,0 +1,174 @@
+#####################
+# Basic Information #
+#####################
+homeassistant:
+  customize: !include customize.yaml
+  auth_providers:
+    - type: legacy_api_password
+      api_password: !secret http_password
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - !secret trusted_networks
+breaking_changes:
+mobile_app:
+script:
+person:
+
+#########################
+# Automation Components #
+#########################
+automation: !include automations.yaml
+input_select: !include input_select.yaml
+input_text: !include input_text.yaml
+timer: !include  timers.yaml
+
+####################
+# Cover Components #
+####################     
+cover:
+  platform: opengarage
+  covers:
+      garage:
+        host:  !secret garagehost
+        device_key: !secret garage_device_key
+        name:  Garage Door     
+
+########################
+# Front End Components #
+#########################
+config:
+frontend:
+  themes: !include_dir_merge_named themes
+map:
+updater:
+hassio:
+system_health:
+stream:
+
+######################
+# History Components #
+######################
+history: !include history.yaml
+influxdb:
+  host: localhost
+  port: 8086
+  database: !secret influx_db
+  username: !secret  influx_un
+  password: !secret http_password
+  default_measurement: state
+logbook: !include logbook.yaml
+recorder:
+
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_secret
+zwave:
+  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+  network_key: !secret network_key
+  device_config: !include zwave_device_config.yaml
+tuya: !include tuya.yaml
+
+########################
+# Google Calendar APIO #
+########################
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+
+###########################
+# Media Player Components #
+###########################
+media_player:
+  - platform: volumio
+    host: !secret volumiohost
+    port: 3000
+  - platform: spotify
+    client_id: !secret eric_spot_client_id
+    client_secret: !secret eric_spot_client_secret
+  - platform: yamaha_musiccast
+    host: !secret loft_yamaha
+
+##############    
+# IP Cameras #
+##############
+camera: !include cam.yaml
+
+##############
+# Irrigation #
+##############
+rachio:
+  api_key: !secret rachio_api_key
+
+###########################
+# Organization Components #
+###########################
+group: !include groups.yaml
+scene: !include scenes.yaml
+
+####################
+# Other Components #
+####################
+api:
+http:
+  base_url: !secret base_url
+discovery:
+  ignore:
+    - roku
+rest_command:
+  google_backup:
+    url: !secret google_backup_url
+    timeout: '300'
+ssdp:
+zeroconf:
+notify:
+  - platform: html5 
+    name: chrome_push_notification
+    vapid_pub_key: !secret vapid_pub_key
+    vapid_prv_key: !secret vapid_prv_key
+    vapid_email: !secret nicole_email
+
+#####################
+# Sensor Components #
+#####################
+sensor: !include sensors.yaml
+binary_sensor: !include binary_sensors.yaml
+fastdotcom:
+  scan_interval:
+    minutes: 60
+speedtestdotnet:
+  scan_interval:
+    minutes: 65
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+iqvia: #Allergies
+  zip_code: !secret pollen_zip_code
+  monitored_conditions:
+    - allergy_index_today
+    - allergy_index_tomorrow
+
+#####################
+# Switch Components #
+#####################
+fan: !include fans.yaml
+switch: !include switches.yaml
+light: !include lights.yaml
+input_boolean: !include input_boolean.yaml
+
+######################
+# Weather Components #
+######################
+sun:
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api
+    mode: daily
+
+######################
+# OctoPrint#
+######################
+octoprint:
+  host: !secret OctoIP
+  api_key: !secret OctoAPI

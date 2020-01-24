@@ -1,0 +1,395 @@
+- alias: Scene - Turn Off Lights When Watching TV at Night
+  id: '1522876316388'
+  trigger:
+  - platform: template
+    value_template: '{{states.remote.living_room.attributes.current_activity == "Watch
+      TV"}} '
+  - platform: template
+    value_template: '{{states.remote.living_room.attributes.current_activity == "Watch
+      Roku"}} '
+  condition:
+  - after: '19:29'
+    condition: time
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Home
+  action:
+  - data:
+      entity_id: scene.watch_tv
+    service: scene.turn_on
+- alias: Guest Room - Turn on nightstand with wall switch
+  id: '1522888948173'
+  trigger:
+  - entity_id: switch.guest_room_floor_lamp_switch
+    platform: state
+    to: 'on'
+  action:
+  - data:
+      entity_id: switch.guest_room_nightstand_lamp_switch
+    service: switch.turn_on
+- alias: Guest Room - Turn off nightstand with wall switch
+  id: '1522889042539'
+  trigger:
+  - entity_id: switch.guest_room_floor_lamp_switch
+    platform: state
+    to: 'off'
+  action:
+  - data:
+      entity_id: switch.guest_room_nightstand_lamp_switch
+    service: switch.turn_off
+- alias: Home Mode - Set to Home When Anyone Arrives Home and Mode is not Sleep
+  id: '1522931077343'
+  trigger:
+  - entity_id: group.phones
+    platform: state
+    to: home
+  - entity_id: person.nicole
+    platform: state
+    to: home
+  - entity_id: person.eric
+    platform: state
+    to: home
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Away
+  action:
+  - data:
+      entity_id: input_select.home_mode
+      option: Home
+    service: input_select.select_option
+- alias: Home Mode - Set To Away When Everyone Leaves
+  id: '1522931541949'
+  trigger:
+  - entity_id: group.phones
+    for: 00:05:00
+    platform: state
+    to: not_home
+  action:
+  - data:
+      entity_id: input_select.home_mode
+      option: Away
+    service: input_select.select_option
+- alias: Home Mode - Set To Home At Sunrise If Anyone Is Home
+  action:
+  - data:
+      entity_id: input_select.home_mode
+      option: Home
+    service: input_select.select_option
+  condition:
+  - condition: state
+    entity_id: group.phones
+    state: home
+  id: '1522931689561'
+  trigger:
+  - event: sunrise
+    platform: sun
+- alias: Home Mode - Set To Sleep At 02:00 If Anyone Is Home
+  action:
+  - data:
+      entity_id: input_select.home_mode
+      option: Sleep
+    service: input_select.select_option
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Home
+  id: '1522931845172'
+  trigger:
+  - at: 02:00:00
+    platform: time
+- alias: Kitchen - Unlock Kitchen Door When Someone Arrives Home
+  id: '1522931995271'
+  trigger:
+  - entity_id: person.eric
+    platform: state
+    to: home
+  - entity_id: person.nicole
+    platform: state
+    to: home
+  action:
+  - data:
+      entity_id: lock.kitchen_door_lock_locked
+    service: lock.unlock
+- alias: Scene - Turn Off Lights And Lock Doors When Everyone Leaves
+  action:
+  - data:
+      entity_id: scene.away
+    service: scene.turn_on
+  id: '1522945160123'
+  trigger:
+  - entity_id: input_select.home_mode
+    platform: state
+    to: Away
+- alias: Scene - Turn Off Lights And Lock Doors When Sleep
+  action:
+  - data:
+      entity_id: scene.sleep
+    service: scene.turn_on
+  id: '1522945234824'
+  trigger:
+  - entity_id: input_select.home_mode
+    platform: state
+    to: Sleep
+- alias: Scene - Turn On Indoor Lights At Dusk
+  id: '1522945341172'
+  trigger:
+  - entity_id: binary_sensor.dusk
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Home
+  action:
+  - data:
+      entity_id: scene.indoor_lights_on
+    service: scene.turn_on
+- alias: Scene - Turn On Lights When Someone Arrives Home At Dusk or Night
+  id: '1523015798070'
+  trigger:
+  - entity_id: group.phones
+    platform: state
+    to: home
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.night
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.dusk
+      state: 'on'
+  action:
+  - data:
+      entity_id: scene.indoor_lights_on
+    service: scene.turn_on
+- alias: Kitchen - Lock the Door At 2:00:00
+  id: '1524073765787'
+  trigger:
+  - at: 02:00:00
+    platform: time
+  action:
+  - data:
+      entity_id: lock.kitchen_door_lock_locked
+    service: lock.lock
+- alias: System - Check for new snapshots daily
+  id: '1543376445848'
+  trigger:
+  - at: 03:00:00
+    platform: time
+  action:
+  - data:
+      addon: 7be23ff5_dropbox_sync
+      input:
+        command: upload
+    service: rest_command.google_backup
+- alias: Work Days - Turn on MagicMirror
+  id: '1546951741513'
+  trigger:
+  - at: 06:15:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - data:
+      entity_id: switch.mirror_screen
+    service: switch.turn_on
+- alias: Bedroom - Turn On Main Light With Entry Switch
+  id: '1548980303353'
+  trigger:
+  - entity_id: light.bedroom_entry_light
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: light.bedroom_light_switch
+    service: light.turn_on
+- alias: Bedroom - Turn Off Main Light With Entry Light
+  id: '1548980361657'
+  trigger:
+  - entity_id: light.bedroom_entry_light
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      entity_id: light.bedroom_light_switch
+    service: light.turn_off
+- alias: Bedroom - Turn on Humidifier at Night
+  id: '1549208103754'
+  trigger:
+  - entity_id: binary_sensor.night
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.humidifier_switch
+    service: switch.turn_on
+  - data:
+      entity_id: switch.humidifier_2
+    service: switch.turn_on
+- alias: Bedroom - Turn off Humidifier at Morning
+  id: '1549208168922'
+  trigger:
+  - entity_id: binary_sensor.morning
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.humidifier_switch
+    service: switch.turn_off
+  - data:
+      entity_id: switch.humidifier_2
+    service: switch.turn_off
+- alias: Loft - Trigger Xbox Scene When Logged In
+  id: '1573693554096'
+  description: ''
+  trigger:
+  - entity_id: sensor.puregeekery
+    platform: state
+    to: Online
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id: scene.play_xbox
+    service: scene.turn_on
+- alias: Loft - Fan Light Off With Wall Switch
+  id: '1573825610778'
+  description: Turn of the ceiling fan light with the wall switch. Also set the fan
+    to medium speed.
+  trigger:
+  - entity_id: light.desk_light_switch
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      entity_id: fan.loft_ceiling_fan
+      speed: medium
+    service: fan.set_speed
+  - data:
+      entity_id: light.loft_fan_light
+    service: light.turn_off
+- alias: System - Weekly Backup
+  id: '1573827443988'
+  description: Create a weekly backup of HA
+  trigger:
+  - at: 02:00:00
+    platform: time
+  condition:
+    condition: time
+    weekday:
+    - sun
+  action:
+  - service: hassio.snapshot_full
+    data_template:
+      name: Hassio ({{now().strftime('%d.%m.%y')}})
+- alias: Loft - Fan Light Off With Wall Switch
+  id: '1577647896286'
+  description: ''
+  trigger:
+  - entity_id: light.desk_light_switch
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - entity_id: light.loft_fan_light
+    service: light.turn_on
+- alias: Fish - Set Fed Time
+  id: '1678657997296'
+  trigger:
+  - platform: state
+    entity_id: switch.fish_tank_light
+    from: 'off'
+    to: 'on'
+  action:
+  - service: input_text.set_value
+    data_template:
+      entity_id: input_text.fish_last_fed
+      value: '{{states(''sensor.date_time'')}}'
+- alias: Fish - Send notification when fish need fed
+  id: '1577839778680'
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ as_timestamp(strptime(states(''sensor.date_time''), ''%Y-%m-%d,
+      %H:%M'')) - as_timestamp(strptime(states(''input_text.fish_last_fed''), ''%Y-%m-%d,
+      %H:%M''))|float > 2880 * 60 }}'
+  condition: []
+  action:
+  - data:
+      message: Fish have not been fed in two days.
+    service: notify.mobile_app_sm_g965u
+- alias: Lights - Turn on pier lights on weekdays
+  id: '1577972724008'
+  description: ''
+  trigger:
+  - at: 05:30
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - entity_id: switch.pier_lights_switch
+    service: switch.turn_on
+- alias: Door Open Notification - Notify Eric if Home
+  id: '1578081825952'
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.kitchen_patio_door_motion_sensor
+    for: 00:00:30
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.living_room_door_sensor
+    for: 00:00:30
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: person.eric
+    state: home
+  action:
+  - data:
+      message: Door left open.
+    service: notify.mobile_app_sm_g965u
+- alias: Door Open Notification - Notify Nicole if Home
+  id: '1578081825953'
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.kitchen_patio_door_motion_sensor
+    for: 00:00:30
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.living_room_door_sensor
+    for: 00:00:30
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: person.nicole
+    state: home
+  action:
+  - data:
+      message: Door left open.
+    service: notify.mobile_app_pixel_3a
+- id: '1579718011517'
+  alias: Scene - Trigger Listen To Music When Input Phono
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{is_state_attr(''media_player.loft_main'', ''source'', ''phono'')}}'
+  condition: []
+  action:
+  - entity_id: scene.listen_to_music
+    service: scene.turn_on

@@ -1,0 +1,28 @@
+#############
+# MQTT Fans #
+#############
+- platform: mqtt
+  name: "Loft Ceiling Fan"
+  command_topic: "cmnd/LoftFan/FanSpeed"
+  speed_command_topic: "cmnd/LoftFan/FanSpeed"
+  state_topic: "stat/LoftFan/RESULT"
+  speed_state_topic: "stat/LoftFan/RESULT"
+  state_value_template: >
+    {% if value_json.FanSpeed is defined %}
+      {% if value_json.FanSpeed == 0 -%}0{%- elif value_json.FanSpeed > 0 -%}4{%- endif %}
+    {% else %}
+      {% if states.fan.loft_ceiling_fan.state == 'off' -%}0{%- elif states.fan.loft_ceiling_fan.state == 'on' -%}4{%- endif %}
+    {% endif %}
+  speed_value_template: "{{ value_json.FanSpeed }}"
+  availability_topic: tele/LoftFan/LWT
+  payload_off: "0"
+  payload_on: "4"
+  payload_low_speed: "1"
+  payload_medium_speed: "2"
+  payload_high_speed: "3"
+  payload_available: Online
+  payload_not_available: Offline
+  speeds:
+    - low
+    - medium
+    - high
