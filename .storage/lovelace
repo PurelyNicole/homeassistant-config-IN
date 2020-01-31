@@ -82,10 +82,6 @@
                     "url": "/community_plugin/calendar-card/calendar-card.js"
                 },
                 {
-                    "type": "js",
-                    "url": "/community_plugin/entity-attributes-card/entity-attributes-card.js"
-                },
-                {
                     "type": "module",
                     "url": "/community_plugin/lovelace-slider-entity-row/slider-entity-row.js"
                 },
@@ -448,6 +444,61 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "switch.peninsula_light_switch"
+                                },
+                                {
+                                    "entity": "switch.under_cabinet_lights_switch"
+                                },
+                                {
+                                    "entity": "light.dining_room_light",
+                                    "toggle": true,
+                                    "type": "custom:slider-entity-row"
+                                },
+                                {
+                                    "entity": "light.kitchen_overhead_lights"
+                                }
+                            ],
+                            "title": "Kitchen Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "lock.kitchen_door_lock_locked"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_door_lock_status"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_patio_door_motion_sensor"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Kitchen Doors",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.utility_room_moisture_general"
+                                },
+                                {
+                                    "entity": "sensor.utility_room_moisture_temperature"
+                                }
+                            ],
+                            "title": "Utility Room",
+                            "type": "glance"
+                        }
+                    ],
+                    "path": "kitchen",
+                    "title": "Kitchen"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
                                     "entity": "scene.sleep"
                                 }
                             ],
@@ -516,65 +567,22 @@
                             "refresh_interval": 0,
                             "title": "Bedroom Co2 Levels 3 Days",
                             "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.bedroom_shade_2_control"
+                                },
+                                {
+                                    "entity": "cover.bedroom_shade_3_control"
+                                }
+                            ],
+                            "title": "Window Shades",
+                            "type": "entities"
                         }
                     ],
                     "path": "bedroom",
                     "title": "Bedroom"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.peninsula_light_switch"
-                                },
-                                {
-                                    "entity": "switch.under_cabinet_lights_switch"
-                                },
-                                {
-                                    "entity": "light.dining_room_light",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                },
-                                {
-                                    "entity": "light.kitchen_overhead_lights"
-                                }
-                            ],
-                            "title": "Kitchen Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "lock.kitchen_door_lock_locked"
-                                },
-                                {
-                                    "entity": "sensor.kitchen_door_lock_status"
-                                },
-                                {
-                                    "entity": "binary_sensor.kitchen_patio_door_motion_sensor"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Kitchen Doors",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.utility_room_moisture_general"
-                                },
-                                {
-                                    "entity": "sensor.utility_room_moisture_temperature"
-                                }
-                            ],
-                            "title": "Utility Room",
-                            "type": "glance"
-                        }
-                    ],
-                    "path": "kitchen",
-                    "title": "Kitchen"
                 },
                 {
                     "badges": [],
@@ -614,7 +622,7 @@
                                             "entity": "sensor.pond_water_temperature"
                                         },
                                         {
-                                            "entity": "sensor.pool_temperature"
+                                            "entity": "sensor.pool_water_temperature"
                                         }
                                     ],
                                     "title": "Water Temperatures",
@@ -1199,7 +1207,7 @@
                                             "entity": "sensor.pond_water_temperature"
                                         },
                                         {
-                                            "entity": "sensor.pool_temperature"
+                                            "entity": "sensor.pool_water_temperature"
                                         }
                                     ],
                                     "title": "Water Temperatures",
@@ -2289,7 +2297,7 @@
                                                     }
                                                 },
                                                 {
-                                                    "entity": "sensor.pool_temperature",
+                                                    "entity": "sensor.pool_water_temperature",
                                                     "name": "Pool Temperature",
                                                     "show_state": true
                                                 },
@@ -2570,6 +2578,18 @@
                     ],
                     "path": "test-2",
                     "title": "Test 2"
+                },
+                {
+                    "badges": [],
+                    "cards": [],
+                    "path": "3d-print",
+                    "title": "3D Print"
+                },
+                {
+                    "badges": [],
+                    "cards": [],
+                    "path": "3d-print",
+                    "title": "3D Print"
                 }
             ]
         }
