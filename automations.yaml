@@ -383,13 +383,41 @@
   - data:
       message: Door left open.
     service: notify.mobile_app_pixel_3a
-- id: '1579718011517'
-  alias: Scene - Trigger Listen To Music When Input Phono
+- alias: Scene - Trigger Listen To Music When Input Line1
+  id: '1579718011517'
   description: ''
   trigger:
   - platform: template
-    value_template: '{{is_state_attr(''media_player.loft_main'', ''source'', ''phono'')}}'
+    value_template: '{{is_state_attr(''media_player.loft_main'', ''source'', ''Line1'')}}'
   condition: []
   action:
   - entity_id: scene.listen_to_music
     service: scene.turn_on
+- alias: Notification - Dismiss alert after fish fed
+  id: '1579891708175'
+  description: ''
+  trigger:
+  - entity_id: switch.fish_tank_light
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      notification_id: 49980
+    service: persistent_notification.dismiss
+- alias: Reset mailboxPIR state
+  hide_entity: true
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.mailbox
+    from: 'off'
+    to: 'on'
+    for:
+      seconds: 5
+  action:
+  - service: mqtt.publish
+    data:
+      topic: tele/RFBridge/RESULT
+      payload: 1B4619off #madeup to turn off motion

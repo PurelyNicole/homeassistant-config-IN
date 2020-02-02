@@ -48,17 +48,17 @@
       state: Sleep
     light.hallway_lights:
       state: 'off'
+    light.gym_light_switch:
+      state: 'off'
     lock.front_door_lock_locked:
       state: locked
     lock.kitchen_door_lock_locked:
       state: locked
     lock.workshop_door_lock_locked:
       state: locked
-    switch.fish_light:
-      state: 'off'
     switch.mirror_screen:
       state: 'off'
-    switch.pier_lights_switch:
+    switch.fish_tank_light:
       state: 'off'
 - name: Watch TV
   entities:

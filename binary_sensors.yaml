@@ -41,3 +41,18 @@
 ###################
 - platform: workday
   country: US
+
+###################
+# mail Box Sensor #
+###################
+- platform: mqtt
+  state_topic: "tele/RFBridge/RESULT"
+  name: 'Mailbox'
+  value_template: '{{value_json.RfReceived.Data}}'
+  payload_on: '1B4619'
+  payload_off: '1B4619off'
+  device_class: motion
+  #optimistic: false
+  qos: 1
+
+
