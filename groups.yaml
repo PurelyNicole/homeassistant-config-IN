@@ -15,7 +15,6 @@ entry_hall_lights:
   entities:
     - switch.entryway_light_switch
     - light.hallway_lights
-    - light.gym_light_switch
     - light.hall_bath_switch
 guest_room_lights:
   name: Guest Room Lights

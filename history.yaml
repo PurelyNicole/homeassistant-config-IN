@@ -111,6 +111,7 @@ exclude:
     - sensor.dark_sky_wind_speed_0d
     - sensor.dark_sky_wind_speed_1d
     - sensor.dark_sky_wind_speed_2d
+    - sensor.date_time
     - sensor.flat_fork_last_update
     - sensor.fort_harrison_last_update
     - sensor.front_door_lock_status

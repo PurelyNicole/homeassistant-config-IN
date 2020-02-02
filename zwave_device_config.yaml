@@ -85,3 +85,15 @@ sensor.kitchen_patio_door_motion_sourcenodeid:
 sensor.kitchen_patio_door_motion_burglar:
   ignored: true
   polling_intensity: 0
+sensor.front_door_lock_alarm_type:
+  ignored: true
+  polling_intensity: 0
+sensor.front_door_lock_alarm_level:
+  ignored: true
+  polling_intensity: 0
+sensor.workshop_door_lock_alarm_type:
+  ignored: true
+  polling_intensity: 0
+sensor.workshop_door_lock_alarm_level:
+  ignored: true
+  polling_intensity: 0

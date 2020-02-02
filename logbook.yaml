@@ -84,6 +84,7 @@ exclude:
     - sensor.dark_sky_wind_speed_0d
     - sensor.dark_sky_wind_speed_1d
     - sensor.dark_sky_wind_speed_2d
+    - sensor.date_time
     - sensor.kitchen_door_lock_alarm_level
     - sensor.kitchen_door_lock_alarm_type
     - sensor.kitchen_patio_door_motion_alarm_level
