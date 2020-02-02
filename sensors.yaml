@@ -23,11 +23,6 @@
 # MQTT Sensors #
 ################
 - platform: mqtt
-  name: "Pool Temperature"
-  state_topic: 'tele/pooltemp1/SENSOR'
-  unit_of_measurement: '°F'
-  value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
-- platform: mqtt
   name: "Workshop Temperature"
   state_topic: 'tele/AFSHT31/SENSOR'
   unit_of_measurement: '°F'
@@ -170,6 +165,69 @@
       friendly_name: 'Kitchen Door Lock Status'
       value_template: "{{ state_attr('lock.kitchen_door_lock_locked', 'lock_status') }}"
       entity_id: lock.kitchen_door_lock_locked
+    # Octoprint converts seconds to real time
+    octoprint_time_elapsed_format:
+      friendly_name: 'Printing Time Elapsed'
+      value_template: >-
+        {% set etime = states.sensor.octoprint_time_elapsed.state | int %}
+        {% set seconds = etime % 60 %}
+        {% set minutes = ((etime % 3600) / 60) | int %}
+        {% set hours = ((etime % 86400) / 3600) | int %}
+        {% set days = (etime / 86400) | int %}
+        {%- if days > 0 -%}
+          {%- if days == 1 -%}
+            1 day
+          {%- else -%}
+            {{ days }} days
+          {%- endif -%}
+          {{ ', ' }}
+        {%- endif -%}
+        {%- if hours > 0 -%}
+          {%- if hours == 1 -%}
+            1 hour
+          {%- else -%}
+            {{ hours }} hours
+          {%- endif -%}
+          {{ ', ' }}
+        {%- endif -%}
+        {%- if minutes > 0 -%}
+          {%- if minutes == 1 -%}
+            1 minute
+          {%- else -%}
+            {{ minutes }} minutes
+          {%- endif -%}
+        {%- endif -%}
+    octoprint_time_remaining_format:
+      friendly_name: 'Printing Time Remaining'
+      value_template: >-
+        {% set rtime = states.sensor.octoprint_time_remaining.state | int %}
+        {% set seconds = rtime % 60 %}
+        {% set minutes = ((rtime % 3600) / 60) | int %}
+        {% set hours = ((rtime % 86400) / 3600) | int %}
+        {% set days = (rtime / 86400) | int %}
+        {%- if days > 0 -%}
+          {%- if days == 1 -%}
+            1 day
+          {%- else -%}
+            {{ days }} days
+          {%- endif -%}
+          {{ ', ' }}
+        {%- endif -%}
+        {%- if hours > 0 -%}
+          {%- if hours == 1 -%}
+            1 hour
+          {%- else -%}
+            {{ hours }} hours
+          {%- endif -%}
+          {{ ', ' }}
+        {%- endif -%}
+        {%- if minutes > 0 -%}
+          {%- if minutes == 1 -%}
+            1 minute
+          {%- else -%}
+            {{ minutes }} minutes
+          {%- endif -%}
+        {%- endif -%}
     # Trail Status
     fort_harrison_trail_status:
       friendly_name: "Fort Harrison Trail Status"
@@ -266,4 +324,19 @@
   xuid: 
     - !secret xuid
   scan_interval: 60
+
+- platform: history_stats
+  name: XBox Played Today
+  entity_id: sensor.puregeekery
+  state: 'Online'
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end: '{{ now() }}'
+- platform: history_stats
+  name: XBox Played This Week
+  entity_id: sensor.puregeekery
+  state: 'Online'
+  type: time
+  start: '{{ now().replace(day=0).replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end: '{{ now() }}'
 # END
