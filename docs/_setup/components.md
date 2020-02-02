@@ -4,6 +4,9 @@ Components in Home Assitant are the devices and services that control various as
 
 ## Automation
 * automation
+* input_boolean
+* input_select
+* input_text
 * rest command
 * template
 
@@ -12,15 +15,14 @@ Components in Home Assitant are the devices and services that control various as
 
 ## Camera
 * ffmpeg
+* mjpeg
+* nwsradar
 * stream
 
-## Climate
-* fan
-* nest
-
 ## Cover
-* open garage
+* opengarage
 
+------------
 ## Environment
 * sun
 * time of day
@@ -45,6 +47,7 @@ Components in Home Assitant are the devices and services that control various as
 
 ## Hub
 * mqtt
+* nest
 * tuya
 * zwave
 

@@ -4,4 +4,3 @@ My main to-do list can be found in the issues section of my repo. However, there
 * Sleep Detection
 * Room Detection: Most room detection solutions I've found involve carrying a phone around. However, I do not carry a phone around at home.
 * Voice Assitant
-* Google Play Music
