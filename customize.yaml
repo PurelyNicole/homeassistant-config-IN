@@ -165,14 +165,14 @@ scene.listen_to_music:
   icon: mdi:record-player
 media_player.volumio:
   icon: mdi:library-music
-switch.volumio_zone_1:
-  friendly_name: 'Volumio: Zone 1'
+switch.musiccast_zone_1:
+  friendly_name: 'MusicCast: Zone 1'
   icon: mdi:library-music
-switch.volumio_zone_2:
-  friendly_name: 'Volumio: Zone 2'
+switch.musiccast_zone_2:
+  friendly_name: 'MusicCast: Zone 2'
   icon: mdi:library-music
-switch.volumio_zone_3:
-  friendly_name: 'Volumio: Zone 3'
+switch.musiccast_zone_3:
+  friendly_name: 'MusicCast: Zone 3'
   icon: mdi:library-music
 switch.ipod_zone_1:
   friendly_name: 'iPod: Zone 1'

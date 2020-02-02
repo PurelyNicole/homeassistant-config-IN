@@ -56,6 +56,7 @@ Components in Home Assitant are the devices and services that control various as
 
 ## Media Player
 * cast
+* musiccast
 * volumio (open source media player)
 
 ## Network

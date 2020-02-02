@@ -152,6 +152,10 @@
                 {
                     "type": "module",
                     "url": "/community_plugin/config-template-card/config-template-card.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/harmony-card/harmony-card.js"
                 }
             ],
             "title": "Home Assistant",
@@ -1096,10 +1100,10 @@
                                     "entity": "sensor.octoprint_job_percentage"
                                 },
                                 {
-                                    "entity": "sensor.octoprint_time_elapsed"
+                                    "entity": "sensor.octoprint_time_elapsed_format"
                                 },
                                 {
-                                    "entity": "sensor.octoprint_time_remaining"
+                                    "entity": "sensor.octoprint_time_remaining_format"
                                 }
                             ],
                             "title": "Ender 3 Pro",
@@ -1362,7 +1366,8 @@
                                     "type": "entities"
                                 },
                                 {
-                                    "entity": "media_player.volumio",
+                                    "artwork": "cover",
+                                    "entity": "media_player.living_room_music_main",
                                     "type": "custom:mini-media-player"
                                 }
                             ],
@@ -1410,7 +1415,7 @@
                         {
                             "cards": [
                                 {
-                                    "entity": "switch.volumio_zone_1",
+                                    "entity": "switch.musiccast_zone_1",
                                     "hold_action": {
                                         "action": "more-info"
                                     },
@@ -1422,7 +1427,7 @@
                                     "type": "entity-button"
                                 },
                                 {
-                                    "entity": "switch.volumio_zone_2",
+                                    "entity": "switch.musiccast_zone_2",
                                     "hold_action": {
                                         "action": "more-info"
                                     },
@@ -1434,43 +1439,7 @@
                                     "type": "entity-button"
                                 },
                                 {
-                                    "entity": "switch.volumio_zone_3",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "show_icon": true,
-                                    "show_name": true,
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "type": "entity-button"
-                                },
-                                {
-                                    "entity": "switch.ipod_zone_1",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "show_icon": true,
-                                    "show_name": true,
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "type": "entity-button"
-                                },
-                                {
-                                    "entity": "switch.ipod_zone_2",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "show_icon": true,
-                                    "show_name": true,
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "type": "entity-button"
-                                },
-                                {
-                                    "entity": "switch.ipod_zone_3",
+                                    "entity": "switch.musiccast_zone_3",
                                     "hold_action": {
                                         "action": "more-info"
                                     },
@@ -1485,7 +1454,7 @@
                                 {
                                     "aspect_ratio": "78%",
                                     "type": "iframe",
-                                    "url": "http://192.168.1.82:3000/playback"
+                                    "url": "https://open.spotify.com/"
                                 },
                                 "break",
                                 {
@@ -1494,12 +1463,12 @@
                                             "entities": [
                                                 {
                                                     "entity": "input_boolean.fill_cd_changer",
+                                                    "show_state": false,
                                                     "tap_action": {
                                                         "action": "toggle"
                                                     }
                                                 }
                                             ],
-                                            "show_state": false,
                                             "type": "glance"
                                         },
                                         {
@@ -1540,33 +1509,6 @@
                                         }
                                     ],
                                     "type": "vertical-stack"
-                                },
-                                {
-                                    "dateBottomFormat": "DD",
-                                    "dateTopFormat": "MMM",
-                                    "entities": [
-                                        {
-                                            "entity": "calendar.music_announcements",
-                                            "name": "Music Announcements"
-                                        }
-                                    ],
-                                    "eventsLimit": "99",
-                                    "hideHeader": false,
-                                    "hidePastEvents": false,
-                                    "hideTime": true,
-                                    "highlightToday": false,
-                                    "ignoreEventsByLocationExpression": "",
-                                    "ignoreEventsExpression": "",
-                                    "numberOfDays": "60",
-                                    "progressBar": false,
-                                    "showEventOrigin": false,
-                                    "showLocation": false,
-                                    "showLocationIcon": false,
-                                    "showMultiDay": false,
-                                    "startFromToday": false,
-                                    "timeFormat": "HH:mma",
-                                    "title": "Upcoming Releases",
-                                    "type": "custom:calendar-card"
                                 }
                             ],
                             "column_width": [
@@ -1645,8 +1587,9 @@
                             "type": "entities"
                         },
                         {
+                            "artwork": "cover",
                             "entity": "media_player.loft_main",
-                            "type": "media-control"
+                            "type": "custom:mini-media-player"
                         },
                         {
                             "dateBottomFormat": "DD",
@@ -1788,7 +1731,8 @@
                             "type": "entities"
                         },
                         {
-                            "entity": "media_player.volumio",
+                            "artwork": "cover",
+                            "entity": "media_player.living_room_music_main",
                             "type": "custom:mini-media-player"
                         },
                         {
@@ -1913,508 +1857,9 @@
                 },
                 {
                     "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "weather.dark_sky",
-                                            "type": "weather-forecast"
-                                        },
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "sensor.nicole_location"
-                                                },
-                                                {
-                                                    "entity": "sensor.eric_location"
-                                                }
-                                            ],
-                                            "title": "Presence",
-                                            "type": "glance"
-                                        },
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "light.hallway_lights",
-                                                    "name": "Hallway",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.entryway_light_switch",
-                                                    "name": "Entry",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "lock.front_door_lock_locked",
-                                                    "name": "Front Door",
-                                                    "show_state": false
-                                                }
-                                            ],
-                                            "title": "Entryway",
-                                            "type": "glance"
-                                        },
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "switch.peninsula_light_switch",
-                                                    "name": "Peninsula",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.under_cabinet_lights_switch",
-                                                    "name": "Cabinets",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.kitchen_overhead_lights",
-                                                    "name": "Overhead",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "lock.kitchen_door_lock_locked",
-                                                    "name": "Door",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
-                                                    "name": "Patio Door"
-                                                }
-                                            ],
-                                            "show_state": false,
-                                            "title": "Kitchen",
-                                            "type": "glance"
-                                        },
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "switch.guest_room_floor_lamp_switch",
-                                                    "name": "Guest Room Floor",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.guest_room_nightstand_lamp_switch",
-                                                    "name": "Guest Room Table",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.gym_light_switch",
-                                                    "name": "Gym",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.dining_room_light",
-                                                    "name": "Dining Room",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                }
-                                            ],
-                                            "show_state": false,
-                                            "title": "Other Rooms",
-                                            "type": "glance"
-                                        },
-                                        "break",
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "switch.bar_lights_switch",
-                                                    "name": "Bar",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.fireplace_lights_switch",
-                                                    "name": "Fireplace",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.globe_lamp_switch",
-                                                    "name": "Globe Lamp",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.table_lamps_switch",
-                                                    "name": "Table Lamps",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.fish_tank_light",
-                                                    "name": "Fish Tank",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.fish_tank_light",
-                                                    "name": "Fish Tank",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "sensor.fish_tank_temperature",
-                                                    "name": "Fish Temp",
-                                                    "show_state": true
-                                                },
-                                                {
-                                                    "entity": "binary_sensor.living_room_door_sensor",
-                                                    "name": "Patio Door",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "sensor.living_room_thermostat_temperature",
-                                                    "name": "Temperature",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "sensor.living_room_thermostat_humidity",
-                                                    "name": "Humidity"
-                                                },
-                                                {
-                                                    "entity": "sensor.living_room",
-                                                    "name": "Activity"
-                                                }
-                                            ],
-                                            "show_state": true,
-                                            "title": "Living Room",
-                                            "type": "glance"
-                                        },
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "light.bedroom_entry_light",
-                                                    "name": "Entry",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.bedroom_light_switch",
-                                                    "name": "Overhead",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.bathroom_vanity_light",
-                                                    "name": "Vanity",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.bathroom_shower",
-                                                    "name": "Shower",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "sensor.bedroom_temperature",
-                                                    "name": "Temperature"
-                                                },
-                                                {
-                                                    "entity": "sensor.bedroom_humidity",
-                                                    "name": "Humidity"
-                                                }
-                                            ],
-                                            "show_state": true,
-                                            "title": "Bedroom",
-                                            "type": "glance"
-                                        },
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "fan.loft_ceiling_fan",
-                                                    "name": "Fan",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.loft_fan_light",
-                                                    "name": "Fan Light",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.tetris_lamp_switch",
-                                                    "name": "Tetris Lamp",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.reading_lamp_switch",
-                                                    "name": "Reading Lamp",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.desk_light_switch",
-                                                    "name": "Desk",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "light.alcove_light_switch",
-                                                    "name": "Alcove",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "sensor.record_console_temperature",
-                                                    "name": "Temperature"
-                                                },
-                                                {
-                                                    "entity": "sensor.record_console_relative_humidity",
-                                                    "name": "Humidity"
-                                                }
-                                            ],
-                                            "show_state": true,
-                                            "title": "Loft",
-                                            "type": "glance"
-                                        },
-                                        "break",
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "switch.deck_flood_lights_switch",
-                                                    "name": "Flood",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.garage_flood_lights_switch",
-                                                    "name": "Garage",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.landscaping_lights_switch",
-                                                    "name": "Landscaping",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.patio_flood_lights_switch",
-                                                    "name": "Patio",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.pier_lights_switch",
-                                                    "name": "Pier",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.porch_light_switch",
-                                                    "name": "Porch",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "switch.workshop_light_switch",
-                                                    "name": "Workshop",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "cover.garage_door",
-                                                    "name": "Garage",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "sensor.pool_water_temperature",
-                                                    "name": "Pool Temperature",
-                                                    "show_state": true
-                                                },
-                                                {
-                                                    "entity": "sensor.pond_water_temperature",
-                                                    "name": "Pond Temperature"
-                                                }
-                                            ],
-                                            "title": "Outdoor",
-                                            "type": "glance"
-                                        },
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "lock.workshop_door_lock_locked",
-                                                    "name": "Lock",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                },
-                                                {
-                                                    "entity": "sensor.workshop_temperature",
-                                                    "name": "Temperature"
-                                                },
-                                                {
-                                                    "entity": "sensor.workshop_humidity",
-                                                    "name": "Humidity"
-                                                }
-                                            ],
-                                            "title": "Workshop",
-                                            "type": "glance"
-                                        },
-                                        {
-                                            "dateBottomFormat": "ddd",
-                                            "dateTopFormat": "DD",
-                                            "entities": [
-                                                "calendar.nicoles_calendar",
-                                                "calendar.eric_nicole_events",
-                                                "calendar.eric_events"
-                                            ],
-                                            "eventsLimit": "99",
-                                            "hideHeader": false,
-                                            "hidePastEvents": true,
-                                            "hideTime": false,
-                                            "highlightToday": false,
-                                            "ignoreEventsByLocationExpression": "",
-                                            "ignoreEventsExpression": "",
-                                            "numberOfDays": "7",
-                                            "progressBar": false,
-                                            "showEventOrigin": false,
-                                            "showLocation": false,
-                                            "showLocationIcon": true,
-                                            "showMultiDay": true,
-                                            "startFromToday": true,
-                                            "timeFormat": "HH:mma",
-                                            "title": "Calendar",
-                                            "type": "custom:calendar-card"
-                                        }
-                                    ],
-                                    "layout": "vertical",
-                                    "type": "custom:layout-card"
-                                },
-                                "break",
-                                {
-                                    "cards": [
-                                        {
-                                            "aspect_ratio": "0%",
-                                            "camera_image": "camera.driveway_cam2",
-                                            "camera_view": "live",
-                                            "entities": [
-                                                {
-                                                    "entity": "camera.driveway_cam2"
-                                                }
-                                            ],
-                                            "type": "picture-glance"
-                                        },
-                                        {
-                                            "aspect_ratio": "0%",
-                                            "camera_image": "camera.porch",
-                                            "camera_view": "live",
-                                            "entities": [
-                                                {
-                                                    "entity": "camera.porch"
-                                                }
-                                            ],
-                                            "entity": "camera.porch",
-                                            "type": "picture-glance"
-                                        },
-                                        {
-                                            "aspect_ratio": "0%",
-                                            "camera_image": "camera.ind",
-                                            "entity": "camera.ind",
-                                            "show_name": false,
-                                            "show_state": false,
-                                            "type": "picture-entity"
-                                        }
-                                    ],
-                                    "column_width": "100%",
-                                    "layout": "vertical",
-                                    "max_columns": 1,
-                                    "min_columns": 1,
-                                    "type": "custom:layout-card"
-                                }
-                            ],
-                            "column_width": [
-                                "75%",
-                                "25%"
-                            ],
-                            "layout": "vertical",
-                            "max_columns": 2,
-                            "min_columns": 2,
-                            "type": "custom:layout-card"
-                        }
-                    ],
+                    "cards": [],
                     "icon": "",
-                    "panel": true,
+                    "panel": false,
                     "path": "test",
                     "theme": "Backend-selected",
                     "title": "Test"
@@ -2524,56 +1969,6 @@
                             "show_header_toggle": false,
                             "title": "Quick View",
                             "type": "entities"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_boolean.fill_cd_changer"
-                                        }
-                                    ],
-                                    "show_state": false,
-                                    "type": "glance"
-                                },
-                                {
-                                    "card": {
-                                        "entities": [
-                                            {
-                                                "entity": "sensor.cd_changer",
-                                                "icon": "mdi:numeric-1-circle",
-                                                "name": "${{states['sensor.cd_changer'].attributes.cd1}}"
-                                            },
-                                            {
-                                                "entity": "sensor.cd_changer",
-                                                "icon": "mdi:numeric-2-circle",
-                                                "name": "${{states['sensor.cd_changer'].attributes.cd2}}"
-                                            },
-                                            {
-                                                "entity": "sensor.cd_changer",
-                                                "icon": "mdi:numeric-3-circle",
-                                                "name": "${{states['sensor.cd_changer'].attributes.cd3}}"
-                                            },
-                                            {
-                                                "entity": "sensor.cd_changer",
-                                                "icon": "mdi:numeric-4-circle",
-                                                "name": "${{states['sensor.cd_changer'].attributes.cd4}}"
-                                            },
-                                            {
-                                                "entity": "sensor.cd_changer",
-                                                "icon": "mdi:numeric-5-circle",
-                                                "name": "${{states['sensor.cd_changer'].attributes.cd5}}"
-                                            }
-                                        ],
-                                        "type": "entities"
-                                    },
-                                    "entities": [
-                                        "sensor.cd_changer"
-                                    ],
-                                    "type": "custom:config-template-card"
-                                }
-                            ],
-                            "type": "vertical-stack"
                         }
                     ],
                     "path": "test-2",

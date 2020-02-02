@@ -143,9 +143,9 @@ exclude:
     - switch.ipod_zone_2
     - switch.ipod_zone_3
     - switch.rachio_c7327b_in_standby_mode
-    - switch.volumio_zone_1
-    - switch.volumio_zone_2
-    - switch.volumio_zone_3
+    - switch.musiccast_zone_1
+    - switch.musiccast_zone_2
+    - switch.musiccast_zone_3
     - switch.wled1_outsidelow_nightlight
     - switch.wled1_outsidelow_sync_receive
     - switch.wled1_outsidelow_sync_send
