@@ -10,22 +10,38 @@ homeassistant:
     - type: trusted_networks
       trusted_networks:
         - !secret trusted_networks
-breaking_changes:
-mobile_app:
-script:
-person:
+hassio:
 
-#########################
-# Automation Components #
-#########################
+##############
+# Automation #
+##############
 automation: !include automations.yaml
+input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
 input_text: !include input_text.yaml
-timer: !include  timers.yaml
+rest_command:
+  google_backup:
+    url: !secret google_backup_url
+    timeout: '300'
+script:
+timer: !include timers.yaml
 
-####################
-# Cover Components #
-####################     
+############
+# Calendar #
+############
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+
+##########
+# Camera #
+##########
+camera: !include cam.yaml
+stream:
+
+#########
+# Cover #
+#########
 cover:
   platform: opengarage
   covers:
@@ -34,17 +50,13 @@ cover:
         device_key: !secret garage_device_key
         name:  Garage Door     
 
-########################
-# Front End Components #
-#########################
+########
+# HACS #
+########
+breaking_changes:
 config:
 frontend:
   themes: !include_dir_merge_named themes
-map:
-updater:
-hassio:
-system_health:
-stream:
 
 ######################
 # History Components #
@@ -58,8 +70,13 @@ influxdb:
   password: !secret http_password
   default_measurement: state
 logbook: !include logbook.yaml
+logger:
+  default: info
 recorder:
 
+#######
+# Hub #
+#######
 nest:
   client_id: !secret nest_id
   client_secret: !secret nest_secret
@@ -67,18 +84,10 @@ zwave:
   usb_path: /dev/serial/by-id/usb-0658_0200-if00
   network_key: !secret network_key
   device_config: !include zwave_device_config.yaml
-tuya: !include tuya.yaml
 
-########################
-# Google Calendar APIO #
-########################
-google:
-  client_id: !secret google_client_id
-  client_secret: !secret google_client_secret
-
-###########################
-# Media Player Components #
-###########################
+################
+# Media Player #
+################
 media_player:
   - platform: volumio
     host: !secret volumiohost
@@ -88,11 +97,8 @@ media_player:
     client_secret: !secret eric_spot_client_secret
   - platform: yamaha_musiccast
     host: !secret loft_yamaha
-
-##############    
-# IP Cameras #
-##############
-camera: !include cam.yaml
+  - platform: yamaha_musiccast
+    host: !secret living_room_yamaha
 
 ##############
 # Irrigation #
@@ -100,9 +106,9 @@ camera: !include cam.yaml
 rachio:
   api_key: !secret rachio_api_key
 
-###########################
-# Organization Components #
-###########################
+################
+# Organization #
+################
 group: !include groups.yaml
 scene: !include scenes.yaml
 
@@ -115,18 +121,30 @@ http:
 discovery:
   ignore:
     - roku
-rest_command:
-  google_backup:
-    url: !secret google_backup_url
-    timeout: '300'
-ssdp:
-zeroconf:
+mobile_app:
+system_health:
+
+#################
+# Notifications #
+#################
 notify:
   - platform: html5 
     name: chrome_push_notification
     vapid_pub_key: !secret vapid_pub_key
     vapid_prv_key: !secret vapid_prv_key
     vapid_email: !secret nicole_email
+
+###########
+# Network #
+###########
+ssdp:
+zeroconf:
+
+######################
+# Presence Detection #
+######################
+map:
+person:
 
 #####################
 # Sensor Components #
@@ -155,7 +173,6 @@ iqvia: #Allergies
 fan: !include fans.yaml
 switch: !include switches.yaml
 light: !include lights.yaml
-input_boolean: !include input_boolean.yaml
 
 ######################
 # Weather Components #
