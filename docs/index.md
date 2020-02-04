@@ -14,3 +14,4 @@ We had originally set up our smart home using SmartThings. But as our system gre
 * Technology should fit your life. Your life shouldn't fit technology.
 * Automation over remote control.
 * Devices should still work if the network goes down.
+* Snitches get disassembled and sent to Beelzebot.

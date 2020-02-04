@@ -1,0 +1,27 @@
+{
+    "data": {
+        "camera.driveway_cam2": {
+            "preload_stream": true
+        },
+        "camera.driveway_cam_sub": {
+            "preload_stream": true
+        },
+        "camera.driveway_stream": {
+            "preload_stream": true
+        },
+        "camera.front_door_stream": {
+            "preload_stream": true
+        },
+        "camera.porch": {
+            "preload_stream": false
+        },
+        "camera.porch_stream": {
+            "preload_stream": true
+        },
+        "camera.porch_sub": {
+            "preload_stream": true
+        }
+    },
+    "key": "camera",
+    "version": 1
+}

@@ -15,6 +15,7 @@ hassio:
 ##############
 # Automation #
 ##############
+alert: !include alerts.yaml
 automation: !include automations.yaml
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
@@ -23,7 +24,7 @@ rest_command:
   google_backup:
     url: !secret google_backup_url
     timeout: '300'
-script:
+script: !include scripts.yaml
 timer: !include timers.yaml
 
 ############
@@ -36,7 +37,7 @@ google:
 ##########
 # Camera #
 ##########
-camera: !include cam.yaml
+camera: !include cameras.yaml
 stream:
 
 #########
@@ -58,6 +59,15 @@ config:
 frontend:
   themes: !include_dir_merge_named themes
 
+##########
+# Health #
+##########
+iqvia:
+  zip_code: !secret pollen_zip_code
+  monitored_conditions:
+    - allergy_index_today
+    - allergy_index_tomorrow
+
 ######################
 # History Components #
 ######################
@@ -70,9 +80,11 @@ influxdb:
   password: !secret http_password
   default_measurement: state
 logbook: !include logbook.yaml
-logger:
-  default: info
 recorder:
+logger:
+  default: warn
+  logs:
+    homeassistant.components.yamaha_musiccast: debug
 
 #######
 # Hub #
@@ -80,6 +92,9 @@ recorder:
 nest:
   client_id: !secret nest_id
   client_secret: !secret nest_secret
+octoprint:
+  host: !secret OctoIP
+  api_key: !secret OctoAPI
 zwave:
   usb_path: /dev/serial/by-id/usb-0658_0200-if00
   network_key: !secret network_key
@@ -89,16 +104,16 @@ zwave:
 # Media Player #
 ################
 media_player:
+  - platform: yamaha_musiccast
+    host: !secret living_room_yamaha
+  - platform: yamaha_musiccast
+    host: !secret loft_yamaha
   - platform: volumio
     host: !secret volumiohost
     port: 3000
   - platform: spotify
-    client_id: !secret eric_spot_client_id
-    client_secret: !secret eric_spot_client_secret
-  - platform: yamaha_musiccast
-    host: !secret loft_yamaha
-  - platform: yamaha_musiccast
-    host: !secret living_room_yamaha
+    client_id: spotify_client_id
+    client_secret: spotify_client_secret
 
 ##############
 # Irrigation #
@@ -112,15 +127,12 @@ rachio:
 group: !include groups.yaml
 scene: !include scenes.yaml
 
-####################
-# Other Components #
-####################
+#########
+# Other #
+#########
 api:
 http:
   base_url: !secret base_url
-discovery:
-  ignore:
-    - roku
 mobile_app:
 system_health:
 
@@ -139,6 +151,9 @@ notify:
 ###########
 ssdp:
 zeroconf:
+discovery:
+  ignore:
+    - roku
 
 ######################
 # Presence Detection #
@@ -146,11 +161,24 @@ zeroconf:
 map:
 person:
 
-#####################
-# Sensor Components #
-#####################
+###########
+# Sensor #
+###########
 sensor: !include sensors.yaml
 binary_sensor: !include binary_sensors.yaml
+
+###########
+# Switch  #
+###########
+fan: !include fans.yaml
+switch: !include switches.yaml
+light: !include lights.yaml
+
+#####################
+# System Monitoring #
+#####################
+pi_hole:
+  - host: 'localhost:4865'
 fastdotcom:
   scan_interval:
     minutes: 60
@@ -161,18 +189,6 @@ speedtestdotnet:
     - ping
     - download
     - upload
-iqvia: #Allergies
-  zip_code: !secret pollen_zip_code
-  monitored_conditions:
-    - allergy_index_today
-    - allergy_index_tomorrow
-
-#####################
-# Switch Components #
-#####################
-fan: !include fans.yaml
-switch: !include switches.yaml
-light: !include lights.yaml
 
 ######################
 # Weather Components #
@@ -182,10 +198,3 @@ weather:
   - platform: darksky
     api_key: !secret darksky_api
     mode: daily
-
-######################
-# OctoPrint#
-######################
-octoprint:
-  host: !secret OctoIP
-  api_key: !secret OctoAPI

@@ -1,0 +1,11 @@
+/auth*
+/cloud
+/core*
+/esphome*
+/frontend*
+/hacs*
+/hassio
+/homekit_controller-entity-map
+/onboarding
+/person
+/unifi_data

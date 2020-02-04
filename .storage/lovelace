@@ -805,7 +805,18 @@
                                     "entity": "switch.pond_heater"
                                 }
                             ],
+                            "show_header_toggle": false,
                             "title": "Outdoor Heaters",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.mailbox"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Mailbox",
                             "type": "entities"
                         }
                     ],
@@ -1724,6 +1735,9 @@
                                 },
                                 {
                                     "entity": "sensor.fish_tank_temperature"
+                                },
+                                {
+                                    "entity": "input_text.fish_last_fed"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -1857,7 +1871,27 @@
                 },
                 {
                     "badges": [],
-                    "cards": [],
+                    "cards": [
+                        {
+                            "aspect_ratio": "0%",
+                            "entities": [
+                                {
+                                    "entity": "input_select.spotify_playlist"
+                                }
+                            ],
+                            "image": "local/playlist_images/family_mix.png",
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "input_select.select_option",
+                                "service_data": {
+                                    "entity_id": "input_select.spotify_playlist",
+                                    "option": "Family Mix"
+                                }
+                            },
+                            "title": "Family Playlist",
+                            "type": "picture-glance"
+                        }
+                    ],
                     "icon": "",
                     "panel": false,
                     "path": "test",

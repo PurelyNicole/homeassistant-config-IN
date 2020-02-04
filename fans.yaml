@@ -1,6 +1,6 @@
-#############
-# MQTT Fans #
-#############
+########
+# MQTT #
+########
 - platform: mqtt
   name: "Loft Ceiling Fan"
   command_topic: "cmnd/LoftFan/FanSpeed"

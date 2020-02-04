@@ -1,8 +1,8 @@
-####################
-# Presence Groups #
-####################    
-phones:
-  name: Phones
+############
+# Presence #
+############    
+people:
+  name: People
   entities:
     - person.eric
     - person.nicole
@@ -65,3 +65,5 @@ outdoor_lights:
     - switch.pier_lights_switch
     - switch.porch_light_switch
     - switch.workshop_light_switch
+indoor_lights:
+  - group.entry_hall_lights

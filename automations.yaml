@@ -40,7 +40,7 @@
 - alias: Home Mode - Set to Home When Anyone Arrives Home and Mode is not Sleep
   id: '1522931077343'
   trigger:
-  - entity_id: group.phones
+  - entity_id: group.people
     platform: state
     to: home
   - entity_id: person.nicole
@@ -61,7 +61,7 @@
 - alias: Home Mode - Set To Away When Everyone Leaves
   id: '1522931541949'
   trigger:
-  - entity_id: group.phones
+  - entity_id: group.people
     for: 00:05:00
     platform: state
     to: not_home
@@ -78,7 +78,7 @@
     service: input_select.select_option
   condition:
   - condition: state
-    entity_id: group.phones
+    entity_id: group.people
     state: home
   id: '1522931689561'
   trigger:
@@ -148,7 +148,7 @@
 - alias: Scene - Turn On Lights When Someone Arrives Home At Dusk or Night
   id: '1523015798070'
   trigger:
-  - entity_id: group.phones
+  - entity_id: group.people
     platform: state
     to: home
   condition:
@@ -164,15 +164,6 @@
   - data:
       entity_id: scene.indoor_lights_on
     service: scene.turn_on
-- alias: Kitchen - Lock the Door At 2:00:00
-  id: '1524073765787'
-  trigger:
-  - at: 02:00:00
-    platform: time
-  action:
-  - data:
-      entity_id: lock.kitchen_door_lock_locked
-    service: lock.lock
 - alias: System - Check for new snapshots daily
   id: '1543376445848'
   trigger:
@@ -330,19 +321,6 @@
   - data:
       message: Fish have not been fed in two days.
     service: notify.mobile_app_sm_g965u
-- alias: Lights - Turn on pier lights on weekdays
-  id: '1577972724008'
-  description: ''
-  trigger:
-  - at: 05:30
-    platform: time
-  condition:
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: 'on'
-  action:
-  - entity_id: switch.pier_lights_switch
-    service: switch.turn_on
 - alias: Door Open Notification - Notify Eric if Home
   id: '1578081825952'
   description: ''
@@ -406,7 +384,7 @@
   - data:
       notification_id: 49980
     service: persistent_notification.dismiss
-- alias: Reset mailboxPIR state
+- alias: Mailbox - Reset mailboxPIR state
   hide_entity: true
   initial_state: 'on'
   trigger:
@@ -420,4 +398,21 @@
   - service: mqtt.publish
     data:
       topic: tele/RFBridge/RESULT
-      payload: 1B4619off #madeup to turn off motion
+      payload: 1B4619off
+  id: 423ae9691e5c4140bdc9547fd69a1fed
+- id: '1580761584418'
+  alias: Notification - Mailbox Opened
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.mailbox
+    from: 'Clear'
+    platform: state
+    to: 'Detected'
+  condition: []
+  action:
+  - data:
+      message: Mailbox has been opened.
+      target:
+      - notify.mobile_app_sm_g965u
+      - notify.moblie_app_pixel_3a
+    service: notify.notify
