@@ -26,6 +26,7 @@ rest_command:
     timeout: '300'
 script: !include scripts.yaml
 timer: !include timers.yaml
+python_script:
 
 ############
 # Calendar #
@@ -43,18 +44,11 @@ stream:
 #########
 # Cover #
 #########
-cover:
-  platform: opengarage
-  covers:
-      garage:
-        host:  !secret garagehost
-        device_key: !secret garage_device_key
-        name:  Garage Door     
+cover: !include cover.yaml
 
 ########
 # HACS #
 ########
-breaking_changes:
 config:
 frontend:
   themes: !include_dir_merge_named themes
@@ -81,10 +75,6 @@ influxdb:
   default_measurement: state
 logbook: !include logbook.yaml
 recorder:
-logger:
-  default: warn
-  logs:
-    homeassistant.components.yamaha_musiccast: debug
 
 #######
 # Hub #
@@ -106,14 +96,14 @@ zwave:
 media_player:
   - platform: yamaha_musiccast
     host: !secret living_room_yamaha
-  - platform: yamaha_musiccast
-    host: !secret loft_yamaha
+  # - platform: yamaha_musiccast
+  #   host: !secret loft_yamaha
   - platform: volumio
     host: !secret volumiohost
     port: 3000
-  - platform: spotify
-    client_id: spotify_client_id
-    client_secret: spotify_client_secret
+spotify:
+  client_id: !secret  spotify_client_id
+  client_secret: !secret spotify_client_secret
 
 ##############
 # Irrigation #

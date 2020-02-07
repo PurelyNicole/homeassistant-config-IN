@@ -95,10 +95,6 @@
                 },
                 {
                     "type": "module",
-                    "url": "/community_plugin/button-entity-row/button-entity-row.js"
-                },
-                {
-                    "type": "module",
                     "url": "/community_plugin/custom-header/custom-header.js"
                 },
                 {
@@ -135,15 +131,7 @@
                 },
                 {
                     "type": "js",
-                    "url": "/community_plugin/lovelace-home-feed-card/lovelace-home-feed-card.js"
-                },
-                {
-                    "type": "js",
                     "url": "/community_plugin/light-brightness-preset-row/light-brightness-preset-row.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/spotify-card/spotify-card.js"
                 },
                 {
                     "type": "module",
@@ -437,6 +425,16 @@
                             ],
                             "title": "Living Room Door",
                             "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_select.fan_speed_select"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Test Great Room Fan",
+                            "type": "entities"
                         }
                     ],
                     "path": "living-room",
@@ -540,6 +538,12 @@
                                 },
                                 {
                                     "entity": "light.exhaust_fan"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.bedroom_closet_light_switch"
                                 }
                             ],
                             "title": "Bedroom Lights",
@@ -548,13 +552,16 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.bedroom_temperature_2"
+                                    "entity": "sensor.master_bedroom_temperature"
+                                },
+                                {
+                                    "entity": "sensor.master_bedroom_humidity"
                                 },
                                 {
                                     "entity": "sensor.bedroom_co2_value"
                                 },
                                 {
-                                    "entity": "switch.humidifier_switch"
+                                    "entity": "switch.bedroom_humidifier"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -575,12 +582,19 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "cover.master_bedroom_shades"
+                                },
+                                {
+                                    "entity": "cover.bedroom_shade_1_control_2"
+                                },
+                                {
                                     "entity": "cover.bedroom_shade_2_control"
                                 },
                                 {
                                     "entity": "cover.bedroom_shade_3_control"
                                 }
                             ],
+                            "show_header_toggle": false,
                             "title": "Window Shades",
                             "type": "entities"
                         }
@@ -899,6 +913,16 @@
                             ],
                             "title": "Loft Climate",
                             "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.loft_humidifier"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Loft Humidifier",
+                            "type": "entities"
                         }
                     ],
                     "path": "loft-dash",
@@ -991,23 +1015,6 @@
                             },
                             "show_empty": false,
                             "type": "custom:auto-entities"
-                        },
-                        {
-                            "card": {
-                                "entities": [
-                                    {
-                                        "entity": "sensor.potential_breaking_changes"
-                                    }
-                                ],
-                                "type": "glance"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "sensor.potential_breaking_changes",
-                                    "state_not": "0"
-                                }
-                            ],
-                            "type": "conditional"
                         },
                         {
                             "entities": [
@@ -1285,6 +1292,7 @@
                             "entity": "sensor.grocy_chores",
                             "show_days": 2,
                             "show_quantity": 5,
+                            "title": "Chorin'",
                             "type": "custom:grocy-chores-card"
                         },
                         {
@@ -1426,117 +1434,146 @@
                         {
                             "cards": [
                                 {
-                                    "entity": "switch.musiccast_zone_1",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "show_icon": true,
-                                    "show_name": true,
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "type": "entity-button"
-                                },
-                                {
-                                    "entity": "switch.musiccast_zone_2",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "show_icon": true,
-                                    "show_name": true,
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "type": "entity-button"
-                                },
-                                {
-                                    "entity": "switch.musiccast_zone_3",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "show_icon": true,
-                                    "show_name": true,
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "type": "entity-button"
-                                },
-                                "break",
-                                {
-                                    "aspect_ratio": "78%",
-                                    "type": "iframe",
-                                    "url": "https://open.spotify.com/"
-                                },
-                                "break",
-                                {
-                                    "cards": [
+                                    "aspect_ratio": "0%",
+                                    "entities": [
                                         {
-                                            "entities": [
-                                                {
-                                                    "entity": "input_boolean.fill_cd_changer",
-                                                    "show_state": false,
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "glance"
-                                        },
-                                        {
-                                            "card": {
-                                                "entities": [
-                                                    {
-                                                        "entity": "sensor.cd_changer",
-                                                        "icon": "mdi:numeric-1-circle",
-                                                        "name": "${{states['sensor.cd_changer'].attributes.cd1}}"
-                                                    },
-                                                    {
-                                                        "entity": "sensor.cd_changer",
-                                                        "icon": "mdi:numeric-2-circle",
-                                                        "name": "${{states['sensor.cd_changer'].attributes.cd2}}"
-                                                    },
-                                                    {
-                                                        "entity": "sensor.cd_changer",
-                                                        "icon": "mdi:numeric-3-circle",
-                                                        "name": "${{states['sensor.cd_changer'].attributes.cd3}}"
-                                                    },
-                                                    {
-                                                        "entity": "sensor.cd_changer",
-                                                        "icon": "mdi:numeric-4-circle",
-                                                        "name": "${{states['sensor.cd_changer'].attributes.cd4}}"
-                                                    },
-                                                    {
-                                                        "entity": "sensor.cd_changer",
-                                                        "icon": "mdi:numeric-5-circle",
-                                                        "name": "${{states['sensor.cd_changer'].attributes.cd5}}"
-                                                    }
-                                                ],
-                                                "type": "entities"
-                                            },
-                                            "entities": [
-                                                "sensor.cd_changer"
-                                            ],
-                                            "type": "custom:config-template-card"
+                                            "entity": "input_select.spotify_playlist"
                                         }
                                     ],
-                                    "type": "vertical-stack"
+                                    "image": "local/playlist_images/all_songs_considered.png",
+                                    "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"All Songs Considered\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "input_select.select_option",
+                                        "service_data": {
+                                            "entity_id": "input_select.spotify_playlist",
+                                            "option": "All Songs Considered"
+                                        }
+                                    },
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "entities": [
+                                        {
+                                            "entity": "input_select.spotify_playlist"
+                                        }
+                                    ],
+                                    "image": "local/playlist_images/family_mix.png",
+                                    "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"Family Mix\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "input_select.select_option",
+                                        "service_data": {
+                                            "entity_id": "input_select.spotify_playlist",
+                                            "option": "Family Mix"
+                                        }
+                                    },
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "entities": [
+                                        {
+                                            "entity": "input_select.spotify_playlist"
+                                        }
+                                    ],
+                                    "image": "local/playlist_images/skatepark_punks.jpg",
+                                    "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"Skatepark Punks\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "input_select.select_option",
+                                        "service_data": {
+                                            "entity_id": "input_select.spotify_playlist",
+                                            "option": "Skatepark Punks"
+                                        }
+                                    },
+                                    "type": "picture-glance"
                                 }
                             ],
-                            "column_width": [
-                                "10%",
-                                "70%",
-                                "20%"
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.living_room_music_main",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "activities": [
+                                        {
+                                            "device": "Yamaha Amp",
+                                            "name": "MusicCast - Zone 1"
+                                        },
+                                        {
+                                            "device": "Yamaha Amp",
+                                            "name": "MusicCast - Zone 2"
+                                        },
+                                        {
+                                            "device": "Yamaha Amp",
+                                            "name": "MusicCast - Zone 3"
+                                        }
+                                    ],
+                                    "buttons": {
+                                        "a": {
+                                            "hide": true
+                                        },
+                                        "b": {
+                                            "hide": true
+                                        },
+                                        "back": {
+                                            "hide": true
+                                        },
+                                        "dpad_center": {
+                                            "command": "InputNetwork",
+                                            "icon": "mdi:spotify"
+                                        },
+                                        "dpad_down": {
+                                            "hide": true
+                                        },
+                                        "dpad_left": {
+                                            "command": "InputServer",
+                                            "icon": "mdi:play-network-outline"
+                                        },
+                                        "dpad_right": {
+                                            "command": "InputAux",
+                                            "icon": "mdi:ipod"
+                                        },
+                                        "dpad_up": {
+                                            "hide": true
+                                        },
+                                        "volume_down": {
+                                            "hide": true
+                                        },
+                                        "volume_mute": {
+                                            "hide": true
+                                        },
+                                        "volume_up": {
+                                            "hide": true
+                                        },
+                                        "x": {
+                                            "hide": true
+                                        },
+                                        "xbox": {
+                                            "hide": true
+                                        },
+                                        "y": {
+                                            "hide": true
+                                        }
+                                    },
+                                    "entity": "remote.living_room",
+                                    "type": "custom:harmony-card"
+                                }
                             ],
-                            "layout": "vertical",
-                            "max_columns": 3,
-                            "min_columns": 3,
-                            "type": "custom:layout-card"
+                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:play-circle-outline",
-                    "panel": true,
-                    "path": "volumio-dash",
-                    "title": "Volumio"
+                    "panel": false,
+                    "path": "music-dash",
+                    "theme": "Backend-selected",
+                    "title": "Music Dash"
                 },
                 {
                     "badges": [],
@@ -1747,6 +1784,26 @@
                         {
                             "artwork": "cover",
                             "entity": "media_player.living_room_music_main",
+                            "shortcuts": {
+                                "buttons": [
+                                    {
+                                        "id": "spotify:playlist:37i9dQZF1EgI2DmBExJvLf",
+                                        "name": "Family Mix",
+                                        "type": "playlist"
+                                    },
+                                    {
+                                        "id": "spotify:playlist:265tbRU6EfWnfZKES6fdZe",
+                                        "name": "Hip-Hop",
+                                        "type": "playlist"
+                                    },
+                                    {
+                                        "id": "spotify:playlist:3BQOuGRwZKpADrJbS0Aff9",
+                                        "name": "Alternative",
+                                        "type": "playlist"
+                                    }
+                                ],
+                                "columns": 3
+                            },
                             "type": "custom:mini-media-player"
                         },
                         {
@@ -1868,35 +1925,6 @@
                     "panel": true,
                     "path": "weather",
                     "title": "Weather"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "aspect_ratio": "0%",
-                            "entities": [
-                                {
-                                    "entity": "input_select.spotify_playlist"
-                                }
-                            ],
-                            "image": "local/playlist_images/family_mix.png",
-                            "tap_action": {
-                                "action": "call-service",
-                                "service": "input_select.select_option",
-                                "service_data": {
-                                    "entity_id": "input_select.spotify_playlist",
-                                    "option": "Family Mix"
-                                }
-                            },
-                            "title": "Family Playlist",
-                            "type": "picture-glance"
-                        }
-                    ],
-                    "icon": "",
-                    "panel": false,
-                    "path": "test",
-                    "theme": "Backend-selected",
-                    "title": "Test"
                 },
                 {
                     "badges": [],

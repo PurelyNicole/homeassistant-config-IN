@@ -4,3 +4,21 @@ home_mode:
    - Home
    - Away
    - Sleep
+spotify_playlist:
+  name: Spotify Playlist
+  options:
+    - 'Off'
+    - All Songs Considered
+    - Family Mix
+    - Skatepark Punks
+  initial: 'Off'
+  icon: mdi:spotify
+fan_speed_select:
+    name: Fan Speed Select
+    options:
+      - Fan Off
+      - Speed 1 of 7
+      - Speed 3 of 7
+      - Speed 4 of 7
+      - Speed 7 of 7
+    icon: mdi:fan
