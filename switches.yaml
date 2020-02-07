@@ -48,14 +48,6 @@
   payload_not_available: "Offline"
   retain: true
   optimistic: false
-- platform: mqtt
-  name: "Mirror Screen"
-  state_topic: "stat/TasmoMirror/POWER1"
-  command_topic: "cmnd/TasmoMirror/POWER1"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
   # Roomba Switch
 - platform: mqtt
   name: "Roomba"
@@ -94,6 +86,18 @@
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
+- platform: mqtt
+  name: "Loft Humidifier"
+  state_topic: "stat/LoftHumidifier/POWER"
+  command_topic: "cmnd/LoftHumidifier/POWER"
+  availability_topic: "tele/LoftHumidifier/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: true
+  optimistic: false
 #####################
 # Template Switches #
 #####################

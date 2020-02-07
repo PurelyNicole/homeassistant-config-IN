@@ -76,7 +76,7 @@ sensor.front_door_lock_status:
   icon: mdi:information
 sensor.bedroom_humidity:
   icon: mdi:water-percent
-switch.humidifier_switch:
+switch.bedroom_humidifier:
   icon: mdi:cup-water
 light.bathroom_mirror_led:
   icon: mdi:led-on
@@ -118,6 +118,7 @@ sensor.tetris_lamp_power:
 binary_sensor.utility_room_moisture_general:
   device_class: moisture
 switch.humidifier_2:
+  friendly_name: Guest Room Humidifier
   icon: mdi:cup-water
 device_tracker.loft_tv:
   icon: mdi:television
@@ -202,3 +203,5 @@ input_boolean.get_random_cd:
   icon: fas:compact-disc
 input_boolean.get_random_record:
   icon: fas:record-vinyl
+switch.loft_humidifier:
+  icon: mdi:cup-water

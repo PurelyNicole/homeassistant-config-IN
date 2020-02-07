@@ -1,3 +1,25 @@
+########
+# MQTT #
+########
+- platform: mqtt
+  state_topic: "tele/RFBridge/RESULT"
+  name: 'Mailbox'
+  value_template: '{{value_json.RfReceived.Data}}'
+  payload_on: '1B4619'
+  payload_off: '1B4619off'
+  device_class: motion
+  #optimistic: false
+  qos: 1.
+- platform: mqtt
+  state_topic: "tele/RFBridge/RESULT"
+  name: 'Closet PIR'
+  value_template: '{{value_json.RfReceived.Data}}'
+  payload_on: '121619'
+  payload_off: '121619off'
+  device_class: motion
+  #optimistic: false
+  qos: 1
+
 ####################
 # Template Sensors #
 ####################
@@ -36,23 +58,21 @@
   after: sunset
   before: sunrise
 
-###################
-# Work Day Sensor #
-###################
+###########
+# Workday #
+###########
 - platform: workday
+  name: Hell Week
   country: US
-
-###################
-# mail Box Sensor #
-###################
-- platform: mqtt
-  state_topic: "tele/RFBridge/RESULT"
-  name: 'Mailbox'
-  value_template: '{{value_json.RfReceived.Data}}'
-  payload_on: '1B4619'
-  payload_off: '1B4619off'
-  device_class: motion
-  #optimistic: false
-  qos: 1
-
-
+- platform: workday
+  name: Days MTWT
+  country: US
+- platform: workday
+  name: Nights MTWT
+  country: US
+- platform: workday
+  name: Days TFSS
+  country: US
+- platform: workday
+  name: Nights TFSS
+  country: US

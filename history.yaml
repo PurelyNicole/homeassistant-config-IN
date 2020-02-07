@@ -119,7 +119,7 @@ exclude:
     - sensor.kitchen_door_lock_status
     - sensor.last_boot
     - sensor.living_room_door_sensor_access_control
-    - sensor.potential_breaking_changes
+    #- sensor.potential_breaking_changes
     - sensor.printer_output_tray
     - sensor.printer_tray_1
     - sensor.printer_tray_2

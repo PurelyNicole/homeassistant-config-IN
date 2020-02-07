@@ -54,6 +54,7 @@ master_bedroom_lights:
     - light.bedroom_entry_light
     - light.bathroom_shower
     - light.exhaust_fan
+    - light.bedroom_closet_light_switch
 outdoor_lights:
   name: Outdoor Lights
   entities:

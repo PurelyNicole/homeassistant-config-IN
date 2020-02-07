@@ -1,0 +1,12 @@
+- platform: group
+  name: Master Bedroom Shades
+  entities:
+    - cover.bedroom_shade_1_control_2
+    - cover.bedroom_shade_2_control
+    - cover.bedroom_shade_3_control
+- platform: opengarage
+  covers:
+    garage:
+      host:  !secret garagehost
+      device_key: !secret garage_device_key
+      name:  Garage Door     
