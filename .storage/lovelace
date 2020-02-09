@@ -107,10 +107,6 @@
                 },
                 {
                     "type": "module",
-                    "url": "/community_plugin/lovelace-layout-card/layout-card.js"
-                },
-                {
-                    "type": "module",
                     "url": "/community_plugin/lovelace-auto-entities/auto-entities.js"
                 },
                 {
@@ -1434,64 +1430,77 @@
                         {
                             "cards": [
                                 {
-                                    "aspect_ratio": "0%",
-                                    "entities": [
+                                    "cards": [
                                         {
-                                            "entity": "input_select.spotify_playlist"
+                                            "aspect_ratio": "0%",
+                                            "entities": [
+                                                {
+                                                    "entity": "input_select.spotify_playlist"
+                                                }
+                                            ],
+                                            "image": "local/playlist_images/all_songs_considered.png",
+                                            "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"All Songs Considered\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.spotify_playlist",
+                                                    "option": "All Songs Considered"
+                                                }
+                                            },
+                                            "type": "picture-glance"
+                                        },
+                                        {
+                                            "aspect_ratio": "0%",
+                                            "entities": [
+                                                {
+                                                    "entity": "input_select.spotify_playlist"
+                                                }
+                                            ],
+                                            "image": "local/playlist_images/family_mix.png",
+                                            "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"Family Mix\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.spotify_playlist",
+                                                    "option": "Family Mix"
+                                                }
+                                            },
+                                            "type": "picture-glance"
                                         }
                                     ],
-                                    "image": "local/playlist_images/all_songs_considered.png",
-                                    "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"All Songs Considered\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
-                                    "tap_action": {
-                                        "action": "call-service",
-                                        "service": "input_select.select_option",
-                                        "service_data": {
-                                            "entity_id": "input_select.spotify_playlist",
-                                            "option": "All Songs Considered"
-                                        }
-                                    },
-                                    "type": "picture-glance"
+                                    "type": "horizontal-stack"
                                 },
                                 {
-                                    "aspect_ratio": "0%",
-                                    "entities": [
+                                    "cards": [
                                         {
-                                            "entity": "input_select.spotify_playlist"
+                                            "aspect_ratio": "0%",
+                                            "entities": [
+                                                {
+                                                    "entity": "input_select.spotify_playlist"
+                                                }
+                                            ],
+                                            "image": "local/playlist_images/skatepark_punks.jpg",
+                                            "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"Skatepark Punks\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.spotify_playlist",
+                                                    "option": "Skatepark Punks"
+                                                }
+                                            },
+                                            "type": "picture-glance"
+                                        },
+                                        {
+                                            "type": "custom:gap-card"
                                         }
                                     ],
-                                    "image": "local/playlist_images/family_mix.png",
-                                    "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"Family Mix\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
-                                    "tap_action": {
-                                        "action": "call-service",
-                                        "service": "input_select.select_option",
-                                        "service_data": {
-                                            "entity_id": "input_select.spotify_playlist",
-                                            "option": "Family Mix"
-                                        }
-                                    },
-                                    "type": "picture-glance"
-                                },
-                                {
-                                    "aspect_ratio": "0%",
-                                    "entities": [
-                                        {
-                                            "entity": "input_select.spotify_playlist"
-                                        }
-                                    ],
-                                    "image": "local/playlist_images/skatepark_punks.jpg",
-                                    "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"Skatepark Punks\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
-                                    "tap_action": {
-                                        "action": "call-service",
-                                        "service": "input_select.select_option",
-                                        "service_data": {
-                                            "entity_id": "input_select.spotify_playlist",
-                                            "option": "Skatepark Punks"
-                                        }
-                                    },
-                                    "type": "picture-glance"
+                                    "type": "horizontal-stack"
                                 }
                             ],
-                            "type": "horizontal-stack"
+                            "type": "vertical-stack"
                         },
                         {
                             "cards": [
@@ -1928,111 +1937,7 @@
                 },
                 {
                     "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.ambient_weather_temp",
-                                    "name": "Temperature"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_dew_point",
-                                    "name": "Dew Point"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_feels_like",
-                                    "name": "Feels Like"
-                                }
-                            ],
-                            "title": "Outdoors",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "label": "Outdoor",
-                                    "type": "section"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_temp"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_humidity"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_dew_point"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_feels_like"
-                                },
-                                {
-                                    "label": "Wind",
-                                    "type": "section"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_wind_speed"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_wind_gust"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_wind_dir"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_wind_avg_10m"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_wind_dir_avg_10m"
-                                },
-                                {
-                                    "label": "Rainfall",
-                                    "type": "section"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_hourly_rain_rate"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_daily_rain"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_weekly_rain"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_monthly_rain"
-                                },
-                                {
-                                    "label": "Pressure",
-                                    "type": "section"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_rel_pressure"
-                                },
-                                {
-                                    "label": "Indoor",
-                                    "type": "section"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_indoor_temp"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_indoor_humidity"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_feels_like_indoor"
-                                },
-                                {
-                                    "label": "Outdoor Fridge",
-                                    "type": "section"
-                                },
-                                {
-                                    "entity": "sensor.ambient_weather_fridge_temp"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Quick View",
-                            "type": "entities"
-                        }
-                    ],
+                    "cards": [],
                     "path": "test-2",
                     "title": "Test 2"
                 },

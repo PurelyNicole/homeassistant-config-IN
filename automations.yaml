@@ -416,6 +416,7 @@
     data:
       topic: tele/RFBridge/RESULT
       payload: 121619off
+  id: 25648f5637ba4a03987fdd9f25b869cc
 - alias: MBCloset - turn light on
   hide_entity: true
   initial_state: 'on'
@@ -427,6 +428,7 @@
   action:
   - service: light.turn_on
     entity_id: light.bedroom_closet_light_switch
+  id: 6ab4458fae84471fb66e9a597822f799
 - alias: MBCloset - turn light off
   hide_entity: true
   initial_state: 'on'
@@ -440,6 +442,7 @@
   action:
   - service: light.turn_off
     entity_id: light.bedroom_closet_light_switch
+  id: d201437986574e27ab03fefc240f7d7a
 - id: '1580761584418'
   alias: Notification - Mailbox Opened
   description: ''
@@ -456,3 +459,16 @@
       - notify.mobile_app_sm_g965u
       - notify.moblie_app_pixel_3a
     service: notify.notify
+- id: '1581102486796'
+  alias: Spotify - Playlist dropdown to off
+  description: ''
+  trigger:
+  - entity_id: media_player.spotify_zeckner_vision
+    platform: state
+    to: idle
+  condition: []
+  action:
+  - data:
+      option: 'Off'
+    entity_id: input_select.spotify_playlist
+    service: input_select.set_options
