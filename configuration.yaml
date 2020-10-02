@@ -17,9 +17,9 @@ hassio:
 ##############
 alert: !include alerts.yaml
 automation: !include automations.yaml
-input_boolean: !include input_boolean.yaml
-input_select: !include input_select.yaml
-input_text: !include input_text.yaml
+input_boolean:
+input_select:
+input_text:
 rest_command:
   google_backup:
     url: !secret google_backup_url
@@ -32,8 +32,8 @@ python_script:
 # Calendar #
 ############
 google:
-  client_id: !secret google_client_id
-  client_secret: !secret google_client_secret
+  client_id: !secret google_cal_client_id
+  client_secret: !secret google_cal_client_secret
 
 ##########
 # Camera #
@@ -58,10 +58,7 @@ frontend:
 ##########
 iqvia:
   zip_code: !secret pollen_zip_code
-  monitored_conditions:
-    - allergy_index_today
-    - allergy_index_tomorrow
-
+  
 ######################
 # History Components #
 ######################
@@ -85,22 +82,24 @@ nest:
 octoprint:
   host: !secret OctoIP
   api_key: !secret OctoAPI
+  bed: true
 zwave:
   usb_path: /dev/serial/by-id/usb-0658_0200-if00
   network_key: !secret network_key
+  polling_interval: 30000
   device_config: !include zwave_device_config.yaml
+
 
 ################
 # Media Player #
 ################
 media_player:
   - platform: yamaha_musiccast
-    host: !secret living_room_yamaha
-  # - platform: yamaha_musiccast
-  #   host: !secret loft_yamaha
-  - platform: volumio
-    host: !secret volumiohost
-    port: 3000
+    host: 192.168.1.205
+    port: 5005
+  - platform: yamaha_musiccast
+    host: 192.168.1.81
+    port: 5004
 spotify:
   client_id: !secret  spotify_client_id
   client_secret: !secret spotify_client_secret
@@ -122,7 +121,6 @@ scene: !include scenes.yaml
 #########
 api:
 http:
-  base_url: !secret base_url
 mobile_app:
 system_health:
 
@@ -141,15 +139,20 @@ notify:
 ###########
 ssdp:
 zeroconf:
-discovery:
-  ignore:
-    - roku
 
 ######################
 # Presence Detection #
 ######################
 map:
 person:
+
+##########
+# Remote #
+##########
+remote:
+  - platform: harmony
+    name: Living Room
+    host: 192.168.20.6
 
 ###########
 # Sensor #
@@ -167,8 +170,6 @@ light: !include lights.yaml
 #####################
 # System Monitoring #
 #####################
-pi_hole:
-  - host: 'localhost:4865'
 fastdotcom:
   scan_interval:
     minutes: 60

@@ -1,0 +1,51 @@
+{
+    "data": {
+        "items": [
+            {
+                "icon": "mdi:fan",
+                "id": "fan_speed_select",
+                "name": "Fan Speed Select",
+                "options": [
+                    "Fan Off",
+                    "Speed 1 of 7",
+                    "Speed 3 of 7",
+                    "Speed 4 of 7"
+                ]
+            },
+            {
+                "icon": "mdi:home",
+                "id": "home_mode",
+                "name": "Home Mode",
+                "options": [
+                    "Home",
+                    "Away",
+                    "Sleep"
+                ]
+            },
+            {
+                "icon": "mdi:spotify",
+                "id": "spotify_playlist",
+                "name": "Spotify Playlist",
+                "options": [
+                    "Off",
+                    "All Songs Considered",
+                    "Audio Snobbery",
+                    "Family Mix",
+                    "Skatepark Punks"
+                ]
+            },
+            {
+                "icon": "mdi:alpha-n-box",
+                "id": "nicole_wfh_status",
+                "name": "Nicole WFH Status",
+                "options": [
+                    "Come In",
+                    "Do Not Disturb",
+                    "In a Meeting"
+                ]
+            }
+        ]
+    },
+    "key": "input_select",
+    "version": 1
+}

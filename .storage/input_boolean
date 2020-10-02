@@ -1,0 +1,33 @@
+{
+    "data": {
+        "items": [
+            {
+                "icon": "mdi:music-box-outline",
+                "id": "fill_cd_changer",
+                "name": "Fill CD Changer"
+            },
+            {
+                "icon": "mdi:book-open-page-variant",
+                "id": "get_a_random_book",
+                "name": "Get a Random Book"
+            },
+            {
+                "icon": "fas:compact-disc",
+                "id": "get_random_cd",
+                "name": "Get a Random CD"
+            },
+            {
+                "icon": "fas:record-vinyl",
+                "id": "get_random_record",
+                "name": "Get a Random Record"
+            },
+            {
+                "icon": "mdi:pine-tree",
+                "id": "show_holiday_lights",
+                "name": "Show Holiday Lights"
+            }
+        ]
+    },
+    "key": "input_boolean",
+    "version": 1
+}

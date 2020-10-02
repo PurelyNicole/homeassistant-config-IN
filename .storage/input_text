@@ -1,0 +1,15 @@
+{
+    "data": {
+        "items": [
+            {
+                "id": "fish_last_fed",
+                "max": 50,
+                "min": 0,
+                "mode": "text",
+                "name": "Fish Last Fed"
+            }
+        ]
+    },
+    "key": "input_text",
+    "version": 1
+}
