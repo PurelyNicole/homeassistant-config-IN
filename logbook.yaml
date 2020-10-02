@@ -3,6 +3,12 @@ exclude:
     - weather
     - zwave
   entities:
+    - binary_sensor.living_room_thermostat_has_leaf
+    - input_boolean.get_random_record
+    - input_boolean.show_holiday_lights
+    - light.hallway_lights_mqtt
+    - light.kitchen_overheadlights_mqtt
+    - sensor.dark_sky_alerts
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_cloud_coverage
@@ -89,8 +95,11 @@ exclude:
     - sensor.kitchen_door_lock_alarm_type
     - sensor.kitchen_patio_door_motion_alarm_level
     - sensor.kitchen_patio_door_motion_alarm_type
+    - sensor.random_album
     - sensor.utility_room_moisture_alarm_level
     - sensor.utility_room_moisture_alarm_type
+    - sensor.volumio_artist
+    - sensor.volumio_song
     - sensor.wled1_outsidelow_free_memory
     - sensor.wled1_outsidelow_uptime
     - sensor.wled2_outsidegara_free_memory
@@ -99,7 +108,24 @@ exclude:
     - sensor.wled3_outsideeyebrow_uptime
     - sensor.workshop_door_lock_alarm_level
     - sensor.workshop_door_lock_alarm_type
-    - switch.mirror_screen
+    - switch.mb_magic_mirror_screen
+    - sensor.volumio_remote_text_2
+    - sensor.wifi_connection_pixel3a
+    - sensor.wifi_connection_s9
+    - switch.bar_lights_switch
+    - switch.deck_flood_lights_switch
+    - switch.entryway_light_switch
+    - switch.fireplace_lights_switch
+    - switch.garage_flood_lights_switch
+    - switch.globe_lamp_switch
+    - switch.guest_room_floor_lamp_switch
+    - switch.guest_room_nightstand_lamp_switch
+    - switch.landscaping_lights_switch
+    - switch.outdoor_string_lights
+    - switch.porch_light_switch
+    - switch.reading_lamp_switch
+    - switch.table_lamps_switch
+    - switch.workshop_light_switch
     - switch.wled1_outsidelow_nightlight
     - switch.wled1_outsidelow_sync_receive
     - switch.wled1_outsidelow_sync_send

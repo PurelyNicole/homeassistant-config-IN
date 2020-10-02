@@ -104,7 +104,6 @@ exclude:
   - sensor.record_console_homehealth
   - sensor.record_console_power_management
   - sensor.record_console_sourcenodeid
-  - sensor.tetris_lamp_previous_reading
   - sun.sun
   - switch.add_glitter
   - switch.add_lightning

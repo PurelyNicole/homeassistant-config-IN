@@ -31,9 +31,6 @@ sensor.humidifier_previous_reading:
 sensor.humidifier_previous_reading_2:
   ignored: true
   polling_intensity: 0
-sensor.tetris_lamp_previous_reading:
-  ignored: true
-  polling_intensity: 0
 sensor.reading_lamp_previous_reading:
   ignored: true
   polling_intensity: 0
@@ -56,15 +53,6 @@ sensor.hank_electronics_ltd_hkzw_dws01_door_window_sensor_sourcenodeid:
   ignored: true
   polling_intensity: 0
 sensor.guest_room_nightstand_lamp_power_2:
-  ignored: true
-  polling_intensity: 0
-sensor.record_console_alarm_level:
-  ignored: true
-  polling_intensity: 0
-sensor.record_console_sourcenodeid:
-  ignored: true
-  polling_intensity: 0
-sensor.record_console_burglar:
   ignored: true
   polling_intensity: 0
 sensor.kitchen_door_lock_alarm_type:
@@ -97,3 +85,21 @@ sensor.workshop_door_lock_alarm_type:
 sensor.workshop_door_lock_alarm_level:
   ignored: true
   polling_intensity: 0
+sensor.humidifier_energy:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_power:
+  ignored: true
+  polling_intensity: 0
+switch.entryway_light_switch:
+  ignored: false
+  polling_intensity: 1
+lock.front_door_lock_locked:
+  ignored: false
+  polling_intensity: 1
+switch.fireplace_lights_switch:
+  ignored: false
+  polling_intensity: 1
+lock.workshop_door_lock_locked:
+  ignored: false
+  polling_intensity: 1

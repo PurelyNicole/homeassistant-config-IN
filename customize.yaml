@@ -1,23 +1,9 @@
-group.living_room_lights:
-  icon: mdi:lightbulb
-group.kitchen_lights:
-  icon: mdi:lightbulb
-group.outdoor_lights:
-  icon: mdi:lightbulb
-group.master_bedroom_lights:
-  icon: mdi:lightbulb
-group.loft_lights:
-  icon: mdi:lightbulb
-group.guest_room_lights:
-  icon: mdi:lightbulb
 sensor.eric_phone_battery:
   icon: mdi:battery-charging
 sensor.nicole_phone_battery:
   icon: mdi:battery-charging
 device_tracker.nicole_phone:
   friendly_name: Nicole
-input_select.home_mode:
-  icon: mdi:home
 input_select.time_of_day:
   icon: mdi:clock-outline
 binary_sensor.kitchen_patio_door_motion_sensor:
@@ -28,48 +14,12 @@ scene.goodnight:
   icon: mdi:weather-night
 scene.watch_tv:
   icon: mdi:television-classic
-switch.bar_lights_switch:
-  icon: mdi:glass-cocktail
-switch.entryway_light_switch:
-  icon: mdi:lightbulb
-switch.fireplace_lights_switch:
-  icon: mdi:track-light
-switch.globe_lamp_switch:
-  icon: mdi:lightbulb
-switch.table_lamps_switch:
-  icon: mdi:lamp
-switch.peninsula_light_switch:
-  icon: mdi:lightbulb
-switch.under_cabinet_lights_switch:
-  icon: mdi:lightbulb
-switch.deck_flood_lights_switch:
-  icon: mdi:lightbulb
-switch.garage_flood_lights_switch:
-  icon: mdi:lightbulb
-switch.landscaping_lights_switch:
-  icon: mdi:lightbulb
-switch.patio_flood_lights_switch:
-  icon: mdi:lightbulb
-switch.pier_lights_switch:
-  icon: mdi:lightbulb
-switch.porch_light_switch:
-  icon: mdi:lightbulb
-switch.workshop_light_switch:
-  icon: mdi:lightbulb
-switch.deck_string_lights_switch:
-  icon: mdi:lightbulb
 light.exhaust_fan:
   icon: mdi:fan
 light.bathroom_shower:
   icon: mdi:shower-head
 light.desk_light_switch:
   icon: mdi:track-light
-switch.tetris_lamp_switch:
-  icon: mdi:lightbulb
-switch.guest_room_floor_lamp_switch:
-  icon: mdi:lightbulb
-switch.guest_room_nightstand_lamp_switch:
-  icon: mdi:lightbulb
 switch.fish_light:
   icon: mdi:fish
 sensor.front_door_lock_status:
@@ -80,7 +30,7 @@ switch.bedroom_humidifier:
   icon: mdi:cup-water
 light.bathroom_mirror_led:
   icon: mdi:led-on
-switch.mirror_screen:
+switch.mb_magic_mirror_screen:
   icon: mdi:cellphone
 sensor.kitchen_door_lock_status:
   icon: mdi:information
@@ -113,13 +63,8 @@ binary_sensor.living_room_thermostat_has_leaf:
   icon: mdi:leaf
 zone.miso2:
   icon: mdi:briefcase
-sensor.tetris_lamp_power:
-  hidden: true
 binary_sensor.utility_room_moisture_general:
   device_class: moisture
-switch.humidifier_2:
-  friendly_name: Guest Room Humidifier
-  icon: mdi:cup-water
 device_tracker.loft_tv:
   icon: mdi:television
 scene.sleep:
@@ -133,8 +78,6 @@ sensor.pond_water_temperature:
   icon: mdi:thermometer
 switch.reading_lamp_switch:
   icon: mdi:desk-lamp
-binary_sensor.record_console_sensor:
-  icon: mdi:record-player
 person.nicole:
   icon: mdi:alpha-n-box
 person.eric:
@@ -188,8 +131,6 @@ sensor.eric_location:
   icon: mdi:alpha-e-box
 sensor.nicole_location:
   icon: mdi:alpha-n-box
-group.entry_hall_lights:
-  icon: mdi:lightbulb
 zone.eric_parents:
   icon: mdi:alpha-z-box
 sensor.ambient_weather_feels_like_indoor:
@@ -197,11 +138,3 @@ sensor.ambient_weather_feels_like_indoor:
   unit_of_measurement: °F
 switch.fish_tank_light:
   icon: mdi:fish
-input_boolean.fill_cd_changer:
-  icon: mdi:music-box-outline
-input_boolean.get_random_cd:
-  icon: fas:compact-disc
-input_boolean.get_random_record:
-  icon: fas:record-vinyl
-switch.loft_humidifier:
-  icon: mdi:cup-water
