@@ -20,7 +20,7 @@
                                     "entity": "sensor.eric_location"
                                 },
                                 {
-                                    "entity": "sensor.battery_level_2"
+                                    "entity": "sensor.galaxy_s9_battery_level"
                                 },
                                 {
                                     "entity": "sensor.nicole_location"

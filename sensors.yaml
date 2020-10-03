@@ -19,24 +19,6 @@
     - 208248
     - 208210
 
-#################
-# History Stats #
-#################
-- platform: history_stats
-  name: XBox Played Today
-  entity_id: sensor.puregeekery
-  state: 'Online'
-  type: time
-  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
-  end: '{{ now() }}'
-- platform: history_stats
-  name: XBox Played This Week
-  entity_id: sensor.puregeekery
-  state: 'Online'
-  type: time
-  start: '{{ as_timestamp( now().replace(hour=0).replace(minute=0).replace(second=0) ) - now().weekday() * 86400 }}'
-  end: '{{ now() }}'
-
 ################    
 # MQTT Sensors #
 ################
@@ -79,7 +61,7 @@
 ##################
 - platform: places
   name: Nicole Places
-  devicetracker_id: device_tracker.pixel_3a_gps
+  devicetracker_id: sensor.pixel_3a_geocoded_location
   options: zone,place
   map_provider: google
   map_zoom: 19
@@ -87,7 +69,7 @@
   api_key: !secret nicole_email
 - platform: places
   name: Eric Places
-  devicetracker_id: device_tracker.galaxy_s9_gps
+  devicetracker_id: sensor.sm_g965u_geocoded_location
   options: zone,place
   map_provider: google
   map_zoom: 19
@@ -137,18 +119,6 @@
 - platform: template
   sensors:
     # Device Tracker
-    eric_phone_battery:
-      friendly_name: 'Eric Phone Battery'
-      value_template: '{{ states.device_tracker.galaxy_s9_gps.attributes.battery_level }}'
-      entity_id: device_tracker.galaxy_s9_gps
-      device_class: battery
-      unit_of_measurement: '%'
-    nicole_phone_battery:
-      friendly_name: 'Nicole Phone Battery'
-      value_template: '{{ states.device_tracker.pixel_3a_gps.attributes.battery_level }}'
-      unique_id: 36b0274dc4eb
-      device_class: battery
-      unit_of_measurement: '%'
     nicole_location:
       friendly_name: 'Nicole Location'
       value_template: >
@@ -157,6 +127,7 @@
         {%- else -%}
           {{state_attr('sensor.nicole_places', 'devicetracker_zone')| capitalize}}
         {%- endif %}
+      unique_id: nicole_location_sensor
     eric_location:
       friendly_name: 'Eric Location'
       value_template: >
@@ -165,20 +136,22 @@
         {%- else -%}
           {{state_attr('sensor.eric_places', 'devicetracker_zone')| capitalize}}
         {%- endif %}
+      unique_id: eric_location_sensor
     # Front Door Lock
     front_door_lock_status: 
       friendly_name: 'Front Door Lock Status'
       value_template: "{{ state_attr('lock.front_door_lock_locked', 'lock_status') }}"
-      entity_id: lock.front_door_lock_locked    
+      unique_id : front_door_lock_status    
     # Harmony Remote 
-    living_room:
-      friendly_name: 'Living Room Remote'
+    living_room_remote_current_activity:
+      friendly_name: 'Living Room Remote Current Activity'
       value_template: "{{ state_attr('remote.living_room', 'current_activity') }}"    
+      unique_id: living_room_remote_current_activity
     # Kitchen Door Lock
     kitchen_door_lock_status: 
       friendly_name: 'Kitchen Door Lock Status'
       value_template: "{{ state_attr('lock.kitchen_door_lock_locked', 'lock_status') }}"
-      entity_id: lock.kitchen_door_lock_locked
+      unique_id : kitchen_door_lock_status
     # Octoprint converts seconds to real time
     octoprint_time_elapsed_format:
       friendly_name: 'Printing Time Elapsed'
@@ -211,6 +184,7 @@
             {{ minutes }} minutes
           {%- endif -%}
         {%- endif -%}
+      unique_id: octo_print_elapsed_time
     octoprint_time_remaining_format:
       friendly_name: 'Printing Time Remaining'
       value_template: >-
@@ -242,30 +216,37 @@
             {{ minutes }} minutes
           {%- endif -%}
         {%- endif -%}
+      unique_id: octoprint_remaining_time
     # Trail Status
     fort_harrison_trail_status:
       friendly_name: "Fort Harrison Trail Status"
       value_template: '{{ states.sensor.trail_status.attributes["0"]["conditionColor"]}}'
+      unique_id: fh_trail_status
     fort_harrison_last_update:
       friendly_name: "Fort Harrison Last Update"
       value_template: '{{ as_timestamp(strptime(states.sensor.trail_status.attributes["0"]["conditionDate"], "%Y-%m-%d %H:%M:%S")) | timestamp_custom("%D") }}'
+      unique_id: fh_last_update
     town_run_trail_status:
       friendly_name: "Town Run Trail Status"
       value_template: '{{ states.sensor.trail_status.attributes["1"]["conditionColor"]}}'
+      unique_id: tr_trail_status
     town_run_last_update:
       friendly_name: "Town Run Last Update"
       value_template: '{{ as_timestamp(strptime(states.sensor.trail_status.attributes["1"]["conditionDate"], "%Y-%m-%d %H:%M:%S")) | timestamp_custom("%D") }}'
+      unique_id: tr_last_update
     flat_fork_trail_status:
       friendly_name: "Flat Fork Trail Status"
       value_template: '{{ states.sensor.trail_status.attributes["2"]["conditionColor"]}}'
+      unique_id: ff_trail_status
     flat_fork_last_update:
       friendly_name: "Flat Fork Last Update"
       value_template: '{{ as_timestamp(strptime(states.sensor.trail_status.attributes["2"]["conditionDate"], "%Y-%m-%d %H:%M:%S")) | timestamp_custom("%D") }}'
+      unique_id: ff_last_update
     # Workshop Door Lock
     workshop_door_lock_status: 
       friendly_name: 'Workshop Door Lock Status'
       value_template: "{{ state_attr('lock.workshop_door_lock_locked', 'lock_status') }}"
-      entity_id: lock.workshop_door_lock_locked
+      unique_id: workshop_door_lock_status
     # Workshop Smoke Detector
     workshop_smoke_detector_status:
       value_template: >-
@@ -281,10 +262,12 @@
               Unknown
           {%- endif %}
       friendly_name: "Workshop Smoke Detector Status"
+      unique_id: workshop_smoke_detector_status
     workshop_smoke_detector_battery:
       value_template: "{{ state_attr('zwave.workshop_smoke_detector', 'battery_level') }}"
       friendly_name: 'Smoke/CO Alarm Battery'
       device_class: battery
+      unique_id: workshop_smoke_detector_battery_status
 
 #####################
 # Time Date Sensors #

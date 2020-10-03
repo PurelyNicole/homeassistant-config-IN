@@ -46,7 +46,7 @@ sensor.emoncms_voltage:
   icon: mdi:power-plug
 sensor.emoncms_kwh:
   icon: mdi:power-plug
-sensor.living_room:
+sensor.living_room_remote_activity:
   icon: mdi:remote
 switch.roomba:
   icon: mdi:robot-vacuum
