@@ -1,24 +1,56 @@
-###############
-# MQTT Lights #
-###############
+#########
+# Group #
+#########
+- platform: group
+  name: Outdoor Lights
+  entities:
+    - light.deck_flood_lights
+    - light.flood_light_1
+    - light.flood_light_2
+    - light.flood_light_3
+    - light.garage_flood_lights
+    - light.landscaping_lights
+    - light.patio_flood_lights
+    - light.pier_lights
+    - light.pond_light
+    - light.porch_light
+    - light.workshop_light
+- platform: group
+  name: Holiday Lights
+  entities:
+    - light.outdoor_string_lights
+    - light.wled1_outsidelow
+    - light.wled1_outsidelow_2
+    - light.wled2_outsidegara
+    - light.wled2_outsidegara_2
+    - light.wled3_outsideeyebrow
+    - light.wled3_outsideeyebrow_2
+- platform: group
+  name: Bedroom Lights
+  entities:
+    - light.bathroom_mirror_led
+    - light.bathroom_shower
+    - light.bathroom_vanity_light
+    - light.bedroom_closet_light_switch
+    - light.bedroom_entry_light
+    - light.bedroom_light_switch
+- platform: group
+  name: Living Room Lights
+  entities:
+    - light.bar_lights
+    - light.fireplace_lights
+    - light.globe_lamp
+    - light.table_lamps
+
+########
+# MQTT #
+########
 # Shower
 - platform: mqtt
   name: "Bathroom Shower"
   state_topic: "stat/MB_Shower_light/POWER"
   command_topic: "cmnd/MB_Shower_light/POWER"
   availability_topic: "tele/MB_Shower_light/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
-# Exahust Fan
-- platform: mqtt
-  name: "Exhaust Fan"
-  state_topic: "stat/MB_Exhaust_Fan/POWER"
-  command_topic: "cmnd/MB_Exhaust_Fan/POWER"
-  availability_topic: "tele/MB_Exhaust_Fan/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
@@ -174,6 +206,61 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+- platform: mqtt
+  name: "Porch Light"
+  state_topic: "stat/PorchLight/POWER"
+  command_topic: "cmnd/PorchLight/POWER"
+  availability_topic: "tele/PorchLight/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Garage Light"
+  state_topic: "stat/garagelight/POWER"
+  command_topic: "cmnd/garagelight/POWER"
+  availability_topic: "tele/garagelight/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Guest Room Floor Lamp"
+  state_topic: "stat/GuestBedroomLightSw/POWER"
+  command_topic: "cmnd/GuestBedroomLightSw/POWER"
+  availability_topic: "tele/GuestBedroomLightSw/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Guest Room Nightstand Lamp"
+  state_topic: "stat/GuestRoomLamp/POWER"
+  command_topic: "cmnd/GuestRoomLamp/POWER"
+  availability_topic: "tele/GuestRoomLamp/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Guest Room Bed Lamp"
+  state_topic: "stat/guest_bed_light/POWER"
+  command_topic: "cmnd/guest_bed_light/POWER"
+  availability_topic: "tele/guest_bed_light/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
   # Loft Fan
 - platform: mqtt
   name: "Loft Fan Light"
@@ -212,11 +299,35 @@
   payload_not_available: "Offline"
   retain: false
 - platform: mqtt
-  name: "Unused"
-  state_topic: "stat/PierLights/POWER"
+  name: "Peninsula Light Switch"
+  state_topic: "stat/peninsula_light_switch/POWER"
   value_template: "{{ value_json.POWER }}"
-  command_topic: "cmnd/PierLights/POWER"
-  availability_topic: "tele/PierLights/LWT"
+  command_topic: "cmnd/peninsula_light_switch/POWER"
+  availability_topic: "tele/peninsula_light_switch/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Under Cabinet Lights Switch"
+  state_topic: "stat/under_cabinet_lights_switch/POWER"
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/under_cabinet_lights_switch/POWER"
+  availability_topic: "tele/under_cabinet_lights_switch/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Pier Lights"
+  state_topic: "stat/pierlights/POWER"
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/pierlights/POWER"
+  availability_topic: "tele/pierlights/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
@@ -352,6 +463,78 @@
   payload_not_available: "Offline"
   qos: 1
   retain: false
+- platform: mqtt
+  name: "Office RGBW"
+  availability_topic: "tele/office_rgbw/LWT"
+  command_topic: "cmnd/office_rgbw/POWER1"
+  state_topic: "stat/office_rgbw/RESULT"
+  state_value_template: "{{value_json.POWER}}"
+  brightness_command_topic: "cmnd/office_rgbw/Dimmer"
+  brightness_state_topic: "stat/office_rgbw/RESULT"
+  brightness_value_template: "{{value_json.Dimmer}}"
+  brightness_scale: 100
+  rgb_command_topic: "cmnd/office_rgbw/Color2"
+  rgb_state_topic: "tele/office_rgbw/RESULT"
+    # RGB<->RGBWW conversion
+  rgb_value_template: >
+    {% set red = (value_json.Color.split(',')[0] | round(0)) %}
+    {% set green = (value_json.Color.split(',')[1] | round(0)) %}
+    {% set blue = (value_json.Color.split(',')[2] | round(0)) %}
+    {% set white = (value_json.Color.split(',')[3] | round(0)) %}
+    {{ green + white }},{{ red + white }},{{ blue + white }}
+  rgb_command_template: >
+    {% if red==green and red==blue %}
+      0,0,0,{{ red }}
+    {% else %}
+      {{ green }},{{ red }},{{ blue  }},0
+    {% endif %}
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+##########
+# Switch #
+##########
+- platform: switch
+  name: Bar Lights
+  entity_id: switch.bar_lights_switch
+- platform: switch
+  name: Deck Flood Lights
+  entity_id: switch.deck_flood_lights_switch
+- platform: switch
+  name: Entryway Light
+  entity_id: switch.entryway_light_switch
+- platform: switch
+  name: Fireplace Lights
+  entity_id: switch.fireplace_lights_switch
+- platform: switch
+  name: Garage Flood Lights
+  entity_id: switch.garage_flood_lights_switch
+- platform: switch
+  name: Globe Lamp
+  entity_id: switch.globe_lamp_switch
+- platform: switch
+  name: Landscaping Lights
+  entity_id: switch.landscaping_lights
+- platform: switch
+  name: Outdoor String Lights
+  entity_id: switch.outdoor_string_lights
+- platform: switch
+  name: Patio Flood Lights
+  entity_id: switch.patio_flood_lights_switch
+- platform: switch
+  name: Pergola Fan
+  entity_id: switch.pergola_fan
+- platform: switch
+  name: Reading Lamp
+  entity_id: switch.reading_lamp_switch
+- platform: switch
+  name: Table Lamps
+  entity_id: switch.table_lamps_switch
+- platform: switch
+  name: Workshop Light
+  entity_id: switch.workshop_light_switch
 ###################
 # Template Lights #
 ###################

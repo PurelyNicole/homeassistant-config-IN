@@ -1,16 +1,7 @@
-spotify_music:
-  alias: Play Spotify Playlist
+lock_all_doors:
+  alias: Locks - Lock All Doors
+  description: Sets all doors to Locked state.
   sequence:
-  - service: media_player.select_source
-    data_template: 
-      entity_id: media_player.spotify_zeckner_vision
-      source: Living Room Music
-  - service: media_player.play_media
+  - service: lock.lock
     data_template:
-      entity_id: media_player.spotify_zeckner_vision
-      media_content_type: playlist
-      media_content_id: >
-        {% if is_state("input_select.spotify_playlist", "All Songs Considered") %} https://open.spotify.com/playlist/7ro9wf8vuSLGxStaC8t8Rv
-        {% elif is_state("input_select.spotify_playlist", "Family Mix") %} https://open.spotify.com/playlist/37i9dQZF1EgI2DmBExJvLf
-        {% elif is_state("input_select.spotify_playlist", "Skatepark Punks") %} https://open.spotify.com/playlist/37i9dQZF1DX3MU5XUozve7
-        {% endif %}
+      entity_id: all

@@ -23,7 +23,7 @@
   payload_on: "Lightning On"
   payload_off: "Lightning Off"
   retain: false
-  #holiday Sonoff switch
+  # Holiday Sonoff switch
 - platform: mqtt
   name: "Outdoor String Lights"
   state_topic: "stat/xmaslight1/POWER"
@@ -36,8 +36,21 @@
   payload_not_available: "Offline"
   retain: true
   optimistic: false
+# Exahust Fan
 - platform: mqtt
-  name: "Humidifier 2"
+  name: "Bedroom Exhaust Fan"
+  state_topic: "stat/MB_Exhaust_Fan/POWER"
+  command_topic: "cmnd/MB_Exhaust_Fan/POWER"
+  availability_topic: "tele/MB_Exhaust_Fan/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+#IP 192.168.1.107
+- platform: mqtt
+  name: "zUnused Plug"
   state_topic: "stat/SonoffOutlet1_S31/POWER"
   command_topic: "cmnd/SonoffOutlet1_S31/POWER"
   availability_topic: "tele/SonoffOutlet1_S31/LWT"
@@ -48,6 +61,7 @@
   payload_not_available: "Offline"
   retain: true
   optimistic: false
+  unique_id: 1921681107switch
   # Roomba Switch
 - platform: mqtt
   name: "Roomba"
@@ -61,7 +75,8 @@
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
-  retain: true
+  optimistic: true
+  retain: false # conflicting with Tasmota retained, was causing power on following power off not previous state
 - platform: mqtt
   name: "Gutter Heater 1"
   state_topic: "stat/Outdoor_Plug_Switch3/POWER1"
@@ -98,6 +113,22 @@
   payload_not_available: "Offline"
   retain: true
   optimistic: false
+- platform: mqtt
+  name: "Landscaping Lights"
+  state_topic: "stat/Outdoor2chSwitch/POWER1"
+  command_topic: "cmnd/Outdoor2chSwitch/POWER1"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "Pergola Fan"
+  state_topic: "stat/Outdoor2chSwitch/POWER2"
+  command_topic: "cmnd/Outdoor2chSwitch/POWER2"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
 #####################
 # Template Switches #
 #####################

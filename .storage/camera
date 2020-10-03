@@ -1,7 +1,13 @@
 {
     "data": {
+        "camera.driveway_cam": {
+            "preload_stream": true
+        },
         "camera.driveway_cam2": {
             "preload_stream": true
+        },
+        "camera.driveway_cam_bi": {
+            "preload_stream": false
         },
         "camera.driveway_cam_sub": {
             "preload_stream": true
@@ -9,7 +15,13 @@
         "camera.driveway_stream": {
             "preload_stream": true
         },
+        "camera.driveway_sub_stream": {
+            "preload_stream": true
+        },
         "camera.front_door_stream": {
+            "preload_stream": true
+        },
+        "camera.pond": {
             "preload_stream": true
         },
         "camera.porch": {

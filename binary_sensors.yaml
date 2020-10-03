@@ -1,15 +1,15 @@
 ########
 # MQTT #
 ########
+# rf bridge PIR
 - platform: mqtt
   state_topic: "tele/RFBridge/RESULT"
   name: 'Mailbox'
   value_template: '{{value_json.RfReceived.Data}}'
-  payload_on: '1B4619'
-  payload_off: '1B4619off'
+  payload_on: '9B1620'
+  payload_off: '9B1620off'
   device_class: motion
-  #optimistic: false
-  qos: 1.
+  qos: 1
 - platform: mqtt
   state_topic: "tele/RFBridge/RESULT"
   name: 'Closet PIR'
@@ -17,8 +17,42 @@
   payload_on: '121619'
   payload_off: '121619off'
   device_class: motion
-  #optimistic: false
   qos: 1
+- platform: mqtt
+  state_topic: "tele/RFBridge/RESULT"
+  name: 'Garage PIR 1'
+  value_template: '{{value_json.RfReceived.Data}}'
+  payload_on: 'F22A20'
+  payload_off: 'F22A20off'
+  device_class: motion
+  qos: 1
+- platform: mqtt
+  state_topic: "tele/RFBridge/RESULT"
+  name: 'Garage PIR 2'
+  value_template: '{{value_json.RfReceived.Data}}'
+  payload_on: '937860'
+  payload_off: '937860off'
+  device_class: motion
+  qos: 1
+# Blue Irs Motion
+- platform: mqtt
+  state_topic: "BI/PorchCam"
+  name: 'Porch Camera Motion'
+  payload_on: 'Motion'
+  payload_off: 'Clear'
+  device_class: motion
+- platform: mqtt
+  state_topic: "BI/Driveway"
+  name: 'Driveway Camera Motion'
+  payload_on: 'Motion'
+  payload_off: 'Clear'
+  device_class: motion
+- platform: mqtt
+  state_topic: "BI/DrivewayVehicleMotion"
+  name: 'Driveway Vehicle Motion'
+  payload_on: 'Motion'
+  payload_off: 'Clear'
+  device_class: motion
 
 ####################
 # Template Sensors #
@@ -29,10 +63,11 @@
       friendly_name: "Living Room Door"
       device_class: door
       value_template: "{{ is_state('sensor.living_room_door_sensor_access_control', '22') }}"
-    record_console_sensor:
-      friendly_name: "Recod Console"
-      device_class: door
-      value_template: "{{ is_state('sensor.record_console_burglar', '8') }}"
+    office_motion_sensor:
+      friendly_name: "Office Multi Sensor"
+      device_class: motion
+      unique_id: 15902office
+      value_template: "{{ is_state('sensor.office_multi_sensor_alarm_type', '8') }}"
 
 ######################
 # Time of Day Sensor #

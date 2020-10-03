@@ -1,0 +1,103 @@
+{
+    "version": 1,
+    "key": "lovelace_resources",
+    "data": {
+        "items": [
+            {
+                "id": "260f9678554646deb54b9eaa378ea968",
+                "type": "module",
+                "url": "/hacsfiles/lovelace-slider-entity-row/slider-entity-row.js"
+            },
+            {
+                "id": "1bed803e347c4ac7ba17868b4935faa8",
+                "type": "module",
+                "url": "/hacsfiles/simple-thermostat/simple-thermostat.js"
+            },
+            {
+                "id": "f00edab2e33f4312826f1dca39807a59",
+                "type": "module",
+                "url": "/hacsfiles/lovelace-card-mod/card-mod.js"
+            },
+            {
+                "id": "1f45bbcf3839416cbe1e4158d569c159",
+                "type": "module",
+                "url": "/hacsfiles/lovelace-card-tools/card-tools.js"
+            },
+            {
+                "id": "d4367b10434543098c2dfb83d5fee540",
+                "type": "module",
+                "url": "/hacsfiles/lovelace-gap-card/gap-card.js"
+            },
+            {
+                "id": "a0cc51512b894ae8adf3b7856fb96231",
+                "type": "module",
+                "url": "/hacsfiles/mini-graph-card/mini-graph-card-bundle.js"
+            },
+            {
+                "id": "8abcc5968a2747e0afb207fafd5ed7bb",
+                "type": "module",
+                "url": "/hacsfiles/mini-media-player/mini-media-player-bundle.js"
+            },
+            {
+                "id": "6f88290a524b41be9555891962164714",
+                "type": "js",
+                "url": "/hacsfiles/light-brightness-preset-row/light-brightness-preset-row.js"
+            },
+            {
+                "id": "0b1395d097ea4787bb635d6216a5610a",
+                "type": "module",
+                "url": "/hacsfiles/lovelace-template-entity-row/template-entity-row.js"
+            },
+            {
+                "id": "c51f109a468c4480be77e8e3f405b530",
+                "type": "module",
+                "url": "/hacsfiles/config-template-card/config-template-card.js"
+            },
+            {
+                "id": "a580b1488e6e4f4eb7f3b3a3d91c907d",
+                "type": "js",
+                "url": "/hacsfiles/lovelace-swipe-navigation/swipe-navigation.js"
+            },
+            {
+                "id": "a608daf3713843feb8cf80994785fea0",
+                "type": "module",
+                "url": "/hacsfiles/ha-card-weather-conditions/ha-card-weather-conditions.js"
+            },
+            {
+                "id": "8fd801ec93314bb997a20b0481039acb",
+                "type": "module",
+                "url": "/hacsfiles/fan-control-entity-row/fan-control-entity-row.js"
+            },
+            {
+                "id": "48a47eea2799443cad042064bc87d896",
+                "type": "module",
+                "url": "/hacsfiles/harmony-card/harmony-card.js"
+            },
+            {
+                "id": "91dabde5643f4c2d87ee43a90a9de1b3",
+                "type": "module",
+                "url": "/hacsfiles/lovelace-grocy-chores-card/grocy-chores-card.js"
+            },
+            {
+                "id": "d4952b202aee40329c18e98719dd46e0",
+                "type": "module",
+                "url": "/hacsfiles/lovelace-auto-entities/auto-entities.js"
+            },
+            {
+                "id": "1e3f491009ef4046954c34f004e89bf0",
+                "type": "module",
+                "url": "/hacsfiles/custom-header/custom-header.js"
+            },
+            {
+                "id": "64e5e9191af24978b6afa006a94feb8c",
+                "type": "module",
+                "url": "/hacsfiles/battery-state-card/battery-state-card.js"
+            },
+            {
+                "url": "/hacsfiles/atomic-calendar-revive/atomic-calendar-revive.js",
+                "type": "module",
+                "id": "db949e26fe1a4ee8a6f9842dc4581b88"
+            }
+        ]
+    }
+}

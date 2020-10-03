@@ -1,148 +1,15 @@
 {
+    "version": 1,
+    "key": "lovelace",
     "data": {
         "config": {
             "custom_header": {
                 "compact_mode": true,
-                "exceptions": [
-                    {
-                        "conditions": {
-                            "user": "Loft"
-                        },
-                        "config": {
-                            "clock_date": true,
-                            "clock_format": "24",
-                            "default_tab": "11",
-                            "menu": "show",
-                            "notifications": "show",
-                            "options": "clock",
-                            "show_tabs": "11,13,16",
-                            "swipe_amount": "15",
-                            "swipe_animate": "none",
-                            "voice": "show"
-                        }
-                    },
-                    {
-                        "conditions": {
-                            "user": "Kitchen"
-                        },
-                        "config": {
-                            "clock_date": true,
-                            "clock_format": "24",
-                            "default_tab": "9",
-                            "disable": false,
-                            "hide_tabs": "0,1,2,3,4,5,6,7,8",
-                            "menu": "show",
-                            "notifications": "show",
-                            "options": "clock",
-                            "swipe_amount": "15",
-                            "swipe_animate": "none",
-                            "voice": "show"
-                        }
-                    },
-                    {
-                        "conditions": {
-                            "user": "Nicole, Eric"
-                        },
-                        "config": {
-                            "default_tab": "0",
-                            "disable": false,
-                            "hide_tabs": "9,10, 11,12,13,14",
-                            "menu": "show",
-                            "notifications": "show",
-                            "options": "show",
-                            "show_tabs": "0,1,2,3,4,5,6,7,8,16",
-                            "swipe_amount": "15",
-                            "swipe_animate": "none",
-                            "voice": "show"
-                        }
-                    },
-                    {
-                        "conditions": {
-                            "user": "livingroom"
-                        },
-                        "config": {
-                            "clock_format": "12",
-                            "default_tab": "12",
-                            "menu": "show",
-                            "notifications": "show",
-                            "options": "clock",
-                            "show_tabs": "12,13,16",
-                            "swipe_amount": "15",
-                            "swipe_animate": "none",
-                            "voice": "show"
-                        }
-                    }
-                ],
+                "exceptions": [],
                 "hidden_tab_redirect": false,
                 "swipe": true
             },
-            "resources": [
-                {
-                    "type": "js",
-                    "url": "/community_plugin/calendar-card/calendar-card.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/lovelace-slider-entity-row/slider-entity-row.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/simple-thermostat/simple-thermostat.js"
-                },
-                {
-                    "type": "js",
-                    "url": "/community_plugin/fan-control-entity-row/fan-control-entity-row.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/custom-header/custom-header.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/lovelace-card-mod/card-mod.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/lovelace-card-tools/card-tools.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/lovelace-auto-entities/auto-entities.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/lovelace-gap-card/gap-card.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/mini-graph-card/mini-graph-card-bundle.js"
-                },
-                {
-                    "type": "js",
-                    "url": "/community_plugin/lovelace-grocy-chores-card/grocy-chores-card.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/mini-media-player/mini-media-player-bundle.js"
-                },
-                {
-                    "type": "js",
-                    "url": "/community_plugin/light-brightness-preset-row/light-brightness-preset-row.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/lovelace-template-entity-row/template-entity-row.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/config-template-card/config-template-card.js"
-                },
-                {
-                    "type": "module",
-                    "url": "/community_plugin/harmony-card/harmony-card.js"
-                }
-            ],
-            "title": "Home Assistant",
+            "title": "",
             "views": [
                 {
                     "badges": [],
@@ -153,13 +20,13 @@
                                     "entity": "sensor.eric_location"
                                 },
                                 {
-                                    "entity": "sensor.eric_phone_battery"
+                                    "entity": "sensor.battery_level_2"
                                 },
                                 {
                                     "entity": "sensor.nicole_location"
                                 },
                                 {
-                                    "entity": "sensor.nicole_phone_battery"
+                                    "entity": "sensor.pixel_3a_battery_level"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -169,22 +36,28 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "cover.garage_door"
+                                    "entity": "cover.garage_door",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "lock.kitchen_door_lock_locked"
+                                    "entity": "lock.kitchen_door_lock_locked",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "lock.workshop_door_lock_locked"
+                                    "entity": "lock.workshop_door_lock_locked",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "lock.front_door_lock_locked"
+                                    "entity": "lock.front_door_lock_locked",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "binary_sensor.kitchen_patio_door_motion_sensor"
+                                    "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "binary_sensor.living_room_door_sensor"
+                                    "entity": "binary_sensor.living_room_door_sensor",
+                                    "secondary_info": "last-changed"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -235,11 +108,12 @@
                             "type": "entities"
                         },
                         {
-                            "dateBottomFormat": "ddd",
-                            "dateTopFormat": "DD",
+                            "type": "custom:atomic-calendar-revive",
+                            "name": "Calendar Card",
+                            "enableModeChange": true,
                             "entities": [
                                 {
-                                    "entity": "calendar.nicoles_calendar",
+                                    "entity": "calendar.nicole_s_calendar",
                                     "name": "Nicole's Calendar"
                                 },
                                 {
@@ -251,953 +125,39 @@
                                     "name": "Eric Events"
                                 }
                             ],
-                            "eventsLimit": "99",
-                            "hideHeader": false,
-                            "hidePastEvents": true,
-                            "hideTime": false,
-                            "highlightToday": false,
-                            "ignoreEventsByLocationExpression": "",
-                            "ignoreEventsExpression": "",
-                            "numberOfDays": "7",
-                            "progressBar": false,
-                            "showEventOrigin": false,
-                            "showLocation": false,
-                            "showLocationIcon": true,
-                            "showMultiDay": true,
-                            "startFromToday": true,
-                            "timeFormat": "HH:mma",
-                            "title": "Calendar",
-                            "type": "custom:calendar-card"
+                            "firstDayOfWeek": 1,
+                            "maxDaysToShow": 7,
+                            "hideFinishedEvents": true,
+                            "showDate": false,
+                            "showEventIcon": false,
+                            "showWeekDay": true,
+                            "disableLocationLink": false,
+                            "showFullDayProgress": false,
+                            "showCurrentEventLine": false,
+                            "showMonth": false
                         },
                         {
                             "entity": "weather.dark_sky",
                             "type": "weather-forecast"
                         }
                     ],
-                    "icon": "",
+                    "icon": "mdi:home",
                     "path": "default_view",
-                    "title": "Home"
-                },
-                {
-                    "badges": [],
-                    "cards": [
+                    "title": "Home",
+                    "visible": [
                         {
-                            "entities": [
-                                {
-                                    "entity": "scene.watch_tv"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
+                            "user": "0dd6426c68884f519adac238ccf98431"
                         },
                         {
-                            "entities": [
-                                {
-                                    "entity": "switch.bar_lights_switch"
-                                },
-                                {
-                                    "entity": "switch.fireplace_lights_switch"
-                                },
-                                {
-                                    "entity": "switch.globe_lamp_switch"
-                                },
-                                {
-                                    "entity": "switch.table_lamps_switch"
-                                },
-                                {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "light.hallway_lights"
-                                },
-                                {
-                                    "entity": "switch.entryway_light_switch"
-                                },
-                                {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "light.dining_room_light",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                }
-                            ],
-                            "title": "Living Room Lights",
-                            "type": "entities"
+                            "user": "a94f20ade56d4f149ee532d5a44d66d2"
                         },
                         {
-                            "card": {
-                                "entity": "media_player.volumio",
-                                "type": "media-control"
-                            },
-                            "entities": [
-                                "media_player.volumio"
-                            ],
-                            "show_empty": false,
-                            "state_filter": [
-                                "playing"
-                            ],
-                            "type": "entity-filter"
+                            "user": "47e06542f5524edb907f45b4d7df6ad6"
                         },
                         {
-                            "card": {
-                                "entity": "climate.living_room",
-                                "icon": "mdi:thermostat",
-                                "name": "Nest",
-                                "sensors": [
-                                    {
-                                        "entity": "sensor.living_room_thermostat_humidity"
-                                    }
-                                ],
-                                "step_size": 1,
-                                "type": "custom:simple-thermostat"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "climate.living_room",
-                                    "state_not": "auto"
-                                }
-                            ],
-                            "type": "conditional"
-                        },
-                        {
-                            "card": {
-                                "entity": "climate.living_room",
-                                "type": "thermostat"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "climate.living_room",
-                                    "state": "auto"
-                                }
-                            ],
-                            "type": "conditional"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.fish_tank_light",
-                                    "icon": "mdi:fish"
-                                },
-                                {
-                                    "entity": "sensor.fish_tank_temperature"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Fish Tank",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "remote.living_room"
-                                },
-                                {
-                                    "entity": "sensor.living_room"
-                                }
-                            ],
-                            "title": "Harmony",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "lock.front_door_lock_locked"
-                                },
-                                {
-                                    "entity": "sensor.front_door_lock_status"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Front Door Lock",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.living_room_door_sensor"
-                                }
-                            ],
-                            "title": "Living Room Door",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_select.fan_speed_select"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Test Great Room Fan",
-                            "type": "entities"
+                            "user": "3960e44645fe4662b6ffb4d21d2151e8"
                         }
-                    ],
-                    "path": "living-room",
-                    "title": "Living Room"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.peninsula_light_switch"
-                                },
-                                {
-                                    "entity": "switch.under_cabinet_lights_switch"
-                                },
-                                {
-                                    "entity": "light.dining_room_light",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                },
-                                {
-                                    "entity": "light.kitchen_overhead_lights"
-                                }
-                            ],
-                            "title": "Kitchen Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "lock.kitchen_door_lock_locked"
-                                },
-                                {
-                                    "entity": "sensor.kitchen_door_lock_status"
-                                },
-                                {
-                                    "entity": "binary_sensor.kitchen_patio_door_motion_sensor"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Kitchen Doors",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.utility_room_moisture_general"
-                                },
-                                {
-                                    "entity": "sensor.utility_room_moisture_temperature"
-                                }
-                            ],
-                            "title": "Utility Room",
-                            "type": "glance"
-                        }
-                    ],
-                    "path": "kitchen",
-                    "title": "Kitchen"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "scene.sleep"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "light.bedroom_entry_light",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                },
-                                {
-                                    "entity": "light.bedroom_light_switch",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                },
-                                {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "light.bathroom_vanity_light",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                },
-                                {
-                                    "entity": "light.bathroom_mirror_led",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                },
-                                {
-                                    "entity": "light.bathroom_shower"
-                                },
-                                {
-                                    "entity": "light.exhaust_fan"
-                                },
-                                {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "light.bedroom_closet_light_switch"
-                                }
-                            ],
-                            "title": "Bedroom Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.master_bedroom_temperature"
-                                },
-                                {
-                                    "entity": "sensor.master_bedroom_humidity"
-                                },
-                                {
-                                    "entity": "sensor.bedroom_co2_value"
-                                },
-                                {
-                                    "entity": "switch.bedroom_humidifier"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Climate",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.bedroom_co2_value"
-                                }
-                            ],
-                            "hours_to_show": 72,
-                            "refresh_interval": 0,
-                            "title": "Bedroom Co2 Levels 3 Days",
-                            "type": "history-graph"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "cover.master_bedroom_shades"
-                                },
-                                {
-                                    "entity": "cover.bedroom_shade_1_control_2"
-                                },
-                                {
-                                    "entity": "cover.bedroom_shade_2_control"
-                                },
-                                {
-                                    "entity": "cover.bedroom_shade_3_control"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Window Shades",
-                            "type": "entities"
-                        }
-                    ],
-                    "path": "bedroom",
-                    "title": "Bedroom"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "sensor.allergy_index_today",
-                                            "max": 12,
-                                            "min": 0,
-                                            "severity": {
-                                                "green": 0,
-                                                "red": 8.4,
-                                                "yellow": 3.6
-                                            },
-                                            "type": "gauge"
-                                        },
-                                        {
-                                            "entity": "sensor.allergy_index_tomorrow",
-                                            "max": 12,
-                                            "min": 0,
-                                            "severity": {
-                                                "green": 0,
-                                                "red": 8.4,
-                                                "yellow": 3.6
-                                            },
-                                            "type": "gauge"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.pond_water_temperature"
-                                        },
-                                        {
-                                            "entity": "sensor.pool_water_temperature"
-                                        }
-                                    ],
-                                    "title": "Water Temperatures",
-                                    "type": "glance"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.deck_flood_lights_switch"
-                                },
-                                {
-                                    "entity": "switch.garage_flood_lights_switch"
-                                },
-                                {
-                                    "entity": "switch.landscaping_lights_switch"
-                                },
-                                {
-                                    "entity": "switch.patio_flood_lights_switch"
-                                },
-                                {
-                                    "entity": "switch.pier_lights_switch"
-                                },
-                                {
-                                    "entity": "switch.porch_light_switch"
-                                },
-                                {
-                                    "entity": "switch.workshop_light_switch"
-                                },
-                                {
-                                    "entity": "switch.deck_string_lights_switch"
-                                },
-                                {
-                                    "entity": "light.pond_light"
-                                }
-                            ],
-                            "title": "Outdoor Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "lock.workshop_door_lock_locked"
-                                        },
-                                        {
-                                            "entity": "sensor.workshop_door_lock_status"
-                                        }
-                                    ],
-                                    "title": "Workshop Lock",
-                                    "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.workshop_temperature"
-                                        },
-                                        {
-                                            "entity": "sensor.workshop_humidity"
-                                        }
-                                    ],
-                                    "title": "Workshop Climate",
-                                    "type": "glance"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.town_run_trail_status",
-                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
-                                },
-                                {
-                                    "entity": "sensor.town_run_last_update"
-                                },
-                                {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "sensor.fort_harrison_trail_status",
-                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
-                                },
-                                {
-                                    "entity": "sensor.fort_harrison_last_update"
-                                },
-                                {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "sensor.flat_fork_trail_status",
-                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
-                                },
-                                {
-                                    "entity": "sensor.flat_fork_last_update"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Trail Status",
-                            "type": "entities"
-                        },
-                        {
-                            "card": {
-                                "entities": [
-                                    {
-                                        "type": "divider"
-                                    },
-                                    {
-                                        "entity": "light.wled1_outsidelow"
-                                    },
-                                    {
-                                        "entity": "light.wled2_outsidegara"
-                                    },
-                                    {
-                                        "entity": "light.wled3_outsideeyebrow"
-                                    },
-                                    {
-                                        "type": "divider"
-                                    },
-                                    {
-                                        "entity": "switch.outdoor_string_lights"
-                                    },
-                                    {
-                                        "type": "divider"
-                                    },
-                                    {
-                                        "entity": "light.flood_light_1"
-                                    },
-                                    {
-                                        "entity": "light.flood_light_2"
-                                    },
-                                    {
-                                        "entity": "light.flood_light_3"
-                                    }
-                                ],
-                                "title": "Holiday Lights",
-                                "type": "entities"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "input_boolean.show_holiday_lights",
-                                    "state": "on"
-                                }
-                            ],
-                            "type": "conditional"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.crawlspace_temperature"
-                                        },
-                                        {
-                                            "entity": "sensor.crawlspace_humidity"
-                                        }
-                                    ],
-                                    "title": "Crawlspace Climate",
-                                    "type": "glance"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.gutter_heater_1"
-                                },
-                                {
-                                    "entity": "switch.gutter_heater_2"
-                                },
-                                {
-                                    "entity": "switch.pond_heater"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Outdoor Heaters",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.mailbox"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Mailbox",
-                            "type": "entities"
-                        }
-                    ],
-                    "path": "outdoors",
-                    "title": "Outdoors"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "scene.play_xbox"
-                                },
-                                {
-                                    "entity": "scene.read"
-                                },
-                                {
-                                    "entity": "scene.listen_to_music"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "light.loft_fan_light"
-                                },
-                                {
-                                    "customTheme": false,
-                                    "entity": "fan.loft_ceiling_fan",
-                                    "name": "Loft Fan",
-                                    "type": "custom:fan-control-entity-row"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Loft Fan",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.tetris_lamp_switch"
-                                },
-                                {
-                                    "entity": "switch.reading_lamp_switch"
-                                },
-                                {
-                                    "entity": "light.desk_light_switch",
-                                    "toggle": true,
-                                    "type": "custom:slider-entity-row"
-                                },
-                                {
-                                    "entity": "light.alcove_light_switch"
-                                },
-                                {
-                                    "entity": "light.network_closet_light"
-                                }
-                            ],
-                            "title": "Loft Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.loft_main",
-                            "type": "media-control"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.record_console_temperature"
-                                },
-                                {
-                                    "entity": "sensor.record_console_relative_humidity"
-                                },
-                                {
-                                    "entity": "sensor.network_rack_temperature"
-                                }
-                            ],
-                            "title": "Loft Climate",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.loft_humidifier"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Loft Humidifier",
-                            "type": "entities"
-                        }
-                    ],
-                    "path": "loft-dash",
-                    "title": "Loft"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.guest_room_floor_lamp_switch"
-                                },
-                                {
-                                    "entity": "switch.guest_room_nightstand_lamp_switch"
-                                },
-                                {
-                                    "entity": "light.wled_sparebedroom_2",
-                                    "name": "LED Nightstand Light"
-                                },
-                                {
-                                    "entity": "switch.humidifier_2"
-                                }
-                            ],
-                            "title": "Guest Room",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "light.gym_light_switch"
-                                }
-                            ],
-                            "title": "Gym",
-                            "type": "entities"
-                        }
-                    ],
-                    "path": "other-rooms",
-                    "title": "Other Rooms"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.porch",
-                            "camera_view": "live",
-                            "entities": [
-                                "camera.porch"
-                            ],
-                            "title": "Porch (Live)",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.driveway_cam2",
-                            "camera_view": "live",
-                            "entities": [
-                                "camera.driveway_cam2"
-                            ],
-                            "title": "Driveway View 2 (Live)",
-                            "type": "picture-glance"
-                        }
-                    ],
-                    "path": "cameras",
-                    "theme": "default",
-                    "title": "Cameras"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "card": {
-                                "title": "Devices with Low Battery",
-                                "type": "glance"
-                            },
-                            "filter": {
-                                "include": [
-                                    {
-                                        "attributes": {
-                                            "battery": "< 25"
-                                        }
-                                    },
-                                    {
-                                        "attributes": {
-                                            "battery_level": "< 25"
-                                        }
-                                    }
-                                ]
-                            },
-                            "show_empty": false,
-                            "type": "custom:auto-entities"
-                        },
-                        {
-                            "entities": [
-                                "sensor.fast_com_download",
-                                "sensor.speedtest_download"
-                            ],
-                            "hours_to_show": 24,
-                            "title": "Download Speed",
-                            "type": "history-graph"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entity": "sensor.memory_use_percent",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 0,
-                                        "red": 75,
-                                        "yellow": 50
-                                    },
-                                    "type": "gauge"
-                                },
-                                {
-                                    "entity": "sensor.disk_use_percent",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 0,
-                                        "red": 75,
-                                        "yellow": 50
-                                    },
-                                    "type": "gauge"
-                                },
-                                {
-                                    "entity": "sensor.processor_use",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 0,
-                                        "red": 75,
-                                        "yellow": 50
-                                    },
-                                    "type": "gauge"
-                                }
-                            ],
-                            "type": "horizontal-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_boolean.show_holiday_lights"
-                                }
-                            ],
-                            "title": "View Components",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.emoncms_total_power"
-                                },
-                                {
-                                    "entity": "sensor.emoncms_kwh"
-                                },
-                                {
-                                    "entity": "sensor.emoncms_voltage"
-                                }
-                            ],
-                            "title": "Power Usage",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.roomba"
-                                },
-                                {
-                                    "entity": "sensor.roomba_battery_filtered"
-                                },
-                                {
-                                    "entity": "sensor.roomba_status"
-                                },
-                                {
-                                    "entity": "device_tracker.roomba"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Roomba",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.octoprint_printing"
-                                },
-                                {
-                                    "entity": "sensor.octoprint_current_state"
-                                },
-                                {
-                                    "entity": "sensor.octoprint_job_percentage"
-                                },
-                                {
-                                    "entity": "sensor.octoprint_time_elapsed_format"
-                                },
-                                {
-                                    "entity": "sensor.octoprint_time_remaining_format"
-                                }
-                            ],
-                            "title": "Ender 3 Pro",
-                            "type": "entities"
-                        },
-                        {
-                            "card": {
-                                "card": {
-                                    "title": "Automations",
-                                    "type": "entities"
-                                },
-                                "filter": {
-                                    "include": [
-                                        {
-                                            "domain": "automation"
-                                        }
-                                    ]
-                                },
-                                "show_empty": false,
-                                "type": "custom:auto-entities"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "input_boolean.show_automations",
-                                    "state": "on"
-                                }
-                            ],
-                            "type": "conditional"
-                        },
-                        {
-                            "card": {
-                                "card": {
-                                    "title": "Z-Wave",
-                                    "type": "entities"
-                                },
-                                "filter": {
-                                    "include": [
-                                        {
-                                            "domain": "zwave"
-                                        }
-                                    ]
-                                },
-                                "show_empty": false,
-                                "type": "custom:auto-entities"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "input_boolean.show_zwave",
-                                    "state": "on"
-                                }
-                            ],
-                            "type": "conditional"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.octoprint",
-                            "entities": [
-                                {
-                                    "entity": "camera.octoprint"
-                                }
-                            ],
-                            "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
-                            "title": "3D Printer",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.network_rack_temperature"
-                                }
-                            ],
-                            "hours_to_show": 72,
-                            "refresh_interval": 0,
-                            "title": "Network Rack Temp",
-                            "type": "history-graph"
-                        }
-                    ],
-                    "path": "system",
-                    "theme": "default",
-                    "title": "System"
+                    ]
                 },
                 {
                     "badges": [],
@@ -1252,31 +212,13 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "sensor.allergy_index_today",
-                                            "max": 12,
-                                            "min": 0,
-                                            "severity": {
-                                                "green": 0,
-                                                "red": 7.3,
-                                                "yellow": 4.9
-                                            },
-                                            "theme": "default",
-                                            "type": "gauge"
-                                        },
-                                        {
-                                            "entity": "sensor.dark_sky_uv_index",
-                                            "max": 11,
-                                            "min": 0,
-                                            "name": "UV Index: Today",
-                                            "severity": {
-                                                "green": 0,
-                                                "orange": 6,
-                                                "purle": 11,
-                                                "red": 8,
-                                                "yellow": 3
-                                            },
-                                            "theme": "default",
-                                            "type": "gauge"
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.mailbox",
+                                                    "secondary_info": "last-changed"
+                                                }
+                                            ],
+                                            "type": "entities"
                                         }
                                     ],
                                     "type": "horizontal-stack"
@@ -1292,11 +234,12 @@
                             "type": "custom:grocy-chores-card"
                         },
                         {
-                            "dateBottomFormat": "ddd",
-                            "dateTopFormat": "DD",
+                            "type": "custom:atomic-calendar-revive",
+                            "name": "Calendar Card",
+                            "enableModeChange": true,
                             "entities": [
                                 {
-                                    "entity": "calendar.nicoles_calendar",
+                                    "entity": "calendar.nicole_s_calendar",
                                     "name": "Nicole's Calendar"
                                 },
                                 {
@@ -1308,23 +251,16 @@
                                     "name": "Eric Events"
                                 }
                             ],
-                            "eventsLimit": "99",
-                            "hideHeader": false,
-                            "hidePastEvents": true,
-                            "hideTime": false,
-                            "highlightToday": false,
-                            "ignoreEventsByLocationExpression": "",
-                            "ignoreEventsExpression": "",
-                            "numberOfDays": "7",
-                            "progressBar": false,
-                            "showEventOrigin": false,
-                            "showLocation": true,
-                            "showLocationIcon": true,
-                            "showMultiDay": true,
-                            "startFromToday": true,
-                            "timeFormat": "HH:mma",
-                            "title": "Calendar",
-                            "type": "custom:calendar-card"
+                            "firstDayOfWeek": 1,
+                            "maxDaysToShow": 7,
+                            "hideFinishedEvents": true,
+                            "showDate": false,
+                            "showEventIcon": false,
+                            "showWeekDay": true,
+                            "disableLocationLink": false,
+                            "showFullDayProgress": false,
+                            "showCurrentEventLine": false,
+                            "showMonth": false
                         },
                         {
                             "cards": [
@@ -1358,22 +294,28 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "cover.garage_door"
+                                            "entity": "cover.garage_door",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "lock.kitchen_door_lock_locked"
+                                            "entity": "lock.kitchen_door_lock_locked",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "lock.workshop_door_lock_locked"
+                                            "entity": "lock.workshop_door_lock_locked",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "lock.front_door_lock_locked"
+                                            "entity": "lock.front_door_lock_locked",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "binary_sensor.kitchen_patio_door_motion_sensor"
+                                            "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "binary_sensor.living_room_door_sensor"
+                                            "entity": "binary_sensor.living_room_door_sensor",
+                                            "secondary_info": "last-changed"
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -1383,7 +325,7 @@
                                 {
                                     "artwork": "cover",
                                     "entity": "media_player.living_room_music_main",
-                                    "type": "custom:mini-media-player"
+                                    "type": "media-control"
                                 }
                             ],
                             "type": "vertical-stack"
@@ -1402,11 +344,11 @@
                         },
                         {
                             "aspect_ratio": "0%",
-                            "camera_image": "camera.driveway_cam2",
+                            "camera_image": "camera.driveway_cam",
                             "camera_view": "live",
                             "entities": [
                                 {
-                                    "entity": "camera.driveway_cam2"
+                                    "entity": "camera.driveway_cam"
                                 }
                             ],
                             "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
@@ -1414,7 +356,7 @@
                         },
                         {
                             "aspect_ratio": "100%",
-                            "entity": "camera.ind",
+                            "entity": "camera.nwsradar_ind_enhanced_composite_reflectivity_loop",
                             "show_name": false,
                             "show_state": false,
                             "type": "picture-entity"
@@ -1422,316 +364,15 @@
                     ],
                     "icon": "mdi:home-assistant",
                     "path": "kitchen-dash",
-                    "title": "Kitchen Dash"
-                },
-                {
-                    "badges": [],
-                    "cards": [
+                    "title": "Kitchen Dash",
+                    "visible": [
                         {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "aspect_ratio": "0%",
-                                            "entities": [
-                                                {
-                                                    "entity": "input_select.spotify_playlist"
-                                                }
-                                            ],
-                                            "image": "local/playlist_images/all_songs_considered.png",
-                                            "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"All Songs Considered\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "input_select.select_option",
-                                                "service_data": {
-                                                    "entity_id": "input_select.spotify_playlist",
-                                                    "option": "All Songs Considered"
-                                                }
-                                            },
-                                            "type": "picture-glance"
-                                        },
-                                        {
-                                            "aspect_ratio": "0%",
-                                            "entities": [
-                                                {
-                                                    "entity": "input_select.spotify_playlist"
-                                                }
-                                            ],
-                                            "image": "local/playlist_images/family_mix.png",
-                                            "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"Family Mix\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "input_select.select_option",
-                                                "service_data": {
-                                                    "entity_id": "input_select.spotify_playlist",
-                                                    "option": "Family Mix"
-                                                }
-                                            },
-                                            "type": "picture-glance"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "aspect_ratio": "0%",
-                                            "entities": [
-                                                {
-                                                    "entity": "input_select.spotify_playlist"
-                                                }
-                                            ],
-                                            "image": "local/playlist_images/skatepark_punks.jpg",
-                                            "style": "ha-card {\n  {% if is_state(\"input_select.spotify_playlist\", \"Skatepark Punks\") -%}\n    filter: grayscale(0%);\n  {% else %}\n    filter: grayscale(100%);\n  {% endif %}\n}\n",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "input_select.select_option",
-                                                "service_data": {
-                                                    "entity_id": "input_select.spotify_playlist",
-                                                    "option": "Skatepark Punks"
-                                                }
-                                            },
-                                            "type": "picture-glance"
-                                        },
-                                        {
-                                            "type": "custom:gap-card"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                }
-                            ],
-                            "type": "vertical-stack"
+                            "user": "7c494534273a4776ad3e53bdfa0fae31"
                         },
                         {
-                            "cards": [
-                                {
-                                    "artwork": "cover",
-                                    "entity": "media_player.living_room_music_main",
-                                    "type": "custom:mini-media-player"
-                                },
-                                {
-                                    "activities": [
-                                        {
-                                            "device": "Yamaha Amp",
-                                            "name": "MusicCast - Zone 1"
-                                        },
-                                        {
-                                            "device": "Yamaha Amp",
-                                            "name": "MusicCast - Zone 2"
-                                        },
-                                        {
-                                            "device": "Yamaha Amp",
-                                            "name": "MusicCast - Zone 3"
-                                        }
-                                    ],
-                                    "buttons": {
-                                        "a": {
-                                            "hide": true
-                                        },
-                                        "b": {
-                                            "hide": true
-                                        },
-                                        "back": {
-                                            "hide": true
-                                        },
-                                        "dpad_center": {
-                                            "command": "InputNetwork",
-                                            "icon": "mdi:spotify"
-                                        },
-                                        "dpad_down": {
-                                            "hide": true
-                                        },
-                                        "dpad_left": {
-                                            "command": "InputServer",
-                                            "icon": "mdi:play-network-outline"
-                                        },
-                                        "dpad_right": {
-                                            "command": "InputAux",
-                                            "icon": "mdi:ipod"
-                                        },
-                                        "dpad_up": {
-                                            "hide": true
-                                        },
-                                        "volume_down": {
-                                            "hide": true
-                                        },
-                                        "volume_mute": {
-                                            "hide": true
-                                        },
-                                        "volume_up": {
-                                            "hide": true
-                                        },
-                                        "x": {
-                                            "hide": true
-                                        },
-                                        "xbox": {
-                                            "hide": true
-                                        },
-                                        "y": {
-                                            "hide": true
-                                        }
-                                    },
-                                    "entity": "remote.living_room",
-                                    "type": "custom:harmony-card"
-                                }
-                            ],
-                            "type": "vertical-stack"
+                            "user": "0dd6426c68884f519adac238ccf98431"
                         }
-                    ],
-                    "icon": "mdi:play-circle-outline",
-                    "panel": false,
-                    "path": "music-dash",
-                    "theme": "Backend-selected",
-                    "title": "Music Dash"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "light.loft_fan_light"
-                                        },
-                                        {
-                                            "entity": "light.desk_light_switch",
-                                            "toggle": true,
-                                            "type": "custom:slider-entity-row"
-                                        },
-                                        {
-                                            "entity": "switch.reading_lamp_switch"
-                                        },
-                                        {
-                                            "entity": "light.alcove_light_switch"
-                                        },
-                                        {
-                                            "entity": "switch.tetris_lamp_switch"
-                                        }
-                                    ],
-                                    "title": "Loft Lights",
-                                    "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "fan.loft_ceiling_fan",
-                                            "name": "Loft Fan",
-                                            "type": "custom:fan-control-entity-row"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Loft Fan",
-                                    "type": "entities"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "scene.play_xbox"
-                                },
-                                {
-                                    "entity": "scene.read"
-                                },
-                                {
-                                    "entity": "scene.listen_to_music"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
-                        },
-                        {
-                            "artwork": "cover",
-                            "entity": "media_player.loft_main",
-                            "type": "custom:mini-media-player"
-                        },
-                        {
-                            "dateBottomFormat": "DD",
-                            "dateTopFormat": "MMM",
-                            "entities": [
-                                {
-                                    "entity": "calendar.music_announcements",
-                                    "name": "Music Announcements"
-                                }
-                            ],
-                            "eventsLimit": "99",
-                            "hideHeader": false,
-                            "hidePastEvents": false,
-                            "hideTime": true,
-                            "highlightToday": false,
-                            "ignoreEventsByLocationExpression": "",
-                            "ignoreEventsExpression": "",
-                            "numberOfDays": "60",
-                            "progressBar": false,
-                            "showEventOrigin": false,
-                            "showLocation": false,
-                            "showLocationIcon": false,
-                            "showMultiDay": false,
-                            "startFromToday": false,
-                            "timeFormat": "HH:mma",
-                            "title": "Upcoming Releases",
-                            "type": "custom:calendar-card"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.record_console_temperature"
-                                },
-                                {
-                                    "entity": "sensor.record_console_relative_humidity"
-                                }
-                            ],
-                            "title": "Loft Climate",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.music_med_value"
-                                }
-                            ],
-                            "hours_to_show": 720,
-                            "refresh_interval": 0,
-                            "type": "history-graph"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_boolean.get_random_record",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            }
-                                        },
-                                        {
-                                            "entity": "input_boolean.get_random_cd",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            }
-                                        }
-                                    ],
-                                    "show_state": false,
-                                    "type": "glance"
-                                },
-                                {
-                                    "aspect_ratio": "0%",
-                                    "camera_image": "camera.random_album_cover",
-                                    "entity": "sensor.random_album",
-                                    "show_name": false,
-                                    "show_state": true,
-                                    "type": "picture-entity"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:stairs",
-                    "path": "loft",
-                    "title": "Loft Dash"
+                    ]
                 },
                 {
                     "badges": [],
@@ -1749,16 +390,16 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.bar_lights_switch"
+                                    "entity": "light.wled_barlights"
                                 },
                                 {
-                                    "entity": "switch.fireplace_lights_switch"
+                                    "entity": "light.fireplace_lights"
                                 },
                                 {
-                                    "entity": "switch.globe_lamp_switch"
+                                    "entity": "light.globe_lamp"
                                 },
                                 {
-                                    "entity": "switch.table_lamps_switch"
+                                    "entity": "light.table_lamps"
                                 },
                                 {
                                     "type": "divider"
@@ -1767,7 +408,7 @@
                                     "entity": "light.hallway_lights"
                                 },
                                 {
-                                    "entity": "switch.entryway_light_switch"
+                                    "entity": "light.entryway_light"
                                 }
                             ],
                             "title": "Living Room Lights",
@@ -1791,62 +432,832 @@
                             "type": "entities"
                         },
                         {
-                            "artwork": "cover",
                             "entity": "media_player.living_room_music_main",
-                            "shortcuts": {
-                                "buttons": [
-                                    {
-                                        "id": "spotify:playlist:37i9dQZF1EgI2DmBExJvLf",
-                                        "name": "Family Mix",
-                                        "type": "playlist"
-                                    },
-                                    {
-                                        "id": "spotify:playlist:265tbRU6EfWnfZKES6fdZe",
-                                        "name": "Hip-Hop",
-                                        "type": "playlist"
-                                    },
-                                    {
-                                        "id": "spotify:playlist:3BQOuGRwZKpADrJbS0Aff9",
-                                        "name": "Alternative",
-                                        "type": "playlist"
-                                    }
-                                ],
-                                "columns": 3
-                            },
-                            "type": "custom:mini-media-player"
+                            "type": "media-control"
                         },
                         {
                             "entity": "weather.dark_sky",
                             "type": "weather-forecast"
+                        },
+                        {
+                            "entity": "climate.living_room",
+                            "icon": "mdi:thermostat",
+                            "name": "Nest",
+                            "sensors": [
+                                {
+                                    "entity": "sensor.living_room_thermostat_humidity"
+                                }
+                            ],
+                            "step_size": 1,
+                            "type": "custom:simple-thermostat"
                         }
                     ],
                     "icon": "mdi:sofa",
                     "path": "living-room-dash",
-                    "title": "Living Room Dash"
+                    "title": "Living Room Dash",
+                    "visible": [
+                        {
+                            "user": "c67fd1a0304e486b9f5547e4e4a86ffb"
+                        },
+                        {
+                            "user": "0dd6426c68884f519adac238ccf98431"
+                        }
+                    ]
                 },
                 {
                     "badges": [],
                     "cards": [
                         {
-                            "aspect_ratio": "50%",
+                            "entities": [
+                                {
+                                    "entity": "light.wled_barlights"
+                                },
+                                {
+                                    "entity": "light.fireplace_lights"
+                                },
+                                {
+                                    "entity": "light.globe_lamp"
+                                },
+                                {
+                                    "entity": "light.table_lamps"
+                                },
+                                {
+                                    "entity": "switch.fish_tank_light",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "title": "Living Room Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.entryway_light"
+                                },
+                                {
+                                    "entity": "light.hallway_lights"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.gym_light_switch"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.hall_bath_switch"
+                                }
+                            ],
+                            "title": "Hall Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.guest_room_bed_lamp"
+                                },
+                                {
+                                    "entity": "light.guest_room_floor_lamp"
+                                },
+                                {
+                                    "entity": "light.office_rgbw"
+                                }
+                            ],
+                            "title": "Guest Room Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.kitchen_overhead_lights"
+                                },
+                                {
+                                    "entity": "light.peninsula_light_switch"
+                                },
+                                {
+                                    "entity": "light.under_cabinet_lights_switch"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.dining_room_light"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.half_bath_switch"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.garage_light"
+                                }
+                            ],
+                            "title": "Kitchen Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.bedroom_entry_light"
+                                },
+                                {
+                                    "entity": "light.bedroom_light_switch"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.bedroom_closet_light_switch"
+                                },
+                                {
+                                    "entity": "light.bathroom_vanity_light"
+                                },
+                                {
+                                    "entity": "switch.mb_magic_mirror_screen"
+                                },
+                                {
+                                    "entity": "light.bathroom_mirror_led"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.bathroom_shower"
+                                },
+                                {
+                                    "entity": "switch.bedroom_exhaust_fan"
+                                }
+                            ],
+                            "title": "Bedroom Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.alcove_light_switch"
+                                },
+                                {
+                                    "entity": "light.desk_light_switch"
+                                },
+                                {
+                                    "entity": "light.reading_lamp"
+                                },
+                                {
+                                    "entity": "light.loft_fan_light"
+                                },
+                                {
+                                    "entity": "fan.loft_ceiling_fan",
+                                    "type": "custom:fan-control-entity-row"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "light.network_closet_light"
+                                }
+                            ],
+                            "title": "Loft",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.deck_flood_lights"
+                                },
+                                {
+                                    "entity": "light.flood_light_1"
+                                },
+                                {
+                                    "entity": "light.flood_light_2"
+                                },
+                                {
+                                    "entity": "light.flood_light_3"
+                                },
+                                {
+                                    "entity": "light.garage_flood_lights"
+                                },
+                                {
+                                    "entity": "light.landscaping_lights"
+                                },
+                                {
+                                    "entity": "light.pergola_fan"
+                                },
+                                {
+                                    "entity": "light.pond_light"
+                                },
+                                {
+                                    "entity": "light.porch_light"
+                                },
+                                {
+                                    "entity": "light.workshop_light"
+                                }
+                            ],
+                            "title": "Outdoor Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "card": {
+                                "entities": [
+                                    {
+                                        "type": "divider"
+                                    },
+                                    {
+                                        "entity": "light.wled1_outsidelow"
+                                    },
+                                    {
+                                        "entity": "light.wled2_outsidegara"
+                                    },
+                                    {
+                                        "entity": "light.wled3_outsideeyebrow"
+                                    },
+                                    {
+                                        "type": "divider"
+                                    },
+                                    {
+                                        "entity": "light.outdoor_string_lights"
+                                    },
+                                    {
+                                        "type": "divider"
+                                    },
+                                    {
+                                        "entity": "light.flood_light_1"
+                                    },
+                                    {
+                                        "entity": "light.flood_light_2"
+                                    },
+                                    {
+                                        "entity": "light.flood_light_3"
+                                    }
+                                ],
+                                "title": "Holiday Lights",
+                                "type": "entities"
+                            },
+                            "conditions": [
+                                {
+                                    "entity": "input_boolean.show_holiday_lights",
+                                    "state": "on"
+                                }
+                            ],
+                            "type": "conditional"
+                        }
+                    ],
+                    "icon": "mdi:lightbulb-group-outline",
+                    "panel": false,
+                    "path": "lighting",
+                    "title": "Lighting"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "binary_sensor.living_room_door_sensor",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "cover.garage_door",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Doors",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "lock.front_door_lock_locked"
+                                },
+                                {
+                                    "entity": "sensor.front_door_lock_status",
+                                    "name": "Door Locked/Unlocked At:",
+                                    "secondary": "{{states('sensor.front_door_lock_status')}}",
+                                    "state": "{{(as_timestamp(states.lock.front_door_lock_locked.last_changed))|timestamp_custom('%m/%d %H:%M')}}",
+                                    "type": "custom:template-entity-row"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Front Door",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "lock.kitchen_door_lock_locked"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_door_lock_status",
+                                    "name": "Door Locked/Unlocked At:",
+                                    "secondary": "{{states('sensor.kitchen_door_lock_status')}}",
+                                    "state": "{{(as_timestamp(states.lock.kitchen_door_lock_locked.last_changed))|timestamp_custom('%m/%d %H:%M')}}",
+                                    "type": "custom:template-entity-row"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Kitchen Door",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "lock.workshop_door_lock_locked"
+                                },
+                                {
+                                    "entity": "sensor.workshop_door_lock_status",
+                                    "name": "Door Locked/Unlocked At:",
+                                    "secondary": "{{states('sensor.workshop_door_lock_status')}}",
+                                    "state": "{{(as_timestamp(states.lock.workshop_door_lock_locked.last_changed))|timestamp_custom('%m/%d %H:%M')}}",
+                                    "type": "custom:template-entity-row"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Workshop Door",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:door-closed-lock",
+                    "path": "doors",
+                    "title": "Doors"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.bedroom_shade_east_control"
+                                },
+                                {
+                                    "entity": "cover.bedroom_shade_2_control"
+                                },
+                                {
+                                    "entity": "cover.bedroom_shade_3_control"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Bedroom Window Shades",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.eyebrow_shade_1_control"
+                                },
+                                {
+                                    "entity": "cover.eyebrow_shade_2_control"
+                                },
+                                {
+                                    "entity": "cover.eyebrow_shade_3_control"
+                                }
+                            ],
+                            "title": "Living Room Window Shades",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:window-closed-variant",
+                    "path": "windows",
+                    "title": "Windows"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "climate.living_room",
+                            "icon": "mdi:thermostat",
+                            "step_size": 1,
+                            "type": "custom:simple-thermostat"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.bedroom_humidifier"
+                                },
+                                {
+                                    "entity": "switch.office_fan_humidifier_switch"
+                                },
+                                {
+                                    "entity": "switch.loft_humidifier"
+                                }
+                            ],
+                            "title": "Humidifiers",
+                            "type": "glance",
+                            "state_color": true
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.ambient_weather_indoor_temp"
+                                },
+                                {
+                                    "entity": "sensor.living_room_thermostat_temperature"
+                                },
+                                {
+                                    "entity": "sensor.master_bedroom_temperature"
+                                },
+                                {
+                                    "entity": "sensor.office_multi_sensor_temperature"
+                                },
+                                {
+                                    "entity": "sensor.loft_temperature"
+                                },
+                                {
+                                    "entity": "sensor.network_rack_temperature"
+                                },
+                                {
+                                    "entity": "sensor.crawlspace_temperature"
+                                },
+                                {
+                                    "entity": "sensor.utility_room_moisture_temperature"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Home Temperatures",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.ambient_weather_indoor_humidity"
+                                },
+                                {
+                                    "entity": "sensor.living_room_thermostat_humidity"
+                                },
+                                {
+                                    "entity": "sensor.master_bedroom_humidity"
+                                },
+                                {
+                                    "entity": "sensor.office_multi_sensor_humidity"
+                                },
+                                {
+                                    "entity": "sensor.loft_humidity"
+                                },
+                                {
+                                    "entity": "sensor.network_rack_humidity"
+                                },
+                                {
+                                    "entity": "sensor.crawlspace_humidity"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Home Humidity",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.crawlspace_humidity"
+                                }
+                            ],
+                            "hours_to_show": 72,
+                            "refresh_interval": 0,
+                            "title": "crawlspace humidity 3 Days",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.pond_water_temperature",
+                                    "name": "Pond"
+                                },
+                                {
+                                    "entity": "sensor.pool_water_temperature",
+                                    "name": "Pool"
+                                },
+                                {
+                                    "entity": "sensor.fish_tank_temperature",
+                                    "name": "Fish Tank"
+                                }
+                            ],
+                            "title": "Water Temperatures",
+                            "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.workshop_temperature"
+                                        },
+                                        {
+                                            "entity": "sensor.workshop_humidity"
+                                        }
+                                    ],
+                                    "title": "Workshop Climate",
+                                    "type": "glance"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:thermometer",
+                    "path": "climate",
+                    "title": "Climate"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.gutter_heater_1"
+                                },
+                                {
+                                    "entity": "switch.gutter_heater_2"
+                                },
+                                {
+                                    "entity": "switch.pond_heater"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Outdoor Heaters",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.town_run_trail_status",
+                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
+                                },
+                                {
+                                    "entity": "sensor.town_run_last_update"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "sensor.fort_harrison_trail_status",
+                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
+                                },
+                                {
+                                    "entity": "sensor.fort_harrison_last_update"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "sensor.flat_fork_trail_status",
+                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
+                                },
+                                {
+                                    "entity": "sensor.flat_fork_last_update"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Trail Status",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.zone_1"
+                                },
+                                {
+                                    "entity": "switch.zone_2"
+                                },
+                                {
+                                    "entity": "switch.zone_3"
+                                },
+                                {
+                                    "entity": "switch.zone_4"
+                                },
+                                {
+                                    "entity": "switch.zone_5"
+                                },
+                                {
+                                    "entity": "switch.zone_6"
+                                },
+                                {
+                                    "entity": "switch.zone_7"
+                                },
+                                {
+                                    "entity": "switch.zone_8"
+                                },
+                                {
+                                    "entity": "switch.zone_9"
+                                },
+                                {
+                                    "entity": "switch.zone_10"
+                                },
+                                {
+                                    "entity": "switch.zone_11"
+                                },
+                                {
+                                    "entity": "switch.zone_12"
+                                },
+                                {
+                                    "entity": "switch.zone_13"
+                                },
+                                {
+                                    "entity": "switch.zone_14"
+                                },
+                                {
+                                    "entity": "switch.zone_15"
+                                }
+                            ],
+                            "hours_to_show": 167,
+                            "refresh_interval": 1,
+                            "title": "Rachio (Weekly)",
+                            "type": "history-graph"
+                        },
+                        {
+                            "type": "custom:gap-card"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.zone_1"
+                                },
+                                {
+                                    "entity": "switch.zone_2"
+                                },
+                                {
+                                    "entity": "switch.zone_3"
+                                },
+                                {
+                                    "entity": "switch.zone_4"
+                                },
+                                {
+                                    "entity": "switch.zone_5"
+                                },
+                                {
+                                    "entity": "switch.zone_6"
+                                },
+                                {
+                                    "entity": "switch.zone_7"
+                                },
+                                {
+                                    "entity": "switch.zone_8"
+                                },
+                                {
+                                    "entity": "switch.zone_9"
+                                },
+                                {
+                                    "entity": "switch.zone_10"
+                                },
+                                {
+                                    "entity": "switch.zone_11"
+                                },
+                                {
+                                    "entity": "switch.zone_12"
+                                },
+                                {
+                                    "entity": "switch.zone_13"
+                                },
+                                {
+                                    "entity": "switch.zone_14"
+                                },
+                                {
+                                    "entity": "switch.zone_15"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "title": "Rachio (Daily)",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.pool_pump_speed_1"
+                                },
+                                {
+                                    "entity": "switch.pool_pump_speed_2"
+                                },
+                                {
+                                    "entity": "switch.pool_pump_speed_3"
+                                },
+                                {
+                                    "entity": "sensor.pool_water_temperature"
+                                }
+                            ],
+                            "title": "Pool",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.pool_water_temperature"
+                                }
+                            ],
+                            "hours_to_show": 72,
+                            "refresh_interval": 0,
+                            "title": "Pool Water Temp",
+                            "type": "history-graph"
+                        }
+                    ],
+                    "icon": "mdi:leaf",
+                    "path": "outdoors",
+                    "title": "Outdoors"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "aspect_ratio": "0%",
                             "camera_image": "camera.porch",
                             "camera_view": "live",
-                            "entity": "camera.porch",
-                            "type": "picture-entity"
+                            "entities": [
+                                {
+                                    "entity": "camera.porch"
+                                }
+                            ],
+                            "title": "Porch",
+                            "type": "picture-glance"
                         },
                         {
                             "aspect_ratio": "0%",
-                            "camera_image": "camera.driveway_cam2",
+                            "camera_image": "camera.driveway_cam",
+                            "camera_view": "live",
+                            "entities": [
+                                {
+                                    "entity": "camera.driveway_cam"
+                                }
+                            ],
+                            "title": "Driveway",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.west_fence",
                             "camera_view": "live",
                             "entities": [],
-                            "entity": "camera.driveway_cam2",
+                            "entity": "camera.west_fence",
+                            "hold_action": {
+                                "action": "none"
+                            },
                             "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
+                            "tap_action": {
+                                "action": "none"
+                            },
+                            "title": "West Fence",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.workshop",
+                            "camera_view": "live",
+                            "entities": [],
+                            "entity": "camera.workshop",
+                            "hold_action": {
+                                "action": "none"
+                            },
+                            "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
+                            "tap_action": {
+                                "action": "none"
+                            },
+                            "title": "Workshop",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.pond",
+                            "entities": [],
+                            "image": "c",
+                            "title": "Pond Camera",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.backyard_east",
+                            "entities": [],
+                            "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                            "title": "Backyard East",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.east_gate",
+                            "entities": [],
+                            "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                            "title": "East Gate",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.front_yard",
+                            "entities": [
+                                "binary_sensor.ambient_weather_battery",
+                                "binary_sensor.ambient_weather_battery_fridge"
+                            ],
+                            "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                            "title": "Front Yard",
                             "type": "picture-glance"
                         }
                     ],
                     "icon": "mdi:camera",
                     "path": "cameras",
-                    "title": "DashCams"
+                    "title": "Cameras"
                 },
                 {
                     "badges": [],
@@ -1905,14 +1316,34 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.network_rac_humidityy"
+                                    "entity": "sensor.us_coronavirus_current",
+                                    "name": "Current"
+                                },
+                                {
+                                    "entity": "sensor.us_coronavirus_confirmed",
+                                    "name": "Confirmed"
                                 }
                             ],
-                            "hours_to_show": 24,
-                            "line_width": 3,
-                            "ponts_per_hour": 8,
-                            "smoothing": false,
-                            "type": "custom:mini-graph-card"
+                            "hours_to_show": 168,
+                            "refresh_interval": 0,
+                            "title": "Coronavirus US (Weekly)",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.us_coronavirus_deaths",
+                                    "name": "Deaths"
+                                },
+                                {
+                                    "entity": "sensor.us_coronavirus_recovered",
+                                    "name": "Recovered"
+                                }
+                            ],
+                            "hours_to_show": 168,
+                            "refresh_interval": 0,
+                            "title": "Coronavirus US (Weekly)",
+                            "type": "history-graph"
                         }
                     ],
                     "icon": "mdi:home-analytics",
@@ -1937,25 +1368,284 @@
                 },
                 {
                     "badges": [],
-                    "cards": [],
-                    "path": "test-2",
-                    "title": "Test 2"
+                    "cards": [
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.octoprint",
+                            "entities": [
+                                {
+                                    "entity": "camera.octoprint"
+                                }
+                            ],
+                            "title": "3D Printer",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.octoprint_printing"
+                                },
+                                {
+                                    "entity": "sensor.octoprint_current_state"
+                                },
+                                {
+                                    "entity": "sensor.octoprint_job_percentage"
+                                },
+                                {
+                                    "entity": "sensor.octoprint_time_elapsed_format"
+                                },
+                                {
+                                    "entity": "sensor.octoprint_time_remaining_format"
+                                }
+                            ],
+                            "title": "Ender 3 Pro",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:printer-3d-nozzle",
+                    "path": "printer",
+                    "title": "3D Printer"
                 },
                 {
                     "badges": [],
-                    "cards": [],
-                    "path": "3d-print",
-                    "title": "3D Print"
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_select.fan_speed_select"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Test Great Room Fan",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.utility_room_moisture_general"
+                                },
+                                {
+                                    "entity": "sensor.utility_room_moisture_temperature"
+                                }
+                            ],
+                            "title": "Utility Room",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.us_coronavirus_confirmed"
+                                },
+                                {
+                                    "entity": "sensor.us_coronavirus_current"
+                                },
+                                {
+                                    "entity": "sensor.us_coronavirus_deaths"
+                                },
+                                {
+                                    "entity": "sensor.us_coronavirus_recovered"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "sensor.worldwide_coronavirus_confirmed"
+                                },
+                                {
+                                    "entity": "sensor.worldwide_coronavirus_current"
+                                },
+                                {
+                                    "entity": "sensor.worldwide_coronavirus_deaths"
+                                },
+                                {
+                                    "entity": "sensor.worldwide_coronavirus_recovered"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Coronavirus Stats",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.random_book",
+                                    "name": "You Should Read..."
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_boolean.get_random_record",
+                                            "name": "Random Record",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "input_boolean.get_random_cd",
+                                            "name": "Random CD",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "input_boolean.get_random_book",
+                                            "name": "Random Book",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        }
+                                    ],
+                                    "show_state": false,
+                                    "state_color": false,
+                                    "type": "glance"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.random_album_cover",
+                                    "entity": "sensor.random_album",
+                                    "show_name": false,
+                                    "show_state": true,
+                                    "type": "picture-entity"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.music_med_value"
+                                }
+                            ],
+                            "hours_to_show": 720,
+                            "refresh_interval": 0,
+                            "type": "history-graph"
+                        },
+                        {
+                            "entity": "media_player.loft_main",
+                            "type": "media-control"
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.office_music_squeezelite"
+                        }
+                    ],
+                    "panel": false,
+                    "path": "test",
+                    "title": "Test",
+                    "visible": [
+                        {
+                            "user": "0dd6426c68884f519adac238ccf98431"
+                        },
+                        {
+                            "user": "a94f20ade56d4f149ee532d5a44d66d2"
+                        },
+                        {
+                            "user": "3960e44645fe4662b6ffb4d21d2151e8"
+                        }
+                    ]
                 },
                 {
                     "badges": [],
-                    "cards": [],
-                    "path": "3d-print",
-                    "title": "3D Print"
+                    "cards": [
+                        {
+                            "entities": [
+                                "sensor.fast_com_download",
+                                "sensor.speedtest_download"
+                            ],
+                            "hours_to_show": 24,
+                            "title": "Download Speed",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.show_holiday_lights"
+                                }
+                            ],
+                            "title": "View Components",
+                            "type": "entities"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "sensor.memory_use_percent",
+                                    "max": 100,
+                                    "min": 0,
+                                    "severity": {
+                                        "green": 0,
+                                        "red": 75,
+                                        "yellow": 50
+                                    },
+                                    "type": "gauge"
+                                },
+                                {
+                                    "entity": "sensor.disk_use_percent",
+                                    "max": 100,
+                                    "min": 0,
+                                    "severity": {
+                                        "green": 0,
+                                        "red": 75,
+                                        "yellow": 50
+                                    },
+                                    "type": "gauge"
+                                },
+                                {
+                                    "entity": "sensor.processor_use",
+                                    "max": 100,
+                                    "min": 0,
+                                    "severity": {
+                                        "green": 0,
+                                        "red": 75,
+                                        "yellow": 50
+                                    },
+                                    "type": "gauge"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.emoncms_total_power"
+                                },
+                                {
+                                    "entity": "sensor.emoncms_kwh"
+                                },
+                                {
+                                    "entity": "sensor.emoncms_voltage"
+                                }
+                            ],
+                            "title": "Power Usage",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.roomba"
+                                },
+                                {
+                                    "entity": "sensor.roomba_battery_filtered"
+                                },
+                                {
+                                    "entity": "sensor.roomba_status"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Roomba",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:cogs",
+                    "path": "system",
+                    "theme": "default",
+                    "title": "System"
                 }
             ]
         }
-    },
-    "key": "lovelace",
-    "version": 1
+    }
 }

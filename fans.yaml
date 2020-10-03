@@ -1,6 +1,19 @@
 ########
 # MQTT #
 ########
+# Exahust Fan
+- platform: mqtt
+  name: "Bedroom Exhaust Fan"
+  state_topic: "stat/MB_Exhaust_Fan/POWER"
+  command_topic: "cmnd/MB_Exhaust_Fan/POWER"
+  availability_topic: "tele/MB_Exhaust_Fan/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+# Loft Fan
 - platform: mqtt
   name: "Loft Ceiling Fan"
   command_topic: "cmnd/LoftFan/FanSpeed"

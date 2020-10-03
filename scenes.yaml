@@ -7,7 +7,9 @@
     group.guest_room_lights: false
     group.master_bedroom_lights: false
     group.entry_hall_lights: false
-    switch.mirror_screen: false
+    switch.mb_magic_mirror_screen: false
+    light.gym_light_switch:
+      state: 'off'
     lock.kitchen_door_lock_locked: locked
     lock.workshop_door_lock_locked: locked
     lock.front_door_lock_locked: locked
@@ -56,7 +58,7 @@
       state: locked
     lock.workshop_door_lock_locked:
       state: locked
-    switch.mirror_screen:
+    switch.mb_magic_mirror_screen:
       state: 'off'
     switch.fish_tank_light:
       state: 'off'
@@ -66,7 +68,7 @@
     switch.fireplace_lights_switch: false
     switch.globe_lamp_switch: false
     switch.table_lamps_switch: false
-    switch.peninsula_light_switch: false
+    light.peninsula_light_switch: false
     light.dining_room_light: false
     light.kitchen_overhead_lights: false
     light.loft_fan_light: false
@@ -79,23 +81,10 @@
   id: de3e0d02a4ad49a492754c8209cd8c73
 - name: Read
   entities:
-    light.loft_fan_light: 
-      state: off
+    light.loft_fan_light:
+      state: false
     switch.reading_lamp_switch:
-      state: on
-    light.alcove_light_switch: 
-      state: off
+      state: true
+    light.alcove_light_switch:
+      state: false
   id: 43a17a2f033f46d191eed82ff5e91de4
-- name: Listen to Music
-  entities:
-    light.loft_fan_light: 
-      state: off
-    switch.reading_lamp_switch: 
-      state: on
-    light.alcove_light_switch: 
-      state: off
-    light.desk_light_switch: 
-      state: off
-    fan.loft_ceiling_fan: 
-      state: off
-  id: e03f08a8da2646f8baa94afa5409dd2b

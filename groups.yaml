@@ -1,46 +1,63 @@
+#########
+# Cover #
+#########
+master_bedroom_shades:
+  name: Master Bedroom Shades
+  entities:
+    - cover.bedroom_shade_east_control
+    - cover.bedroom_shade_2_control
+    - cover.bedroom_shade_3_control
+living_room_shades:
+  name: Living Room Shades
+  entities:
+    - cover.eyebrow_shade_1_control
+    - cover.eyebrow_shade_2_control
+    - cover.eyebrow_shade_3_control
+
 ############
 # Presence #
-############    
+############
 people:
   name: People
   entities:
     - person.eric
     - person.nicole
 
-###################
-# Lighting Groups #
-###################
+############
+# Lighting #
+############
 entry_hall_lights:
   name: Entry/Hall Lights
   entities:
-    - switch.entryway_light_switch
+    - light.entryway_light
     - light.hallway_lights
     - light.hall_bath_switch
 guest_room_lights:
   name: Guest Room Lights
   entities:
-    - switch.guest_room_floor_lamp_switch
-    - switch.guest_room_nightstand_lamp_switch
+    - light.guest_room_floor_lamp
+    - light.guest_room_nightstand_lamp
+    - light.guest_room_bed_lamp
+    - light.office_rgbw
 kitchen_lights:
   name: Kitchen Lights
   entities:
-    - switch.peninsula_light_switch
-    - switch.under_cabinet_lights_switch
+    - light.peninsula_light_switch
+    - light.under_cabinet_lights_switch
     - light.dining_room_light
     - light.kitchen_overhead_lights
     - light.half_bath_switch
 living_room_lights:
   name: Living Room Lights
   entities:
-    - switch.bar_lights_switch
-    - switch.fireplace_lights_switch
-    - switch.globe_lamp_switch
-    - switch.table_lamps_switch
+    - light.wled_barlights
+    - light.fireplace_lights
+    - light.globe_lamp
+    - light.table_lamps
 loft_lights:
   name: Loft Lights
   entities:
-    - switch.tetris_lamp_switch
-    - switch.reading_lamp_switch
+    - light.reading_lamp
     - light.desk_light_switch
     - light.alcove_light_switch
     - light.loft_fan_light
@@ -58,13 +75,14 @@ master_bedroom_lights:
 outdoor_lights:
   name: Outdoor Lights
   entities:
-    - switch.deck_flood_lights_switch
-    - switch.deck_string_lights_switch
-    - switch.garage_flood_lights_switch
-    - switch.landscaping_lights_switch
-    - switch.patio_flood_lights_switch
-    - switch.pier_lights_switch
-    - switch.porch_light_switch
-    - switch.workshop_light_switch
+    - light.deck_flood_lights
+    - light.garage_flood_lights
+    - light.landscaping_lights
+    - light.patio_flood_lights
+    - light.pier_lights
+    - light.porch_light
+    - light.workshop_light
+    - light.pond_light
+    - light.pergola_fan
 indoor_lights:
   - group.entry_hall_lights

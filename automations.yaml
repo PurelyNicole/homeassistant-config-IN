@@ -17,26 +17,33 @@
   - data:
       entity_id: scene.watch_tv
     service: scene.turn_on
-- alias: Guest Room - Turn on nightstand with wall switch
-  id: '1522888948173'
+- id: '1522888948173'
+  alias: Guest Room - Turn on lights with wall switch
   trigger:
-  - entity_id: switch.guest_room_floor_lamp_switch
+  - entity_id: light.guest_room_floor_lamp
     platform: state
     to: 'on'
   action:
-  - data:
-      entity_id: switch.guest_room_nightstand_lamp_switch
-    service: switch.turn_on
-- alias: Guest Room - Turn off nightstand with wall switch
-  id: '1522889042539'
+  - entity_id: light.office_rgbw
+    service: light.turn_on
+  - data: {}
+    entity_id: light.guest_room_bed_lamp
+    service: light.turn_on
+  mode: single
+- id: '1522889042539'
+  alias: Guest Room - Turn off lights with wall switch
   trigger:
-  - entity_id: switch.guest_room_floor_lamp_switch
+  - entity_id: light.guest_room_floor_lamp
+    from: 'on'
     platform: state
     to: 'off'
   action:
-  - data:
-      entity_id: switch.guest_room_nightstand_lamp_switch
-    service: switch.turn_off
+  - entity_id: light.office_rgbw
+    service: light.turn_off
+  - data: {}
+    entity_id: light.guest_room_bed_lamp
+    service: light.turn_off
+  mode: single
 - alias: Home Mode - Set to Home When Anyone Arrives Home and Mode is not Sleep
   id: '1522931077343'
   trigger:
@@ -131,8 +138,8 @@
   - entity_id: input_select.home_mode
     platform: state
     to: Sleep
-- alias: Scene - Turn On Indoor Lights At Dusk
-  id: '1522945341172'
+- id: '1522945341172'
+  alias: Scene - Turn On Indoor Lights At Dusk
   trigger:
   - entity_id: binary_sensor.dusk
     platform: state
@@ -141,6 +148,11 @@
   - condition: state
     entity_id: input_select.home_mode
     state: Home
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: remote.living_room
+      state: 'off'
   action:
   - data:
       entity_id: scene.indoor_lights_on
@@ -175,15 +187,15 @@
       input:
         command: upload
     service: rest_command.google_backup
-- id: '1546951741513'
-  alias: Switch - Turn on MagicMirror
+- alias: Switch - Turn on MagicMirror
+  id: '1546951741513'
   trigger:
   - at: 06:15:00
     platform: time
   condition: []
   action:
   - data:
-      entity_id: switch.mirror_screen
+      entity_id: switch.mb_magic_mirror_screen
     service: switch.turn_on
 - alias: Bedroom - Turn On Main Light With Entry Switch
   id: '1548980303353'
@@ -209,51 +221,23 @@
   - data:
       entity_id: light.bedroom_light_switch
     service: light.turn_off
-- id: '1549208103754'
-  alias: Bedroom - Turn on Humidifier at Night
+- id: '1649208103764'
+  alias: Switch - Turn on Humidifiers at Night
   trigger:
   - entity_id: binary_sensor.night
     platform: state
     to: 'on'
   condition: []
   action:
-  - data:
-      entity_id: switch.bedroom_humidifier
-    service: switch.turn_on
-  - data:
-      entity_id: switch.humidifier_2
-    service: switch.turn_on
-  - entity_id: switch.loft_humidifier
-    service: switch.turn_on
-- id: '1549208168922'
-  alias: Bedroom - Turn off Humidifier at Morning
-  trigger:
-  - entity_id: binary_sensor.morning
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data:
-      entity_id: switch.bedroom_humidifier
-    service: switch.turn_off
-  - data:
-      entity_id: switch.humidifier_2
-    service: switch.turn_off
-  - entity_id: switch.loft_humidifier
-    service: switch.turn_off
-- alias: Loft - Trigger Xbox Scene When Logged In
-  id: '1573693554096'
-  description: ''
-  trigger:
-  - entity_id: sensor.puregeekery
-    platform: state
-    to: Online
-  condition: []
-  action:
-  - alias: ''
-    data:
-      entity_id: scene.play_xbox
-    service: scene.turn_on
+  - type: turn_on
+    device_id: 77972d09c4204f5095233e8d46f78bb6
+    entity_id: switch.bedroom_humidifier
+    domain: switch
+  - type: turn_on
+    device_id: ca0d575e83874565b700fddd31f336c2
+    entity_id: switch.office_fan_humidifier_switch
+    domain: switch
+  mode: single
 - alias: Loft - Fan Light Off With Wall Switch
   id: '1573825610778'
   description: Turn of the ceiling fan light with the wall switch. Also set the fan
@@ -280,7 +264,7 @@
   condition:
     condition: time
     weekday:
-    - sun
+    - mon
   action:
   - service: hassio.snapshot_full
     data_template:
@@ -309,8 +293,8 @@
     data_template:
       entity_id: input_text.fish_last_fed
       value: '{{states(''sensor.date_time'')}}'
-- alias: Fish - Send notification when fish need fed
-  id: '1577839778680'
+- id: '1577839778680'
+  alias: Fish - Send notification when fish need fed
   description: ''
   trigger:
   - platform: template
@@ -321,8 +305,8 @@
   action:
   - data:
       message: Fish have not been fed in two days.
-    service: notify.mobile_app_sm_g965u
-- alias: Door Open Notification - Notify Eric if Home
+    service: notify.mobile_app_galaxys9
+- alias: Notification - Notify Eric Door Open
   id: '1578081825952'
   description: ''
   trigger:
@@ -342,7 +326,7 @@
   - data:
       message: Door left open.
     service: notify.mobile_app_sm_g965u
-- alias: Door Open Notification - Notify Nicole if Home
+- alias: Notification - Notify Nicole Door Open
   id: '1578081825953'
   description: ''
   trigger:
@@ -386,7 +370,6 @@
       notification_id: 49980
     service: persistent_notification.dismiss
 - alias: Mailbox - Reset mailboxPIR state
-  hide_entity: true
   initial_state: 'on'
   trigger:
   - platform: state
@@ -399,10 +382,9 @@
   - service: mqtt.publish
     data:
       topic: tele/RFBridge/RESULT
-      payload: 1B4619off
+      payload: 9B1620off
   id: 423ae9691e5c4140bdc9547fd69a1fed
 - alias: MBCloset - Reset MBClosetPIR state
-  hide_entity: true
   initial_state: 'on'
   trigger:
   - platform: state
@@ -418,7 +400,6 @@
       payload: 121619off
   id: 25648f5637ba4a03987fdd9f25b869cc
 - alias: MBCloset - turn light on
-  hide_entity: true
   initial_state: 'on'
   trigger:
   - platform: state
@@ -430,7 +411,7 @@
     entity_id: light.bedroom_closet_light_switch
   id: 6ab4458fae84471fb66e9a597822f799
 - alias: MBCloset - turn light off
-  hide_entity: true
+  id: '1681203496897'
   initial_state: 'on'
   trigger:
   - platform: state
@@ -442,33 +423,145 @@
   action:
   - service: light.turn_off
     entity_id: light.bedroom_closet_light_switch
-  id: d201437986574e27ab03fefc240f7d7a
-- id: '1580761584418'
+- alias: Garage 1 - Reset garagePIR state
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_pir_1
+    from: 'off'
+    to: 'on'
+    for:
+      seconds: 5
+  action:
+  - service: mqtt.publish
+    data:
+      topic: tele/RFBridge/RESULT
+      payload: F22A20off
+  id: 47cbe31aece64b6c86bca7c3a38591a1
+- alias: Garage 2 - Reset garagePIR state
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_pir_2
+    from: 'off'
+    to: 'on'
+    for:
+      seconds: 5
+  action:
+  - service: mqtt.publish
+    data:
+      topic: tele/RFBridge/RESULT
+      payload: 937860off
+  id: 5aced3b758174fc3a83cd7ae80bd91ef
+- alias: Garage1 - turn light on
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_pir_1
+    from: 'off'
+    to: 'on'
+  action:
+  - service: light.turn_on
+    entity_id: light.garage_light
+  id: 075b8a30da8b46c09874aadb0ef78ded
+- alias: Garage2 - turn light on
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_pir_2
+    from: 'off'
+    to: 'on'
+  action:
+  - service: light.turn_on
+    entity_id: light.garage_light
+  id: e00b831d6fc54f85b2fa056bbdae8941
+- id: debe92329291497898094bf0c5b9f084
+  alias: Garage - turn light off
+  trigger:
+  - entity_id: light.garage_light
+    for: 0:30:00
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: light.garage_light
+    service: light.turn_off
+  initial_state: 'on'
+  mode: single
+- id: '1782213597807'
   alias: Notification - Mailbox Opened
   description: ''
   trigger:
   - entity_id: binary_sensor.mailbox
-    from: Clear
     platform: state
-    to: Detected
+    to: 'on'
   condition: []
   action:
   - data:
       message: Mailbox has been opened.
-      target:
-      - notify.mobile_app_sm_g965u
-      - notify.moblie_app_pixel_3a
-    service: notify.notify
-- id: '1581102486796'
-  alias: Spotify - Playlist dropdown to off
+    service: notify.mobile_app_pixel_3a
+  - data:
+      message: Mailbox has been opened.
+    service: notify.mobile_app_galaxys9
+- alias: Lighting - Outdoor Lights on at Sunset
+  id: '1581713139579'
   description: ''
   trigger:
-  - entity_id: media_player.spotify_zeckner_vision
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.outdoor_lights
+    service: light.turn_on
+- alias: Lighting - Outdoor Lights Off at Sunrise
+  id: '1581713222232'
+  description: ''
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.outdoor_lights
+    service: light.turn_off
+- id: '1581973044961'
+  alias: Switch - Turn Off Humidifiers At Morning
+  description: ''
+  trigger:
+  - at: 09:00
+    platform: time
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 77972d09c4204f5095233e8d46f78bb6
+    entity_id: switch.bedroom_humidifier
+    domain: switch
+  - type: turn_off
+    device_id: ca0d575e83874565b700fddd31f336c2
+    entity_id: switch.office_fan_humidifier_switch
+    domain: switch
+  mode: single
+- id: '1593366918811'
+  alias: Notification - Print finished
+  description: Send a push notification when the 3D printer goes from on to off.
+  trigger:
+  - entity_id: binary_sensor.octoprint_printing
+    from: 'on'
     platform: state
-    to: idle
+    to: 'off'
   condition: []
   action:
   - data:
-      option: 'Off'
-    entity_id: input_select.spotify_playlist
-    service: input_select.set_options
+      message: Print complete.
+    service: notify.mobile_app_pixel_3a
+- id: '1600964645726'
+  alias: Lighting - Turn garage light on with door open
+  description: ''
+  trigger:
+  - entity_id: cover.garage_door
+    platform: state
+    to: open
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.garage_light
+    service: light.turn_on
+  mode: single

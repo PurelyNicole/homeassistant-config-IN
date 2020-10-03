@@ -51,10 +51,6 @@
   unit_of_measurement: '%'
   value_template: '{{ value_json["SHT3X-0x44"]["Humidity"] }}'
 - platform: mqtt
-  name: "Pond Water Temperature"
-  state_topic: "ha/pondtemp"
-  qos: 0
-- platform: mqtt
   name: "Bedroom Temperature"
   state_topic: 'tele/BedroomTemp/SENSOR'
   unit_of_measurement: '°F'
@@ -150,14 +146,14 @@
     nicole_phone_battery:
       friendly_name: 'Nicole Phone Battery'
       value_template: '{{ states.device_tracker.pixel_3a_gps.attributes.battery_level }}'
-      entity_id: device_tracker.pixel_3a_gps
+      unique_id: 36b0274dc4eb
       device_class: battery
       unit_of_measurement: '%'
     nicole_location:
       friendly_name: 'Nicole Location'
       value_template: >
         {% if is_state_attr('sensor.nicole_places', 'devicetracker_zone', 'not_home') -%}
-          {{state_attr('sensor.nicole_places', 'place_name')}}
+            {{state_attr('sensor.nicole_places', 'place_name')}}
         {%- else -%}
           {{state_attr('sensor.nicole_places', 'devicetracker_zone')| capitalize}}
         {%- endif %}
