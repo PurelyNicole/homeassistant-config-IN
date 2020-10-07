@@ -181,6 +181,16 @@ speedtestdotnet:
     - download
     - upload
 
+###########
+# Utility #
+###########
+logger:
+  default: warning
+  logs: 
+    homeassistant.components.octoprint: fatal
+    pysqueezebox.server: fatal
+
+
 ######################
 # Weather Components #
 ######################

@@ -306,8 +306,8 @@
   - data:
       message: Fish have not been fed in two days.
     service: notify.mobile_app_galaxys9
-- alias: Notification - Notify Eric Door Open
-  id: '1578081825952'
+- id: '1578081825952'
+  alias: Notification - Notify Eric Door Open
   description: ''
   trigger:
   - entity_id: binary_sensor.kitchen_patio_door_motion_sensor
@@ -325,7 +325,8 @@
   action:
   - data:
       message: Door left open.
-    service: notify.mobile_app_sm_g965u
+    service: notify.mobile_app_galaxys9
+  mode: single
 - alias: Notification - Notify Nicole Door Open
   id: '1578081825953'
   description: ''
@@ -369,139 +370,6 @@
   - data:
       notification_id: 49980
     service: persistent_notification.dismiss
-- alias: Mailbox - Reset mailboxPIR state
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.mailbox
-    from: 'off'
-    to: 'on'
-    for:
-      seconds: 5
-  action:
-  - service: mqtt.publish
-    data:
-      topic: tele/RFBridge/RESULT
-      payload: 9B1620off
-  id: 423ae9691e5c4140bdc9547fd69a1fed
-- alias: MBCloset - Reset MBClosetPIR state
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.closet_pir
-    from: 'off'
-    to: 'on'
-    for:
-      seconds: 5
-  action:
-  - service: mqtt.publish
-    data:
-      topic: tele/RFBridge/RESULT
-      payload: 121619off
-  id: 25648f5637ba4a03987fdd9f25b869cc
-- alias: MBCloset - turn light on
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.closet_pir
-    from: 'off'
-    to: 'on'
-  action:
-  - service: light.turn_on
-    entity_id: light.bedroom_closet_light_switch
-  id: 6ab4458fae84471fb66e9a597822f799
-- alias: MBCloset - turn light off
-  id: '1681203496897'
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: light.bedroom_closet_light_switch
-    from: 'off'
-    to: 'on'
-    for:
-      minutes: 15
-  action:
-  - service: light.turn_off
-    entity_id: light.bedroom_closet_light_switch
-- alias: Garage 1 - Reset garagePIR state
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.garage_pir_1
-    from: 'off'
-    to: 'on'
-    for:
-      seconds: 5
-  action:
-  - service: mqtt.publish
-    data:
-      topic: tele/RFBridge/RESULT
-      payload: F22A20off
-  id: 47cbe31aece64b6c86bca7c3a38591a1
-- alias: Garage 2 - Reset garagePIR state
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.garage_pir_2
-    from: 'off'
-    to: 'on'
-    for:
-      seconds: 5
-  action:
-  - service: mqtt.publish
-    data:
-      topic: tele/RFBridge/RESULT
-      payload: 937860off
-  id: 5aced3b758174fc3a83cd7ae80bd91ef
-- alias: Garage1 - turn light on
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.garage_pir_1
-    from: 'off'
-    to: 'on'
-  action:
-  - service: light.turn_on
-    entity_id: light.garage_light
-  id: 075b8a30da8b46c09874aadb0ef78ded
-- alias: Garage2 - turn light on
-  initial_state: 'on'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.garage_pir_2
-    from: 'off'
-    to: 'on'
-  action:
-  - service: light.turn_on
-    entity_id: light.garage_light
-  id: e00b831d6fc54f85b2fa056bbdae8941
-- id: debe92329291497898094bf0c5b9f084
-  alias: Garage - turn light off
-  trigger:
-  - entity_id: light.garage_light
-    for: 0:30:00
-    platform: state
-    to: 'on'
-  action:
-  - entity_id: light.garage_light
-    service: light.turn_off
-  initial_state: 'on'
-  mode: single
-- id: '1782213597807'
-  alias: Notification - Mailbox Opened
-  description: ''
-  trigger:
-  - entity_id: binary_sensor.mailbox
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data:
-      message: Mailbox has been opened.
-    service: notify.mobile_app_pixel_3a
-  - data:
-      message: Mailbox has been opened.
-    service: notify.mobile_app_galaxys9
 - alias: Lighting - Outdoor Lights on at Sunset
   id: '1581713139579'
   description: ''
@@ -575,7 +443,10 @@
     from: 'on'
     to: 'off'
     for: 0:15:00
-  condition: []
+  condition:
+  - condition: state
+    entity_id: light.guest_room_floor_lamp
+    state: 'on'
   action:
   - service: light.turn_off
     data: {}
