@@ -461,3 +461,20 @@
     data: {}
     entity_id: media_player.office_music_squeezelite
   mode: single
+- id: '1602094793399'
+  alias: Office - Turn fan off when I wake up
+  description: Look for motion between 6:30-9:30, and turn off fan when it's detected.
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.office_motion_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: time
+    after: '6:30'
+    before: '9:30'
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.office_fan_humidifier_switch
+  mode: single
