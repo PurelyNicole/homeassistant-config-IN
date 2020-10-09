@@ -101,23 +101,10 @@ sensor.flat_fork_trail_status:
   icon: mdi:bike
 sensor.town_run_trail_status:
   icon: mdi:bike
-scene.play_xbox:
-  icon: mdi:xbox
 scene.read:
   icon: mdi:book-open-page-variant
 scene.listen_to_music:
   icon: mdi:record-player
-media_player.volumio:
-  icon: mdi:library-music
-switch.musiccast_zone_1:
-  friendly_name: 'MusicCast: Zone 1'
-  icon: mdi:library-music
-switch.musiccast_zone_2:
-  friendly_name: 'MusicCast: Zone 2'
-  icon: mdi:library-music
-switch.musiccast_zone_3:
-  friendly_name: 'MusicCast: Zone 3'
-  icon: mdi:library-music
 switch.ipod_zone_1:
   friendly_name: 'iPod: Zone 1'
   icon: mdi:ipod

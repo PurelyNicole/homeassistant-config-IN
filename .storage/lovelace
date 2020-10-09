@@ -3,12 +3,6 @@
     "key": "lovelace",
     "data": {
         "config": {
-            "custom_header": {
-                "compact_mode": true,
-                "exceptions": [],
-                "hidden_tab_redirect": false,
-                "swipe": true
-            },
             "title": "",
             "views": [
                 {
@@ -17,13 +11,13 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.eric_location"
+                                    "entity": "device_tracker.galaxy_s9"
                                 },
                                 {
                                     "entity": "sensor.galaxy_s9_battery_level"
                                 },
                                 {
-                                    "entity": "sensor.nicole_location"
+                                    "entity": "device_tracker.pixel_3a"
                                 },
                                 {
                                     "entity": "sensor.pixel_3a_battery_level"
@@ -62,7 +56,8 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Doors",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -105,7 +100,8 @@
                                 }
                             ],
                             "title": "Lighting",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "type": "custom:atomic-calendar-revive",
@@ -171,10 +167,10 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "sensor.nicole_location"
+                                            "entity": "device_tracker.pixel_3a"
                                         },
                                         {
-                                            "entity": "sensor.eric_location"
+                                            "entity": "device_tracker.galaxy_s9"
                                         }
                                     ],
                                     "type": "glance"
@@ -289,7 +285,8 @@
                                         }
                                     ],
                                     "title": "Lighting",
-                                    "type": "entities"
+                                    "type": "entities",
+                                    "state_color": true
                                 },
                                 {
                                     "entities": [
@@ -320,10 +317,10 @@
                                     ],
                                     "show_header_toggle": false,
                                     "title": "Doors",
-                                    "type": "entities"
+                                    "type": "entities",
+                                    "state_color": true
                                 },
                                 {
-                                    "artwork": "cover",
                                     "entity": "media_player.living_room_music_main",
                                     "type": "media-control"
                                 }
@@ -385,7 +382,8 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Scenes",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -429,7 +427,8 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Fish Tank",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entity": "media_player.living_room_music_main",
@@ -461,6 +460,131 @@
                         },
                         {
                             "user": "0dd6426c68884f519adac238ccf98431"
+                        }
+                    ]
+                },
+                {
+                    "title": "Home Office",
+                    "path": "home-office",
+                    "icon": "fas:laptop-house",
+                    "visible": [
+                        {
+                            "user": "0dd6426c68884f519adac238ccf98431"
+                        },
+                        {
+                            "user": "3960e44645fe4662b6ffb4d21d2151e8"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "scene.work"
+                                },
+                                {
+                                    "entity": "scene.read"
+                                }
+                            ],
+                            "title": "Scenes"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.office_rgbw"
+                                },
+                                {
+                                    "entity": "light.guest_room_bed_lamp"
+                                },
+                                {
+                                    "entity": "light.guest_room_floor_lamp"
+                                }
+                            ],
+                            "title": "Office Lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.office_multi_sensor_temperature",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "sensor.office_multi_sensor_relative_humidity",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "switch.office_fan_humidifier_switch",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "title": "Office Climate",
+                            "show_header_toggle": false,
+                            "state_color": true
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.office_music_squeezelite"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_boolean.get_random_record",
+                                            "name": "Random Record",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "input_boolean.get_random_cd",
+                                            "name": "Random CD",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "input_boolean.get_random_book",
+                                            "name": "Random Book",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        }
+                                    ],
+                                    "show_state": false,
+                                    "state_color": false,
+                                    "type": "glance"
+                                },
+                                {
+                                    "type": "entity",
+                                    "entity": "sensor.random_book",
+                                    "name": "You Should Read..."
+                                },
+                                {
+                                    "type": "entity",
+                                    "entity": "sensor.random_album",
+                                    "name": "You Should Listen To...",
+                                    "icon": "hass:music-note"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.music_med_value"
+                                }
+                            ],
+                            "hours_to_show": 720,
+                            "refresh_interval": 0,
+                            "type": "history-graph"
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "binary_sensor.office_motion_sensor"
                         }
                     ]
                 },
@@ -595,7 +719,8 @@
                                 }
                             ],
                             "title": "Bedroom Lights",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -713,6 +838,9 @@
                     "title": "Lighting"
                 },
                 {
+                    "icon": "hass:door-closed",
+                    "path": "doors-windows",
+                    "title": "Doors and Windows",
                     "badges": [],
                     "cards": [
                         {
@@ -732,7 +860,8 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Doors",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -784,15 +913,7 @@
                             "show_header_toggle": false,
                             "title": "Workshop Door",
                             "type": "entities"
-                        }
-                    ],
-                    "icon": "mdi:door-closed-lock",
-                    "path": "doors",
-                    "title": "Doors"
-                },
-                {
-                    "badges": [],
-                    "cards": [
+                        },
                         {
                             "entities": [
                                 {
@@ -807,27 +928,10 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Bedroom Window Shades",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "cover.eyebrow_shade_1_control"
-                                },
-                                {
-                                    "entity": "cover.eyebrow_shade_2_control"
-                                },
-                                {
-                                    "entity": "cover.eyebrow_shade_3_control"
-                                }
-                            ],
-                            "title": "Living Room Window Shades",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         }
-                    ],
-                    "icon": "mdi:window-closed-variant",
-                    "path": "windows",
-                    "title": "Windows"
+                    ]
                 },
                 {
                     "badges": [],
@@ -897,7 +1001,7 @@
                                     "entity": "sensor.master_bedroom_humidity"
                                 },
                                 {
-                                    "entity": "sensor.office_multi_sensor_humidity"
+                                    "entity": "sensor.office_multi_sensor_relative_humidity"
                                 },
                                 {
                                     "entity": "sensor.loft_humidity"
@@ -1466,72 +1570,8 @@
                             "type": "entities"
                         },
                         {
-                            "entities": [
-                                {
-                                    "entity": "sensor.random_book",
-                                    "name": "You Should Read..."
-                                }
-                            ],
-                            "type": "entities"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "input_boolean.get_random_record",
-                                            "name": "Random Record",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            }
-                                        },
-                                        {
-                                            "entity": "input_boolean.get_random_cd",
-                                            "name": "Random CD",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            }
-                                        },
-                                        {
-                                            "entity": "input_boolean.get_random_book",
-                                            "name": "Random Book",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            }
-                                        }
-                                    ],
-                                    "show_state": false,
-                                    "state_color": false,
-                                    "type": "glance"
-                                },
-                                {
-                                    "aspect_ratio": "0%",
-                                    "camera_image": "camera.random_album_cover",
-                                    "entity": "sensor.random_album",
-                                    "show_name": false,
-                                    "show_state": true,
-                                    "type": "picture-entity"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.music_med_value"
-                                }
-                            ],
-                            "hours_to_show": 720,
-                            "refresh_interval": 0,
-                            "type": "history-graph"
-                        },
-                        {
                             "entity": "media_player.loft_main",
                             "type": "media-control"
-                        },
-                        {
-                            "type": "media-control",
-                            "entity": "media_player.office_music_squeezelite"
                         }
                     ],
                     "panel": false,

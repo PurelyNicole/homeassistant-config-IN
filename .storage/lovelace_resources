@@ -39,29 +39,14 @@
                 "url": "/hacsfiles/mini-media-player/mini-media-player-bundle.js"
             },
             {
-                "id": "6f88290a524b41be9555891962164714",
-                "type": "js",
-                "url": "/hacsfiles/light-brightness-preset-row/light-brightness-preset-row.js"
-            },
-            {
                 "id": "0b1395d097ea4787bb635d6216a5610a",
                 "type": "module",
                 "url": "/hacsfiles/lovelace-template-entity-row/template-entity-row.js"
             },
             {
-                "id": "c51f109a468c4480be77e8e3f405b530",
-                "type": "module",
-                "url": "/hacsfiles/config-template-card/config-template-card.js"
-            },
-            {
                 "id": "a580b1488e6e4f4eb7f3b3a3d91c907d",
                 "type": "js",
                 "url": "/hacsfiles/lovelace-swipe-navigation/swipe-navigation.js"
-            },
-            {
-                "id": "a608daf3713843feb8cf80994785fea0",
-                "type": "module",
-                "url": "/hacsfiles/ha-card-weather-conditions/ha-card-weather-conditions.js"
             },
             {
                 "id": "8fd801ec93314bb997a20b0481039acb",
@@ -77,16 +62,6 @@
                 "id": "91dabde5643f4c2d87ee43a90a9de1b3",
                 "type": "module",
                 "url": "/hacsfiles/lovelace-grocy-chores-card/grocy-chores-card.js"
-            },
-            {
-                "id": "d4952b202aee40329c18e98719dd46e0",
-                "type": "module",
-                "url": "/hacsfiles/lovelace-auto-entities/auto-entities.js"
-            },
-            {
-                "id": "1e3f491009ef4046954c34f004e89bf0",
-                "type": "module",
-                "url": "/hacsfiles/custom-header/custom-header.js"
             },
             {
                 "id": "64e5e9191af24978b6afa006a94feb8c",

@@ -1,4 +1,6 @@
 {
+    "version": 1,
+    "key": "input_select",
     "data": {
         "items": [
             {
@@ -21,31 +23,7 @@
                     "Away",
                     "Sleep"
                 ]
-            },
-            {
-                "icon": "mdi:spotify",
-                "id": "spotify_playlist",
-                "name": "Spotify Playlist",
-                "options": [
-                    "Off",
-                    "All Songs Considered",
-                    "Audio Snobbery",
-                    "Family Mix",
-                    "Skatepark Punks"
-                ]
-            },
-            {
-                "icon": "mdi:alpha-n-box",
-                "id": "nicole_wfh_status",
-                "name": "Nicole WFH Status",
-                "options": [
-                    "Come In",
-                    "Do Not Disturb",
-                    "In a Meeting"
-                ]
             }
         ]
-    },
-    "key": "input_select",
-    "version": 1
+    }
 }

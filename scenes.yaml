@@ -14,12 +14,27 @@
     lock.workshop_door_lock_locked: locked
     lock.front_door_lock_locked: locked
   id: c3481ab7e6ad46c996739fdcfd89164a
-- name: Indoor Lights On
+- id: 9d83c933fcc942b48006920571ae5803
+  name: Indoor Lights On
   entities:
-    group.living_room_lights: true
-    group.kitchen_lights: true
-    group.entry_hall_lights: true
-  id: 9d83c933fcc942b48006920571ae5803
+    switch.entryway_light_switch:
+      node_id: 20
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594378272768'
+      friendly_name: Entryway Light
+      state: 'on'
+    light.kitchen_overhead_lights:
+      friendly_name: Kitchen Overhead Lights
+      supported_features: 0
+      state: 'on'
+    switch.table_lamps_switch:
+      node_id: 22
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594411827200'
+      friendly_name: Table Lamps Switch
+      state: 'on'
 - name: Outdoor Lights Off
   entities:
     group.outdoor_lights: false
@@ -62,29 +77,108 @@
       state: 'off'
     switch.fish_tank_light:
       state: 'off'
-- name: Watch TV
+- id: 31056ae2d40b4531acdfb6709544e86f
+  name: Watch TV
   entities:
-    switch.entryway_light_switch: false
-    switch.fireplace_lights_switch: false
-    switch.globe_lamp_switch: false
-    switch.table_lamps_switch: false
-    light.peninsula_light_switch: false
-    light.dining_room_light: false
-    light.kitchen_overhead_lights: false
-    light.loft_fan_light: false
-    light.hallway_lights: false
-  id: 31056ae2d40b4531acdfb6709544e86f
-- name: Play Xbox
-  entities:
-    light.loft_fan_light: true
-    switch.reading_lamp_switch: false
-  id: de3e0d02a4ad49a492754c8209cd8c73
-- name: Read
-  entities:
+    switch.entryway_light_switch:
+      node_id: 20
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594378272768'
+      friendly_name: Entryway Light
+      state: 'off'
+    switch.fireplace_lights_switch:
+      node_id: 19
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594361495552'
+      friendly_name: Fire Place Lights Switch
+      state: 'off'
+    switch.globe_lamp_switch:
+      node_id: 35
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594629931008'
+      friendly_name: Globe Lamp Switch
+      state: 'off'
+    switch.table_lamps_switch:
+      node_id: 22
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594411827200'
+      friendly_name: Table Lamps Switch
+      state: 'off'
+    light.dining_room_light:
+      friendly_name: Dining Room Light
+      supported_features: 1
+      state: 'off'
+    light.kitchen_overhead_lights:
+      friendly_name: Kitchen Overhead Lights
+      supported_features: 0
+      state: 'off'
     light.loft_fan_light:
-      state: false
-    switch.reading_lamp_switch:
-      state: true
-    light.alcove_light_switch:
-      state: false
-  id: 43a17a2f033f46d191eed82ff5e91de4
+      friendly_name: Loft Fan Light
+      supported_features: 0
+      state: 'off'
+    light.hallway_lights:
+      friendly_name: Hallway Lights
+      supported_features: 0
+      state: 'off'
+    light.peninsula_light_switch:
+      friendly_name: Peninsula Light Switch
+      supported_features: 0
+      state: 'off'
+- id: '1602271496816'
+  name: Read
+  entities:
+    light.office_rgbw:
+      brightness: 145
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Office RGBW
+      supported_features: 17
+      state: 'on'
+    light.guest_room_floor_lamp:
+      friendly_name: Guest Room Floor Lamp
+      supported_features: 0
+      state: 'off'
+    light.guest_room_bed_lamp:
+      friendly_name: Guest Room Bed Lamp
+      supported_features: 0
+      state: 'on'
+  icon: mdi:book-open-page-variant
+- id: '1602271670314'
+  name: Work
+  entities:
+    light.office_rgbw:
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Office RGBW
+      supported_features: 17
+      state: 'on'
+    light.guest_room_floor_lamp:
+      friendly_name: Guest Room Floor Lamp
+      supported_features: 0
+      state: 'on'
+    light.guest_room_bed_lamp:
+      friendly_name: Guest Room Bed Lamp
+      supported_features: 0
+      state: 'on'
+  icon: fas:laptop-house
