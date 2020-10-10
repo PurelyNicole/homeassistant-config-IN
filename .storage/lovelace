@@ -391,13 +391,13 @@
                                     "entity": "light.wled_barlights"
                                 },
                                 {
-                                    "entity": "light.fireplace_lights"
+                                    "entity": "switch.fireplace_lights_switch"
                                 },
                                 {
-                                    "entity": "light.globe_lamp"
+                                    "entity": "switch.globe_lamp_switch"
                                 },
                                 {
-                                    "entity": "light.table_lamps"
+                                    "entity": "switch.table_lamps_switch"
                                 },
                                 {
                                     "type": "divider"
@@ -406,7 +406,7 @@
                                     "entity": "light.hallway_lights"
                                 },
                                 {
-                                    "entity": "light.entryway_light"
+                                    "entity": "switch.entryway_light_switch"
                                 }
                             ],
                             "title": "Living Room Lights",
@@ -597,13 +597,13 @@
                                     "entity": "light.wled_barlights"
                                 },
                                 {
-                                    "entity": "light.fireplace_lights"
+                                    "entity": "switch.fireplace_lights_switch"
                                 },
                                 {
-                                    "entity": "light.globe_lamp"
+                                    "entity": "switch.globe_lamp_switch"
                                 },
                                 {
-                                    "entity": "light.table_lamps"
+                                    "entity": "switch.table_lamps_switch"
                                 },
                                 {
                                     "entity": "switch.fish_tank_light",
@@ -616,7 +616,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.entryway_light"
+                                    "entity": "switch.entryway_light_switch"
                                 },
                                 {
                                     "entity": "light.hallway_lights"
@@ -731,7 +731,7 @@
                                     "entity": "light.desk_light_switch"
                                 },
                                 {
-                                    "entity": "light.reading_lamp"
+                                    "entity": "switch.reading_lamp_switch"
                                 },
                                 {
                                     "entity": "light.loft_fan_light"
@@ -753,7 +753,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.deck_flood_lights"
+                                    "entity": "switch.deck_flood_lights_switch"
                                 },
                                 {
                                     "entity": "light.flood_light_1"
@@ -765,13 +765,13 @@
                                     "entity": "light.flood_light_3"
                                 },
                                 {
-                                    "entity": "light.garage_flood_lights"
+                                    "entity": "switch.garage_flood_lights_switch"
                                 },
                                 {
-                                    "entity": "light.landscaping_lights"
+                                    "entity": "switch.landscaping_lights"
                                 },
                                 {
-                                    "entity": "light.pergola_fan"
+                                    "entity": "switch.pergola_fan"
                                 },
                                 {
                                     "entity": "light.pond_light"
@@ -780,7 +780,7 @@
                                     "entity": "light.porch_light"
                                 },
                                 {
-                                    "entity": "light.workshop_light"
+                                    "entity": "switch.workshop_light_switch"
                                 }
                             ],
                             "title": "Outdoor Lights",
@@ -805,7 +805,7 @@
                                         "type": "divider"
                                     },
                                     {
-                                        "entity": "light.outdoor_string_lights"
+                                        "entity": "switch.outdoor_string_lights"
                                     },
                                     {
                                         "type": "divider"

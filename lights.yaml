@@ -2,46 +2,14 @@
 # Group #
 #########
 - platform: group
-  name: Outdoor Lights
-  entities:
-    - light.deck_flood_lights
-    - light.flood_light_1
-    - light.flood_light_2
-    - light.flood_light_3
-    - light.garage_flood_lights
-    - light.landscaping_lights
-    - light.patio_flood_lights
-    - light.pier_lights
-    - light.pond_light
-    - light.porch_light
-    - light.workshop_light
-- platform: group
   name: Holiday Lights
   entities:
-    - light.outdoor_string_lights
     - light.wled1_outsidelow
     - light.wled1_outsidelow_2
     - light.wled2_outsidegara
     - light.wled2_outsidegara_2
     - light.wled3_outsideeyebrow
     - light.wled3_outsideeyebrow_2
-- platform: group
-  name: Bedroom Lights
-  entities:
-    - light.bathroom_mirror_led
-    - light.bathroom_shower
-    - light.bathroom_vanity_light
-    - light.bedroom_closet_light_switch
-    - light.bedroom_entry_light
-    - light.bedroom_light_switch
-- platform: group
-  name: Living Room Lights
-  entities:
-    - light.bar_lights
-    - light.fireplace_lights
-    - light.globe_lamp
-    - light.table_lamps
-
 ########
 # MQTT #
 ########
@@ -57,6 +25,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 68c63ae39ab9
 # Bedroom Lights
 - platform: mqtt
   name: "Bedroom Light Switch"
@@ -73,6 +42,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: true
+  unique_id: cc50e3c2f564
 - platform: mqtt
   name: "Bedroom Entry Light"
   state_topic: "stat/BedroomEntry/POWER"
@@ -88,6 +58,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 807d3a3730e8
 - platform: mqtt
   name: "Bathroom Vanity Light"
   state_topic: "stat/BathroomVanity/POWER"
@@ -103,6 +74,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: cc50e3c394c8
 - platform: mqtt
   name: "Bedroom Closet Light Switch"
   state_topic: "stat/MB_closetlight_shelly/POWER"
@@ -114,6 +86,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 98f4abf282de
   # Dining Room Lights
 - platform: mqtt
   name: "Dining Room Light"
@@ -130,6 +103,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 807d3a3730c5
   # Gym Lights
 - platform: mqtt
   name: "Gym Light Switch"
@@ -146,6 +120,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 807d3a5c9b29
   # Loft Lights
 - platform: mqtt
   name: "Desk Light Switch"
@@ -162,6 +137,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 807d3a5ca594
 - platform: mqtt
   name: "Alcove Light Switch"
   state_topic: "stat/LoftAlcoveLight/POWER"
@@ -173,6 +149,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: cc50e3ca725e
 - platform: mqtt
   name: "Half Bath Switch"
   state_topic: "stat/HalfBath/POWER"
@@ -493,48 +470,6 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-##########
-# Switch #
-##########
-- platform: switch
-  name: Bar Lights
-  entity_id: switch.bar_lights_switch
-- platform: switch
-  name: Deck Flood Lights
-  entity_id: switch.deck_flood_lights_switch
-- platform: switch
-  name: Entryway Light
-  entity_id: switch.entryway_light_switch
-- platform: switch
-  name: Fireplace Lights
-  entity_id: switch.fireplace_lights_switch
-- platform: switch
-  name: Garage Flood Lights
-  entity_id: switch.garage_flood_lights_switch
-- platform: switch
-  name: Globe Lamp
-  entity_id: switch.globe_lamp_switch
-- platform: switch
-  name: Landscaping Lights
-  entity_id: switch.landscaping_lights
-- platform: switch
-  name: Outdoor String Lights
-  entity_id: switch.outdoor_string_lights
-- platform: switch
-  name: Patio Flood Lights
-  entity_id: switch.patio_flood_lights_switch
-- platform: switch
-  name: Pergola Fan
-  entity_id: switch.pergola_fan
-- platform: switch
-  name: Reading Lamp
-  entity_id: switch.reading_lamp_switch
-- platform: switch
-  name: Table Lamps
-  entity_id: switch.table_lamps_switch
-- platform: switch
-  name: Workshop Light
-  entity_id: switch.workshop_light_switch
 ###################
 # Template Lights #
 ###################
@@ -555,6 +490,7 @@
           state: 'on'
         - service: light.turn_off
           entity_id: light.hallway_lights_mqtt
+      unique_id: hallway_three_way_light
     kitchen_overhead_lights:
       friendly_name: Kitchen Overhead Lights
       value_template: '{{ is_state("light.kitchen_overheadlights_mqtt", "on") }}'
@@ -570,3 +506,4 @@
           state: 'on'
         - service: light.turn_off
           entity_id: light.kitchen_overheadlights_mqtt
+      unique_id: kitchen_overhead_three_way_light

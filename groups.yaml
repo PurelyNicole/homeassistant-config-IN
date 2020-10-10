@@ -29,7 +29,7 @@ people:
 entry_hall_lights:
   name: Entry/Hall Lights
   entities:
-    - light.entryway_light
+    - switch.entryway_light_switch
     - light.hallway_lights
     - light.hall_bath_switch
 guest_room_lights:
@@ -51,13 +51,13 @@ living_room_lights:
   name: Living Room Lights
   entities:
     - light.wled_barlights
-    - light.fireplace_lights
-    - light.globe_lamp
-    - light.table_lamps
+    - switch.fireplace_lights_switch
+    - switch.globe_lamp_switch
+    - switch.table_lamps_switch
 loft_lights:
   name: Loft Lights
   entities:
-    - light.reading_lamp
+    - switch.reading_lamp_switch
     - light.desk_light_switch
     - light.alcove_light_switch
     - light.loft_fan_light
@@ -75,14 +75,14 @@ master_bedroom_lights:
 outdoor_lights:
   name: Outdoor Lights
   entities:
-    - light.deck_flood_lights
-    - light.garage_flood_lights
-    - light.landscaping_lights
-    - light.patio_flood_lights
+    - switch.deck_flood_lights_switch
+    - switch.garage_flood_lights_switch
+    - switch.landscaping_lights
+    - switch.patio_flood_lights_switch
     - light.pier_lights
     - light.porch_light
-    - light.workshop_light
+    - switch.workshop_light_switch
     - light.pond_light
-    - light.pergola_fan
+    - switch.pergola_fan
 indoor_lights:
   - group.entry_hall_lights
