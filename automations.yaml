@@ -148,15 +148,11 @@
   - condition: state
     entity_id: input_select.home_mode
     state: Home
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: remote.living_room
-      state: 'off'
   action:
   - data:
       entity_id: scene.indoor_lights_on
     service: scene.turn_on
+  mode: single
 - alias: Scene - Turn On Lights When Someone Arrives Home At Dusk or Night
   id: '1523015798070'
   trigger:
@@ -370,26 +366,34 @@
   - data:
       notification_id: 49980
     service: persistent_notification.dismiss
-- alias: Lighting - Outdoor Lights on at Sunset
-  id: '1581713139579'
+- id: '1581713139579'
+  alias: Lighting - Outdoor Lights on at Sunset
   description: ''
   trigger:
   - event: sunset
     platform: sun
   condition: []
   action:
-  - entity_id: light.outdoor_lights
-    service: light.turn_on
-- alias: Lighting - Outdoor Lights Off at Sunrise
-  id: '1581713222232'
+  - entity_id: group.outdoor_lights
+    service: switch.turn_on
+  - service: light.turn_on
+    data: {}
+    entity_id: group.outdoor_lights
+  mode: single
+- id: '1581713222232'
+  alias: Lighting - Outdoor Lights Off at Sunrise
   description: ''
   trigger:
   - event: sunrise
     platform: sun
   condition: []
   action:
-  - entity_id: light.outdoor_lights
-    service: light.turn_off
+  - entity_id: group.outdoor_lights
+    service: switch.turn_off
+  - service: light.turn_off
+    data: {}
+    entity_id: group.outdoor_lights
+  mode: single
 - id: '1581973044961'
   alias: Switch - Turn Off Humidifiers At Morning
   description: ''

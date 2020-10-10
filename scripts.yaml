@@ -1,7 +1,1 @@
-lock_all_doors:
-  alias: Locks - Lock All Doors
-  description: Sets all doors to Locked state.
-  sequence:
-  - service: lock.lock
-    data_template:
-      entity_id: all
+{}
