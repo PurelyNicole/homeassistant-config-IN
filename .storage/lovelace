@@ -11,13 +11,15 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "device_tracker.galaxy_s9"
+                                    "entity": "device_tracker.galaxy_s9",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
                                     "entity": "sensor.galaxy_s9_battery_level"
                                 },
                                 {
-                                    "entity": "device_tracker.pixel_3a"
+                                    "entity": "device_tracker.pixel_3a",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
                                     "entity": "sensor.pixel_3a_battery_level"
@@ -47,6 +49,10 @@
                                 },
                                 {
                                     "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_garage_door_sensor",
                                     "secondary_info": "last-changed"
                                 },
                                 {
@@ -291,28 +297,25 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "cover.garage_door",
-                                            "secondary_info": "last-changed"
+                                            "entity": "cover.garage_door"
                                         },
                                         {
-                                            "entity": "lock.kitchen_door_lock_locked",
-                                            "secondary_info": "last-changed"
+                                            "entity": "lock.kitchen_door_lock_locked"
                                         },
                                         {
-                                            "entity": "lock.workshop_door_lock_locked",
-                                            "secondary_info": "last-changed"
+                                            "entity": "lock.workshop_door_lock_locked"
                                         },
                                         {
-                                            "entity": "lock.front_door_lock_locked",
-                                            "secondary_info": "last-changed"
+                                            "entity": "lock.front_door_lock_locked"
                                         },
                                         {
-                                            "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
-                                            "secondary_info": "last-changed"
+                                            "entity": "binary_sensor.kitchen_patio_door_motion_sensor"
                                         },
                                         {
-                                            "entity": "binary_sensor.living_room_door_sensor",
-                                            "secondary_info": "last-changed"
+                                            "entity": "binary_sensor.kitchen_garage_door_sensor"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.living_room_door_sensor"
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -735,9 +738,6 @@
                                     "entity": "light.desk_light_switch"
                                 },
                                 {
-                                    "entity": "switch.reading_lamp_switch"
-                                },
-                                {
                                     "entity": "light.loft_fan_light"
                                 },
                                 {
@@ -852,7 +852,15 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "cover.garage_door",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
                                     "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_garage_door_sensor",
                                     "secondary_info": "last-changed"
                                 },
                                 {
@@ -860,7 +868,11 @@
                                     "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "cover.garage_door",
+                                    "entity": "binary_sensor.bedroom_door_sensor",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "binary_sensor.home_office_door_sensor",
                                     "secondary_info": "last-changed"
                                 }
                             ],
@@ -967,28 +979,36 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.ambient_weather_indoor_temp"
+                                    "entity": "sensor.ambient_weather_indoor_temp",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.living_room_thermostat_temperature"
+                                    "entity": "sensor.living_room_thermostat_temperature",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.master_bedroom_temperature"
+                                    "entity": "sensor.master_bedroom_temperature",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.office_multi_sensor_temperature"
+                                    "entity": "sensor.office_multi_sensor_temperature",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.loft_temperature"
+                                    "entity": "sensor.loft_temperature",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.network_rack_temperature"
+                                    "entity": "sensor.network_rack_temperature",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.crawlspace_temperature"
+                                    "entity": "sensor.crawlspace_temperature",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.utility_room_moisture_temperature"
+                                    "entity": "sensor.utility_room_moisture_temperature",
+                                    "secondary_info": "last-changed"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -998,25 +1018,32 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.ambient_weather_indoor_humidity"
+                                    "entity": "sensor.ambient_weather_indoor_humidity",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.living_room_thermostat_humidity"
+                                    "entity": "sensor.living_room_thermostat_humidity",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.master_bedroom_humidity"
+                                    "entity": "sensor.master_bedroom_humidity",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.office_multi_sensor_relative_humidity"
+                                    "entity": "sensor.office_multi_sensor_relative_humidity",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.loft_humidity"
+                                    "entity": "sensor.loft_humidity",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.network_rack_humidity"
+                                    "entity": "sensor.network_rack_humidity",
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.crawlspace_humidity"
+                                    "entity": "sensor.crawlspace_humidity",
+                                    "secondary_info": "last-changed"
                                 }
                             ],
                             "show_header_toggle": false,

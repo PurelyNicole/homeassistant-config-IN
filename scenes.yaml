@@ -23,6 +23,7 @@
       value_instance: 1
       value_id: '72057594378272768'
       friendly_name: Entryway Light
+      icon: hass:lightbulb
       state: 'on'
     light.kitchen_overhead_lights:
       friendly_name: Kitchen Overhead Lights
@@ -34,15 +35,122 @@
       value_instance: 1
       value_id: '72057594411827200'
       friendly_name: Table Lamps Switch
+      icon: hass:lightbulb
       state: 'on'
-- name: Outdoor Lights Off
-  entities:
-    group.outdoor_lights: false
-  id: 565dc597cafe4a84baabb94227920fda
-- name: Outdoor Lights On
-  entities:
-    group.outdoor_lights: true
-  id: 2c3878292ee64cc9a7d304c106e235f5
+    light.peninsula_light_switch:
+      friendly_name: Peninsula Light Switch
+      supported_features: 0
+      state: 'on'
+    light.under_cabinet_lights_switch:
+      friendly_name: Under Cabinet Lights Switch
+      supported_features: 0
+      state: 'on'
+    zwave.fireplace_lights:
+      node_id: 19
+      node_name: Fireplace Lights
+      manufacturer_name: GE
+      product_name: 12722 On/Off Relay Switch
+      query_stage: Complete
+      is_awake: true
+      is_ready: true
+      is_failed: false
+      is_info_received: true
+      max_baud_rate: 40000
+      is_zwave_plus: false
+      capabilities:
+      - listening
+      - beaming
+      - routing
+      neighbors:
+      - 2
+      - 3
+      - 34
+      - 35
+      - 6
+      - 7
+      - 36
+      - 9
+      - 13
+      - 17
+      - 20
+      - 54
+      - 56
+      - 28
+      - 30
+      sentCnt: 217
+      sentFailed: 3
+      retries: 3
+      receivedCnt: 207
+      receivedDups: 0
+      receivedUnsolicited: 0
+      sentTS: '2020-10-11 18:18:33:245 '
+      receivedTS: '2020-10-11 18:18:33:361 '
+      lastRequestRTT: 60
+      averageRequestRTT: 60
+      lastResponseRTT: 116
+      averageResponseRTT: 116
+      application_version: '3.29'
+      friendly_name: Fireplace Lights
+      state: ready
+    switch.fireplace_lights_switch:
+      node_id: 19
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594361495552'
+      friendly_name: Fire Place Lights Switch
+      icon: hass:lightbulb
+      state: 'on'
+    zwave.globe_lamp:
+      node_id: 35
+      node_name: Globe Lamp
+      manufacturer_name: GE
+      product_name: 14288 Duplex Receptacle
+      query_stage: Complete
+      is_awake: true
+      is_ready: true
+      is_failed: false
+      is_info_received: true
+      max_baud_rate: 40000
+      is_zwave_plus: true
+      capabilities:
+      - listening
+      - zwave_plus
+      - beaming
+      - routing
+      neighbors:
+      - 3
+      - 36
+      - 6
+      - 7
+      - 13
+      - 17
+      - 19
+      - 22
+      - 56
+      - 30
+      sentCnt: 18
+      sentFailed: 0
+      retries: 5
+      receivedCnt: 9
+      receivedDups: 0
+      receivedUnsolicited: 2
+      sentTS: '2020-10-11 18:18:38:121 '
+      receivedTS: '2020-10-11 18:18:38:273 '
+      lastRequestRTT: 75
+      averageRequestRTT: 87
+      lastResponseRTT: 151
+      averageResponseRTT: 174
+      application_version: '5.23'
+      friendly_name: Globe Lamp
+      state: ready
+    switch.globe_lamp_switch:
+      node_id: 35
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594629931008'
+      friendly_name: Globe Lamp Switch
+      icon: hass:lightbulb
+      state: 'on'
 - name: Sleep
   id: 33bbe74c95a24b1a901f785a056edd70
   entities:
@@ -86,6 +194,7 @@
       value_instance: 1
       value_id: '72057594378272768'
       friendly_name: Entryway Light
+      icon: hass:lightbulb
       state: 'off'
     switch.fireplace_lights_switch:
       node_id: 19
@@ -93,6 +202,7 @@
       value_instance: 1
       value_id: '72057594361495552'
       friendly_name: Fire Place Lights Switch
+      icon: hass:lightbulb
       state: 'off'
     switch.globe_lamp_switch:
       node_id: 35
@@ -100,6 +210,7 @@
       value_instance: 1
       value_id: '72057594629931008'
       friendly_name: Globe Lamp Switch
+      icon: hass:lightbulb
       state: 'off'
     switch.table_lamps_switch:
       node_id: 22
@@ -107,6 +218,7 @@
       value_instance: 1
       value_id: '72057594411827200'
       friendly_name: Table Lamps Switch
+      icon: hass:lightbulb
       state: 'off'
     light.dining_room_light:
       friendly_name: Dining Room Light
@@ -128,6 +240,113 @@
       friendly_name: Peninsula Light Switch
       supported_features: 0
       state: 'off'
+    light.wled_barlights:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - Android
+      - BPM
+      - Blink
+      - Blink Rainbow
+      - Breathe
+      - Chase
+      - Chase
+      - Chase Flash
+      - Chase Flash Rnd
+      - Chase Rainbow
+      - Chase Rainbow
+      - Chase Random
+      - Circus
+      - Colorful
+      - Colorloop
+      - Colortwinkle
+      - Colorwaves
+      - Dark Sparkle
+      - Dissolve
+      - Dissolve Rnd
+      - Dual Scan
+      - Dual Scanner
+      - Dynamic
+      - Fade
+      - Fill Noise
+      - Fire 2012
+      - Fire Flicker
+      - Fireworks
+      - Gradient
+      - Halloween
+      - ICU
+      - In In
+      - In Out
+      - Juggle
+      - Lake
+      - Lighthouse
+      - Lightning
+      - Loading
+      - Mega Strobe
+      - Merry Christmas
+      - Meteor
+      - Multi Comet
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Oscillate
+      - Out In
+      - Out Out
+      - Palette
+      - Pride 2015
+      - Railway
+      - Rain
+      - Rainbow
+      - Rainbow Runner
+      - Random Colors
+      - Red & Blue
+      - Ripple
+      - Running
+      - Running 2
+      - Saw
+      - Scan
+      - Scanner
+      - Smooth Meteor
+      - Solid
+      - Sparkle
+      - Sparkle+
+      - Stream
+      - Stream 2
+      - Strobe
+      - Strobe Rainbow
+      - Sweep
+      - Sweep Random
+      - Traffic Light
+      - Tri Chase
+      - Tri Fade
+      - Tri Wipe
+      - Twinkle
+      - Twinklefox
+      - Wipe
+      - Wipe Random
+      brightness: 11
+      hs_color:
+      - 29.836
+      - 71.765
+      rgb_color:
+      - 255
+      - 162
+      - 71
+      xy_color:
+      - 0.542
+      - 0.392
+      effect: Solid
+      intensity: 128
+      palette: Default
+      playlist:
+      preset:
+      reverse: false
+      speed: 75
+      friendly_name: WLED_BarLights
+      icon: mdi:led-strip-variant
+      supported_features: 55
+      state: 'on'
 - id: '1602271496816'
   name: Read
   entities:

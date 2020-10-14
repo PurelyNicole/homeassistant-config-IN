@@ -1,5 +1,5 @@
-- alias: Scene - Turn Off Lights When Watching TV at Night
-  id: '1522876316388'
+- id: '1522876316388'
+  alias: Scene - Turn Off Lights When Watching TV at Night
   trigger:
   - platform: template
     value_template: '{{states.remote.living_room.attributes.current_activity == "Watch
@@ -8,7 +8,7 @@
     value_template: '{{states.remote.living_room.attributes.current_activity == "Watch
       Roku"}} '
   condition:
-  - after: '19:29'
+  - after: '19:00'
     condition: time
   - condition: state
     entity_id: input_select.home_mode
@@ -17,6 +17,7 @@
   - data:
       entity_id: scene.watch_tv
     service: scene.turn_on
+  mode: single
 - id: '1522888948173'
   alias: Guest Room - Turn on lights with wall switch
   trigger:
@@ -217,23 +218,6 @@
   - data:
       entity_id: light.bedroom_light_switch
     service: light.turn_off
-- id: '1649208103764'
-  alias: Switch - Turn on Humidifiers at Night
-  trigger:
-  - entity_id: binary_sensor.night
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - type: turn_on
-    device_id: 77972d09c4204f5095233e8d46f78bb6
-    entity_id: switch.bedroom_humidifier
-    domain: switch
-  - type: turn_on
-    device_id: ca0d575e83874565b700fddd31f336c2
-    entity_id: switch.office_fan_humidifier_switch
-    domain: switch
-  mode: single
 - alias: Loft - Fan Light Off With Wall Switch
   id: '1573825610778'
   description: Turn of the ceiling fan light with the wall switch. Also set the fan
@@ -374,11 +358,9 @@
     platform: sun
   condition: []
   action:
-  - entity_id: group.outdoor_lights
-    service: switch.turn_on
-  - service: light.turn_on
+  - service: script.turn_on
     data: {}
-    entity_id: group.outdoor_lights
+    entity_id: script.1602368387747
   mode: single
 - id: '1581713222232'
   alias: Lighting - Outdoor Lights Off at Sunrise
@@ -388,11 +370,9 @@
     platform: sun
   condition: []
   action:
-  - entity_id: group.outdoor_lights
-    service: switch.turn_off
-  - service: light.turn_off
+  - service: script.turn_on
     data: {}
-    entity_id: group.outdoor_lights
+    entity_id: script.1602368387748
   mode: single
 - id: '1581973044961'
   alias: Switch - Turn Off Humidifiers At Morning
@@ -425,12 +405,16 @@
       message: Print complete.
     service: notify.mobile_app_pixel_3a
 - id: '1600964645726'
-  alias: Lighting - Turn garage light on with door open
-  description: ''
+  alias: Garage - Turn garage light on with door open
+  description: Turn on the garage light when either door to the garage is opened.
   trigger:
   - entity_id: cover.garage_door
     platform: state
     to: open
+  - platform: state
+    entity_id: binary_sensor.kitchen_garage_door_sensor
+    from: 'off'
+    to: 'on'
   condition: []
   action:
   - data: {}
@@ -466,19 +450,60 @@
     entity_id: media_player.office_music_squeezelite
   mode: single
 - id: '1602094793399'
-  alias: Office - Turn fan off when I wake up
+  alias: Office - Turn fan/humidifier off when I wake up
   description: Look for motion between 6:30-9:30, and turn off fan when it's detected.
   trigger:
   - platform: state
-    entity_id: binary_sensor.office_motion_sensor
+    entity_id: binary_sensor.home_office_door_sensor
     from: 'off'
     to: 'on'
   condition:
   - condition: time
     after: '6:30'
-    before: '9:30'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    before: '7:30'
+  - condition: time
+    weekday:
+    - sat
+    - sun
+    after: '8:00'
+    before: '10:00'
   action:
   - service: switch.turn_off
     data: {}
     entity_id: switch.office_fan_humidifier_switch
+  mode: single
+- id: '1602610938827'
+  alias: Bedroom - Turn off humidifier when everyone wakes up
+  description: When the bedroom door is opened between 6:00 and 13:00, and no phones
+    are charging, turn off the humidifier.
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.bedroom_door_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+  - type: is_not_plugged_in
+    condition: device
+    device_id: c05f4c9d3c894cb7aa86080865fa4c08
+    entity_id: binary_sensor.galaxys9_is_charging
+    domain: binary_sensor
+  - type: is_not_plugged_in
+    condition: device
+    device_id: e6c6a573bc544ba7b3f030f34c4b40d3
+    entity_id: binary_sensor.pixel_3a_is_charging
+    domain: binary_sensor
+  - condition: time
+    after: '6:00'
+    before: '13:00'
+  action:
+  - type: turn_off
+    device_id: 77972d09c4204f5095233e8d46f78bb6
+    entity_id: switch.bedroom_humidifier
+    domain: switch
   mode: single

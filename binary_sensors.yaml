@@ -1,6 +1,6 @@
-########
-# MQTT #
-########
+################
+# MQTT Sensors #
+################
 # rf bridge PIR
 - platform: mqtt
   state_topic: "tele/RFBridge/RESULT"
@@ -10,6 +10,7 @@
   payload_off: '9B1620off'
   device_class: motion
   qos: 1
+  unique_id: mailbox_pir_sensor
 - platform: mqtt
   state_topic: "tele/RFBridge/RESULT"
   name: 'Closet PIR'
@@ -18,6 +19,7 @@
   payload_off: '121619off'
   device_class: motion
   qos: 1
+  unique_id: closet_pir_sensor
 - platform: mqtt
   state_topic: "tele/RFBridge/RESULT"
   name: 'Garage PIR 1'
@@ -26,6 +28,7 @@
   payload_off: 'F22A20off'
   device_class: motion
   qos: 1
+  unique_id: garage_pir_sensor_1
 - platform: mqtt
   state_topic: "tele/RFBridge/RESULT"
   name: 'Garage PIR 2'
@@ -34,6 +37,7 @@
   payload_off: '937860off'
   device_class: motion
   qos: 1
+  unique_id: garage_pir_sensor_2
 # Blue Irs Motion
 - platform: mqtt
   state_topic: "BI/PorchCam"
@@ -41,33 +45,60 @@
   payload_on: 'Motion'
   payload_off: 'Clear'
   device_class: motion
+  unique_id: bi_porch_cam_motion
 - platform: mqtt
   state_topic: "BI/Driveway"
   name: 'Driveway Camera Motion'
   payload_on: 'Motion'
   payload_off: 'Clear'
   device_class: motion
+  unique_id: bi_driveway_cam_motion
 - platform: mqtt
   state_topic: "BI/DrivewayVehicleMotion"
   name: 'Driveway Vehicle Motion'
   payload_on: 'Motion'
   payload_off: 'Clear'
   device_class: motion
+  unique_id: bi_driveway_cam_vehicle_motion
 
 ####################
 # Template Sensors #
 ####################
 - platform: template
   sensors: 
+    # Doors
     living_room_door_sensor:
       friendly_name: "Living Room Door"
       device_class: door
       value_template: "{{ is_state('sensor.living_room_door_sensor_access_control', '22') }}"
+      unique_id: living_room_door_sensor_id
+    kitchen_patio_door_motion_sensor:
+      friendly_name: "Kitchen Patio Door"
+      device_class: door
+      value_template: "{{ is_state('sensor.kitchen_patio_door_motion_alarm_level', '255') }}"
+      unique_id: kitchen_patio_door_motion_sensor_id
+    home_office_door_sensor:
+      friendly_name: "Office Door"
+      device_class: door
+      value_template: "{{ is_state('sensor.home_office_door_sensor_access_control', '22') }}"
+      unique_id: home_office_door_sensor_id
+    kitchen_garage_door_sensor:
+      friendly_name: "Kitchen Garage Door"
+      device_class: door
+      value_template: "{{ is_state('sensor.kitchen_garage_door_access_control', '22') }}"
+      unique_id: kitchen_garage_door_sensor_id
+    bedroom_door_sensor:
+      friendly_name: "Bedroom Door"
+      device_class: door
+      value_template: "{{ is_state('sensor.bedroom_door_access_control', '22') }}"
+      unique_id: bedroom_door_sensor_id
+    # Motion
     office_motion_sensor:
       friendly_name: "Office Multi Sensor"
       device_class: motion
       unique_id: 15902office
-      value_template: "{{ is_state('sensor.office_multi_sensor_alarm_type', '8') }}"
+      value_template: "{{ is_state('sensor.office_multi_sensor_burglar', '8') }}"
+    
 
 ######################
 # Time of Day Sensor #

@@ -1,1 +1,95 @@
-{}
+'1602368387747':
+  alias: Turn On Outdoor Lights
+  sequence:
+  - type: turn_on
+    device_id: a3695db9f1e4454ab64bc0b2ac73d86d
+    entity_id: switch.deck_flood_lights_switch
+    domain: switch
+  - type: turn_on
+    device_id: 77b67cd8780b4e9fb88a4f6086b15ca4
+    entity_id: switch.garage_flood_lights_switch
+    domain: switch
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.landscaping_lights
+  - type: turn_on
+    device_id: 70a2e890c74143c587d78cc62b13c037
+    entity_id: switch.patio_flood_lights_switch
+    domain: switch
+  - service: light.turn_on
+    data: {}
+    entity_id: light.pier_lights
+  - type: turn_on
+    device_id: 3e3c1d178af245d68ca59fd29f0ad9ff
+    entity_id: switch.porch_light_switch
+    domain: switch
+  - type: turn_on
+    device_id: 9d0c5314411448cc9a06e76d650c348c
+    entity_id: switch.workshop_light_switch
+    domain: switch
+  - service: light.turn_on
+    data: {}
+    entity_id: light.pond_light
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.porch_light_switch
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.workshop_light_switch
+  mode: single
+'1602368387748':
+  alias: Turn Off Outdoor Lights
+  sequence:
+  - type: turn_off
+    device_id: a3695db9f1e4454ab64bc0b2ac73d86d
+    entity_id: switch.deck_flood_lights_switch
+    domain: switch
+  - type: turn_off
+    device_id: 77b67cd8780b4e9fb88a4f6086b15ca4
+    entity_id: switch.garage_flood_lights_switch
+    domain: switch
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.landscaping_lights
+  - type: turn_off
+    device_id: 70a2e890c74143c587d78cc62b13c037
+    entity_id: switch.patio_flood_lights_switch
+    domain: switch
+  - service: light.turn_off
+    data: {}
+    entity_id: light.pier_lights
+  - type: turn_off
+    device_id: 3e3c1d178af245d68ca59fd29f0ad9ff
+    entity_id: switch.porch_light_switch
+    domain: switch
+  - type: turn_off
+    device_id: 9d0c5314411448cc9a06e76d650c348c
+    entity_id: switch.workshop_light_switch
+    domain: switch
+  - service: light.turn_off
+    data: {}
+    entity_id: light.pond_light
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.porch_light_switch
+  - type: turn_off
+    device_id: 3e3c1d178af245d68ca59fd29f0ad9ff
+    entity_id: switch.porch_light_switch
+    domain: switch
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.workshop_light_switch
+  - type: turn_off
+    device_id: 9d0c5314411448cc9a06e76d650c348c
+    entity_id: switch.workshop_light_switch
+    domain: switch
+  - service: light.turn_off
+    data: {}
+    entity_id: light.flood_light_1
+  - service: light.turn_off
+    data: {}
+    entity_id: light.flood_light_2
+  - service: light.turn_off
+    data: {}
+    entity_id: light.flood_light_3
+  mode: single
