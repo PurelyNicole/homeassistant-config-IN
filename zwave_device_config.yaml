@@ -1,0 +1,129 @@
+sensor.bedroom_door_alarm_type:
+  ignored: true
+  polling_intensity: 0
+sensor.bedroom_door_burglar:
+  ignored: true
+  polling_intensity: 0
+sensor.bedroom_door_clock:
+  ignored: true
+  polling_intensity: 0
+sensor.bedroom_door_homehealth:
+  ignored: true
+  polling_intensity: 0
+binary_sensor.bedroom_door_sensor_do_not_use:
+  ignored: true
+  polling_intensity: 0
+sensor.bedroom_door_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_exporting:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_interval:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_interval_2:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_previous_reading:
+  ignored: true
+  polling_intensity: 0
+sensor.humidifier_previous_reading_2:
+  ignored: true
+  polling_intensity: 0
+binary_sensor.home_office_door_sensor_sensor_do_not_use:
+  ignored: true
+  polling_intensity: 0
+sensor.home_office_door_sensor_alarm_type:
+  ignored: true
+  polling_intensity: 0
+sensor.home_office_door_sensor_appliance:
+  ignored: true
+  polling_intensity: 0
+sensor.home_office_door_sensor_burglar:
+  ignored: true
+  polling_intensity: 0
+sensor.home_office_door_sensor_homehealth:
+  ignored: true
+  polling_intensity: 0
+sensor.home_office_door_sensor_power_management:
+  ignored: true
+  polling_intensity: 0
+sensor.home_office_door_sensor_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.home_office_door_sensor_system:
+  ignored: true
+  polling_intensity: 0
+binary_sensor.kitchen_garage_door_do_not_use:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_garage_door_appliance:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_garage_door_burglar:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_garage_door_clock:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_garage_door_emergency:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_garage_door_homehealth:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_garage_door_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_garage_door_window_sensor_alarm_level:
+  ignored: false
+  polling_intensity: 0
+sensor.kitchen_garage_door_window_sensor_alarm_type:
+  ignored: true
+  polling_intensity: 0
+binary_sensor.kitchen_patio_door_motion_sensor_do_not_use:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_patio_door_motion_alarm_type:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_patio_door_motion_burglar:
+  ignored: true
+  polling_intensity: 0
+sensor.kitchen_patio_door_motion_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.living_room_door_sensor_appliance:
+  ignored: true
+  polling_intensity: 0
+sensor.living_room_door_sensor_burglar:
+  ignored: true
+  polling_intensity: 0
+sensor.living_room_door_sensor_clock:
+  ignored: true
+  polling_intensity: 0
+sensor.living_room_door_sensor_sourcenodeid:
+  ignored: true
+  polling_intensity: 0
+sensor.living_room_door_sensor_system:
+  ignored: true
+  polling_intensity: 0
+sensor.vision_security_zd2102_eu_door_window_sensor_alarm_type:
+  ignored: true
+  polling_intensity: 0
+binary_sensor.vision_security_zd2102_eu_door_window_sensor_sensor:
+  ignored: true
+  polling_intensity: 0
+sensor.reading_lamp_current:
+  ignored: true
+  polling_intensity: 0
+sensor.reading_lamp_energy:
+  ignored: true
+  polling_intensity: 0
+sensor.reading_lamp_power:
+  ignored: true
+  polling_intensity: 0
+sensor.reading_lamp_voltage:
+  ignored: true
+  polling_intensity: 0

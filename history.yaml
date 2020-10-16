@@ -1,15 +1,4 @@
 exclude:
-  domains:
-    - alert
-    - automation
-    - calendar
-    - camera
-    - device_tracker
-    - group
-    - scene
-    - weather
-    - zone
-    - zwave
   entities:
     - binary_sensor.day
     - binary_sensor.dusk

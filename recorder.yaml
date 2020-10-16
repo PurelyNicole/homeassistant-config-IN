@@ -1,0 +1,13 @@
+db_url: !secret db_url
+exclude:
+  domains:
+    - alert
+    - automation
+    - calendar
+    - camera
+    - group
+    - media_player
+    - scene
+    - weather
+    - zone
+    - zwave

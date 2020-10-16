@@ -20,6 +20,8 @@ automation: !include automations.yaml
 input_boolean:
 input_select:
 input_text:
+input_number:
+input_datetime:
 rest_command:
   google_backup:
     url: !secret google_backup_url
@@ -39,7 +41,7 @@ google:
 # Camera #
 ##########
 camera: !include cameras.yaml
-stream:
+#stream:
 
 #########
 # Cover #
@@ -71,7 +73,7 @@ influxdb:
   password: !secret http_password
   default_measurement: state
 logbook: !include logbook.yaml
-recorder:
+recorder: !include recorder.yaml
 
 #######
 # Hub #
