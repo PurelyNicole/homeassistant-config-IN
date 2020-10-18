@@ -27,34 +27,42 @@
   state_topic: 'tele/AFSHT31/SENSOR'
   unit_of_measurement: '°F'
   value_template: '{{ value_json["SHT3X-0x44"]["Temperature"] }}'
+  unique_id: workshop_temperature
 - platform: mqtt
   name: "Workshop Humidity"
   state_topic: 'tele/AFSHT31/SENSOR'
   unit_of_measurement: '%'
   value_template: '{{ value_json["SHT3X-0x44"]["Humidity"] }}'
+  unique_id: workshop_humidity
 - platform: mqtt
   name: "Bedroom Temperature"
   state_topic: 'tele/BedroomTemp/SENSOR'
   unit_of_measurement: '°F'
   value_template: '{{ value_json["HTU21"]["Temperature"] }}'
+  unique_id: bedroom_temperature
 - platform: mqtt
   name: "Bedroom Humidity"
   state_topic: 'tele/BedroomTemp/SENSOR'
   unit_of_measurement: '%'
   value_template: '{{ value_json["HTU21"]["Humidity"] }}'
+  unique_id: bedroom_humidity
   # Roomba Sensors
 - platform: mqtt
   name: "Roomba Status"
   state_topic: "roomba/currentStatus"
+  unique_id: roomba_status
 - platform: mqtt
   name: "Roomba Battery"
   state_topic: "roomba/battery"
+  unique_id: roomba_battery
 - platform: mqtt
   name: "Roomba Battery Filtered"
   state_topic: "roomba/filterbattery"
+  unique_id: roomba_filtered_battery
 - platform: mqtt
   name: "Roomba Check In"
   state_topic: "checkIn/roomba"
+  unique_id: roomba_check_in
 
 ##################
 # Places Sesnors #  
@@ -312,13 +320,4 @@
     - icon
     - daily_summary
     - alerts
-
-###############
-# Xbox Sensor #
-###############
-- platform: xbox_live
-  api_key: !secret xbox_api_key
-  xuid: 
-    - !secret xuid
-  scan_interval: 60
 # END

@@ -123,22 +123,3 @@
   name: Night
   after: sunset
   before: sunrise
-
-###########
-# Workday #
-###########
-- platform: workday
-  name: Hell Week
-  country: US
-- platform: workday
-  name: Days MTWT
-  country: US
-- platform: workday
-  name: Nights MTWT
-  country: US
-- platform: workday
-  name: Days TFSS
-  country: US
-- platform: workday
-  name: Nights TFSS
-  country: US

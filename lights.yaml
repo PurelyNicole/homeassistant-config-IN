@@ -161,6 +161,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 973399
 - platform: mqtt
   name: "Hall Bath Switch"
   state_topic: "stat/HallBathLight/POWER"
@@ -172,6 +173,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 992050
 - platform: mqtt
   name: "Network Closet Light"
   state_topic: "stat/NetworkCloset/POWER"
@@ -183,6 +185,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 722921
 - platform: mqtt
   name: "Porch Light"
   state_topic: "stat/PorchLight/POWER"
@@ -194,6 +197,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 989008
 - platform: mqtt
   name: "Garage Light"
   state_topic: "stat/garagelight/POWER"
@@ -205,6 +209,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 839697
 - platform: mqtt
   name: "Guest Room Floor Lamp"
   state_topic: "stat/GuestBedroomLightSw/POWER"
@@ -216,6 +221,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 787288
 - platform: mqtt
   name: "Guest Room Nightstand Lamp"
   state_topic: "stat/GuestRoomLamp/POWER"
@@ -227,6 +233,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 834516
 - platform: mqtt
   name: "Guest Room Bed Lamp"
   state_topic: "stat/guest_bed_light/POWER"
@@ -238,6 +245,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 450228
   # Loft Fan
 - platform: mqtt
   name: "Loft Fan Light"
@@ -251,6 +259,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 184663
 # Hallway Lights
 - platform: mqtt
   name: "Hallway Lights MQTT"
@@ -263,6 +272,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 757428
 # Kitchen Overhead Light
 - platform: mqtt
   name: "Kitchen OverheadLights mqtt"
@@ -275,6 +285,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 561974
 - platform: mqtt
   name: "Peninsula Light Switch"
   state_topic: "stat/peninsula_light_switch/POWER"
@@ -287,6 +298,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 813292
 - platform: mqtt
   name: "Under Cabinet Lights Switch"
   state_topic: "stat/under_cabinet_lights_switch/POWER"
@@ -299,6 +311,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 8265293
 - platform: mqtt
   name: "Pier Lights"
   state_topic: "stat/pierlights/POWER"
@@ -311,6 +324,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 5545193
 # Flood lights RGBWW
 - platform: mqtt
   name: "Flood Light 1"
@@ -344,6 +358,7 @@
   payload_not_available: "Offline"
   qos: 1
   retain: false
+  unique_id: 6269646
 - platform: mqtt
   name: "Flood Light 2"
   command_topic: "cmnd/Flood2/POWER"
@@ -376,6 +391,7 @@
   payload_not_available: "Offline"
   qos: 1
   retain: false
+  unique_id: 4217741
 - platform: mqtt
   name: "Flood Light 3"
   command_topic: "cmnd/Flood3/POWER"
@@ -408,6 +424,7 @@
   payload_not_available: "Offline"
   qos: 1
   retain: false
+  unique_id: 4419246
 - platform: mqtt
   name: "Pond Light"
   command_topic: "cmnd/Flood4/POWER"
@@ -440,6 +457,7 @@
   payload_not_available: "Offline"
   qos: 1
   retain: false
+  unique_id: 7406015
 - platform: mqtt
   name: "Office RGBW"
   availability_topic: "tele/office_rgbw/LWT"
@@ -469,6 +487,7 @@
   payload_off: "OFF"
   payload_available: "Online"
   payload_not_available: "Offline"
+  unique_id: 6789531
 
 ###################
 # Template Lights #
@@ -490,7 +509,7 @@
           state: 'on'
         - service: light.turn_off
           entity_id: light.hallway_lights_mqtt
-      unique_id: hallway_three_way_light
+      unique_id: 6613387
     kitchen_overhead_lights:
       friendly_name: Kitchen Overhead Lights
       value_template: '{{ is_state("light.kitchen_overheadlights_mqtt", "on") }}'
@@ -506,4 +525,4 @@
           state: 'on'
         - service: light.turn_off
           entity_id: light.kitchen_overheadlights_mqtt
-      unique_id: kitchen_overhead_three_way_light
+      unique_id: 8292891

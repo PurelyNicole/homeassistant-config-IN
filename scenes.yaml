@@ -14,8 +14,8 @@
     lock.workshop_door_lock_locked: locked
     lock.front_door_lock_locked: locked
   id: c3481ab7e6ad46c996739fdcfd89164a
-- id: 9d83c933fcc942b48006920571ae5803
-  name: Indoor Lights On
+- name: Indoor Lights On
+  id: 9d83c933fcc942b48006920571ae5803
   entities:
     switch.entryway_light_switch:
       node_id: 20
@@ -185,8 +185,8 @@
       state: 'off'
     switch.fish_tank_light:
       state: 'off'
-- id: 31056ae2d40b4531acdfb6709544e86f
-  name: Watch TV
+- name: Watch TV
+  id: 31056ae2d40b4531acdfb6709544e86f
   entities:
     switch.entryway_light_switch:
       node_id: 20
@@ -347,21 +347,15 @@
       icon: mdi:led-strip-variant
       supported_features: 55
       state: 'on'
-- id: '1602271496816'
-  name: Read
+- name: Read
+  id: '1602271496816'
   entities:
     light.office_rgbw:
-      brightness: 145
-      hs_color:
-      - 0
-      - 0
+      brightness: 148
       rgb_color:
       - 255
-      - 255
-      - 255
-      xy_color:
-      - 0.323
-      - 0.329
+      - 179
+      - 71
       friendly_name: Office RGBW
       supported_features: 17
       state: 'on'
@@ -374,8 +368,8 @@
       supported_features: 0
       state: 'on'
   icon: mdi:book-open-page-variant
-- id: '1602271670314'
-  name: Work
+- name: Work
+  id: '1602271670314'
   entities:
     light.office_rgbw:
       brightness: 255
@@ -401,3 +395,79 @@
       supported_features: 0
       state: 'on'
   icon: fas:laptop-house
+- name: Listen to Music
+  id: '1602877278259'
+  entities:
+    switch.office_fan_humidifier_switch:
+      node_id: 2
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594076282880'
+      power_consumption: 0
+      friendly_name: Office Fan/Humidifier Switch
+      icon: hass:fan
+      state: 'off'
+    zwave.office_outlet:
+      node_id: 2
+      node_name: HKZW-SO01 Smart Plug
+      manufacturer_name: Hank
+      product_name: HKZW-SO01 Smart Plug
+      query_stage: Complete
+      is_awake: true
+      is_ready: true
+      is_failed: false
+      is_info_received: true
+      max_baud_rate: 40000
+      is_zwave_plus: true
+      capabilities:
+      - routing
+      - zwave_plus
+      - listening
+      - beaming
+      neighbors:
+      - 1
+      - 34
+      - 36
+      - 6
+      - 7
+      - 9
+      - 13
+      - 17
+      - 19
+      - 20
+      - 22
+      - 54
+      - 56
+      - 28
+      sentCnt: 10
+      sentFailed: 0
+      retries: 0
+      receivedCnt: 8
+      receivedDups: 0
+      receivedUnsolicited: 0
+      sentTS: '2020-10-16 12:19:41:083 '
+      receivedTS: '2020-10-16 12:19:41:119 '
+      lastRequestRTT: 23
+      averageRequestRTT: 27
+      lastResponseRTT: 36
+      averageResponseRTT: 45
+      application_version: '1.05'
+      friendly_name: Office Fan/Humidifier
+      state: ready
+    light.guest_room_bed_lamp:
+      friendly_name: Guest Room Bed Lamp
+      supported_features: 0
+      state: 'off'
+    light.guest_room_floor_lamp:
+      friendly_name: Guest Room Floor Lamp
+      supported_features: 0
+      state: 'on'
+    light.office_rgbw:
+      brightness: 148
+      rgb_color:
+      - 255
+      - 179
+      - 71
+      friendly_name: Office RGBW
+      supported_features: 17
+      state: 'on'

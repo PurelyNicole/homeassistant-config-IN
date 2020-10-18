@@ -9,6 +9,7 @@
   payload_on: "Audio On"
   payload_off: "Audio Off"
   retain: false
+  unique_id: 7364740
 - platform: mqtt
   name: "Add Glitter"
   state_topic: "holidayLights/glitter/state"
@@ -16,6 +17,7 @@
   payload_on: "Glitter On"
   payload_off: "Glitter Off"
   retain: false
+  unique_id: 7124216
 - platform: mqtt
   name: "Add Lightning"
   state_topic: "holidayLights/lightning/state"
@@ -23,6 +25,7 @@
   payload_on: "Lightning On"
   payload_off: "Lightning Off"
   retain: false
+  unique_id: 5476637
   # Holiday Sonoff switch
 - platform: mqtt
   name: "Outdoor String Lights"
@@ -36,6 +39,7 @@
   payload_not_available: "Offline"
   retain: true
   optimistic: false
+  unique_id: 9664818
 # Exahust Fan
 - platform: mqtt
   name: "Bedroom Exhaust Fan"
@@ -48,6 +52,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 1772303
 #IP 192.168.1.107
 - platform: mqtt
   name: "zUnused Plug"
@@ -77,6 +82,7 @@
   payload_off: "OFF"
   optimistic: true
   retain: false # conflicting with Tasmota retained, was causing power on following power off not previous state
+  unique_id: 2403109
 - platform: mqtt
   name: "Gutter Heater 1"
   state_topic: "stat/Outdoor_Plug_Switch3/POWER1"
@@ -85,6 +91,7 @@
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
+  unique_id: 2044212
 - platform: mqtt
   name: "Gutter Heater 2"
   state_topic: "stat/Outdoor_Plug_Switch3/POWER2"
@@ -93,6 +100,7 @@
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
+  unique_id: 2018374
 - platform: mqtt
   name: "Pond Heater"
   state_topic: "stat/Outdoor_Plug_Switch3/POWER3"
@@ -101,6 +109,7 @@
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
+  unique_id: 2753377
 - platform: mqtt
   name: "Loft Humidifier"
   state_topic: "stat/LoftHumidifier/POWER"
@@ -113,6 +122,7 @@
   payload_not_available: "Offline"
   retain: true
   optimistic: false
+  unique_id: 9537161
 - platform: mqtt
   name: "Landscaping Lights"
   state_topic: "stat/Outdoor2chSwitch/POWER1"
@@ -121,6 +131,7 @@
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
+  unique_id: 3827302
 - platform: mqtt
   name: "Pergola Fan"
   state_topic: "stat/Outdoor2chSwitch/POWER2"
@@ -129,3 +140,4 @@
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
+  unique_id: 7317335

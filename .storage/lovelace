@@ -297,25 +297,32 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "cover.garage_door"
+                                            "entity": "cover.garage_door",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "lock.kitchen_door_lock_locked"
+                                            "entity": "lock.kitchen_door_lock_locked",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "lock.workshop_door_lock_locked"
+                                            "entity": "lock.workshop_door_lock_locked",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "lock.front_door_lock_locked"
+                                            "entity": "lock.front_door_lock_locked",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "binary_sensor.kitchen_patio_door_motion_sensor"
+                                            "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "binary_sensor.kitchen_garage_door_sensor"
+                                            "entity": "binary_sensor.kitchen_garage_door_sensor",
+                                            "secondary_info": "last-changed"
                                         },
                                         {
-                                            "entity": "binary_sensor.living_room_door_sensor"
+                                            "entity": "binary_sensor.living_room_door_sensor",
+                                            "secondary_info": "last-changed"
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -489,6 +496,9 @@
                                 },
                                 {
                                     "entity": "scene.read"
+                                },
+                                {
+                                    "entity": "scene.listen_to_music"
                                 }
                             ],
                             "title": "Scenes"
@@ -527,10 +537,6 @@
                             "title": "Office Climate",
                             "show_header_toggle": false,
                             "state_color": true
-                        },
-                        {
-                            "type": "media-control",
-                            "entity": "media_player.office_music_squeezelite"
                         },
                         {
                             "cards": [
@@ -739,6 +745,9 @@
                                 },
                                 {
                                     "entity": "light.loft_fan_light"
+                                },
+                                {
+                                    "entity": "switch.reading_lamp_switch"
                                 },
                                 {
                                     "entity": "fan.loft_ceiling_fan",
@@ -1383,10 +1392,7 @@
                         {
                             "aspect_ratio": "0%",
                             "camera_image": "camera.front_yard",
-                            "entities": [
-                                "binary_sensor.ambient_weather_battery",
-                                "binary_sensor.ambient_weather_battery_fridge"
-                            ],
+                            "entities": [],
                             "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
                             "title": "Front Yard",
                             "type": "picture-glance"

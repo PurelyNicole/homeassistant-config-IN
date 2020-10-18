@@ -13,6 +13,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+  unique_id: 68c63ae4493b
 # Loft Fan
 - platform: mqtt
   name: "Loft Ceiling Fan"
@@ -39,3 +40,4 @@
     - low
     - medium
     - high
+  unique_id: dc4f22b06033
