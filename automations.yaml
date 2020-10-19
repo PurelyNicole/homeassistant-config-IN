@@ -414,6 +414,9 @@
   - platform: state
     entity_id: binary_sensor.kitchen_garage_door_sensor
     to: 'on'
+  - platform: state
+    entity_id: sensor.kitchen_garage_door_access_control
+    for: '22'
   condition: []
   action:
   - data: {}
@@ -508,4 +511,23 @@
     device_id: 77972d09c4204f5095233e8d46f78bb6
     entity_id: switch.bedroom_humidifier
     domain: switch
+  mode: single
+- id: '1603114369121'
+  alias: Notify - Check if GFI Tripped
+  description: If the Shield tablet isn't plugged in, it's likely because the GFI
+    has tripped. Notify on that condition.
+  trigger:
+  - type: not_plugged_in
+    platform: device
+    device_id: a79348a9f549481a999840a336e6d7b0
+    entity_id: binary_sensor.shield_tablet_k1_is_charging
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mobile_app_pixel_3a
+    data:
+      message: Check if GFI tripped.
+  - service: notify.mobile_app_galaxys9
+    data:
+      message: Check if GFI tripped.
   mode: single

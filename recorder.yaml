@@ -1,13 +1,58 @@
 db_url: !secret db_url
 exclude:
   domains:
-    - alert
-    - automation
     - calendar
     - camera
     - group
+    - input_boolean
     - media_player
     - scene
     - weather
     - zone
     - zwave
+  entity_globs:
+    - binary_sensor.octoprint*
+    - binary_sensor.nextion_*
+    - binary_sensor.volumio_remote_*
+    - sensor.dark_sky*
+    - sensor.octoprint*
+    - sensor.openweathermap*
+  entities:
+    - binary_sensor.bedroom_shade21_shade_closed
+    - binary_sensor.bedroom_shade2_button
+    - binary_sensor.bedroom_shade2_shade_open
+    - binary_sensor.bedroom_shade_3_button
+    - binary_sensor.bedroom_shade_3_shade_closed
+    - binary_sensor.bedroom_shade_3_shade_open
+    - binary_sensor.bedroom_shade_east_button
+    - binary_sensor.bedroom_shade_east_closed
+    - binary_sensor.bedroom_shade_east_open
+    - binary_sensor.living_room_thermostat_has_leaf
+    - binary_sensor.living_room_thermostat_online
+    - binary_sensor.living_room_thermostat_fan
+    - light.hallway_lights_mqtt
+    - light.kitchen_overheadlights_mqtt
+    - sensor.ambient_weather_last_rain
+    - sensor.cd_changer
+    - sensor.date_time
+    - sensor.flat_fork_last_update
+    - sensor.fort_harrison_last_update
+    - sensor.galaxys9_proximity_sensor
+    - sensor.hacs
+    - sensor.kitchen_door_lock_alarm_level
+    - sensor.kitchen_door_lock_alarm_type
+    - sensor.kitchen_patio_door_motion_alarm_level
+    - sensor.kitchen_patio_door_motion_alarm_type
+    - sensor.last_boot
+    - sensor.pixel_3a_proximity_sensor
+    - sensor.random_album
+    - sensor.random_book
+    - sensor.town_run_last_update
+    - sensor.volumio_artist
+    - sensor.volumio_song
+    - sensor.wled1_outsidelow_free_memory
+    - sensor.wled1_outsidelow_uptime
+    - sensor.wled2_outsidegara_free_memory
+    - sensor.wled2_outsidegara_uptime
+    - sensor.wled3_outsideeyebrow_free_memory
+    - sensor.wled3_outsideeyebrow_uptime
