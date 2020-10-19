@@ -102,9 +102,8 @@ media_player:
   - platform: yamaha_musiccast
     host: 192.168.1.81
     port: 5004
-spotify:
-  client_id: !secret  spotify_client_id
-  client_secret: !secret spotify_client_secret
+  - platform: hifiberry
+    host: 192.168.1.224
 
 ##############
 # Irrigation #

@@ -519,6 +519,10 @@
                             "title": "Office Lights"
                         },
                         {
+                            "type": "media-control",
+                            "entity": "media_player.hifiberry"
+                        },
+                        {
                             "type": "entities",
                             "entities": [
                                 {
