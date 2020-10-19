@@ -1575,40 +1575,6 @@
                             "type": "glance"
                         },
                         {
-                            "entities": [
-                                {
-                                    "entity": "sensor.us_coronavirus_confirmed"
-                                },
-                                {
-                                    "entity": "sensor.us_coronavirus_current"
-                                },
-                                {
-                                    "entity": "sensor.us_coronavirus_deaths"
-                                },
-                                {
-                                    "entity": "sensor.us_coronavirus_recovered"
-                                },
-                                {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "sensor.worldwide_coronavirus_confirmed"
-                                },
-                                {
-                                    "entity": "sensor.worldwide_coronavirus_current"
-                                },
-                                {
-                                    "entity": "sensor.worldwide_coronavirus_deaths"
-                                },
-                                {
-                                    "entity": "sensor.worldwide_coronavirus_recovered"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Coronavirus Stats",
-                            "type": "entities"
-                        },
-                        {
                             "entity": "media_player.loft_main",
                             "type": "media-control"
                         }
@@ -1632,13 +1598,12 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
-                                "sensor.fast_com_download",
-                                "sensor.speedtest_download"
-                            ],
-                            "hours_to_show": 24,
-                            "title": "Download Speed",
-                            "type": "history-graph"
+                            "type": "entity",
+                            "entity": "sensor.last_boot"
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "sensor.hacs"
                         },
                         {
                             "entities": [
@@ -1690,21 +1655,6 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.emoncms_total_power"
-                                },
-                                {
-                                    "entity": "sensor.emoncms_kwh"
-                                },
-                                {
-                                    "entity": "sensor.emoncms_voltage"
-                                }
-                            ],
-                            "title": "Power Usage",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
                                     "entity": "switch.roomba"
                                 },
                                 {
@@ -1717,6 +1667,49 @@
                             "show_header_toggle": false,
                             "title": "Roomba",
                             "type": "entities"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.ambient_weather_battery"
+                                },
+                                {
+                                    "entity": "binary_sensor.ambient_weather_battery_fridge"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_door_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.front_door_lock_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.home_office_door_sensor_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_door_lock_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_garage_door_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_patio_door_motion_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.living_room_door_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.office_multi_sensor_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.utility_room_moisture_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.workshop_door_lock_battery_level"
+                                }
+                            ],
+                            "title": "Battery Levels",
+                            "state_color": true
                         }
                     ],
                     "icon": "mdi:cogs",

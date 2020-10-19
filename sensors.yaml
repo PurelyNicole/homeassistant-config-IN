@@ -64,26 +64,6 @@
   state_topic: "checkIn/roomba"
   unique_id: roomba_check_in
 
-##################
-# Places Sesnors #  
-##################
-- platform: places
-  name: Nicole Places
-  devicetracker_id: sensor.pixel_3a_geocoded_location
-  options: zone,place
-  map_provider: google
-  map_zoom: 19
-  home_zone: zone.home
-  api_key: !secret nicole_email
-- platform: places
-  name: Eric Places
-  devicetracker_id: sensor.sm_g965u_geocoded_location
-  options: zone,place
-  map_provider: google
-  map_zoom: 19
-  home_zone: zone.home
-  api_key: !secret nicole_email
-
 ###################
 # RESTful Sensors #
 ###################
@@ -126,25 +106,6 @@
 ####################
 - platform: template
   sensors:
-    # Device Tracker
-    nicole_location:
-      friendly_name: 'Nicole Location'
-      value_template: >
-        {% if is_state_attr('sensor.nicole_places', 'devicetracker_zone', 'not_home') -%}
-            {{state_attr('sensor.nicole_places', 'place_name')}}
-        {%- else -%}
-          {{state_attr('sensor.nicole_places', 'devicetracker_zone')| capitalize}}
-        {%- endif %}
-      unique_id: nicole_location_sensor
-    eric_location:
-      friendly_name: 'Eric Location'
-      value_template: >
-        {% if is_state_attr('sensor.eric_places', 'devicetracker_zone', 'not_home') -%}
-          {{state_attr('sensor.eric_places', 'place_name')}}
-        {%- else -%}
-          {{state_attr('sensor.eric_places', 'devicetracker_zone')| capitalize}}
-        {%- endif %}
-      unique_id: eric_location_sensor
     # Front Door Lock
     front_door_lock_status: 
       friendly_name: 'Front Door Lock Status'

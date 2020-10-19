@@ -7,12 +7,6 @@ master_bedroom_shades:
     - cover.bedroom_shade_east_control
     - cover.bedroom_shade_2_control
     - cover.bedroom_shade_3_control
-living_room_shades:
-  name: Living Room Shades
-  entities:
-    - cover.eyebrow_shade_1_control
-    - cover.eyebrow_shade_2_control
-    - cover.eyebrow_shade_3_control
 
 ############
 # Presence #
