@@ -84,13 +84,13 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "group.entry_hall_lights"
+                                },
+                                {
                                     "entity": "group.living_room_lights"
                                 },
                                 {
                                     "entity": "group.kitchen_lights"
-                                },
-                                {
-                                    "entity": "group.outdoor_lights"
                                 },
                                 {
                                     "entity": "group.master_bedroom_lights"
@@ -102,7 +102,7 @@
                                     "entity": "group.guest_room_lights"
                                 },
                                 {
-                                    "entity": "light.hallway_lights"
+                                    "entity": "group.outdoor_lights"
                                 }
                             ],
                             "title": "Lighting",
@@ -510,13 +510,17 @@
                                     "entity": "light.office_rgbw"
                                 },
                                 {
+                                    "entity": "switch.office_wled_switch"
+                                },
+                                {
                                     "entity": "light.guest_room_bed_lamp"
                                 },
                                 {
                                     "entity": "light.guest_room_floor_lamp"
                                 }
                             ],
-                            "title": "Office Lights"
+                            "title": "Office Lights",
+                            "state_color": true
                         },
                         {
                             "type": "media-control",

@@ -27,12 +27,12 @@ entry_hall_lights:
     - light.hallway_lights
     - light.hall_bath_switch
 guest_room_lights:
-  name: Guest Room Lights
+  name: Office Lights
   entities:
     - light.guest_room_floor_lamp
     - light.guest_room_nightstand_lamp
     - light.guest_room_bed_lamp
-    - light.office_rgbw
+    - switch.office_wled_switch
 kitchen_lights:
   name: Kitchen Lights
   entities:

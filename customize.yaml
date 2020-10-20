@@ -125,3 +125,18 @@ sensor.ambient_weather_feels_like_indoor:
   unit_of_measurement: °F
 switch.fish_tank_light:
   icon: mdi:fish
+group.entry_hall_lights:
+  icon: mdi:lightbulb-multiple
+group.living_room_lights:
+  icon: mdi:lightbulb-multiple
+group.kitchen_lights:
+  icon: mdi:lightbulb-multiple
+group.master_bedroom_lights:
+  icon: mdi:lightbulb-multiple
+group.loft_lights:
+  icon: mdi:lightbulb-multiple
+group.guest_room_lights:
+  friendly_name: Office Lights
+  icon: mdi:lightbulb-multiple
+group.outdoor_lights:
+  icon: mdi:lightbulb-multiple

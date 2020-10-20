@@ -25,8 +25,8 @@
     platform: state
     to: 'on'
   action:
-  - entity_id: light.office_rgbw
-    service: light.turn_on
+  - entity_id: switch.office_wled_switch
+    service: switch.turn_on
   - data: {}
     entity_id: light.guest_room_bed_lamp
     service: light.turn_on
@@ -39,8 +39,8 @@
     platform: state
     to: 'off'
   action:
-  - entity_id: light.office_rgbw
-    service: light.turn_off
+  - entity_id: switch.office_wled_switch
+    service: switch.turn_off
   - data: {}
     entity_id: light.guest_room_bed_lamp
     service: light.turn_off
@@ -440,16 +440,13 @@
   action:
   - service: light.turn_off
     data: {}
-    entity_id: light.office_rgbw
-  - service: light.turn_off
+    entity_id: switch.office_wled_switch
+  - service: switch.turn_off
     data: {}
     entity_id: light.guest_room_bed_lamp
   - service: light.turn_off
     data: {}
     entity_id: light.guest_room_floor_lamp
-  - service: media_player.media_pause
-    data: {}
-    entity_id: media_player.office_music_squeezelite
   mode: single
 - id: '1602094793399'
   alias: Office - Turn fan/humidifier off when I wake up
@@ -492,6 +489,9 @@
     entity_id: binary_sensor.bedroom_door_sensor
     from: 'off'
     to: 'on'
+  - platform: state
+    entity_id: sensor.bedroom_door_access_control
+    to: '23'
   condition:
   - type: is_not_plugged_in
     condition: device
