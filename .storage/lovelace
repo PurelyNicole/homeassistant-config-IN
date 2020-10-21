@@ -667,9 +667,12 @@
                                 },
                                 {
                                     "entity": "light.office_rgbw"
+                                },
+                                {
+                                    "entity": "switch.office_wled_switch"
                                 }
                             ],
-                            "title": "Guest Room Lights",
+                            "title": "Office Lights",
                             "type": "entities"
                         },
                         {
@@ -950,21 +953,33 @@
                             "type": "entities"
                         },
                         {
-                            "entities": [
+                            "type": "vertical-stack",
+                            "cards": [
                                 {
-                                    "entity": "cover.bedroom_shade_east_control"
+                                    "type": "entities",
+                                    "entities": [
+                                        "input_datetime.open_blinds_time"
+                                    ],
+                                    "title": "What Time Should the Shades Open?"
                                 },
                                 {
-                                    "entity": "cover.bedroom_shade_2_control"
-                                },
-                                {
-                                    "entity": "cover.bedroom_shade_3_control"
+                                    "entities": [
+                                        {
+                                            "entity": "cover.bedroom_shade_east_control"
+                                        },
+                                        {
+                                            "entity": "cover.bedroom_shade_2_control"
+                                        },
+                                        {
+                                            "entity": "cover.bedroom_shade_3_control"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Bedroom Window Shades",
+                                    "type": "entities",
+                                    "state_color": true
                                 }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Bedroom Window Shades",
-                            "type": "entities",
-                            "state_color": true
+                            ]
                         }
                     ]
                 },

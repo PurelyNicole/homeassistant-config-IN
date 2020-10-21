@@ -1,11 +1,8 @@
 {
+    "version": 1,
+    "key": "input_boolean",
     "data": {
         "items": [
-            {
-                "icon": "mdi:music-box-outline",
-                "id": "fill_cd_changer",
-                "name": "Fill CD Changer"
-            },
             {
                 "icon": "mdi:book-open-page-variant",
                 "id": "get_a_random_book",
@@ -25,9 +22,11 @@
                 "icon": "mdi:pine-tree",
                 "id": "show_holiday_lights",
                 "name": "Show Holiday Lights"
+            },
+            {
+                "name": "Time to open blinds?",
+                "id": "time_to_open_blinds"
             }
         ]
-    },
-    "key": "input_boolean",
-    "version": 1
+    }
 }

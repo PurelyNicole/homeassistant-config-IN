@@ -434,9 +434,11 @@
     to: 'off'
     for: 0:15:00
   condition:
-  - condition: state
-    entity_id: light.guest_room_floor_lamp
-    state: 'on'
+  - condition: not
+    conditions:
+    - condition: time
+      after: '21:00'
+      before: '23:59'
   action:
   - service: light.turn_off
     data: {}
@@ -530,4 +532,16 @@
   - service: notify.mobile_app_galaxys9
     data:
       message: Check if GFI tripped.
+  mode: single
+- id: '1603310291699'
+  alias: Is it time to open the blinds?
+  description: ''
+  trigger:
+  - platform: time
+    at: input_datetime.open_blinds_time
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.time_to_open_blinds
   mode: single
