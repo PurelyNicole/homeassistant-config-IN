@@ -4,7 +4,6 @@ exclude:
     - calendar
     - camera
     - group
-    - input_boolean
     - media_player
     - scene
     - weather

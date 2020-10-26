@@ -2,6 +2,7 @@ exclude:
   domains:
     - alert
     - automation
+    - input_boolean
     - script
   entities:
     - binary_sensor.day

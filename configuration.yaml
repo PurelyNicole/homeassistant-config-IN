@@ -36,6 +36,10 @@ python_script:
 google:
   client_id: !secret google_cal_client_id
   client_secret: !secret google_cal_client_secret
+remember_the_milk:
+  - name: nicole_rtm
+    api_key: !secret rtm_api
+    shared_secret: !secret rtm_secret
 
 ##########
 # Camera #
