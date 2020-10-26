@@ -1,4 +1,6 @@
 {
+    "version": 1,
+    "key": "camera",
     "data": {
         "camera.driveway_cam": {
             "preload_stream": true
@@ -32,8 +34,12 @@
         },
         "camera.porch_sub": {
             "preload_stream": true
+        },
+        "camera.blueiris_porch_sub": {
+            "preload_stream": false
+        },
+        "camera.blueiris_driveway_sub": {
+            "preload_stream": false
         }
-    },
-    "key": "camera",
-    "version": 1
+    }
 }
