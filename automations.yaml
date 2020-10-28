@@ -285,7 +285,8 @@
   action:
   - data:
       message: Fish have not been fed in two days.
-    service: notify.mobile_app_galaxys9
+    service: notify.mobile_app_erics_iphone
+  mode: single
 - id: '1578081825952'
   alias: Notification - Notify Eric Door Open
   description: ''
@@ -305,7 +306,7 @@
   action:
   - data:
       message: Door left open.
-    service: notify.mobile_app_galaxys9
+    service: notify.mobile_app_erics_iphone
   mode: single
 - alias: Notification - Notify Nicole Door Open
   id: '1578081825953'
@@ -495,11 +496,9 @@
     entity_id: sensor.bedroom_door_access_control
     to: '23'
   condition:
-  - type: is_not_plugged_in
-    condition: device
-    device_id: c05f4c9d3c894cb7aa86080865fa4c08
-    entity_id: binary_sensor.galaxys9_is_charging
-    domain: binary_sensor
+  - condition: state
+    entity_id: sensor.erics_iphone_battery_state
+    state: Charging
   - type: is_not_plugged_in
     condition: device
     device_id: e6c6a573bc544ba7b3f030f34c4b40d3
@@ -529,7 +528,7 @@
   - service: notify.mobile_app_pixel_3a
     data:
       message: Check if GFI tripped.
-  - service: notify.mobile_app_galaxys9
+  - service: notify.mobile_app_erics_iphone
     data:
       message: Check if GFI tripped.
   mode: single

@@ -11,14 +11,14 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "device_tracker.galaxy_s9",
+                                    "entity": "person.eric",
                                     "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.galaxy_s9_battery_level"
+                                    "entity": "sensor.erics_iphone_battery_level"
                                 },
                                 {
-                                    "entity": "device_tracker.pixel_3a",
+                                    "entity": "person.nicole",
                                     "secondary_info": "last-changed"
                                 },
                                 {
@@ -173,10 +173,10 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "device_tracker.pixel_3a"
+                                            "entity": "person.nicole"
                                         },
                                         {
-                                            "entity": "device_tracker.galaxy_s9"
+                                            "entity": "person.eric"
                                         }
                                     ],
                                     "type": "glance"
@@ -1337,7 +1337,7 @@
                     "cards": [
                         {
                             "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_porch_camera",
+                            "camera_image": "camera.blueiris_porch_sub",
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_porch_sub"
@@ -1345,20 +1345,19 @@
                             ],
                             "title": "Porch",
                             "type": "picture-glance",
-                            "entity": "camera.blueiris_porch_sub",
-                            "camera_view": "live"
+                            "entity": "camera.blueiris_porch_sub"
                         },
                         {
                             "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_driveway_camera",
+                            "camera_image": "camera.blueiris_driveway_sub",
                             "entities": [
                                 {
-                                    "entity": "camera.blueiris_driveway_camera"
+                                    "entity": "camera.blueiris_driveway_sub"
                                 }
                             ],
                             "title": "Driveway",
                             "type": "picture-glance",
-                            "camera_view": "live"
+                            "entity": "camera.blueiris_driveway_sub"
                         },
                         {
                             "aspect_ratio": "0%",
@@ -1408,7 +1407,8 @@
                             ],
                             "image": "c",
                             "title": "Pond Camera",
-                            "type": "picture-glance"
+                            "type": "picture-glance",
+                            "entity": "camera.blueiris_pond_sub"
                         },
                         {
                             "aspect_ratio": "0%",
@@ -1420,7 +1420,8 @@
                             ],
                             "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
                             "title": "Backyard East",
-                            "type": "picture-glance"
+                            "type": "picture-glance",
+                            "entity": "camera.blueiris_backyardeast_sub"
                         },
                         {
                             "aspect_ratio": "0%",
@@ -1432,7 +1433,8 @@
                             ],
                             "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
                             "title": "East Gate",
-                            "type": "picture-glance"
+                            "type": "picture-glance",
+                            "entity": "camera.blueiris_eastgate_sub"
                         },
                         {
                             "aspect_ratio": "0%",
@@ -1444,7 +1446,8 @@
                             ],
                             "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
                             "title": "Front Yard",
-                            "type": "picture-glance"
+                            "type": "picture-glance",
+                            "entity": "camera.blueiris_frontyard_sub"
                         }
                     ],
                     "icon": "mdi:camera",
@@ -1626,24 +1629,6 @@
                         {
                             "entity": "media_player.loft_main",
                             "type": "media-control"
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.blueiris_driveway_camera",
-                            "name": "Blue Iris Driveway",
-                            "camera_image": "camera.blueiris_driveway_camera",
-                            "camera_view": "live"
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.blueiris_porch_camera",
-                            "camera_image": "camera.blueiris_porch_camera",
-                            "camera_view": "live"
-                        },
-                        {
-                            "type": "picture-entity",
-                            "entity": "camera.blueiris_porch_sub",
-                            "camera_view": "live"
                         }
                     ],
                     "panel": false,

@@ -76,7 +76,7 @@ influxdb:
   username: !secret  influx_un
   password: !secret http_password
   default_measurement: state
-logbook:
+logbook: !include  logbook.yaml
 recorder: !include recorder.yaml
 
 #######

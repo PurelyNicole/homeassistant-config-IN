@@ -70,6 +70,9 @@ outdoor_lights:
   name: Outdoor Lights
   entities:
     - switch.deck_flood_lights_switch
+    - light.flood_light_1
+    - light.flood_light_2
+    - light.flood_light_3
     - switch.garage_flood_lights_switch
     - switch.landscaping_lights
     - switch.patio_flood_lights_switch

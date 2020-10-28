@@ -1,0 +1,4 @@
+exclude:
+  entities:
+    - binary_sensor.office_motion_sensor
+    - sensor.pixel_3a_detected_activity
