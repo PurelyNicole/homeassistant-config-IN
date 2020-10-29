@@ -484,29 +484,13 @@
     domain: switch
   mode: single
 - id: '1602610938827'
-  alias: Bedroom - Turn off humidifier when everyone wakes up
-  description: When the bedroom door is opened between 6:00 and 13:00, and no phones
-    are charging, turn off the humidifier.
+  alias: Bedroom - Turn off humidifier when blinds open
+  description: When the blinds open, turn off the humidifier.
   trigger:
   - platform: state
-    entity_id: binary_sensor.bedroom_door_sensor
-    from: 'off'
-    to: 'on'
-  - platform: state
-    entity_id: sensor.bedroom_door_access_control
-    to: '23'
-  condition:
-  - condition: state
-    entity_id: sensor.erics_iphone_battery_state
-    state: Charging
-  - type: is_not_plugged_in
-    condition: device
-    device_id: e6c6a573bc544ba7b3f030f34c4b40d3
-    entity_id: binary_sensor.pixel_3a_is_charging
-    domain: binary_sensor
-  - condition: time
-    after: '6:00'
-    before: '13:00'
+    entity_id: input_boolean.time_to_open_blinds
+    to: 'True'
+  condition: []
   action:
   - type: turn_off
     device_id: 77972d09c4204f5095233e8d46f78bb6
