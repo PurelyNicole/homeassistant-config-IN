@@ -223,18 +223,6 @@
   retain: false
   unique_id: 787288
 - platform: mqtt
-  name: "Guest Room Nightstand Lamp"
-  state_topic: "stat/GuestRoomLamp/POWER"
-  command_topic: "cmnd/GuestRoomLamp/POWER"
-  availability_topic: "tele/GuestRoomLamp/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
-  unique_id: 834516
-- platform: mqtt
   name: "Guest Room Bed Lamp"
   state_topic: "stat/guest_bed_light/POWER"
   command_topic: "cmnd/guest_bed_light/POWER"
@@ -458,36 +446,6 @@
   qos: 1
   retain: false
   unique_id: 7406015
-- platform: mqtt
-  name: "Office RGBW"
-  availability_topic: "tele/office_rgbw/LWT"
-  command_topic: "cmnd/office_rgbw/POWER1"
-  state_topic: "stat/office_rgbw/RESULT"
-  state_value_template: "{{value_json.POWER}}"
-  brightness_command_topic: "cmnd/office_rgbw/Dimmer"
-  brightness_state_topic: "stat/office_rgbw/RESULT"
-  brightness_value_template: "{{value_json.Dimmer}}"
-  brightness_scale: 100
-  rgb_command_topic: "cmnd/office_rgbw/Color2"
-  rgb_state_topic: "tele/office_rgbw/RESULT"
-    # RGB<->RGBWW conversion
-  rgb_value_template: >
-    {% set red = (value_json.Color.split(',')[0] | round(0)) %}
-    {% set green = (value_json.Color.split(',')[1] | round(0)) %}
-    {% set blue = (value_json.Color.split(',')[2] | round(0)) %}
-    {% set white = (value_json.Color.split(',')[3] | round(0)) %}
-    {{ green + white }},{{ red + white }},{{ blue + white }}
-  rgb_command_template: >
-    {% if red==green and red==blue %}
-      0,0,0,{{ red }}
-    {% else %}
-      {{ green }},{{ red }},{{ blue  }},0
-    {% endif %}
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  unique_id: 6789531
 
 ###################
 # Template Lights #

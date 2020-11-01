@@ -347,31 +347,51 @@
       icon: mdi:led-strip-variant
       supported_features: 55
       state: 'on'
-- name: Read
-  id: '1602271496816'
+- id: '1602271496816'
+  name: Read
   entities:
     light.office_rgbw:
-      brightness: 148
+      effect_list:
+      - None
+      - Wake up
+      - Cycle up
+      - Cycle down
+      - Random
+      brightness: 127.5
+      hs_color:
+      - 0
+      - 0
       rgb_color:
       - 255
-      - 179
-      - 71
-      friendly_name: Office RGBW
-      supported_features: 17
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      white_value: 127.5
+      effect: None
+      friendly_name: Office_RGBW
+      supported_features: 181
       state: 'on'
     light.guest_room_floor_lamp:
       friendly_name: Guest Room Floor Lamp
       supported_features: 0
       state: 'off'
-    light.guest_room_bed_lamp:
-      friendly_name: Guest Room Bed Lamp
-      supported_features: 0
+    switch.office_bed_light:
+      friendly_name: Office Bed Light
+      icon: hass:lightbulb
       state: 'on'
   icon: mdi:book-open-page-variant
-- name: Work
-  id: '1602271670314'
+- id: '1602271670314'
+  name: Work
   entities:
     light.office_rgbw:
+      effect_list:
+      - None
+      - Wake up
+      - Cycle up
+      - Cycle down
+      - Random
       brightness: 255
       hs_color:
       - 0
@@ -383,27 +403,29 @@
       xy_color:
       - 0.323
       - 0.329
-      friendly_name: Office RGBW
-      supported_features: 17
+      white_value: 255
+      effect: None
+      friendly_name: Office_RGBW
+      supported_features: 181
       state: 'on'
     light.guest_room_floor_lamp:
       friendly_name: Guest Room Floor Lamp
       supported_features: 0
       state: 'on'
-    light.guest_room_bed_lamp:
-      friendly_name: Guest Room Bed Lamp
-      supported_features: 0
+    switch.office_bed_light:
+      friendly_name: Office Bed Light
+      icon: hass:lightbulb
       state: 'on'
   icon: fas:laptop-house
-- name: Listen to Music
-  id: '1602877278259'
+- id: '1602877278259'
+  name: Listen to Music
   entities:
     switch.office_fan_humidifier_switch:
       node_id: 2
       value_index: 0
       value_instance: 1
       value_id: '72057594076282880'
-      power_consumption: 0
+      power_consumption: 28.677
       friendly_name: Office Fan/Humidifier Switch
       icon: hass:fan
       state: 'off'
@@ -412,62 +434,75 @@
       node_name: HKZW-SO01 Smart Plug
       manufacturer_name: Hank
       product_name: HKZW-SO01 Smart Plug
-      query_stage: Complete
+      query_stage: Dynamic
       is_awake: true
-      is_ready: true
+      is_ready: false
       is_failed: false
       is_info_received: true
       max_baud_rate: 40000
       is_zwave_plus: true
       capabilities:
-      - routing
       - zwave_plus
       - listening
       - beaming
+      - routing
       neighbors:
-      - 1
       - 34
+      - 3
       - 36
-      - 6
       - 7
       - 9
-      - 13
-      - 17
       - 19
       - 20
       - 22
       - 54
       - 56
       - 28
-      sentCnt: 10
-      sentFailed: 0
+      - 62
+      - 63
+      sentCnt: 12
+      sentFailed: 1
       retries: 0
-      receivedCnt: 8
+      receivedCnt: 9
       receivedDups: 0
       receivedUnsolicited: 0
-      sentTS: '2020-10-16 12:19:41:083 '
-      receivedTS: '2020-10-16 12:19:41:119 '
+      sentTS: '2020-10-31 22:34:24:974 '
+      receivedTS: '2020-10-31 22:34:25:009 '
       lastRequestRTT: 23
-      averageRequestRTT: 27
-      lastResponseRTT: 36
-      averageResponseRTT: 45
+      averageRequestRTT: 48
+      lastResponseRTT: 35
+      averageResponseRTT: 36
       application_version: '1.05'
       friendly_name: Office Fan/Humidifier
-      state: ready
-    light.guest_room_bed_lamp:
-      friendly_name: Guest Room Bed Lamp
-      supported_features: 0
-      state: 'off'
+      state: initializing
     light.guest_room_floor_lamp:
       friendly_name: Guest Room Floor Lamp
       supported_features: 0
       state: 'on'
     light.office_rgbw:
-      brightness: 148
+      effect_list:
+      - None
+      - Wake up
+      - Cycle up
+      - Cycle down
+      - Random
+      brightness: 119.85
+      hs_color:
+      - 0
+      - 0
       rgb_color:
       - 255
-      - 179
-      - 71
-      friendly_name: Office RGBW
-      supported_features: 17
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      white_value: 119.85
+      effect: None
+      friendly_name: Office_RGBW
+      supported_features: 181
       state: 'on'
+    switch.office_bed_light:
+      friendly_name: Office Bed Light
+      icon: hass:lightbulb
+      state: 'off'

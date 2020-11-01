@@ -515,7 +515,7 @@
                                     "entity": "switch.office_wled_switch"
                                 },
                                 {
-                                    "entity": "light.guest_room_bed_lamp"
+                                    "entity": "switch.office_bed_light"
                                 },
                                 {
                                     "entity": "light.guest_room_floor_lamp"
@@ -526,7 +526,7 @@
                         },
                         {
                             "type": "media-control",
-                            "entity": "media_player.hifiberry"
+                            "entity": "media_player.officemusic"
                         },
                         {
                             "type": "entities",
@@ -662,7 +662,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.guest_room_bed_lamp"
+                                    "entity": "switch.office_bed_light"
                                 },
                                 {
                                     "entity": "light.guest_room_floor_lamp"
@@ -1664,6 +1664,12 @@
                         {
                             "type": "entity",
                             "entity": "sensor.hacs"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "binary_sensor.updater"
+                            ]
                         },
                         {
                             "entities": [

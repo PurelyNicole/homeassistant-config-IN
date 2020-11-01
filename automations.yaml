@@ -19,31 +19,38 @@
     service: scene.turn_on
   mode: single
 - id: '1522888948173'
-  alias: Guest Room - Turn on lights with wall switch
+  alias: Office - Turn on lights with wall switch
   trigger:
   - entity_id: light.guest_room_floor_lamp
     platform: state
     to: 'on'
   action:
-  - entity_id: switch.office_wled_switch
-    service: switch.turn_on
-  - data: {}
-    entity_id: light.guest_room_bed_lamp
-    service: light.turn_on
+  - type: turn_on
+    device_id: 4aac034661657e0e02201862965efd4d
+    entity_id: light.office_rgbw
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: e93c31a0056d8f643306aa69147fd759
+    entity_id: switch.office_bed_light
+    domain: switch
   mode: single
 - id: '1522889042539'
-  alias: Guest Room - Turn off lights with wall switch
+  alias: Office - Turn off lights with wall switch
   trigger:
   - entity_id: light.guest_room_floor_lamp
     from: 'on'
     platform: state
     to: 'off'
   action:
-  - entity_id: switch.office_wled_switch
-    service: switch.turn_off
-  - data: {}
-    entity_id: light.guest_room_bed_lamp
-    service: light.turn_off
+  - type: turn_off
+    device_id: e93c31a0056d8f643306aa69147fd759
+    entity_id: switch.office_bed_light
+    domain: switch
+  - type: turn_off
+    device_id: 4aac034661657e0e02201862965efd4d
+    entity_id: light.office_rgbw
+    domain: light
   mode: single
 - alias: Home Mode - Set to Home When Anyone Arrives Home and Mode is not Sleep
   id: '1522931077343'
@@ -441,15 +448,16 @@
       after: '21:00'
       before: '23:59'
   action:
-  - service: light.turn_off
-    data: {}
-    entity_id: switch.office_wled_switch
   - service: switch.turn_off
     data: {}
-    entity_id: light.guest_room_bed_lamp
+    entity_id: switch.office_bed_light
   - service: light.turn_off
     data: {}
     entity_id: light.guest_room_floor_lamp
+  - type: turn_off
+    device_id: 4aac034661657e0e02201862965efd4d
+    entity_id: light.office_rgbw
+    domain: light
   mode: single
 - id: '1602094793399'
   alias: Office - Turn fan/humidifier off when I wake up
