@@ -4,30 +4,35 @@
 homeassistant:
   customize: !include customize.yaml
   auth_providers:
-    - type: legacy_api_password
-      api_password: !secret http_password
+    # - type: legacy_api_password
+    #   api_password: !secret http_password
     - type: homeassistant
     - type: trusted_networks
       trusted_networks:
-        - !secret trusted_networks
+        - !secret trusted_network1
+        - !secret trusted_network2
 hassio:
+
+##########
+# Config #
+##########
+default_config:
+automation: !include automations.yaml
+frontend:
+  themes: !include_dir_merge_named themes
+history: !include history.yaml
+logbook: !include  logbook.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
 
 ##############
 # Automation #
 ##############
 alert: !include alerts.yaml
-automation: !include automations.yaml
-input_boolean:
-input_select:
-input_text:
-input_number:
-input_datetime:
 rest_command:
   google_backup:
     url: !secret google_backup_url
     timeout: '300'
-script: !include scripts.yaml
-timer: !include timers.yaml
 python_script:
 
 ############
@@ -45,7 +50,6 @@ remember_the_milk:
 # Camera #
 ##########
 camera: !include cameras.yaml
-#stream:
 
 #########
 # Cover #
@@ -56,8 +60,6 @@ cover: !include cover.yaml
 # HACS #
 ########
 config:
-frontend:
-  themes: !include_dir_merge_named themes
 
 ##########
 # Health #
@@ -68,7 +70,6 @@ iqvia:
 ######################
 # History Components #
 ######################
-history: !include history.yaml
 influxdb:
   host: localhost
   port: 8086
@@ -76,7 +77,6 @@ influxdb:
   username: !secret  influx_un
   password: !secret http_password
   default_measurement: state
-logbook: !include  logbook.yaml
 recorder: !include recorder.yaml
 
 #######
@@ -106,8 +106,9 @@ media_player:
   - platform: yamaha_musiccast
     host: 192.168.1.81
     port: 5004
-  - platform: hifiberry
-    host: 192.168.1.224
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
 
 ##############
 # Irrigation #
@@ -119,15 +120,12 @@ rachio:
 # Organization #
 ################
 group: !include groups.yaml
-scene: !include scenes.yaml
 
 #########
 # Other #
 #########
 api:
 http:
-mobile_app:
-system_health:
 
 #################
 # Notifications #
@@ -138,18 +136,6 @@ notify:
     vapid_pub_key: !secret vapid_pub_key
     vapid_prv_key: !secret vapid_prv_key
     vapid_email: !secret nicole_email
-
-###########
-# Network #
-###########
-ssdp:
-zeroconf:
-
-######################
-# Presence Detection #
-######################
-map:
-person:
 
 ##########
 # Remote #
@@ -186,6 +172,15 @@ speedtestdotnet:
     - download
     - upload
 
+##################
+# Transportation #
+##################
+bmw_connected_drive:
+  name:
+    username: !secret bmw_username
+    password: !secret bmw_password
+    region: "north_america"
+
 ###########
 # Utility #
 ###########
@@ -199,7 +194,6 @@ logger:
 ######################
 # Weather Components #
 ######################
-sun:
 weather:
   - platform: darksky
     api_key: !secret darksky_api

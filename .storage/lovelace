@@ -512,10 +512,7 @@
                                     "entity": "light.office_rgbw"
                                 },
                                 {
-                                    "entity": "switch.office_wled_switch"
-                                },
-                                {
-                                    "entity": "switch.office_bed_light"
+                                    "entity": "light.office_bed_light"
                                 },
                                 {
                                     "entity": "light.guest_room_floor_lamp"
@@ -662,16 +659,13 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.office_bed_light"
+                                    "entity": "light.office_bed_light"
                                 },
                                 {
                                     "entity": "light.guest_room_floor_lamp"
                                 },
                                 {
                                     "entity": "light.office_rgbw"
-                                },
-                                {
-                                    "entity": "switch.office_wled_switch"
                                 }
                             ],
                             "title": "Office Lights",

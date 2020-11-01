@@ -87,23 +87,6 @@
   payload_not_available: "Offline"
   retain: false
   unique_id: 98f4abf282de
-  # Dining Room Lights
-- platform: mqtt
-  name: "Dining Room Light"
-  state_topic: "stat/DiningRoom/POWER"
-  command_topic: "cmnd/DiningRoom/POWER"
-  availability_topic: "tele/DiningRoom/LWT"
-  brightness_state_topic: "stat/DiningRoom/RESULT"
-  brightness_command_topic: "cmnd/DiningRoom/Dimmer"
-  brightness_scale: 100
-  brightness_value_template: "{{ value_json.Dimmer }}"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
-  unique_id: 807d3a3730c5
   # Gym Lights
 - platform: mqtt
   name: "Gym Light Switch"
@@ -274,32 +257,6 @@
   payload_not_available: "Offline"
   retain: false
   unique_id: 561974
-- platform: mqtt
-  name: "Peninsula Light Switch"
-  state_topic: "stat/peninsula_light_switch/POWER"
-  value_template: "{{ value_json.POWER }}"
-  command_topic: "cmnd/peninsula_light_switch/POWER"
-  availability_topic: "tele/peninsula_light_switch/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
-  unique_id: 813292
-- platform: mqtt
-  name: "Under Cabinet Lights Switch"
-  state_topic: "stat/under_cabinet_lights_switch/POWER"
-  value_template: "{{ value_json.POWER }}"
-  command_topic: "cmnd/under_cabinet_lights_switch/POWER"
-  availability_topic: "tele/under_cabinet_lights_switch/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
-  unique_id: 8265293
 - platform: mqtt
   name: "Pier Lights"
   state_topic: "stat/pierlights/POWER"

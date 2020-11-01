@@ -32,8 +32,8 @@
     brightness_pct: 100
   - type: turn_on
     device_id: e93c31a0056d8f643306aa69147fd759
-    entity_id: switch.office_bed_light
-    domain: switch
+    entity_id: light.office_bed_light
+    domain: light
   mode: single
 - id: '1522889042539'
   alias: Office - Turn off lights with wall switch
@@ -45,8 +45,8 @@
   action:
   - type: turn_off
     device_id: e93c31a0056d8f643306aa69147fd759
-    entity_id: switch.office_bed_light
-    domain: switch
+    entity_id: light.office_bed_light
+    domain: light
   - type: turn_off
     device_id: 4aac034661657e0e02201862965efd4d
     entity_id: light.office_rgbw
@@ -136,16 +136,17 @@
   - entity_id: input_select.home_mode
     platform: state
     to: Away
-- alias: Scene - Turn Off Lights And Lock Doors When Sleep
-  action:
-  - data:
-      entity_id: scene.sleep
-    service: scene.turn_on
-  id: '1522945234824'
+- id: '1522945234824'
+  alias: Scene - Turn Off Lights And Lock Doors When Sleep
   trigger:
   - entity_id: input_select.home_mode
     platform: state
     to: Sleep
+  action:
+  - data:
+      entity_id: scene.sleep
+    service: scene.turn_on
+  mode: single
 - id: '1522945341172'
   alias: Scene - Turn On Indoor Lights At Dusk
   trigger:
@@ -161,8 +162,8 @@
       entity_id: scene.indoor_lights_on
     service: scene.turn_on
   mode: single
-- alias: Scene - Turn On Lights When Someone Arrives Home At Dusk or Night
-  id: '1523015798070'
+- id: '1523015798070'
+  alias: Scene - Turn On Lights When Someone Arrives Home At Dusk or Night
   trigger:
   - entity_id: group.people
     platform: state
@@ -180,6 +181,7 @@
   - data:
       entity_id: scene.indoor_lights_on
     service: scene.turn_on
+  mode: single
 - alias: System - Check for new snapshots daily
   id: '1543376445848'
   trigger:
@@ -448,9 +450,9 @@
       after: '21:00'
       before: '23:59'
   action:
-  - service: switch.turn_off
+  - service: light.turn_off
     data: {}
-    entity_id: switch.office_bed_light
+    entity_id: light.office_bed_light
   - service: light.turn_off
     data: {}
     entity_id: light.guest_room_floor_lamp
