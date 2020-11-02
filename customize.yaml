@@ -103,8 +103,6 @@ sensor.town_run_trail_status:
   icon: mdi:bike
 scene.read:
   icon: mdi:book-open-page-variant
-scene.listen_to_music:
-  icon: mdi:record-player
 switch.ipod_zone_1:
   friendly_name: 'iPod: Zone 1'
   icon: mdi:ipod

@@ -31,7 +31,7 @@ guest_room_lights:
   entities:
     - light.guest_room_floor_lamp
     - light.office_bed_light
-    - light.office_rbgw
+    - light.office_rgbw
 kitchen_lights:
   name: Kitchen Lights
   entities:
