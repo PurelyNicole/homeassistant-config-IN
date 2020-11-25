@@ -38,29 +38,7 @@
   device_class: motion
   qos: 1
   unique_id: garage_pir_sensor_2
-# Blue Irs Motion
-- platform: mqtt
-  state_topic: "BI/PorchCam"
-  name: 'Porch Camera Motion'
-  payload_on: 'Motion'
-  payload_off: 'Clear'
-  device_class: motion
-  unique_id: bi_porch_cam_motion
-- platform: mqtt
-  state_topic: "BI/Driveway"
-  name: 'Driveway Camera Motion'
-  payload_on: 'Motion'
-  payload_off: 'Clear'
-  device_class: motion
-  unique_id: bi_driveway_cam_motion
-- platform: mqtt
-  state_topic: "BI/DrivewayVehicleMotion"
-  name: 'Driveway Vehicle Motion'
-  payload_on: 'Motion'
-  payload_off: 'Clear'
-  device_class: motion
-  unique_id: bi_driveway_cam_vehicle_motion
-
+  
 ####################
 # Template Sensors #
 ####################

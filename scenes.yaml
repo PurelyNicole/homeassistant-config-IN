@@ -1,5 +1,5 @@
-- id: c3481ab7e6ad46c996739fdcfd89164a
-  name: Away
+- name: Away
+  id: c3481ab7e6ad46c996739fdcfd89164a
   entities:
     group.living_room_lights:
       entity_id:
@@ -286,14 +286,6 @@
       friendly_name: Fire Place Lights Switch
       icon: hass:lightbulb
       state: 'off'
-    switch.globe_lamp_switch:
-      node_id: 35
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594629931008'
-      friendly_name: Globe Lamp Switch
-      icon: hass:lightbulb
-      state: 'off'
     switch.table_lamps_switch:
       node_id: 22
       value_index: 0
@@ -303,8 +295,8 @@
       icon: hass:lightbulb
       state: 'off'
     light.dining_room_light:
-      friendly_name: Dining Room Light
-      supported_features: 1
+      friendly_name: Dining Room
+      supported_features: 33
       state: 'off'
     light.kitchen_overhead_lights:
       friendly_name: Kitchen Overhead Lights
@@ -323,8 +315,7 @@
       supported_features: 0
       state: 'off'
     light.wled_barlights:
-      min_mireds: 153
-      max_mireds: 500
+      restored: true
       effect_list:
       - Android
       - BPM
@@ -407,30 +398,14 @@
       - Twinklefox
       - Wipe
       - Wipe Random
-      brightness: 11
-      hs_color:
-      - 29.836
-      - 71.765
-      rgb_color:
-      - 255
-      - 162
-      - 71
-      xy_color:
-      - 0.542
-      - 0.392
-      effect: Solid
-      intensity: 128
-      palette: Default
-      playlist:
-      preset:
-      reverse: false
-      speed: 75
+      max_mireds: 500
+      min_mireds: 153
+      supported_features: 55
       friendly_name: WLED_BarLights
       icon: mdi:led-strip-variant
-      supported_features: 55
-      state: 'on'
-- id: '1604329744138'
-  name: Work
+      state: unavailable
+- name: Work
+  id: '1604329744138'
   entities:
     light.office_bed_light:
       friendly_name: Office Bed Light
@@ -444,16 +419,6 @@
       - Cycle down
       - Random
       brightness: 255
-      hs_color:
-      - 0
-      - 0
-      rgb_color:
-      - 255
-      - 255
-      - 255
-      xy_color:
-      - 0.323
-      - 0.329
       white_value: 255
       effect: None
       friendly_name: Office_RGBW
@@ -464,34 +429,21 @@
       supported_features: 0
       state: 'on'
   icon: fas:laptop-code
-- id: '1604329844172'
-  name: Read
+- name: Read
+  id: '1604329844172'
   entities:
     light.office_bed_light:
       friendly_name: Office Bed Light
       supported_features: 0
       state: 'on'
     light.office_rgbw:
-      effect_list:
-      - None
-      - Wake up
-      - Cycle up
-      - Cycle down
-      - Random
-      brightness: 107.1
-      hs_color:
-      - 0
-      - 0
+      brightness: 142
       rgb_color:
       - 255
-      - 255
-      - 255
-      xy_color:
-      - 0.323
-      - 0.329
-      white_value: 107.1
-      effect: None
-      friendly_name: Office_RGBW
+      - 144
+      - 35
+      friendly_name: Office RGBW
+      icon: mdi:led-strip-variant
       supported_features: 181
       state: 'on'
     light.guest_room_floor_lamp:
@@ -499,34 +451,21 @@
       supported_features: 0
       state: 'off'
   icon: fas:book-reader
-- id: '1604329940512'
-  name: Listen to Music
+- name: Listen to Music
+  id: '1604329940512'
   entities:
     light.office_bed_light:
       friendly_name: Office Bed Light
       supported_features: 0
       state: 'off'
     light.office_rgbw:
-      effect_list:
-      - None
-      - Wake up
-      - Cycle up
-      - Cycle down
-      - Random
-      brightness: 124.95
-      hs_color:
-      - 0
-      - 0
+      brightness: 147
       rgb_color:
       - 255
-      - 255
-      - 255
-      xy_color:
-      - 0.323
-      - 0.329
-      white_value: 124.95
-      effect: None
-      friendly_name: Office_RGBW
+      - 163
+      - 72
+      friendly_name: Office RGBW
+      icon: mdi:led-strip-variant
       supported_features: 181
       state: 'on'
     light.guest_room_floor_lamp:
@@ -555,10 +494,10 @@
       max_baud_rate: 40000
       is_zwave_plus: true
       capabilities:
+      - routing
       - listening
       - beaming
       - zwave_plus
-      - routing
       neighbors:
       - 34
       - 3
@@ -579,12 +518,12 @@
       receivedCnt: 8
       receivedDups: 0
       receivedUnsolicited: 0
-      sentTS: '2020-11-02 10:20:58:783 '
-      receivedTS: '2020-11-02 10:20:58:819 '
-      lastRequestRTT: 23
-      averageRequestRTT: 23
-      lastResponseRTT: 36
-      averageResponseRTT: 36
+      sentTS: '2020-11-10 14:32:30:009 '
+      receivedTS: '2020-11-10 14:32:30:112 '
+      lastRequestRTT: 90
+      averageRequestRTT: 56
+      lastResponseRTT: 103
+      averageResponseRTT: 108
       application_version: '1.05'
       friendly_name: Office Fan/Humidifier
       state: ready

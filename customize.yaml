@@ -138,3 +138,5 @@ group.guest_room_lights:
   icon: mdi:lightbulb-multiple
 group.outdoor_lights:
   icon: mdi:lightbulb-multiple
+media_player.hifiberry:
+  friendly_name: Office Music

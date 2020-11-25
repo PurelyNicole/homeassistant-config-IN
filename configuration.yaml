@@ -106,9 +106,12 @@ media_player:
   - platform: yamaha_musiccast
     host: 192.168.1.81
     port: 5004
+  - platform: hifiberry
+    host: 192.168.1.230
 spotify:
   client_id: !secret spotify_client_id
   client_secret: !secret spotify_client_secret
+
 
 ##############
 # Irrigation #
@@ -171,15 +174,6 @@ speedtestdotnet:
     - ping
     - download
     - upload
-
-##################
-# Transportation #
-##################
-bmw_connected_drive:
-  name:
-    username: !secret bmw_username
-    password: !secret bmw_password
-    region: "north_america"
 
 ###########
 # Utility #

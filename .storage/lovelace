@@ -136,7 +136,9 @@
                             "disableLocationLink": false,
                             "showFullDayProgress": false,
                             "showCurrentEventLine": false,
-                            "showMonth": false
+                            "showMonth": false,
+                            "showDescription": false,
+                            "sortByStartTime": true
                         },
                         {
                             "entity": "weather.dark_sky",
@@ -165,11 +167,11 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entity": "weather.dark_sky",
-                            "type": "weather-forecast"
-                        },
-                        {
                             "cards": [
+                                {
+                                    "type": "weather-forecast",
+                                    "entity": "weather.dark_sky"
+                                },
                                 {
                                     "entities": [
                                         {
@@ -227,42 +229,6 @@
                                 }
                             ],
                             "type": "vertical-stack"
-                        },
-                        {
-                            "entity": "sensor.grocy_chores",
-                            "show_days": 2,
-                            "show_quantity": 5,
-                            "title": "Chorin'",
-                            "type": "custom:grocy-chores-card"
-                        },
-                        {
-                            "type": "custom:atomic-calendar-revive",
-                            "name": "Calendar Card",
-                            "enableModeChange": true,
-                            "entities": [
-                                {
-                                    "entity": "calendar.nicole_s_calendar",
-                                    "name": "Nicole's Calendar"
-                                },
-                                {
-                                    "entity": "calendar.eric_nicole_events",
-                                    "name": "Eric & Nicole Events"
-                                },
-                                {
-                                    "entity": "calendar.eric_events",
-                                    "name": "Eric Events"
-                                }
-                            ],
-                            "firstDayOfWeek": 1,
-                            "maxDaysToShow": 7,
-                            "hideFinishedEvents": true,
-                            "showDate": false,
-                            "showEventIcon": false,
-                            "showWeekDay": true,
-                            "disableLocationLink": false,
-                            "showFullDayProgress": false,
-                            "showCurrentEventLine": false,
-                            "showMonth": false
                         },
                         {
                             "cards": [
@@ -331,11 +297,58 @@
                                     "state_color": true
                                 },
                                 {
-                                    "entity": "media_player.living_room_music_main",
-                                    "type": "media-control"
+                                    "type": "media-control",
+                                    "entity": "media_player.living_room_music_main"
                                 }
                             ],
                             "type": "vertical-stack"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "entity": "sensor.grocy_chores",
+                                    "show_days": 2,
+                                    "show_quantity": 5,
+                                    "title": "Chorin'",
+                                    "type": "custom:grocy-chores-card"
+                                },
+                                {
+                                    "type": "custom:atomic-calendar-revive",
+                                    "name": "Calendar Card",
+                                    "enableModeChange": true,
+                                    "entities": [
+                                        {
+                                            "entity": "calendar.nicole_s_calendar",
+                                            "name": "Nicole's Calendar"
+                                        },
+                                        {
+                                            "entity": "calendar.eric_nicole_events",
+                                            "name": "Eric & Nicole Events"
+                                        },
+                                        {
+                                            "entity": "calendar.eric_events",
+                                            "name": "Eric Events"
+                                        },
+                                        {
+                                            "entity": "calendar.meal_plan",
+                                            "name": "Meal Plan"
+                                        }
+                                    ],
+                                    "firstDayOfWeek": 1,
+                                    "maxDaysToShow": 7,
+                                    "hideFinishedEvents": true,
+                                    "showDate": false,
+                                    "showEventIcon": false,
+                                    "showWeekDay": true,
+                                    "disableLocationLink": false,
+                                    "showFullDayProgress": false,
+                                    "showCurrentEventLine": false,
+                                    "showMonth": false,
+                                    "showDescription": false,
+                                    "showProgressBar": false
+                                }
+                            ]
                         },
                         {
                             "aspect_ratio": "0%",
@@ -452,16 +465,8 @@
                             "type": "weather-forecast"
                         },
                         {
-                            "entity": "climate.living_room",
-                            "icon": "mdi:thermostat",
-                            "name": "Nest",
-                            "sensors": [
-                                {
-                                    "entity": "sensor.living_room_thermostat_humidity"
-                                }
-                            ],
-                            "step_size": 1,
-                            "type": "custom:simple-thermostat"
+                            "type": "thermostat",
+                            "entity": "climate.living_room"
                         }
                     ],
                     "icon": "mdi:sofa",
@@ -523,7 +528,7 @@
                         },
                         {
                             "type": "media-control",
-                            "entity": "media_player.officemusic"
+                            "entity": "media_player.hifiberry"
                         },
                         {
                             "type": "entities",
@@ -597,11 +602,38 @@
                             ],
                             "hours_to_show": 720,
                             "refresh_interval": 0,
-                            "type": "history-graph"
+                            "type": "history-graph",
+                            "title": "Music Collection Value"
                         },
                         {
                             "type": "entity",
                             "entity": "binary_sensor.office_motion_sensor"
+                        },
+                        {
+                            "type": "custom:atomic-calendar-revive",
+                            "name": "Upcoming Releases",
+                            "enableModeChange": true,
+                            "entities": [
+                                {
+                                    "entity": "calendar.music_announcements",
+                                    "name": "Music Announcements"
+                                }
+                            ],
+                            "firstDayOfWeek": 1,
+                            "maxDaysToShow": 30,
+                            "hideFinishedEvents": true,
+                            "showDate": false,
+                            "showEventIcon": false,
+                            "showWeekDay": false,
+                            "disableLocationLink": false,
+                            "showFullDayProgress": false,
+                            "showCurrentEventLine": false,
+                            "showMonth": true,
+                            "sortByStartTime": false,
+                            "showRelativeTime": false,
+                            "showDeclined": false,
+                            "showNoEventsForToday": false,
+                            "disableEventLink": false
                         }
                     ]
                 },
@@ -802,6 +834,9 @@
                                 },
                                 {
                                     "entity": "switch.workshop_light_switch"
+                                },
+                                {
+                                    "entity": "light.pier_lights"
                                 }
                             ],
                             "title": "Outdoor Lights",
@@ -984,10 +1019,8 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entity": "climate.living_room",
-                            "icon": "mdi:thermostat",
-                            "step_size": 1,
-                            "type": "custom:simple-thermostat"
+                            "type": "custom:simple-thermostat",
+                            "entity": "climate.living_room"
                         },
                         {
                             "entities": [
@@ -1087,7 +1120,7 @@
                             ],
                             "hours_to_show": 72,
                             "refresh_interval": 0,
-                            "title": "crawlspace humidity 3 Days",
+                            "title": "Crawlspace Humidity - 3 Days",
                             "type": "history-graph"
                         },
                         {
@@ -1142,6 +1175,126 @@
                     "badges": [],
                     "cards": [
                         {
+                            "type": "conditional",
+                            "conditions": [
+                                {
+                                    "entity": "input_boolean.show_sprinklers",
+                                    "state": "on"
+                                }
+                            ],
+                            "card": {
+                                "type": "vertical-stack",
+                                "cards": [
+                                    {
+                                        "entities": [
+                                            {
+                                                "entity": "switch.zone_1"
+                                            },
+                                            {
+                                                "entity": "switch.zone_2"
+                                            },
+                                            {
+                                                "entity": "switch.zone_3"
+                                            },
+                                            {
+                                                "entity": "switch.zone_4"
+                                            },
+                                            {
+                                                "entity": "switch.zone_5"
+                                            },
+                                            {
+                                                "entity": "switch.zone_6"
+                                            },
+                                            {
+                                                "entity": "switch.zone_7"
+                                            },
+                                            {
+                                                "entity": "switch.zone_8"
+                                            },
+                                            {
+                                                "entity": "switch.zone_9"
+                                            },
+                                            {
+                                                "entity": "switch.zone_10"
+                                            },
+                                            {
+                                                "entity": "switch.zone_11"
+                                            },
+                                            {
+                                                "entity": "switch.zone_12"
+                                            },
+                                            {
+                                                "entity": "switch.zone_13"
+                                            },
+                                            {
+                                                "entity": "switch.zone_14"
+                                            },
+                                            {
+                                                "entity": "switch.zone_15"
+                                            }
+                                        ],
+                                        "hours_to_show": 167,
+                                        "refresh_interval": 1,
+                                        "title": "Rachio (Weekly)",
+                                        "type": "history-graph"
+                                    },
+                                    {
+                                        "entities": [
+                                            {
+                                                "entity": "switch.zone_1"
+                                            },
+                                            {
+                                                "entity": "switch.zone_2"
+                                            },
+                                            {
+                                                "entity": "switch.zone_3"
+                                            },
+                                            {
+                                                "entity": "switch.zone_4"
+                                            },
+                                            {
+                                                "entity": "switch.zone_5"
+                                            },
+                                            {
+                                                "entity": "switch.zone_6"
+                                            },
+                                            {
+                                                "entity": "switch.zone_7"
+                                            },
+                                            {
+                                                "entity": "switch.zone_8"
+                                            },
+                                            {
+                                                "entity": "switch.zone_9"
+                                            },
+                                            {
+                                                "entity": "switch.zone_10"
+                                            },
+                                            {
+                                                "entity": "switch.zone_11"
+                                            },
+                                            {
+                                                "entity": "switch.zone_12"
+                                            },
+                                            {
+                                                "entity": "switch.zone_13"
+                                            },
+                                            {
+                                                "entity": "switch.zone_14"
+                                            },
+                                            {
+                                                "entity": "switch.zone_15"
+                                            }
+                                        ],
+                                        "hours_to_show": 24,
+                                        "refresh_interval": 0,
+                                        "title": "Rachio (Daily)",
+                                        "type": "history-graph"
+                                    }
+                                ]
+                            }
+                        },
+                        {
                             "entities": [
                                 {
                                     "entity": "switch.gutter_heater_1"
@@ -1194,115 +1347,6 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.zone_1"
-                                },
-                                {
-                                    "entity": "switch.zone_2"
-                                },
-                                {
-                                    "entity": "switch.zone_3"
-                                },
-                                {
-                                    "entity": "switch.zone_4"
-                                },
-                                {
-                                    "entity": "switch.zone_5"
-                                },
-                                {
-                                    "entity": "switch.zone_6"
-                                },
-                                {
-                                    "entity": "switch.zone_7"
-                                },
-                                {
-                                    "entity": "switch.zone_8"
-                                },
-                                {
-                                    "entity": "switch.zone_9"
-                                },
-                                {
-                                    "entity": "switch.zone_10"
-                                },
-                                {
-                                    "entity": "switch.zone_11"
-                                },
-                                {
-                                    "entity": "switch.zone_12"
-                                },
-                                {
-                                    "entity": "switch.zone_13"
-                                },
-                                {
-                                    "entity": "switch.zone_14"
-                                },
-                                {
-                                    "entity": "switch.zone_15"
-                                }
-                            ],
-                            "hours_to_show": 167,
-                            "refresh_interval": 1,
-                            "title": "Rachio (Weekly)",
-                            "type": "history-graph"
-                        },
-                        {
-                            "type": "custom:gap-card"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.zone_1"
-                                },
-                                {
-                                    "entity": "switch.zone_2"
-                                },
-                                {
-                                    "entity": "switch.zone_3"
-                                },
-                                {
-                                    "entity": "switch.zone_4"
-                                },
-                                {
-                                    "entity": "switch.zone_5"
-                                },
-                                {
-                                    "entity": "switch.zone_6"
-                                },
-                                {
-                                    "entity": "switch.zone_7"
-                                },
-                                {
-                                    "entity": "switch.zone_8"
-                                },
-                                {
-                                    "entity": "switch.zone_9"
-                                },
-                                {
-                                    "entity": "switch.zone_10"
-                                },
-                                {
-                                    "entity": "switch.zone_11"
-                                },
-                                {
-                                    "entity": "switch.zone_12"
-                                },
-                                {
-                                    "entity": "switch.zone_13"
-                                },
-                                {
-                                    "entity": "switch.zone_14"
-                                },
-                                {
-                                    "entity": "switch.zone_15"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0,
-                            "title": "Rachio (Daily)",
-                            "type": "history-graph"
-                        },
-                        {
-                            "entities": [
-                                {
                                     "entity": "switch.pool_pump_speed_1"
                                 },
                                 {
@@ -1343,6 +1387,9 @@
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_porch_sub"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_porch_camera_motion"
                                 }
                             ],
                             "title": "Porch",
@@ -1355,6 +1402,9 @@
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_driveway_sub"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_driveway_camera_motion"
                                 }
                             ],
                             "title": "Driveway",
@@ -1367,6 +1417,9 @@
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_westfence_sub"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_west_fence_motion"
                                 }
                             ],
                             "entity": "camera.blueiris_westfence_sub",
@@ -1386,6 +1439,9 @@
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_workshop_sub"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_workshop_motion"
                                 }
                             ],
                             "entity": "camera.blueiris_workshop_sub",
@@ -1405,6 +1461,9 @@
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_pond_sub"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_pond_camera_motion"
                                 }
                             ],
                             "image": "c",
@@ -1418,6 +1477,9 @@
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_backyardeast_sub"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_east_gate_cam_motion"
                                 }
                             ],
                             "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
@@ -1431,6 +1493,9 @@
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_eastgate_sub"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_east_gate_cam_motion"
                                 }
                             ],
                             "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
@@ -1444,6 +1509,9 @@
                             "entities": [
                                 {
                                     "entity": "camera.blueiris_frontyard_sub"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_front_yard_reo_motion"
                                 }
                             ],
                             "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
@@ -1627,10 +1695,6 @@
                             ],
                             "title": "Utility Room",
                             "type": "glance"
-                        },
-                        {
-                            "entity": "media_player.loft_main",
-                            "type": "media-control"
                         }
                     ],
                     "panel": false,
@@ -1652,65 +1716,34 @@
                     "badges": [],
                     "cards": [
                         {
-                            "type": "entity",
-                            "entity": "sensor.last_boot"
-                        },
-                        {
-                            "type": "entity",
-                            "entity": "sensor.hacs"
-                        },
-                        {
                             "type": "entities",
                             "entities": [
-                                "binary_sensor.updater"
-                            ]
+                                {
+                                    "entity": "binary_sensor.omv_update_available"
+                                },
+                                {
+                                    "entity": "binary_sensor.updater"
+                                },
+                                {
+                                    "entity": "sensor.hacs"
+                                }
+                            ],
+                            "title": "Available Updates",
+                            "state_color": true
                         },
                         {
                             "entities": [
                                 {
                                     "entity": "input_boolean.show_holiday_lights"
+                                },
+                                {
+                                    "entity": "input_boolean.show_sprinklers"
                                 }
                             ],
                             "title": "View Components",
-                            "type": "entities"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entity": "sensor.memory_use_percent",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 0,
-                                        "red": 75,
-                                        "yellow": 50
-                                    },
-                                    "type": "gauge"
-                                },
-                                {
-                                    "entity": "sensor.disk_use_percent",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 0,
-                                        "red": 75,
-                                        "yellow": 50
-                                    },
-                                    "type": "gauge"
-                                },
-                                {
-                                    "entity": "sensor.processor_use",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 0,
-                                        "red": 75,
-                                        "yellow": 50
-                                    },
-                                    "type": "gauge"
-                                }
-                            ],
-                            "type": "horizontal-stack"
+                            "type": "entities",
+                            "state_color": true,
+                            "show_header_toggle": false
                         },
                         {
                             "entities": [
@@ -1732,44 +1765,51 @@
                             "type": "entities",
                             "entities": [
                                 {
-                                    "entity": "binary_sensor.ambient_weather_battery"
+                                    "entity": "sensor.omv_drive1"
                                 },
                                 {
-                                    "entity": "binary_sensor.ambient_weather_battery_fridge"
+                                    "entity": "sensor.omv_sda"
                                 },
                                 {
-                                    "entity": "sensor.bedroom_door_battery_level"
+                                    "entity": "sensor.omv_boot"
                                 },
                                 {
-                                    "entity": "sensor.front_door_lock_battery_level"
+                                    "entity": "sensor.omv_cpu_load"
                                 },
                                 {
-                                    "entity": "sensor.home_office_door_sensor_battery_level"
+                                    "entity": "sensor.omv_memory"
                                 },
                                 {
-                                    "entity": "sensor.kitchen_door_lock_battery_level"
-                                },
-                                {
-                                    "entity": "sensor.kitchen_garage_door_battery_level"
-                                },
-                                {
-                                    "entity": "sensor.kitchen_patio_door_motion_battery_level"
-                                },
-                                {
-                                    "entity": "sensor.living_room_door_battery_level"
-                                },
-                                {
-                                    "entity": "sensor.office_multi_sensor_battery_level"
-                                },
-                                {
-                                    "entity": "sensor.utility_room_moisture_battery_level"
-                                },
-                                {
-                                    "entity": "sensor.workshop_door_lock_battery_level"
+                                    "entity": "sensor.omv_uptime"
                                 }
                             ],
-                            "title": "Battery Levels",
+                            "title": "Open Media Vault",
+                            "show_header_toggle": false,
                             "state_color": true
+                        },
+                        {
+                            "type": "grid",
+                            "title": "System Health",
+                            "cards": [
+                                {
+                                    "type": "gauge",
+                                    "min": 0,
+                                    "max": 100,
+                                    "entity": "sensor.processor_use"
+                                },
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.disk_use_percent",
+                                    "min": 0,
+                                    "max": 100
+                                },
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.memory_use_percent",
+                                    "min": 0,
+                                    "max": 100
+                                }
+                            ]
                         }
                     ],
                     "icon": "mdi:cogs",

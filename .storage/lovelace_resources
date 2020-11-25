@@ -34,24 +34,9 @@
                 "url": "/hacsfiles/mini-graph-card/mini-graph-card-bundle.js"
             },
             {
-                "id": "8abcc5968a2747e0afb207fafd5ed7bb",
-                "type": "module",
-                "url": "/hacsfiles/mini-media-player/mini-media-player-bundle.js"
-            },
-            {
                 "id": "0b1395d097ea4787bb635d6216a5610a",
                 "type": "module",
                 "url": "/hacsfiles/lovelace-template-entity-row/template-entity-row.js"
-            },
-            {
-                "id": "a580b1488e6e4f4eb7f3b3a3d91c907d",
-                "type": "js",
-                "url": "/hacsfiles/lovelace-swipe-navigation/swipe-navigation.js"
-            },
-            {
-                "id": "8fd801ec93314bb997a20b0481039acb",
-                "type": "module",
-                "url": "/hacsfiles/fan-control-entity-row/fan-control-entity-row.js"
             },
             {
                 "id": "48a47eea2799443cad042064bc87d896",
@@ -64,14 +49,14 @@
                 "url": "/hacsfiles/lovelace-grocy-chores-card/grocy-chores-card.js"
             },
             {
-                "id": "64e5e9191af24978b6afa006a94feb8c",
-                "type": "module",
-                "url": "/hacsfiles/battery-state-card/battery-state-card.js"
-            },
-            {
                 "url": "/hacsfiles/atomic-calendar-revive/atomic-calendar-revive.js",
                 "type": "module",
                 "id": "db949e26fe1a4ee8a6f9842dc4581b88"
+            },
+            {
+                "url": "/hacsfiles/fan-control-entity-row/fan-control-entity-row.js",
+                "type": "module",
+                "id": "f6e8d05bec394798abd880259a45ad32"
             }
         ]
     }

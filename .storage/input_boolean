@@ -26,6 +26,11 @@
             {
                 "name": "Time to open blinds?",
                 "id": "time_to_open_blinds"
+            },
+            {
+                "name": "Show Sprinklers",
+                "icon": "mdi:sprinkler-variant",
+                "id": "show_sprinklers"
             }
         ]
     }
