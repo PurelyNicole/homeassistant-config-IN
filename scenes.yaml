@@ -528,3 +528,182 @@
       friendly_name: Office Fan/Humidifier
       state: ready
   icon: mdi:record-player
+- id: '1606676747899'
+  name: Goodnight Office
+  entities:
+    light.office_bed_light:
+      friendly_name: Office Bed Light
+      supported_features: 0
+      state: 'off'
+    light.office_rgbw:
+      effect_list:
+      - None
+      - Wake up
+      - Cycle up
+      - Cycle down
+      - Random
+      friendly_name: Office_RGBW
+      supported_features: 181
+      state: 'off'
+    switch.office_fan_humidifier_switch:
+      node_id: 2
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594076282880'
+      power_consumption: 10.033
+      friendly_name: Office Fan/Humidifier Switch
+      icon: hass:fan
+      state: 'on'
+    zwave.office_outlet:
+      node_id: 2
+      node_name: HKZW-SO01 Smart Plug
+      manufacturer_name: Hank
+      product_name: HKZW-SO01 Smart Plug
+      query_stage: Complete
+      is_awake: true
+      is_ready: true
+      is_failed: false
+      is_info_received: true
+      max_baud_rate: 40000
+      is_zwave_plus: true
+      capabilities:
+      - zwave_plus
+      - beaming
+      - listening
+      - routing
+      neighbors:
+      - 34
+      - 3
+      - 36
+      - 7
+      - 9
+      - 19
+      - 20
+      - 22
+      - 54
+      - 56
+      - 28
+      - 62
+      - 63
+      sentCnt: 26
+      sentFailed: 0
+      retries: 0
+      receivedCnt: 18
+      receivedDups: 2
+      receivedUnsolicited: 0
+      sentTS: '2020-11-29 14:19:49:079 '
+      receivedTS: '2020-11-29 14:19:49:372 '
+      lastRequestRTT: 168
+      averageRequestRTT: 161
+      lastResponseRTT: 293
+      averageResponseRTT: 291
+      application_version: '1.05'
+      friendly_name: Office Fan/Humidifier
+      state: ready
+    light.hallway_lights:
+      friendly_name: Hallway Lights
+      supported_features: 0
+      state: 'off'
+    light.hall_bath_switch:
+      friendly_name: Hall Bath Switch
+      supported_features: 0
+      state: 'off'
+    light.guest_room_floor_lamp:
+      friendly_name: Guest Room Floor Lamp
+      supported_features: 0
+      state: 'off'
+  icon: mdi:sleep
+- id: '1606677565239'
+  name: Bedroom Lights Off
+  entities:
+    switch.bedroom_humidifier:
+      node_id: 13
+      value_index: 0
+      value_instance: 1
+      value_id: '72057594260832256'
+      power_consumption: 0
+      friendly_name: Bedroom Humidifier
+      icon: mdi:cup-water
+      state: 'on'
+    zwave.humidifier_bedroom:
+      node_id: 13
+      node_name: Humidifier
+      manufacturer_name: Aeotec
+      product_name: DSC06106 Smart Energy Switch
+      query_stage: Complete
+      is_awake: true
+      is_ready: true
+      is_failed: false
+      is_info_received: true
+      max_baud_rate: 40000
+      is_zwave_plus: false
+      capabilities:
+      - beaming
+      - listening
+      - routing
+      neighbors:
+      - 34
+      - 3
+      - 35
+      - 36
+      - 6
+      - 7
+      - 9
+      - 17
+      - 19
+      - 20
+      - 22
+      - 56
+      - 28
+      sentCnt: 10
+      sentFailed: 4
+      retries: 0
+      receivedCnt: 10
+      receivedDups: 1
+      receivedUnsolicited: 0
+      sentTS: '2020-11-29 14:18:38:547 '
+      receivedTS: '2020-11-29 14:18:38:762 '
+      lastRequestRTT: 96
+      averageRequestRTT: 200
+      lastResponseRTT: 214
+      averageResponseRTT: 365
+      application_version: '1.43'
+      friendly_name: Bedroom Humidifier
+      state: ready
+    group.master_bedroom_lights:
+      entity_id:
+      - light.bedroom_light_switch
+      - light.bathroom_mirror_led
+      - light.bathroom_vanity_light
+      - light.bedroom_entry_light
+      - light.bathroom_shower
+      - light.exhaust_fan
+      - light.bedroom_closet_light_switch
+      order: 7
+      friendly_name: Master Bedroom Lights
+      icon: mdi:lightbulb-multiple
+      state: 'off'
+    switch.mb_magic_mirror_screen:
+      friendly_name: Magic Mirror Screen
+      icon: mdi:cellphone
+      state: 'off'
+  icon: mdi:lightbulb-off
+- id: '1606678084229'
+  name: Dim Bedroom
+  entities:
+    light.bedroom_entry_light:
+      brightness: 38
+      friendly_name: Bedroom Entry Light
+      supported_features: 1
+      state: 'on'
+    light.bedroom_light_switch:
+      brightness: 76
+      friendly_name: Bedroom Light Switch
+      supported_features: 1
+      state: 'on'
+    light.bathroom_vanity_light:
+      brightness: 76
+      friendly_name: Bathroom Vanity Light
+      supported_features: 1
+      state: 'on'
+  icon: mdi:brightness-6

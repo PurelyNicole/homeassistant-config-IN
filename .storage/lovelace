@@ -506,6 +506,9 @@
                                 },
                                 {
                                     "entity": "scene.listen_to_music"
+                                },
+                                {
+                                    "entity": "scene.goodnight_office"
                                 }
                             ],
                             "title": "Scenes"

@@ -57,7 +57,8 @@
   - platform: time
     at: input_datetime.open_blinds_time
   - platform: template
-    value_template: "{% set hour_before_wake = (state_attr('input_datetime.open_blinds_time', 'hour') - 1) %} {{now().hour == hour_before_wake}}"
+    value_template: '{% set hour_before_wake = (state_attr(''input_datetime.open_blinds_time'',
+      ''hour'') - 1) %} {{now().hour == hour_before_wake}}'
   - platform: sun
     event: sunrise
   condition:
@@ -540,4 +541,103 @@
   - service: switch.turn_off
     data: {}
     entity_id: switch.plant_light
+  mode: single
+- id: '1606675903251'
+  alias: Tag Listen To Music is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: f7889a1c-a431-49da-93db-b38ef3d03cf4
+  condition: []
+  action:
+  - scene: scene.listen_to_music
+  mode: single
+- id: '1606676237934'
+  alias: Tag Read is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 99749d42-158d-4e32-aa3e-a5a2d08177bf
+  condition: []
+  action:
+  - scene: scene.read
+  mode: single
+- id: '1606676307650'
+  alias: Tag Work is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: ddafd438-5814-4669-ae60-4852d653482d
+  condition: []
+  action:
+  - scene: scene.work
+  mode: single
+- id: '1606676456455'
+  alias: Tag Goodnight Office is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: d9299984-99ae-49b1-8744-2ae89f5db8d5
+  condition: []
+  action:
+  - scene: scene.goodnight_office
+  mode: single
+- id: '1606677028890'
+  alias: Tag Goodnight Bedroom - Nicole Nightstand is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 888ae6de-fec0-44ba-9c96-97ca9c8c55f9
+  condition: []
+  action:
+  - scene: scene.bedroom_lights_off
+  mode: single
+- id: '1606677313814'
+  alias: Tag Goodnight - Eric Nightstand is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: fbd1479a-a4eb-402d-8bfa-d8a10db2341c
+  condition: []
+  action:
+  - scene: scene.sleep
+  mode: single
+- id: '1606677325949'
+  alias: Tag Goodnight - Nicole Nightstand is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: d08bfa6b-d279-4aa8-8fe1-5d7d46d1e098
+  condition: []
+  action:
+  - scene: scene.sleep
+  mode: single
+- id: '1606677698755'
+  alias: Tag Goodnight Bedroom - Eric Nightstand is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: b803ac20-0e21-448e-ac03-a0c2bc60f1b7
+  condition: []
+  action:
+  - scene: scene.bedroom_lights_off
+  mode: single
+- id: '1606678221092'
+  alias: Lighting - Dim lights when Eric coming home from nightshift
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: person.eric
+    from: BCC
+    to: Away
+  - platform: state
+    entity_id: person.eric
+    from: MISO
+    to: Away
+  condition:
+  - condition: time
+    after: 04:30
+    before: 06:00
+  action:
+  - scene: scene.dim_bedroom
   mode: single
