@@ -4,12 +4,10 @@
 - platform: group
   name: Holiday Lights
   entities:
-    - light.wled1_outsidelow
     - light.wled1_outsidelow_2
-    - light.wled2_outsidegara
     - light.wled2_outsidegara_2
-    - light.wled3_outsideeyebrow
     - light.wled3_outsideeyebrow_2
+
 ########
 # MQTT #
 ########
@@ -205,32 +203,6 @@
   payload_not_available: "Offline"
   retain: false
   unique_id: 787288
-- platform: mqtt
-  name: "Guest Room Bed Lamp"
-  state_topic: "stat/guest_bed_light/POWER"
-  command_topic: "cmnd/guest_bed_light/POWER"
-  availability_topic: "tele/guest_bed_light/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
-  unique_id: 450228
-  # Loft Fan
-- platform: mqtt
-  name: "Loft Fan Light"
-  state_topic: "stat/LoftFan/POWER1"
-  # value_template: "{{ value_json.POWER1 }}"
-  command_topic: "cmnd/LoftFan/POWER1"
-  availability_topic: "tele/LoftFan/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
-  unique_id: 184663
 # Hallway Lights
 - platform: mqtt
   name: "Hallway Lights MQTT"

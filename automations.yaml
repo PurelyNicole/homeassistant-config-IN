@@ -18,38 +18,6 @@
       entity_id: scene.watch_tv
     service: scene.turn_on
   mode: single
-- id: '1522888948173'
-  alias: Office - Turn on lights with wall switch
-  trigger:
-  - entity_id: light.guest_room_floor_lamp
-    platform: state
-    to: 'on'
-  action:
-  - service: light.turn_on
-    data: {}
-    entity_id: light.office_rgbw
-  - type: turn_on
-    device_id: e93c31a0056d8f643306aa69147fd759
-    entity_id: light.office_bed_light
-    domain: light
-  mode: single
-- id: '1522889042539'
-  alias: Office - Turn off lights with wall switch
-  trigger:
-  - entity_id: light.guest_room_floor_lamp
-    from: 'on'
-    platform: state
-    to: 'off'
-  action:
-  - type: turn_off
-    device_id: e93c31a0056d8f643306aa69147fd759
-    entity_id: light.office_bed_light
-    domain: light
-  - type: turn_off
-    device_id: 4aac034661657e0e02201862965efd4d
-    entity_id: light.office_rgbw
-    domain: light
-  mode: single
 - alias: Home Mode - Set to Home When Anyone Arrives Home and Mode is not Sleep
   id: '1522931077343'
   trigger:
@@ -84,12 +52,14 @@
       option: Away
     service: input_select.select_option
 - id: '1522931689561'
-  alias: Home Mode - Set To Home At Sunrise If Anyone Is Home
+  alias: Home Mode - Set To Home When Blinds Open
   trigger:
-  - event: sunrise
-    platform: sun
   - platform: time
     at: input_datetime.open_blinds_time
+  - platform: template
+    value_template: "{% set hour_before_wake = (state_attr('input_datetime.open_blinds_time', 'hour') - 1) %} {{now().hour == hour_before_wake}}"
+  - platform: sun
+    event: sunrise
   condition:
   - condition: state
     entity_id: group.people
@@ -436,9 +406,10 @@
       after: '21:00'
       before: '23:59'
   action:
-  - service: light.turn_off
-    data: {}
+  - type: turn_off
+    device_id: e93c31a0056d8f643306aa69147fd759
     entity_id: light.office_bed_light
+    domain: light
   - service: light.turn_off
     data: {}
     entity_id: light.guest_room_floor_lamp

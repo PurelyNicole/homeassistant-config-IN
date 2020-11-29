@@ -141,3 +141,13 @@
   payload_off: "OFF"
   retain: true
   unique_id: 7317335
+# Workshop Light
+- platform: mqtt
+  name: "Workshop Light Switch"
+  state_topic: "stat/workshop_light/POWER"
+  command_topic: "cmnd/workshop_light/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+  unique_id: bcddc2b71ffd

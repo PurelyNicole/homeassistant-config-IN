@@ -850,13 +850,13 @@
                                         "type": "divider"
                                     },
                                     {
-                                        "entity": "light.wled1_outsidelow"
+                                        "entity": "light.wled1_outsidelow_2"
                                     },
                                     {
-                                        "entity": "light.wled2_outsidegara"
+                                        "entity": "light.wled2_outsidegara_2"
                                     },
                                     {
-                                        "entity": "light.wled3_outsideeyebrow"
+                                        "entity": "light.wled3_outsideeyebrow_2"
                                     },
                                     {
                                         "type": "divider"
