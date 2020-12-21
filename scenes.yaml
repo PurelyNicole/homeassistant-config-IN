@@ -27,7 +27,7 @@
       - switch.reading_lamp_switch
       - light.desk_light_switch
       - light.alcove_light_switch
-      - light.loft_fan_light
+      - light.loftfan
       - light.network_closet_light
       order: 6
       friendly_name: Loft Lights
@@ -237,7 +237,7 @@
   id: 33bbe74c95a24b1a901f785a056edd70
   entities:
     fan.loft_ceiling_fan:
-      speed: medium
+      speed: low
       state: 'on'
     group.guest_room_lights:
       state: 'off'
@@ -302,8 +302,7 @@
       friendly_name: Kitchen Overhead Lights
       supported_features: 0
       state: 'off'
-    light.loft_fan_light:
-      friendly_name: Loft Fan Light
+    light.loftfan:
       supported_features: 0
       state: 'off'
     light.hallway_lights:
@@ -528,8 +527,8 @@
       friendly_name: Office Fan/Humidifier
       state: ready
   icon: mdi:record-player
-- id: '1606676747899'
-  name: Goodnight Office
+- name: Goodnight Office
+  id: '1606676747899'
   entities:
     light.office_bed_light:
       friendly_name: Office Bed Light
@@ -613,8 +612,8 @@
       supported_features: 0
       state: 'off'
   icon: mdi:sleep
-- id: '1606677565239'
-  name: Bedroom Lights Off
+- name: Bedroom Lights Off
+  id: '1606677565239'
   entities:
     switch.bedroom_humidifier:
       node_id: 13
@@ -655,18 +654,18 @@
       - 22
       - 56
       - 28
-      sentCnt: 10
+      sentCnt: 14
       sentFailed: 4
       retries: 0
-      receivedCnt: 10
+      receivedCnt: 12
       receivedDups: 1
       receivedUnsolicited: 0
-      sentTS: '2020-11-29 14:18:38:547 '
-      receivedTS: '2020-11-29 14:18:38:762 '
+      sentTS: '2020-11-29 17:22:06:137 '
+      receivedTS: '2020-11-29 17:22:06:352 '
       lastRequestRTT: 96
-      averageRequestRTT: 200
+      averageRequestRTT: 102
       lastResponseRTT: 214
-      averageResponseRTT: 365
+      averageResponseRTT: 251
       application_version: '1.43'
       friendly_name: Bedroom Humidifier
       state: ready
@@ -687,22 +686,26 @@
       friendly_name: Magic Mirror Screen
       icon: mdi:cellphone
       state: 'off'
+    fan.bedroom_exhaust_fan:
+      friendly_name: Bedroom Exhaust Fan
+      supported_features: 0
+      state: 'off'
   icon: mdi:lightbulb-off
 - id: '1606678084229'
   name: Dim Bedroom
   entities:
     light.bedroom_entry_light:
-      brightness: 38
+      brightness: 25
       friendly_name: Bedroom Entry Light
       supported_features: 1
       state: 'on'
     light.bedroom_light_switch:
-      brightness: 76
+      brightness: 25
       friendly_name: Bedroom Light Switch
       supported_features: 1
       state: 'on'
     light.bathroom_vanity_light:
-      brightness: 76
+      brightness: 25
       friendly_name: Bathroom Vanity Light
       supported_features: 1
       state: 'on'

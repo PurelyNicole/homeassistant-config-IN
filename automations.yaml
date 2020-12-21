@@ -18,8 +18,8 @@
       entity_id: scene.watch_tv
     service: scene.turn_on
   mode: single
-- alias: Home Mode - Set to Home When Anyone Arrives Home and Mode is not Sleep
-  id: '1522931077343'
+- id: '1522931077343'
+  alias: Home Mode - Set to Home When Anyone Arrives Home and Mode is not Sleep
   trigger:
   - entity_id: group.people
     platform: state
@@ -39,6 +39,7 @@
       entity_id: input_select.home_mode
       option: Home
     service: input_select.select_option
+  mode: restart
 - alias: Home Mode - Set To Away When Everyone Leaves
   id: '1522931541949'
   trigger:
@@ -210,7 +211,7 @@
   condition: []
   action:
   - data:
-      entity_id: light.loft_fan_light
+      entity_id: light.loftfan
     service: light.turn_off
   mode: single
 - alias: System - Weekly Backup
@@ -237,7 +238,7 @@
     to: 'on'
   condition: []
   action:
-  - entity_id: light.loft_fan_light
+  - entity_id: light.loftfan
     service: light.turn_on
 - alias: Fish - Set Fed Time
   id: '1678657997296'
@@ -401,11 +402,9 @@
     to: 'off'
     for: 0:15:00
   condition:
-  - condition: not
-    conditions:
-    - condition: time
-      after: '21:00'
-      before: '23:59'
+  - condition: state
+    entity_id: binary_sensor.home_office_door_sensor
+    state: Open
   action:
   - type: turn_off
     device_id: e93c31a0056d8f643306aa69147fd759
@@ -418,41 +417,6 @@
     device_id: 4aac034661657e0e02201862965efd4d
     entity_id: light.office_rgbw
     domain: light
-  mode: single
-- id: '1602094793399'
-  alias: Office - Turn fan/humidifier off when I wake up
-  description: Look for motion between 6:30-9:30, and turn off fan when it's detected.
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.home_office_door_sensor
-    to: 'on'
-  condition:
-  - condition: or
-    conditions:
-    - condition: time
-      after: 06:30
-      before: 08:00
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-    - condition: time
-      after: 08:00
-      before: '10:00'
-      weekday:
-      - sat
-      - sun
-  action:
-  - type: turn_off
-    device_id: ca0d575e83874565b700fddd31f336c2
-    entity_id: switch.office_fan_humidifier_switch
-    domain: switch
-  - service: input_select.select_option
-    data:
-      option: Home
-    entity_id: input_select.home_mode
   mode: single
 - id: '1602610938827'
   alias: Bedroom - Turn off humidifier when blinds open
@@ -629,15 +593,72 @@
   - platform: state
     entity_id: person.eric
     from: BCC
-    to: Away
-  - platform: state
-    entity_id: person.eric
-    from: MISO
-    to: Away
   condition:
   - condition: time
-    after: 04:30
+    after: 04:00
     before: 06:00
   action:
   - scene: scene.dim_bedroom
   mode: single
+- id: '1606852374881'
+  alias: Office Humidity
+  description: When the office humidity gets below 50%, turn on the humidifier.
+  trigger:
+  - type: value
+    platform: device
+    device_id: d5012fca05d911ebabf433de95c43c23
+    entity_id: sensor.office_multi_sensor_relative_humidity
+    domain: sensor
+    below: 45
+  condition: []
+  action:
+  - type: turn_on
+    device_id: ca0d575e83874565b700fddd31f336c2
+    entity_id: switch.office_fan_humidifier_switch
+    domain: switch
+  mode: single
+- id: '1607793323308'
+  alias: Turn plant lights on at sunrise
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 49fab7540e6fe1f69ed4e3dfac928396
+    entity_id: switch.hall_plant_lights
+    domain: switch
+  mode: single
+- id: '1607793343124'
+  alias: Turn plant lights off at sunset
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 49fab7540e6fe1f69ed4e3dfac928396
+    entity_id: switch.hall_plant_lights
+    domain: switch
+  mode: single
+- id: '1608135961867'
+  alias: Nicole - Office Wakeup
+  description: Use RBG as wakeup light based on alarm on my phone.
+  use_blueprint:
+    path: Sbyx/wake-up-light-alarm-with-sunrise-effect.yaml
+    input:
+      max_brightness: '100'
+      light_entity: light.office_rgbw
+      timestamp_sensor: sensor.pixel_3a_next_alarm
+      pre_sunrise_actions:
+      - service: input_select.select_option
+        data:
+          option: Home
+        entity_id: input_select.home_mode
+      - type: turn_off
+        device_id: ca0d575e83874565b700fddd31f336c2
+        entity_id: switch.office_fan_humidifier_switch
+        domain: switch
+      sunrise_duration: '30'

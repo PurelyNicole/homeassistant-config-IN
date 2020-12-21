@@ -53,7 +53,7 @@ loft_lights:
     - switch.reading_lamp_switch
     - light.desk_light_switch
     - light.alcove_light_switch
-    - light.loft_fan_light
+    - light.loftfan
     - light.network_closet_light
 master_bedroom_lights:
   name: Master Bedroom Lights

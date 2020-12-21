@@ -675,6 +675,9 @@
                                     "entity": "light.hallway_lights"
                                 },
                                 {
+                                    "entity": "switch.hall_plant_lights"
+                                },
+                                {
                                     "type": "divider"
                                 },
                                 {
@@ -748,6 +751,9 @@
                                 },
                                 {
                                     "entity": "light.bedroom_light_switch"
+                                },
+                                {
+                                    "entity": "switch.plant_light"
                                 },
                                 {
                                     "type": "divider"
@@ -1023,7 +1029,8 @@
                     "cards": [
                         {
                             "type": "custom:simple-thermostat",
-                            "entity": "climate.living_room"
+                            "entity": "climate.living_room",
+                            "step_size": 1
                         },
                         {
                             "entities": [
