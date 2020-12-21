@@ -1,4 +1,4 @@
-db_url: !secret db_url
+# db_url: !secret db_url
 exclude:
   domains:
     - calendar
@@ -10,12 +10,27 @@ exclude:
     - zone
     - zwave
   entity_globs:
+    - binary_sensor.blueiris_*_audio
+    - binary_sensor.blueiris_*_connectivity
+    - binary_sensor.blueiris_*_dio
+    - binary_sensor.blueiris_*_external
     - binary_sensor.octoprint*
+    - binary_sensor.music_cast_remote_*
     - binary_sensor.nextion_*
+    - binary_sensor.omv_*
+    - binary_sensor.pixel_3a_*
+    - binary_sensor.puregeekery_*
     - binary_sensor.volumio_remote_*
+    - sensor.*_ip
     - sensor.dark_sky*
+    - sensor.erics_ipad_*
     - sensor.octoprint*
     - sensor.openweathermap*
+    - switch.blueiris_*
+    - sensor.wled*_current
+    - switch.wled*_nightlight
+    - switch.wled*_sync_receive
+    - switch.wled*_sync_send
   entities:
     - binary_sensor.bedroom_shade21_shade_closed
     - binary_sensor.bedroom_shade2_button
@@ -26,14 +41,19 @@ exclude:
     - binary_sensor.bedroom_shade_east_button
     - binary_sensor.bedroom_shade_east_closed
     - binary_sensor.bedroom_shade_east_open
+    - binary_sensor.blueiris_alerts
     - binary_sensor.living_room_thermostat_has_leaf
     - binary_sensor.living_room_thermostat_online
     - binary_sensor.living_room_thermostat_fan
+    - binary_sensor.shield_tablet_k1_wifi_state
+    - binary_seosnor.updater
+    - device_tracker.erics_ipad
     - light.hallway_lights_mqtt
     - light.kitchen_overheadlights_mqtt
     - sensor.ambient_weather_last_rain
     - sensor.cd_changer
     - sensor.date_time
+    - sensor.date_time_iso
     - sensor.flat_fork_last_update
     - sensor.fort_harrison_last_update
     - sensor.hacs
@@ -43,6 +63,8 @@ exclude:
     - sensor.kitchen_patio_door_motion_alarm_type
     - sensor.last_boot
     - sensor.pixel_3a_proximity_sensor
+    - sensor.pixel_3a_last_update_trigger
+    - sensor.pixel_3a_battery_state
     - sensor.random_album
     - sensor.random_book
     - sensor.town_run_last_update
