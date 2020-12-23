@@ -170,7 +170,8 @@
                             "cards": [
                                 {
                                     "type": "weather-forecast",
-                                    "entity": "weather.dark_sky"
+                                    "entity": "weather.openweathermap",
+                                    "secondary_info_attribute": "humidity"
                                 },
                                 {
                                     "entities": [
@@ -375,13 +376,6 @@
                             "type": "picture-glance",
                             "camera_view": "live",
                             "entity": "camera.blueiris_driveway_sub"
-                        },
-                        {
-                            "aspect_ratio": "100%",
-                            "entity": "camera.nwsradar_ind_enhanced_composite_reflectivity_loop",
-                            "show_name": false,
-                            "show_state": false,
-                            "type": "picture-entity"
                         }
                     ],
                     "icon": "mdi:home-assistant",
@@ -461,8 +455,9 @@
                             "type": "media-control"
                         },
                         {
-                            "entity": "weather.dark_sky",
-                            "type": "weather-forecast"
+                            "entity": "weather.openweathermap",
+                            "type": "weather-forecast",
+                            "secondary_info_attribute": "humidity"
                         },
                         {
                             "type": "thermostat",
@@ -623,9 +618,9 @@
                                 }
                             ],
                             "firstDayOfWeek": 1,
-                            "maxDaysToShow": 30,
-                            "hideFinishedEvents": true,
-                            "showDate": false,
+                            "maxDaysToShow": 60,
+                            "hideFinishedEvents": false,
+                            "showDate": true,
                             "showEventIcon": false,
                             "showWeekDay": false,
                             "disableLocationLink": false,
@@ -634,9 +629,14 @@
                             "showMonth": true,
                             "sortByStartTime": false,
                             "showRelativeTime": false,
-                            "showDeclined": false,
+                            "showDeclined": true,
                             "showNoEventsForToday": false,
-                            "disableEventLink": false
+                            "disableEventLink": false,
+                            "showLocation": false,
+                            "showProgressBar": false,
+                            "defaultMode": "Event",
+                            "showDescription": true,
+                            "calShowDescription": false
                         }
                     ]
                 },
@@ -793,7 +793,7 @@
                                     "entity": "light.desk_light_switch"
                                 },
                                 {
-                                    "entity": "light.loft_fan_light"
+                                    "entity": "light.loftfan"
                                 },
                                 {
                                     "entity": "switch.reading_lamp_switch"
@@ -1705,6 +1705,225 @@
                             ],
                             "title": "Utility Room",
                             "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "sensor.vacuum",
+                                    "type": "custom:roomba-vacuum-card"
+                                },
+                                {
+                                    "entities": [
+                                        "input_boolean.vacuum_clean_workout_room",
+                                        "input_boolean.vacuum_clean_bedroom",
+                                        "input_boolean.vacuum_clean_bathroom",
+                                        "input_boolean.vacuum_clean_hall",
+                                        "input_boolean.vacuum_clean_entry",
+                                        "input_boolean.vacuum_clean_laundry",
+                                        "input_boolean.vacuum_clean_kitchen",
+                                        "input_boolean.vacuum_clean_dining",
+                                        "input_boolean.vacuum_clean_office",
+                                        {
+                                            "entity": "automation.vacuum_clean_rooms",
+                                            "lock": {
+                                                "enabled": "[[[\n  if ((states['group.vacuum_rooms'].state == \"on\") && (states['sensor.vacuum'].state == \"Ready\"))\n    return false;\n  return true;\n]]]\n",
+                                                "exemptions": []
+                                            },
+                                            "name": "Clean Rooms",
+                                            "styles": {
+                                                "card": [
+                                                    {
+                                                        "height": "50px"
+                                                    }
+                                                ]
+                                            },
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "automation.trigger",
+                                                "service_data": {
+                                                    "entity_id": "automation.vacuum_clean_rooms"
+                                                }
+                                            },
+                                            "type": "custom:button-card"
+                                        }
+                                    ],
+                                    "head": {
+                                        "label": "Selective Room Cleaning",
+                                        "type": "section"
+                                    },
+                                    "type": "custom:fold-entity-row"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "style": ".text-divider {\n  padding: 0em;\n  margin: 0em;\n} h2 {\n  font-size: 1em;\n  margin-block-start: 0em;\n  margin-block-end: 0em;\n}",
+                                            "text": "Clean",
+                                            "type": "custom:text-divider-row"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_clean_brushes",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 days"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-1 days"
+                                                }
+                                            ],
+                                            "timeout": "10 days",
+                                            "title": "Brushes",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_clean_contacts",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 days"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-3 days"
+                                                }
+                                            ],
+                                            "timeout": "18 days",
+                                            "title": "Contacts",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_clean_filter",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 days"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-10 days"
+                                                }
+                                            ],
+                                            "timeout": "10 days",
+                                            "title": "Filter",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_clean_wheel",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 days"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-3 days"
+                                                }
+                                            ],
+                                            "timeout": "18 days",
+                                            "title": "Wheel",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_clean_bin",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 days"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-3 days"
+                                                }
+                                            ],
+                                            "timeout": "18 days",
+                                            "title": "Bin",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "style": ".text-divider {\n  padding: 0em;\n  margin: 0em;\n} h2 {\n  font-size: 1em;\n  margin-block-start: 0em;\n  margin-block-end: 0em;\n}",
+                                            "text": "Replace",
+                                            "type": "custom:text-divider-row"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_replace_brushes",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 months"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-4 months"
+                                                }
+                                            ],
+                                            "timeout": "8 months",
+                                            "title": "Brushes",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_replace_filter",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 months"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-1 months"
+                                                }
+                                            ],
+                                            "timeout": "3 months",
+                                            "title": "Filter",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_replace_wheel",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 months"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-4 months"
+                                                }
+                                            ],
+                                            "timeout": "2 years",
+                                            "title": "Wheel",
+                                            "type": "custom:check-button-card"
+                                        }
+                                    ],
+                                    "head": {
+                                        "label": "Maintenance",
+                                        "type": "section"
+                                    },
+                                    "type": "custom:fold-entity-row"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.roomba_i7",
+                            "entities": [],
+                            "type": "picture-glance"
                         }
                     ],
                     "panel": false,
@@ -1768,7 +1987,7 @@
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Roomba",
+                            "title": "Loft Roomba",
                             "type": "entities"
                         },
                         {

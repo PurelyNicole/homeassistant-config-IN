@@ -1,3 +1,7 @@
 exclude:
   entities:
+    - automation.vacuum_log_position
+    - automation.vacuum_maintenance_check
+    - automation.vacuum_remove_rooms_for_cleaning
+    - automation.vacuum_update_location
     - binary_sensor.office_motion_sensor

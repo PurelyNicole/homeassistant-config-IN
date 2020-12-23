@@ -57,6 +57,31 @@
                 "url": "/hacsfiles/fan-control-entity-row/fan-control-entity-row.js",
                 "type": "module",
                 "id": "f6e8d05bec394798abd880259a45ad32"
+            },
+            {
+                "url": "/hacsfiles/lovelace-roomba-vacuum-card/roomba-vacuum-card.js",
+                "type": "module",
+                "id": "8a5d4582abca42cc90dfc63c225f70c5"
+            },
+            {
+                "url": "/hacsfiles/check-button-card/check-button-card.js",
+                "type": "module",
+                "id": "94abf2a196bb48b0811e5dc864c96594"
+            },
+            {
+                "url": "/hacsfiles/lovelace-fold-entity-row/fold-entity-row.js",
+                "type": "module",
+                "id": "d0ddcad91e754f81b8b516c5d72c4149"
+            },
+            {
+                "url": "/hacsfiles/text-divider-row/text-divider-row.js",
+                "type": "module",
+                "id": "cef58a3e58c14b84bd51a9bef4874a6b"
+            },
+            {
+                "url": "/hacsfiles/button-card/button-card.js",
+                "type": "module",
+                "id": "ecab3142074b43a3a7bede7b114aa1c7"
             }
         ]
     }

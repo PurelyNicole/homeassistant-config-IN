@@ -48,14 +48,14 @@ sensor.emoncms_kwh:
   icon: mdi:power-plug
 sensor.living_room_remote_activity:
   icon: mdi:remote
-switch.roomba:
+switch.loft_roomba:
   icon: mdi:robot-vacuum
-sensor.roomba:
+sensor.loft_roomba:
   icon: mdi:robot-vacuum
-sensor.roomba_battery:
+sensor.loft_roomba_battery:
   icon: mdi:battery-charging
   unit_of_measurement: '%'
-sensor.roomba_status:
+sensor.loft_roomba_status:
   icon: mdi:format-list-bulleted
 binary_sensor.living_room_thermostat_fan:
   icon: mdi:fan
@@ -84,7 +84,7 @@ person.eric:
   icon: mdi:alpha-e-box
 zwave.record_console:
   node_id: 12
-sensor.roomba_battery_filtered:
+sensor.loft_roomba_battery_filtered:
   icon: mdi:battery-charging
   unit_of_measurement: '%'
 sensor.record_console_relative_humidity:

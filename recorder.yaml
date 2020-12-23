@@ -21,13 +21,18 @@ exclude:
     - binary_sensor.pixel_3a_*
     - binary_sensor.puregeekery_*
     - binary_sensor.volumio_remote_*
+    - input_text.vacuum_*
     - sensor.*_ip
     - sensor.dark_sky*
     - sensor.erics_ipad_*
+    - sensor.shield_tablet_k1_*
     - sensor.octoprint*
     - sensor.openweathermap*
+    - sensor.vacuum_*
     - switch.blueiris_*
     - sensor.wled*_current
+    - switch.add_*
+    - switch.shade*
     - switch.wled*_nightlight
     - switch.wled*_sync_receive
     - switch.wled*_sync_send
@@ -46,14 +51,21 @@ exclude:
     - binary_sensor.living_room_thermostat_online
     - binary_sensor.living_room_thermostat_fan
     - binary_sensor.shield_tablet_k1_wifi_state
-    - binary_seosnor.updater
+    - binary_sensor.updater
     - device_tracker.erics_ipad
     - light.hallway_lights_mqtt
     - light.kitchen_overheadlights_mqtt
     - sensor.ambient_weather_last_rain
+    - sensor.cert_expiry_timestamp_zeckner_duckdns_org
     - sensor.cd_changer
     - sensor.date_time
     - sensor.date_time_iso
+    - sensor.erics_iphone_activity
+    - sensor.erics_iphone_battery_level
+    - sensor.erics_iphone_battery_state
+    - sensor.erics_iphone_connection_type
+    - sensor.erics_iphone_last_update_trigger
+    - sensor.erics_iphone_ssid
     - sensor.flat_fork_last_update
     - sensor.fort_harrison_last_update
     - sensor.hacs
@@ -62,11 +74,22 @@ exclude:
     - sensor.kitchen_patio_door_motion_alarm_level
     - sensor.kitchen_patio_door_motion_alarm_type
     - sensor.last_boot
-    - sensor.pixel_3a_proximity_sensor
+    - sensor.pixel_3a_audio_sensor
+    - sensor.pixel_3a_bluetooth_connection
+    - sensor.pixel_3a_charger_type
     - sensor.pixel_3a_last_update_trigger
+    - sensor.pixel_3a_proximity_sensor
+    - sensor.pixel_3a_light_sensor
     - sensor.pixel_3a_battery_state
+    - sensor.pixel_3a_battery_level
+    - sensor.pixel_3a_pressure_sensor
+    - sensor.pixel_3a_storage_sensor
+    - sensor.puregeekery_account_tier
+    - sensor.puregeekery_gamer_score
+    - sensor.puregeekery_gold_tenure
     - sensor.random_album
     - sensor.random_book
+    - sensor.rest980
     - sensor.town_run_last_update
     - sensor.volumio_artist
     - sensor.volumio_song

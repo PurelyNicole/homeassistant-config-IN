@@ -3,6 +3,7 @@
 #####################
 homeassistant:
   customize: !include customize.yaml
+  packages: !include_dir_named packages
   auth_providers:
     # - type: legacy_api_password
     #   api_password: !secret http_password
@@ -21,7 +22,7 @@ automation: !include automations.yaml
 frontend:
   themes: !include_dir_merge_named themes
 history: !include history.yaml
-logbook: !include  logbook.yaml
+logbook: !include logbook.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 
@@ -70,7 +71,7 @@ influxdb:
   host: localhost
   port: 8086
   database: !secret influx_db
-  username: !secret  influx_un
+  username: !secret influx_un
   password: !secret http_password
   default_measurement: state
 recorder: !include recorder.yaml
@@ -150,9 +151,9 @@ remote:
 sensor: !include sensors.yaml
 binary_sensor: !include binary_sensors.yaml
 
-###########
-# Switch  #
-###########
+##########
+# Switch #
+##########
 fan: !include fans.yaml
 switch: !include switches.yaml
 light: !include lights.yaml
@@ -179,7 +180,6 @@ logger:
   logs: 
     homeassistant.components.octoprint: fatal
     pysqueezebox.server: fatal
-
 
 ######################
 # Weather Components #
