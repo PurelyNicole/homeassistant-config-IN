@@ -556,7 +556,7 @@ automation:
           'sensor.vacuum_maint_clean_contacts',
           'sensor.vacuum_maint_clean_filter',
           'sensor.vacuum_maint_clean_wheel',
-          'sensor.vacuum_maint_clean_bin',
+          'sensor.vacuum_maint_clean_edge_brush',
           'sensor.vacuum_maint_replace_brushes',
           'sensor.vacuum_maint_replace_filter',
           'sensor.vacuum_maint_replace_wheel'

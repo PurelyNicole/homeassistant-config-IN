@@ -17,9 +17,9 @@ custom_components
 deps
 merged
 node-red
-packages
 themes
 tts
+vacuum
 www
 
 # Files
@@ -34,5 +34,4 @@ cam.yaml
 google_calendars.yaml
 OZW_Log.txt
 secrets.yaml
-.remember_the_milk.conf
 .omv_cookies.json

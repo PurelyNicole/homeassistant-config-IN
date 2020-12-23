@@ -109,6 +109,15 @@ spotify:
   client_id: !secret spotify_client_id
   client_secret: !secret spotify_client_secret
 
+#################
+# Notifications #
+#################
+notify:
+  - name: Notify Phones
+    platform: group
+    services:
+      - service: mobile_app_pixel_3a
+      - service: mobile_app_erics_iphone
 
 ##############
 # Irrigation #
@@ -126,16 +135,6 @@ group: !include groups.yaml
 #########
 api:
 http:
-
-#################
-# Notifications #
-#################
-notify:
-  - platform: html5 
-    name: chrome_push_notification
-    vapid_pub_key: !secret vapid_pub_key
-    vapid_prv_key: !secret vapid_prv_key
-    vapid_email: !secret nicole_email
 
 ##########
 # Remote #

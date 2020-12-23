@@ -1774,26 +1774,8 @@
                                                     "value": "-1 days"
                                                 }
                                             ],
-                                            "timeout": "10 days",
+                                            "timeout": "7 days",
                                             "title": "Brushes",
-                                            "type": "custom:check-button-card"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_clean_contacts",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 days"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-3 days"
-                                                }
-                                            ],
-                                            "timeout": "18 days",
-                                            "title": "Contacts",
                                             "type": "custom:check-button-card"
                                         },
                                         {
@@ -1810,8 +1792,8 @@
                                                     "value": "-10 days"
                                                 }
                                             ],
-                                            "timeout": "10 days",
-                                            "title": "Filter",
+                                            "timeout": "7 days",
+                                            "title": "Filter & Bin",
                                             "type": "custom:check-button-card"
                                         },
                                         {
@@ -1828,14 +1810,14 @@
                                                     "value": "-3 days"
                                                 }
                                             ],
-                                            "timeout": "18 days",
+                                            "timeout": "14 days",
                                             "title": "Wheel",
                                             "type": "custom:check-button-card"
                                         },
                                         {
                                             "color": "#40bf6a",
                                             "due": true,
-                                            "entity": "sensor.vacuum_maint_clean_bin",
+                                            "entity": "sensor.vacuum_maint_clean_contacts",
                                             "severity": [
                                                 {
                                                     "color": "#bfb540",
@@ -1846,32 +1828,32 @@
                                                     "value": "-3 days"
                                                 }
                                             ],
-                                            "timeout": "18 days",
-                                            "title": "Bin",
+                                            "timeout": "30 days",
+                                            "title": "Contacts/Sensors",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_clean_edge_brush",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 days"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-3 days"
+                                                }
+                                            ],
+                                            "timeout": "30 days",
+                                            "title": "Edge Brush",
                                             "type": "custom:check-button-card"
                                         },
                                         {
                                             "style": ".text-divider {\n  padding: 0em;\n  margin: 0em;\n} h2 {\n  font-size: 1em;\n  margin-block-start: 0em;\n  margin-block-end: 0em;\n}",
                                             "text": "Replace",
                                             "type": "custom:text-divider-row"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_replace_brushes",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 months"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-4 months"
-                                                }
-                                            ],
-                                            "timeout": "8 months",
-                                            "title": "Brushes",
-                                            "type": "custom:check-button-card"
                                         },
                                         {
                                             "color": "#40bf6a",
@@ -1887,8 +1869,26 @@
                                                     "value": "-1 months"
                                                 }
                                             ],
-                                            "timeout": "3 months",
+                                            "timeout": "2 months",
                                             "title": "Filter",
+                                            "type": "custom:check-button-card"
+                                        },
+                                        {
+                                            "color": "#40bf6a",
+                                            "due": true,
+                                            "entity": "sensor.vacuum_maint_replace_brushes",
+                                            "severity": [
+                                                {
+                                                    "color": "#bfb540",
+                                                    "value": "0 months"
+                                                },
+                                                {
+                                                    "color": "#bf4060",
+                                                    "value": "-4 months"
+                                                }
+                                            ],
+                                            "timeout": "6 months",
+                                            "title": "Brushes",
                                             "type": "custom:check-button-card"
                                         },
                                         {
@@ -1905,7 +1905,7 @@
                                                     "value": "-4 months"
                                                 }
                                             ],
-                                            "timeout": "2 years",
+                                            "timeout": "1 years",
                                             "title": "Wheel",
                                             "type": "custom:check-button-card"
                                         }
@@ -1977,13 +1977,13 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.roomba"
+                                    "entity": "switch.loft_roomba"
                                 },
                                 {
-                                    "entity": "sensor.roomba_battery_filtered"
+                                    "entity": "sensor.loft_roomba_battery_filtered"
                                 },
                                 {
-                                    "entity": "sensor.roomba_status"
+                                    "entity": "sensor.loft_roomba_status"
                                 }
                             ],
                             "show_header_toggle": false,

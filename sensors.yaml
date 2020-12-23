@@ -1,3 +1,10 @@
+#####################
+# Date/Time Sensors #
+#####################
+- platform: time_date
+  display_options:
+    - 'date_time_iso'
+
 ##################
 # Discogs Sensor #
 ##################
@@ -48,21 +55,21 @@
   unique_id: bedroom_humidity
   # Roomba Sensors
 - platform: mqtt
-  name: "Roomba Status"
+  name: "Loft Roomba Status"
   state_topic: "roomba/currentStatus"
-  unique_id: roomba_status
+  unique_id: loft_roomba_status
 - platform: mqtt
-  name: "Roomba Battery"
+  name: "Loft Roomba Battery"
   state_topic: "roomba/battery"
-  unique_id: roomba_battery
+  unique_id: loft_roomba_battery
 - platform: mqtt
-  name: "Roomba Battery Filtered"
+  name: "Loft Roomba Battery Filtered"
   state_topic: "roomba/filterbattery"
-  unique_id: roomba_filtered_battery
+  unique_id: loft_roomba_filtered_battery
 - platform: mqtt
-  name: "Roomba Check In"
+  name: "Loft Roomba Check In"
   state_topic: "checkIn/roomba"
-  unique_id: roomba_check_in
+  unique_id: loft_roomba_check_in
 
 ###################
 # RESTful Sensors #
