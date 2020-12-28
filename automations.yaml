@@ -404,7 +404,7 @@
   condition:
   - condition: state
     entity_id: binary_sensor.home_office_door_sensor
-    state: Open
+    state: 'on'
   action:
   - type: turn_off
     device_id: e93c31a0056d8f643306aa69147fd759

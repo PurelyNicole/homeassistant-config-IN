@@ -187,3 +187,6 @@ sensor.home_office_door_sensor_alarm_level:
 binary_sensor.kitchen_patio_door_motion_sensor_2:
   ignored: true
   polling_intensity: 0
+switch.office_fan_humidifier_switch:
+  ignored: false
+  polling_intensity: 1

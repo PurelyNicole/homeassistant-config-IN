@@ -9,5 +9,4 @@ exclude:
     - binary_sensor.dusk
     - binary_sensor.morning
     - binary_sensor.night
-    - input_select.home_mode
     - sun.sun

@@ -4,6 +4,7 @@
 - platform: time_date
   display_options:
     - 'date_time_iso'
+    - 'date_time_utc'
 
 ##################
 # Discogs Sensor #
