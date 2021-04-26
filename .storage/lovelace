@@ -9,6 +9,669 @@
                     "badges": [],
                     "cards": [
                         {
+                            "cards": [
+                                {
+                                    "type": "weather-forecast",
+                                    "entity": "weather.dark_sky",
+                                    "secondary_info_attribute": "humidity"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "person.nicole"
+                                        },
+                                        {
+                                            "entity": "person.eric"
+                                        }
+                                    ],
+                                    "type": "glance"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.pond_water_temperature"
+                                        },
+                                        {
+                                            "entity": "sensor.pool_water_temperature"
+                                        }
+                                    ],
+                                    "title": "Water Temperatures",
+                                    "type": "glance"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.fish_tank_light",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "sensor.fish_tank_temperature"
+                                        },
+                                        {
+                                            "entity": "input_text.fish_last_fed"
+                                        }
+                                    ],
+                                    "title": "Fish Tank",
+                                    "type": "glance"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.mailbox",
+                                                    "secondary_info": "last-changed"
+                                                }
+                                            ],
+                                            "type": "entities"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "group.entry_hall_lights"
+                                        },
+                                        {
+                                            "entity": "group.guest_room_lights"
+                                        },
+                                        {
+                                            "entity": "group.kitchen_lights"
+                                        },
+                                        {
+                                            "entity": "group.living_room_lights"
+                                        },
+                                        {
+                                            "entity": "group.loft_lights"
+                                        },
+                                        {
+                                            "entity": "group.master_bedroom_lights"
+                                        },
+                                        {
+                                            "entity": "group.outdoor_lights"
+                                        }
+                                    ],
+                                    "title": "Lighting",
+                                    "type": "entities",
+                                    "state_color": true
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "cover.garage_door",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "lock.kitchen_door_lock_locked",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "lock.workshop_door_lock_locked",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "lock.front_door_lock_locked",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.kitchen_garage_door_sensor",
+                                            "secondary_info": "last-changed"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.living_room_door_sensor",
+                                            "secondary_info": "last-changed"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Doors",
+                                    "type": "entities",
+                                    "state_color": true
+                                },
+                                {
+                                    "type": "media-control",
+                                    "entity": "media_player.living_room_music_main"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "type": "custom:atomic-calendar-revive",
+                            "name": "Calendar Card",
+                            "enableModeChange": true,
+                            "entities": [
+                                {
+                                    "entity": "calendar.nicole_s_calendar",
+                                    "name": "Nicole's Calendar"
+                                },
+                                {
+                                    "entity": "calendar.eric_nicole_events",
+                                    "name": "Eric & Nicole Events"
+                                },
+                                {
+                                    "entity": "calendar.eric_events",
+                                    "name": "Eric Events"
+                                },
+                                {
+                                    "entity": "calendar.meal_plan",
+                                    "name": "Meal Plan"
+                                }
+                            ],
+                            "firstDayOfWeek": 1,
+                            "maxDaysToShow": 7,
+                            "hideFinishedEvents": true,
+                            "showDate": false,
+                            "showEventIcon": false,
+                            "showWeekDay": true,
+                            "disableLocationLink": false,
+                            "showFullDayProgress": false,
+                            "showCurrentEventLine": false,
+                            "showMonth": false,
+                            "showDescription": false,
+                            "showProgressBar": false
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.blueiris_porch_sub",
+                            "entities": [
+                                {
+                                    "entity": "camera.blueiris_porch_sub"
+                                }
+                            ],
+                            "title": "Porch",
+                            "type": "picture-glance",
+                            "entity": "camera.blueiris_porch_sub",
+                            "camera_view": "live"
+                        },
+                        {
+                            "aspect_ratio": "0%",
+                            "camera_image": "camera.blueiris_driveway_sub",
+                            "entities": [
+                                {
+                                    "entity": "camera.blueiris_driveway_sub"
+                                }
+                            ],
+                            "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
+                            "type": "picture-glance",
+                            "camera_view": "live",
+                            "entity": "camera.blueiris_driveway_sub"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_clean_out_fridge\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_clean_out_fridge",
+                                        "title": "Clean Out Fridge",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "7 days",
+                                        "due": true,
+                                        "icon": "mdi:fridge-outline"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_grocery_shop\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_grocery_shop",
+                                        "title": "Grocery Shopping",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "7 days",
+                                        "due": true,
+                                        "icon": "mdi:basket"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_change_sheets\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_change_sheets",
+                                        "title": "Change Sheets",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "7 days",
+                                        "due": true,
+                                        "icon": "mdi:bed-king"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_dust\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_dust",
+                                        "title": "Dust",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "14 days",
+                                        "due": true,
+                                        "icon": "mdi:spray-bottle"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_clean_bathrooms\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_clean_bathrooms",
+                                        "title": "Clean Bathrooms",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "7 days",
+                                        "due": true,
+                                        "icon": "mdi:toilet"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_clean_shower\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_clean_shower",
+                                        "title": "Clean Shower",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "7 days",
+                                        "due": true,
+                                        "icon": "mdi:shower-head"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_clean_countertops\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_clean_countertops",
+                                        "title": "Clean Countertops",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "7 days",
+                                        "due": true,
+                                        "icon": "fas:sink"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_change_towels\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_change_towels",
+                                        "title": "Change Towels",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "7 days",
+                                        "due": true
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_mow_grass\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_mow_grass",
+                                        "title": "Mow Grass",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "5 days",
+                                        "due": true,
+                                        "icon": "mdi:mower"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_dog_poop\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_dog_poop",
+                                        "title": "Pick Up Dog Poop",
+                                        "display_limit": "days",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "5 days",
+                                        "due": true,
+                                        "icon": "mdi:emoticon-poop"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "ha-card {display: none} {% if (state_attr(\"sensor.chore_rinse_humidifier_filters\", \"timeout_timestamp\")) > (as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_rinse_humidifier_filters",
+                                        "title": "Rinse Humdifier Filters",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "14 days",
+                                        "due": true,
+                                        "icon": "mdi:air-filter"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_vacuum_stairs\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_vacuum_stairs",
+                                        "title": "Vacuum Stairs",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "14 days",
+                                        "due": true,
+                                        "icon": "mdi:stairs"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_vacuum_couch\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_vacuum_couch",
+                                        "title": "Vacuum Couch",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "1 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "14 days",
+                                        "due": true,
+                                        "icon": "mdi:sofa-outline"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_dog_nails\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_dog_nails",
+                                        "title": "Trim Dog Nails",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "3 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "30 days",
+                                        "due": true,
+                                        "icon": "mdi:dog"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_dog_flea_heartworm\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.dog_flea_heartworm",
+                                        "title": "Dog Flea & Heartworm",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "3 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "30 days",
+                                        "due": true,
+                                        "icon": "mdi:dog"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_clean_air_purifier\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_clean_air_purifier",
+                                        "title": "Clean Air Purifier",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "3 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "60 days",
+                                        "due": true
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_clean_air_purifier_pre_filter\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_clean_air_purifier_pre_filter",
+                                        "title": "Clean Air Purifier Pre Filter",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "3 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "60 days",
+                                        "due": true
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_pantry\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_pantry",
+                                        "title": "Clean Out Pantry",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "3 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "90 days",
+                                        "due": true,
+                                        "icon": "mdi:food-variant"
+                                    }
+                                },
+                                {
+                                    "type": "custom:mod-card",
+                                    "style": "{% if (state_attr(\"sensor.chore_mattress\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "card": {
+                                        "type": "custom:check-button-card",
+                                        "entity": "sensor.chore_mattress",
+                                        "title": "Rotate Mattress",
+                                        "width": "60%",
+                                        "severity": [
+                                            {
+                                                "color": "#FFD600",
+                                                "value": "3 days"
+                                            },
+                                            {
+                                                "color": "#D84315",
+                                                "value": "-1 days"
+                                            }
+                                        ],
+                                        "timeout": "90 days",
+                                        "due": true,
+                                        "icon": "mdi:bed-king-outline"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "icon": "mdi:home-assistant",
+                    "path": "kitchen-dash",
+                    "title": "Kitchen Dash",
+                    "visible": [
+                        {
+                            "user": "7c494534273a4776ad3e53bdfa0fae31"
+                        },
+                        {
+                            "user": "0dd6426c68884f519adac238ccf98431"
+                        }
+                    ]
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
                             "entities": [
                                 {
                                     "entity": "person.eric",
@@ -167,537 +830,6 @@
                     "badges": [],
                     "cards": [
                         {
-                            "cards": [
-                                {
-                                    "type": "weather-forecast",
-                                    "entity": "weather.openweathermap",
-                                    "secondary_info_attribute": "humidity"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "person.nicole"
-                                        },
-                                        {
-                                            "entity": "person.eric"
-                                        }
-                                    ],
-                                    "type": "glance"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.pond_water_temperature"
-                                        },
-                                        {
-                                            "entity": "sensor.pool_water_temperature"
-                                        }
-                                    ],
-                                    "title": "Water Temperatures",
-                                    "type": "glance"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "switch.fish_tank_light",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            }
-                                        },
-                                        {
-                                            "entity": "sensor.fish_tank_temperature"
-                                        },
-                                        {
-                                            "entity": "input_text.fish_last_fed"
-                                        }
-                                    ],
-                                    "title": "Fish Tank",
-                                    "type": "glance"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "binary_sensor.mailbox",
-                                                    "secondary_info": "last-changed"
-                                                }
-                                            ],
-                                            "type": "entities"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "group.entry_hall_lights"
-                                        },
-                                        {
-                                            "entity": "group.guest_room_lights"
-                                        },
-                                        {
-                                            "entity": "group.kitchen_lights"
-                                        },
-                                        {
-                                            "entity": "group.living_room_lights"
-                                        },
-                                        {
-                                            "entity": "group.loft_lights"
-                                        },
-                                        {
-                                            "entity": "group.master_bedroom_lights"
-                                        },
-                                        {
-                                            "entity": "group.outdoor_lights"
-                                        }
-                                    ],
-                                    "title": "Lighting",
-                                    "type": "entities",
-                                    "state_color": true
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "cover.garage_door",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "lock.kitchen_door_lock_locked",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "lock.workshop_door_lock_locked",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "lock.front_door_lock_locked",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "binary_sensor.kitchen_patio_door_motion_sensor",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "binary_sensor.kitchen_garage_door_sensor",
-                                            "secondary_info": "last-changed"
-                                        },
-                                        {
-                                            "entity": "binary_sensor.living_room_door_sensor",
-                                            "secondary_info": "last-changed"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Doors",
-                                    "type": "entities",
-                                    "state_color": true
-                                },
-                                {
-                                    "type": "media-control",
-                                    "entity": "media_player.living_room_music_main"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "custom:atomic-calendar-revive",
-                                    "name": "Calendar Card",
-                                    "enableModeChange": true,
-                                    "entities": [
-                                        {
-                                            "entity": "calendar.nicole_s_calendar",
-                                            "name": "Nicole's Calendar"
-                                        },
-                                        {
-                                            "entity": "calendar.eric_nicole_events",
-                                            "name": "Eric & Nicole Events"
-                                        },
-                                        {
-                                            "entity": "calendar.eric_events",
-                                            "name": "Eric Events"
-                                        },
-                                        {
-                                            "entity": "calendar.meal_plan",
-                                            "name": "Meal Plan"
-                                        }
-                                    ],
-                                    "firstDayOfWeek": 1,
-                                    "maxDaysToShow": 7,
-                                    "hideFinishedEvents": true,
-                                    "showDate": false,
-                                    "showEventIcon": false,
-                                    "showWeekDay": true,
-                                    "disableLocationLink": false,
-                                    "showFullDayProgress": false,
-                                    "showCurrentEventLine": false,
-                                    "showMonth": false,
-                                    "showDescription": false,
-                                    "showProgressBar": false
-                                }
-                            ]
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_porch_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_porch_sub"
-                                }
-                            ],
-                            "title": "Porch",
-                            "type": "picture-glance",
-                            "entity": "camera.blueiris_porch_sub",
-                            "camera_view": "live"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_driveway_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_driveway_sub"
-                                }
-                            ],
-                            "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
-                            "type": "picture-glance",
-                            "camera_view": "live",
-                            "entity": "camera.blueiris_driveway_sub"
-                        },
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_clean_out_fridge\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_clean_out_fridge",
-                                        "title": "Clean Out Fridge",
-                                        "display_limit": "days",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "7 days",
-                                        "due": true,
-                                        "icon": "mdi:fridge-outline"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_grocery_shop\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_grocery_shop",
-                                        "title": "Grocery Shopping",
-                                        "display_limit": "days",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "7 days",
-                                        "due": true,
-                                        "icon": "mdi:basket"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_change_sheets\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_change_sheets",
-                                        "title": "Change Sheets",
-                                        "display_limit": "days",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "7 days",
-                                        "due": true,
-                                        "icon": "mdi:bed-king"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_dust\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_dust",
-                                        "title": "Dust",
-                                        "display_limit": "days",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "7 days",
-                                        "due": true,
-                                        "icon": "mdi:spray-bottle"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_clean_bathrooms\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_clean_bathrooms",
-                                        "title": "Clean Bathrooms",
-                                        "display_limit": "days",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "7 days",
-                                        "due": true,
-                                        "icon": "mdi:toilet"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_clean_shower\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_clean_shower",
-                                        "title": "Clean Shower",
-                                        "display_limit": "days",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "7 days",
-                                        "due": true,
-                                        "icon": "mdi:shower-head"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_clean_countertops\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_clean_countertops",
-                                        "title": "Clean Countertops",
-                                        "display_limit": "days",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "7 days",
-                                        "due": true,
-                                        "icon": "fas:sink"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_rinse_humidifier_filters\", \"timeout_timestamp\")) > as_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_rinse_humidifier_filters",
-                                        "title": "Rinse Humdifier Filters",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "14 days",
-                                        "due": true,
-                                        "icon": "mdi:air-filter"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_vacuum_stairs\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_vacuum_stairs",
-                                        "title": "Vacuum Stairs",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "14 days",
-                                        "due": true,
-                                        "icon": "mdi:stairs"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_vacuum_couch\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_vacuum_couch",
-                                        "title": "Vacuum Couch",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "1 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "14 days",
-                                        "due": true,
-                                        "icon": "mdi:sofa-outline"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_dog_nails\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_dog_nails",
-                                        "title": "Trim Dog Nails",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "3 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "30 days",
-                                        "due": true,
-                                        "icon": "mdi:dog"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_pantry\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_pantry",
-                                        "title": "Clean Out Pantry",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "3 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "90 days",
-                                        "due": true,
-                                        "icon": "mdi:food-variant"
-                                    }
-                                },
-                                {
-                                    "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_mattress\", \"timeout_timestamp\")) >\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                                    "card": {
-                                        "type": "custom:check-button-card",
-                                        "entity": "sensor.chore_mattress",
-                                        "title": "Rotate Mattress",
-                                        "width": "60%",
-                                        "severity": [
-                                            {
-                                                "color": "#FFD600",
-                                                "value": "3 days"
-                                            },
-                                            {
-                                                "color": "#D84315",
-                                                "value": "-1 days"
-                                            }
-                                        ],
-                                        "timeout": "90 days",
-                                        "due": true,
-                                        "icon": "mdi:bed-king-outline"
-                                    }
-                                }
-                            ]
-                        }
-                    ],
-                    "icon": "mdi:home-assistant",
-                    "path": "kitchen-dash",
-                    "title": "Kitchen Dash",
-                    "visible": [
-                        {
-                            "user": "7c494534273a4776ad3e53bdfa0fae31"
-                        },
-                        {
-                            "user": "0dd6426c68884f519adac238ccf98431"
-                        }
-                    ]
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
                             "entities": [
                                 {
                                     "entity": "scene.watch_tv"
@@ -711,7 +843,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.wled_barlights"
+                                    "entity": "light.bar_rgbw"
                                 },
                                 {
                                     "entity": "switch.fireplace_lights_switch"
@@ -721,6 +853,9 @@
                                 },
                                 {
                                     "entity": "switch.table_lamps_switch"
+                                },
+                                {
+                                    "entity": "light.living_room_cd_rgbw"
                                 },
                                 {
                                     "type": "divider"
@@ -747,6 +882,12 @@
                                 },
                                 {
                                     "entity": "input_text.fish_last_fed"
+                                },
+                                {
+                                    "entity": "switch.fish_feeder"
+                                },
+                                {
+                                    "entity": "sensor.fish_feeder_counter_c1"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -759,7 +900,7 @@
                             "type": "media-control"
                         },
                         {
-                            "entity": "weather.openweathermap",
+                            "entity": "weather.dark_sky",
                             "type": "weather-forecast",
                             "secondary_info_attribute": "humidity"
                         },
@@ -823,6 +964,9 @@
                                 },
                                 {
                                     "entity": "light.guest_room_floor_lamp"
+                                },
+                                {
+                                    "entity": "light.office_sconce_dimme"
                                 }
                             ],
                             "title": "Office Lights",
@@ -950,7 +1094,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.wled_barlights"
+                                    "entity": "light.bar_rgbw"
                                 },
                                 {
                                     "entity": "switch.fireplace_lights_switch"
@@ -964,6 +1108,12 @@
                                 {
                                     "entity": "switch.fish_tank_light",
                                     "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "switch.fish_feeder"
+                                },
+                                {
+                                    "entity": "light.living_room_cd_rgbw"
                                 }
                             ],
                             "title": "Living Room Lights",
@@ -988,6 +1138,9 @@
                                     "entity": "light.gym_light_switch"
                                 },
                                 {
+                                    "entity": "switch.seed_start_light"
+                                },
+                                {
                                     "type": "divider"
                                 },
                                 {
@@ -1008,6 +1161,9 @@
                                 },
                                 {
                                     "entity": "light.office_rgbw"
+                                },
+                                {
+                                    "entity": "light.office_sconce_dimme"
                                 }
                             ],
                             "title": "Office Lights",
@@ -1103,8 +1259,13 @@
                                     "entity": "switch.reading_lamp_switch"
                                 },
                                 {
-                                    "entity": "fan.loft_ceiling_fan",
-                                    "type": "custom:fan-control-entity-row"
+                                    "entity": "fan.loftfan"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "switch.loft_desk_plant_lights"
                                 },
                                 {
                                     "type": "divider"
@@ -1114,7 +1275,8 @@
                                 }
                             ],
                             "title": "Loft",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -1529,9 +1691,6 @@
                                                 "entity": "switch.zone_9"
                                             },
                                             {
-                                                "entity": "switch.zone_10"
-                                            },
-                                            {
                                                 "entity": "switch.zone_11"
                                             },
                                             {
@@ -1582,9 +1741,6 @@
                                                 "entity": "switch.zone_9"
                                             },
                                             {
-                                                "entity": "switch.zone_10"
-                                            },
-                                            {
                                                 "entity": "switch.zone_11"
                                             },
                                             {
@@ -1609,20 +1765,30 @@
                             }
                         },
                         {
-                            "entities": [
+                            "type": "conditional",
+                            "conditions": [
                                 {
-                                    "entity": "switch.gutter_heater_1"
-                                },
-                                {
-                                    "entity": "switch.gutter_heater_2"
-                                },
-                                {
-                                    "entity": "switch.pond_heater"
+                                    "entity": "input_boolean.show_outdoor_heaters",
+                                    "state": "on"
                                 }
                             ],
-                            "show_header_toggle": false,
-                            "title": "Outdoor Heaters",
-                            "type": "entities"
+                            "card": {
+                                "entities": [
+                                    {
+                                        "entity": "switch.gutter_heater_1"
+                                    },
+                                    {
+                                        "entity": "switch.gutter_heater_2"
+                                    },
+                                    {
+                                        "entity": "switch.pond_heater"
+                                    }
+                                ],
+                                "show_header_toggle": false,
+                                "title": "Outdoor Heaters",
+                                "type": "entities",
+                                "state_color": true
+                            }
                         },
                         {
                             "entities": [
@@ -1891,38 +2057,6 @@
                             "ponts_per_hour": 8,
                             "smoothing": false,
                             "type": "custom:mini-graph-card"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.us_coronavirus_current",
-                                    "name": "Current"
-                                },
-                                {
-                                    "entity": "sensor.us_coronavirus_confirmed",
-                                    "name": "Confirmed"
-                                }
-                            ],
-                            "hours_to_show": 168,
-                            "refresh_interval": 0,
-                            "title": "Coronavirus US (Weekly)",
-                            "type": "history-graph"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.us_coronavirus_deaths",
-                                    "name": "Deaths"
-                                },
-                                {
-                                    "entity": "sensor.us_coronavirus_recovered",
-                                    "name": "Recovered"
-                                }
-                            ],
-                            "hours_to_show": 168,
-                            "refresh_interval": 0,
-                            "title": "Coronavirus US (Weekly)",
-                            "type": "history-graph"
                         }
                     ],
                     "icon": "mdi:home-analytics",
@@ -1996,6 +2130,10 @@
                             "title": "Chores",
                             "cards": [
                                 {
+                                    "text": "Weekly",
+                                    "type": "custom:text-divider-row"
+                                },
+                                {
                                     "type": "custom:check-button-card",
                                     "entity": "sensor.chore_clean_out_fridge",
                                     "title": "Clean Out Fridge",
@@ -2014,26 +2152,6 @@
                                     "timeout": "7 days",
                                     "due": true,
                                     "icon": "mdi:fridge-outline"
-                                },
-                                {
-                                    "type": "custom:check-button-card",
-                                    "entity": "sensor.chore_grocery_shop",
-                                    "title": "Grocery Shopping",
-                                    "display_limit": "days",
-                                    "width": "60%",
-                                    "severity": [
-                                        {
-                                            "color": "#FFD600",
-                                            "value": "1 days"
-                                        },
-                                        {
-                                            "color": "#D84315",
-                                            "value": "-1 days"
-                                        }
-                                    ],
-                                    "timeout": "7 days",
-                                    "due": true,
-                                    "icon": "mdi:basket"
                                 },
                                 {
                                     "type": "custom:check-button-card",
@@ -2137,6 +2255,88 @@
                                 },
                                 {
                                     "type": "custom:check-button-card",
+                                    "entity": "sensor.chore_grocery_shop",
+                                    "title": "Grocery Shopping",
+                                    "display_limit": "days",
+                                    "width": "60%",
+                                    "severity": [
+                                        {
+                                            "color": "#FFD600",
+                                            "value": "1 days"
+                                        },
+                                        {
+                                            "color": "#D84315",
+                                            "value": "-1 days"
+                                        }
+                                    ],
+                                    "timeout": "7 days",
+                                    "due": true,
+                                    "icon": "mdi:basket"
+                                },
+                                {
+                                    "type": "custom:check-button-card",
+                                    "entity": "sensor.chore_change_towels",
+                                    "title": "Change Towels",
+                                    "width": "60%",
+                                    "severity": [
+                                        {
+                                            "color": "#FFD600",
+                                            "value": "1 days"
+                                        },
+                                        {
+                                            "color": "#D84315",
+                                            "value": "-1 days"
+                                        }
+                                    ],
+                                    "timeout": "7 days",
+                                    "due": true
+                                },
+                                {
+                                    "type": "custom:check-button-card",
+                                    "entity": "sensor.chore_mow_grass",
+                                    "title": "Mow Grass",
+                                    "display_limit": "days",
+                                    "width": "60%",
+                                    "severity": [
+                                        {
+                                            "color": "#FFD600",
+                                            "value": "1 days"
+                                        },
+                                        {
+                                            "color": "#D84315",
+                                            "value": "-1 days"
+                                        }
+                                    ],
+                                    "timeout": "5 days",
+                                    "due": true,
+                                    "icon": "mdi:mower"
+                                },
+                                {
+                                    "type": "custom:check-button-card",
+                                    "entity": "sensor.chore_dog_poop",
+                                    "title": "Pick Up Dog Poop",
+                                    "display_limit": "days",
+                                    "width": "60%",
+                                    "severity": [
+                                        {
+                                            "color": "#FFD600",
+                                            "value": "1 days"
+                                        },
+                                        {
+                                            "color": "#D84315",
+                                            "value": "-1 days"
+                                        }
+                                    ],
+                                    "timeout": "5 days",
+                                    "due": true,
+                                    "icon": "mdi:emoticon-poop"
+                                },
+                                {
+                                    "text": "Bi-Weekly",
+                                    "type": "custom:text-divider-row"
+                                },
+                                {
+                                    "type": "custom:check-button-card",
                                     "entity": "sensor.chore_rinse_humidifier_filters",
                                     "title": "Rinse Humdifier Filters",
                                     "width": "60%",
@@ -2152,7 +2352,8 @@
                                     ],
                                     "timeout": "14 days",
                                     "due": true,
-                                    "icon": "mdi:air-filter"
+                                    "icon": "mdi:air-filter",
+                                    "style": "ha-card {display: none} \n"
                                 },
                                 {
                                     "type": "custom:check-button-card",
@@ -2176,7 +2377,7 @@
                                 {
                                     "type": "custom:check-button-card",
                                     "entity": "sensor.chore_vacuum_couch",
-                                    "title": "Vacuum Stairs",
+                                    "title": "Vacuum Couch",
                                     "width": "60%",
                                     "severity": [
                                         {
@@ -2193,9 +2394,32 @@
                                     "icon": "mdi:sofa-outline"
                                 },
                                 {
+                                    "text": "Monthly +",
+                                    "type": "custom:text-divider-row"
+                                },
+                                {
                                     "type": "custom:check-button-card",
                                     "entity": "sensor.chore_dog_nails",
                                     "title": "Trim Dog Nails",
+                                    "width": "60%",
+                                    "severity": [
+                                        {
+                                            "color": "#FFD600",
+                                            "value": "3 days"
+                                        },
+                                        {
+                                            "color": "#D84315",
+                                            "value": "-1 days"
+                                        }
+                                    ],
+                                    "timeout": "30 days",
+                                    "due": true,
+                                    "icon": "mdi:dog"
+                                },
+                                {
+                                    "type": "custom:check-button-card",
+                                    "entity": "sensor.dog_flea_heartworm",
+                                    "title": "Dog Flea & Heartworm",
                                     "width": "60%",
                                     "severity": [
                                         {
@@ -2252,6 +2476,38 @@
                             ]
                         },
                         {
+                            "type": "custom:atomic-calendar-revive",
+                            "name": "Meal Plan",
+                            "enableModeChange": true,
+                            "entities": [
+                                {
+                                    "entity": "calendar.meal_plan",
+                                    "name": "Meal Plan"
+                                }
+                            ],
+                            "firstDayOfWeek": 1,
+                            "maxDaysToShow": 7,
+                            "hideFinishedEvents": false,
+                            "showDate": true,
+                            "showEventIcon": false,
+                            "showWeekDay": true,
+                            "disableLocationLink": false,
+                            "showFullDayProgress": false,
+                            "showCurrentEventLine": false,
+                            "showMonth": false,
+                            "sortByStartTime": false,
+                            "showRelativeTime": false,
+                            "showDeclined": true,
+                            "showNoEventsForToday": false,
+                            "disableEventLink": false,
+                            "showLocation": false,
+                            "showProgressBar": false,
+                            "defaultMode": "Event",
+                            "showDescription": true,
+                            "calShowDescription": false,
+                            "dimFinishedEvents": false
+                        },
+                        {
                             "cards": [
                                 {
                                     "entity": "sensor.vacuum",
@@ -2297,6 +2553,16 @@
                                         "type": "section"
                                     },
                                     "type": "custom:fold-entity-row"
+                                },
+                                {
+                                    "head": {
+                                        "label": "Schedule",
+                                        "type": "section"
+                                    },
+                                    "type": "custom:fold-entity-row",
+                                    "entities": [
+                                        "input_boolean.vacuum_schedule_1"
+                                    ]
                                 },
                                 {
                                     "entities": [
@@ -2496,16 +2762,6 @@
                             ],
                             "title": "Utility Room",
                             "type": "glance"
-                        },
-                        {
-                            "type": "custom:mod-card",
-                            "style": "{% if (state_attr(\"sensor.chore_change_sheets\", \"timeout_timestamp\")) <\nas_timestamp(now()) %}\n  ha-card {display: none}\n{% endif %}\n",
-                            "card": {
-                                "type": "entities",
-                                "entities": [
-                                    "sensor.chore_change_sheets"
-                                ]
-                            }
                         }
                     ],
                     "panel": false,
@@ -2526,52 +2782,6 @@
                 {
                     "badges": [],
                     "cards": [
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.omv_update_available"
-                                },
-                                {
-                                    "entity": "binary_sensor.updater"
-                                },
-                                {
-                                    "entity": "sensor.hacs"
-                                }
-                            ],
-                            "title": "Available Updates",
-                            "state_color": true
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_boolean.show_holiday_lights"
-                                },
-                                {
-                                    "entity": "input_boolean.show_sprinklers"
-                                }
-                            ],
-                            "title": "View Components",
-                            "type": "entities",
-                            "state_color": true,
-                            "show_header_toggle": false
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.loft_roomba"
-                                },
-                                {
-                                    "entity": "sensor.loft_roomba_battery_filtered"
-                                },
-                                {
-                                    "entity": "sensor.loft_roomba_status"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Loft Roomba",
-                            "type": "entities"
-                        },
                         {
                             "type": "entities",
                             "entities": [
@@ -2599,6 +2809,22 @@
                             "state_color": true
                         },
                         {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.omv_update_available"
+                                },
+                                {
+                                    "entity": "binary_sensor.updater"
+                                },
+                                {
+                                    "entity": "sensor.hacs"
+                                }
+                            ],
+                            "title": "Available Updates",
+                            "state_color": true
+                        },
+                        {
                             "type": "grid",
                             "title": "System Health",
                             "cards": [
@@ -2621,6 +2847,23 @@
                                     "max": 100
                                 }
                             ]
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.show_holiday_lights"
+                                },
+                                {
+                                    "entity": "input_boolean.show_sprinklers"
+                                },
+                                {
+                                    "entity": "input_boolean.show_outdoor_heaters"
+                                }
+                            ],
+                            "title": "View Components",
+                            "type": "entities",
+                            "state_color": true,
+                            "show_header_toggle": false
                         }
                     ],
                     "icon": "mdi:cogs",

@@ -1,3 +1,17 @@
+###############
+# Car Sensors #
+###############
+- platform: openevse
+  host: 192.168.30.114
+  monitored_variables:
+    - status
+    - charge_time
+    - rtc_temp
+    - ir_temp
+    - ambient_temp
+    - usage_session
+    - usage_total
+    
 #####################
 # Date/Time Sensors #
 #####################
@@ -54,23 +68,6 @@
   unit_of_measurement: '%'
   value_template: '{{ value_json["HTU21"]["Humidity"] }}'
   unique_id: bedroom_humidity
-  # Roomba Sensors
-- platform: mqtt
-  name: "Loft Roomba Status"
-  state_topic: "roomba/currentStatus"
-  unique_id: loft_roomba_status
-- platform: mqtt
-  name: "Loft Roomba Battery"
-  state_topic: "roomba/battery"
-  unique_id: loft_roomba_battery
-- platform: mqtt
-  name: "Loft Roomba Battery Filtered"
-  state_topic: "roomba/filterbattery"
-  unique_id: loft_roomba_filtered_battery
-- platform: mqtt
-  name: "Loft Roomba Check In"
-  state_topic: "checkIn/roomba"
-  unique_id: loft_roomba_check_in
 
 ###################
 # RESTful Sensors #

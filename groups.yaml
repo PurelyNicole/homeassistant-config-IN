@@ -43,10 +43,11 @@ kitchen_lights:
 living_room_lights:
   name: Living Room Lights
   entities:
-    - light.wled_barlights
+    - light.bar_rgbw
     - switch.fireplace_lights_switch
     - switch.globe_lamp_switch
     - switch.table_lamps_switch
+    - light.living_room_cd_rgbw
 loft_lights:
   name: Loft Lights
   entities:

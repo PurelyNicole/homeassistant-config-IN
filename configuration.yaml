@@ -119,12 +119,6 @@ notify:
       - service: mobile_app_pixel_3a
       - service: mobile_app_erics_iphone
 
-##############
-# Irrigation #
-##############
-rachio:
-  api_key: !secret rachio_api_key
-
 ################
 # Organization #
 ################
@@ -135,14 +129,6 @@ group: !include groups.yaml
 #########
 api:
 http:
-
-##########
-# Remote #
-##########
-remote:
-  - platform: harmony
-    name: Living Room
-    host: 192.168.20.6
 
 ###########
 # Sensor #
@@ -179,6 +165,7 @@ logger:
   logs: 
     homeassistant.components.octoprint: fatal
     pysqueezebox.server: fatal
+    homeassistant.components.fan: debug
 
 ######################
 # Weather Components #

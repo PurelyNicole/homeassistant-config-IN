@@ -39,24 +39,9 @@
                 "url": "/hacsfiles/lovelace-template-entity-row/template-entity-row.js"
             },
             {
-                "id": "48a47eea2799443cad042064bc87d896",
-                "type": "module",
-                "url": "/hacsfiles/harmony-card/harmony-card.js"
-            },
-            {
-                "id": "91dabde5643f4c2d87ee43a90a9de1b3",
-                "type": "module",
-                "url": "/hacsfiles/lovelace-grocy-chores-card/grocy-chores-card.js"
-            },
-            {
                 "url": "/hacsfiles/atomic-calendar-revive/atomic-calendar-revive.js",
                 "type": "module",
                 "id": "db949e26fe1a4ee8a6f9842dc4581b88"
-            },
-            {
-                "url": "/hacsfiles/fan-control-entity-row/fan-control-entity-row.js",
-                "type": "module",
-                "id": "f6e8d05bec394798abd880259a45ad32"
             },
             {
                 "url": "/hacsfiles/lovelace-roomba-vacuum-card/roomba-vacuum-card.js",
@@ -82,6 +67,11 @@
                 "url": "/hacsfiles/button-card/button-card.js",
                 "type": "module",
                 "id": "ecab3142074b43a3a7bede7b114aa1c7"
+            },
+            {
+                "url": "/hacsfiles/ha-lovelace-elapsed-time-card/elapsed-time-card.js",
+                "type": "module",
+                "id": "91293e176292455fa7ec31706f45bd03"
             }
         ]
     }

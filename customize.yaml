@@ -48,15 +48,6 @@ sensor.emoncms_kwh:
   icon: mdi:power-plug
 sensor.living_room_remote_activity:
   icon: mdi:remote
-switch.loft_roomba:
-  icon: mdi:robot-vacuum
-sensor.loft_roomba:
-  icon: mdi:robot-vacuum
-sensor.loft_roomba_battery:
-  icon: mdi:battery-charging
-  unit_of_measurement: '%'
-sensor.loft_roomba_status:
-  icon: mdi:format-list-bulleted
 binary_sensor.living_room_thermostat_fan:
   icon: mdi:fan
 binary_sensor.living_room_thermostat_has_leaf:
@@ -84,9 +75,6 @@ person.eric:
   icon: mdi:alpha-e-box
 zwave.record_console:
   node_id: 12
-sensor.loft_roomba_battery_filtered:
-  icon: mdi:battery-charging
-  unit_of_measurement: '%'
 sensor.record_console_relative_humidity:
   icon: mdi:water-percent
 sensor.town_run_last_update:
@@ -123,6 +111,14 @@ sensor.ambient_weather_feels_like_indoor:
   unit_of_measurement: °F
 switch.fish_tank_light:
   icon: mdi:fish
+switch.loft_desk_plant_lights_2:
+  icon: mdi:sprout
+switch.plant_light:
+  icon: mdi:sprout
+switch.hall_plant_lights:
+  icon: mdi:sprout
+switch.fish_feeder:
+  icon: mdi:GoogleCirclesCommunities
 group.entry_hall_lights:
   icon: mdi:lightbulb-multiple
 group.living_room_lights:
@@ -140,3 +136,15 @@ group.outdoor_lights:
   icon: mdi:lightbulb-multiple
 media_player.hifiberry:
   friendly_name: Office Music
+sensor.ambient_temperature:
+  friendly_name: OpenEVSE Ambient Temperature
+sensor.charge_time_elapsed:
+  friendly_name: OpenEVSE Charge Time Elapsed
+sensor.ir_temperature:
+  friendly_name: OpenEVSE IR Temperature
+sensor.rtc_temperature:
+  friendly_name: OpenEVSE RTC Temperature
+sensor.usage_this_session:
+  friendly_name: OpenEVSE Usage this Session
+sensor.total_usage:
+  friendly_name: OpenEVSE Total Usage

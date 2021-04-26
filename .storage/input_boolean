@@ -31,6 +31,11 @@
                 "name": "Show Sprinklers",
                 "icon": "mdi:sprinkler-variant",
                 "id": "show_sprinklers"
+            },
+            {
+                "name": "Show Outdoor Heaters",
+                "icon": "mdi:radiator",
+                "id": "show_gutter_heaters"
             }
         ]
     }

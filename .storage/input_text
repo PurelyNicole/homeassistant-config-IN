@@ -1,4 +1,6 @@
 {
+    "version": 1,
+    "key": "input_text",
     "data": {
         "items": [
             {
@@ -9,7 +11,5 @@
                 "name": "Fish Last Fed"
             }
         ]
-    },
-    "key": "input_text",
-    "version": 1
+    }
 }
