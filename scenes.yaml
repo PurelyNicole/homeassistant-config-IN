@@ -2,243 +2,59 @@
   id: c3481ab7e6ad46c996739fdcfd89164a
   entities:
     group.living_room_lights:
-      entity_id:
-      - light.wled_barlights
-      - switch.fireplace_lights_switch
-      - switch.globe_lamp_switch
-      - switch.table_lamps_switch
-      order: 5
-      friendly_name: Living Room Lights
-      icon: mdi:lightbulb-multiple
       state: 'off'
     group.kitchen_lights:
-      entity_id:
-      - light.peninsula_light_switch
-      - light.under_cabinet_lights_switch
-      - light.dining_room_light
-      - light.kitchen_overhead_lights
-      - light.half_bath_switch
-      order: 4
-      friendly_name: Kitchen Lights
-      icon: mdi:lightbulb-multiple
       state: 'off'
     group.loft_lights:
-      entity_id:
-      - switch.reading_lamp_switch
-      - light.desk_light_switch
-      - light.alcove_light_switch
-      - light.loftfan
-      - light.network_closet_light
-      order: 6
-      friendly_name: Loft Lights
-      icon: mdi:lightbulb-multiple
       state: 'off'
     group.guest_room_lights:
-      entity_id:
-      - light.guest_room_floor_lamp
-      - light.office_bed_light
-      - light.office_rbgw
-      order: 3
-      friendly_name: Office Lights
-      icon: mdi:lightbulb-multiple
       state: 'off'
     group.master_bedroom_lights:
-      entity_id:
-      - light.bedroom_light_switch
-      - light.bathroom_mirror_led
-      - light.bathroom_vanity_light
-      - light.bedroom_entry_light
-      - light.bathroom_shower
-      - light.exhaust_fan
-      - light.bedroom_closet_light_switch
-      order: 7
-      friendly_name: Master Bedroom Lights
-      icon: mdi:lightbulb-multiple
       state: 'off'
     group.entry_hall_lights:
-      entity_id:
-      - switch.entryway_light_switch
-      - light.hallway_lights
-      - light.hall_bath_switch
-      order: 2
-      friendly_name: Entry/Hall Lights
-      icon: mdi:lightbulb-multiple
       state: 'off'
     switch.mb_magic_mirror_screen:
-      friendly_name: Magic Mirror Screen
-      icon: mdi:cellphone
       state: 'off'
     light.gym_light_switch:
-      friendly_name: Gym Light Switch
-      supported_features: 1
       state: 'off'
     lock.kitchen_door_lock_locked:
-      node_id: 30
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594547044352'
-      lock_status: Locked by RF
-      friendly_name: Kitchen Door Lock
-      state: unlocked
+      state: locked
     lock.workshop_door_lock_locked:
-      node_id: 32
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594580598784'
-      lock_status: Locked by RF
-      friendly_name: Workshop Door Lock
       state: locked
     lock.front_door_lock_locked:
-      node_id: 36
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594647707648'
-      lock_status: 'Manually Unlocked '
-      friendly_name: Front Door Lock
       state: locked
 - name: Indoor Lights On
   id: 9d83c933fcc942b48006920571ae5803
   entities:
     switch.entryway_light_switch:
-      node_id: 20
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594378272768'
-      friendly_name: Entryway Light
-      icon: hass:lightbulb
       state: 'on'
     light.kitchen_overhead_lights:
-      friendly_name: Kitchen Overhead Lights
-      supported_features: 0
       state: 'on'
     switch.table_lamps_switch:
-      node_id: 22
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594411827200'
-      friendly_name: Table Lamps Switch
-      icon: hass:lightbulb
       state: 'on'
     light.peninsula_light_switch:
-      friendly_name: Peninsula Light Switch
-      supported_features: 0
       state: 'on'
     light.under_cabinet_lights_switch:
-      friendly_name: Under Cabinet Lights Switch
-      supported_features: 0
       state: 'on'
-    zwave.fireplace_lights:
-      node_id: 19
-      node_name: Fireplace Lights
-      manufacturer_name: GE
-      product_name: 12722 On/Off Relay Switch
-      query_stage: Complete
-      is_awake: true
-      is_ready: true
-      is_failed: false
-      is_info_received: true
-      max_baud_rate: 40000
-      is_zwave_plus: false
-      capabilities:
-      - listening
-      - beaming
-      - routing
-      neighbors:
-      - 2
-      - 3
-      - 34
-      - 35
-      - 6
-      - 7
-      - 36
-      - 9
-      - 13
-      - 17
-      - 20
-      - 54
-      - 56
-      - 28
-      - 30
-      sentCnt: 217
-      sentFailed: 3
-      retries: 3
-      receivedCnt: 207
-      receivedDups: 0
-      receivedUnsolicited: 0
-      sentTS: '2020-10-11 18:18:33:245 '
-      receivedTS: '2020-10-11 18:18:33:361 '
-      lastRequestRTT: 60
-      averageRequestRTT: 60
-      lastResponseRTT: 116
-      averageResponseRTT: 116
-      application_version: '3.29'
-      friendly_name: Fireplace Lights
-      state: ready
     switch.fireplace_lights_switch:
-      node_id: 19
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594361495552'
-      friendly_name: Fire Place Lights Switch
-      icon: hass:lightbulb
       state: 'on'
-    zwave.globe_lamp:
-      node_id: 35
-      node_name: Globe Lamp
-      manufacturer_name: GE
-      product_name: 14288 Duplex Receptacle
-      query_stage: Complete
-      is_awake: true
-      is_ready: true
-      is_failed: false
-      is_info_received: true
-      max_baud_rate: 40000
-      is_zwave_plus: true
-      capabilities:
-      - listening
-      - zwave_plus
-      - beaming
-      - routing
-      neighbors:
-      - 3
-      - 36
-      - 6
-      - 7
-      - 13
-      - 17
-      - 19
-      - 22
-      - 56
-      - 30
-      sentCnt: 18
-      sentFailed: 0
-      retries: 5
-      receivedCnt: 9
-      receivedDups: 0
-      receivedUnsolicited: 2
-      sentTS: '2020-10-11 18:18:38:121 '
-      receivedTS: '2020-10-11 18:18:38:273 '
-      lastRequestRTT: 75
-      averageRequestRTT: 87
-      lastResponseRTT: 151
-      averageResponseRTT: 174
-      application_version: '5.23'
-      friendly_name: Globe Lamp
-      state: ready
     switch.globe_lamp_switch:
-      node_id: 35
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594629931008'
-      friendly_name: Globe Lamp Switch
-      icon: hass:lightbulb
+      state: 'on'
+    light.bar_rgb:
+      brightness: 255
+      rgb_color:
+      - 255
+      - 145
+      - 36
+      state: 'on'
+    light.living_room_cd_rgbw:
+      brightness: 255
+      color_temp: 433
+      white_value: 255
       state: 'on'
 - name: Sleep
   id: 33bbe74c95a24b1a901f785a056edd70
   entities:
-    fan.loft_ceiling_fan:
-      speed: low
-      state: 'on'
     group.guest_room_lights:
       state: 'off'
     group.kitchen_lights:
@@ -267,243 +83,77 @@
       state: 'off'
     switch.fish_tank_light:
       state: 'off'
-- id: 31056ae2d40b4531acdfb6709544e86f
-  name: Watch TV
+    light.bar_rgbw:
+      state: 'off'
+- name: Watch TV
+  id: 31056ae2d40b4531acdfb6709544e86f
   entities:
     switch.entryway_light_switch:
-      node_id: 20
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594378272768'
-      friendly_name: Entryway Light
-      icon: hass:lightbulb
       state: 'off'
     switch.fireplace_lights_switch:
-      node_id: 19
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594361495552'
-      friendly_name: Fire Place Lights Switch
-      icon: hass:lightbulb
       state: 'off'
     switch.table_lamps_switch:
-      node_id: 22
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594411827200'
-      friendly_name: Table Lamps Switch
-      icon: hass:lightbulb
       state: 'off'
     light.dining_room_light:
-      friendly_name: Dining Room Light
-      supported_features: 33
       state: 'off'
     light.kitchen_overhead_lights:
-      friendly_name: Kitchen Overhead Lights
-      supported_features: 0
       state: 'off'
     light.loftfan:
-      friendly_name: LoftFan
-      supported_features: 0
       state: 'off'
     light.hallway_lights:
-      friendly_name: Hallway Lights
-      supported_features: 0
       state: 'off'
     light.peninsula_light_switch:
-      friendly_name: Peninsula Light Switch
-      supported_features: 0
       state: 'off'
-    light.wled_barlights:
-      restored: true
-      effect_list:
-      - Android
-      - BPM
-      - Blink
-      - Blink Rainbow
-      - Breathe
-      - Chase
-      - Chase
-      - Chase Flash
-      - Chase Flash Rnd
-      - Chase Rainbow
-      - Chase Rainbow
-      - Chase Random
-      - Circus
-      - Colorful
-      - Colorloop
-      - Colortwinkle
-      - Colorwaves
-      - Dark Sparkle
-      - Dissolve
-      - Dissolve Rnd
-      - Dual Scan
-      - Dual Scanner
-      - Dynamic
-      - Fade
-      - Fill Noise
-      - Fire 2012
-      - Fire Flicker
-      - Fireworks
-      - Gradient
-      - Halloween
-      - ICU
-      - In In
-      - In Out
-      - Juggle
-      - Lake
-      - Lighthouse
-      - Lightning
-      - Loading
-      - Mega Strobe
-      - Merry Christmas
-      - Meteor
-      - Multi Comet
-      - Noise 1
-      - Noise 2
-      - Noise 3
-      - Noise 4
-      - Oscillate
-      - Out In
-      - Out Out
-      - Palette
-      - Pride 2015
-      - Railway
-      - Rain
-      - Rainbow
-      - Rainbow Runner
-      - Random Colors
-      - Red & Blue
-      - Ripple
-      - Running
-      - Running 2
-      - Saw
-      - Scan
-      - Scanner
-      - Smooth Meteor
-      - Solid
-      - Sparkle
-      - Sparkle+
-      - Stream
-      - Stream 2
-      - Strobe
-      - Strobe Rainbow
-      - Sweep
-      - Sweep Random
-      - Traffic Light
-      - Tri Chase
-      - Tri Fade
-      - Tri Wipe
-      - Twinkle
-      - Twinklefox
-      - Wipe
-      - Wipe Random
-      max_mireds: 500
-      min_mireds: 153
-      supported_features: 55
-      friendly_name: Bar Lights
-      icon: mdi:led-strip-variant
-      state: unavailable
-    zwave.globe_lamp:
-      node_id: 35
-      node_name: Globe Lamp
-      manufacturer_name: GE
-      product_name: 14288 Duplex Receptacle
-      query_stage: Complete
-      is_awake: true
-      is_ready: true
-      is_failed: false
-      is_info_received: true
-      max_baud_rate: 40000
-      is_zwave_plus: true
-      capabilities:
-      - routing
-      - listening
-      - zwave_plus
-      - beaming
-      neighbors:
-      - 3
-      - 36
-      - 6
-      - 7
-      - 9
-      - 13
-      - 17
-      - 19
-      - 22
-      - 56
-      - 63
-      - 30
-      - 31
-      sentCnt: 16
-      sentFailed: 1
-      retries: 1
-      receivedCnt: 10
-      receivedDups: 0
-      receivedUnsolicited: 2
-      sentTS: '2020-12-26 20:55:32:742 '
-      receivedTS: '2020-12-26 20:55:33:406 '
-      lastRequestRTT: 218
-      averageRequestRTT: 660
-      lastResponseRTT: 664
-      averageResponseRTT: 1954
-      application_version: '5.23'
-      friendly_name: Globe Lamp
-      state: ready
     switch.globe_lamp_switch:
-      node_id: 35
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594629931008'
-      friendly_name: Globe Lamp Switch
-      icon: hass:lightbulb
       state: 'off'
+    light.bar_rgbw:
+      brightness: 128
+      rgb_color:
+      - 255
+      - 127
+      - 0
+      state: 'on'
+    light.under_cabinet_lights_switch:
+      state: 'on'
+    light.living_room_cd_rgbw:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 109
+      color_temp: 462
+      white_value: 109
+      state: 'on'
 - name: Work
   id: '1604329744138'
   entities:
     light.office_bed_light:
-      friendly_name: Office Bed Light
-      supported_features: 0
       state: 'on'
     light.office_rgbw:
-      effect_list:
-      - None
-      - Wake up
-      - Cycle up
-      - Cycle down
-      - Random
       brightness: 255
       white_value: 255
-      effect: None
-      friendly_name: Office_RGBW
-      supported_features: 181
       state: 'on'
     light.guest_room_floor_lamp:
-      friendly_name: Guest Room Floor Lamp
-      supported_features: 0
+      state: 'on'
+    light.office_sconce_dimme:
+      brightness: 255
       state: 'on'
   icon: fas:laptop-code
 - name: Read
   id: '1604329844172'
   entities:
     light.office_bed_light:
-      friendly_name: Office Bed Light
-      supported_features: 0
-      state: 'on'
+      state: 'off'
     light.office_rgbw:
-      brightness: 142
+      brightness: 142.8
       rgb_color:
       - 255
-      - 144
-      - 35
-      friendly_name: Office RGBW
-      icon: mdi:led-strip-variant
-      supported_features: 181
+      - 142
+      - 33
       state: 'on'
     light.guest_room_floor_lamp:
-      friendly_name: Guest Room Floor Lamp
-      supported_features: 0
-      state: 'off'
+      state: 'on'
+    light.office_sconce_dimme:
+      brightness: 127.5
+      state: 'on'
   icon: fas:book-reader
 - name: Listen to Music
   id: '1604329940512'
@@ -516,11 +166,8 @@
       brightness: 147
       rgb_color:
       - 255
-      - 163
-      - 72
-      friendly_name: Office RGBW
-      icon: mdi:led-strip-variant
-      supported_features: 181
+      - 127
+      - 0
       state: 'on'
     light.guest_room_floor_lamp:
       friendly_name: Guest Room Floor Lamp
@@ -531,7 +178,7 @@
       value_index: 0
       value_instance: 1
       value_id: '72057594076282880'
-      power_consumption: 0
+      power_consumption: 22.985
       friendly_name: Office Fan/Humidifier Switch
       icon: hass:fan
       state: 'off'
@@ -549,9 +196,9 @@
       is_zwave_plus: true
       capabilities:
       - routing
-      - listening
-      - beaming
       - zwave_plus
+      - beaming
+      - listening
       neighbors:
       - 34
       - 3
@@ -566,202 +213,64 @@
       - 28
       - 62
       - 63
-      sentCnt: 10
-      sentFailed: 0
-      retries: 0
-      receivedCnt: 8
-      receivedDups: 0
-      receivedUnsolicited: 0
-      sentTS: '2020-11-10 14:32:30:009 '
-      receivedTS: '2020-11-10 14:32:30:112 '
-      lastRequestRTT: 90
-      averageRequestRTT: 56
-      lastResponseRTT: 103
-      averageResponseRTT: 108
+      sentCnt: 1274
+      sentFailed: 2
+      retries: 4
+      receivedCnt: 1299
+      receivedDups: 38
+      receivedUnsolicited: 6
+      sentTS: '2021-01-26 22:06:44:544 '
+      receivedTS: '2021-01-26 22:06:44:823 '
+      lastRequestRTT: 150
+      averageRequestRTT: 152
+      lastResponseRTT: 279
+      averageResponseRTT: 280
       application_version: '1.05'
       friendly_name: Office Fan/Humidifier
       state: ready
+    light.office_sconce_dimme:
+      brightness: 168.3
+      friendly_name: Office Sconce Dimme
+      supported_features: 33
+      state: 'on'
   icon: mdi:record-player
 - name: Goodnight Office
   id: '1606676747899'
   entities:
     light.office_bed_light:
-      friendly_name: Office Bed Light
-      supported_features: 0
       state: 'off'
     light.office_rgbw:
-      effect_list:
-      - None
-      - Wake up
-      - Cycle up
-      - Cycle down
-      - Random
-      friendly_name: Office_RGBW
-      supported_features: 181
       state: 'off'
     switch.office_fan_humidifier_switch:
-      node_id: 2
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594076282880'
-      power_consumption: 10.033
-      friendly_name: Office Fan/Humidifier Switch
-      icon: hass:fan
       state: 'on'
-    zwave.office_outlet:
-      node_id: 2
-      node_name: HKZW-SO01 Smart Plug
-      manufacturer_name: Hank
-      product_name: HKZW-SO01 Smart Plug
-      query_stage: Complete
-      is_awake: true
-      is_ready: true
-      is_failed: false
-      is_info_received: true
-      max_baud_rate: 40000
-      is_zwave_plus: true
-      capabilities:
-      - zwave_plus
-      - beaming
-      - listening
-      - routing
-      neighbors:
-      - 34
-      - 3
-      - 36
-      - 7
-      - 9
-      - 19
-      - 20
-      - 22
-      - 54
-      - 56
-      - 28
-      - 62
-      - 63
-      sentCnt: 26
-      sentFailed: 0
-      retries: 0
-      receivedCnt: 18
-      receivedDups: 2
-      receivedUnsolicited: 0
-      sentTS: '2020-11-29 14:19:49:079 '
-      receivedTS: '2020-11-29 14:19:49:372 '
-      lastRequestRTT: 168
-      averageRequestRTT: 161
-      lastResponseRTT: 293
-      averageResponseRTT: 291
-      application_version: '1.05'
-      friendly_name: Office Fan/Humidifier
-      state: ready
     light.hallway_lights:
-      friendly_name: Hallway Lights
-      supported_features: 0
       state: 'off'
     light.hall_bath_switch:
-      friendly_name: Hall Bath Switch
-      supported_features: 0
       state: 'off'
     light.guest_room_floor_lamp:
-      friendly_name: Guest Room Floor Lamp
-      supported_features: 0
       state: 'off'
   icon: mdi:sleep
 - name: Bedroom Lights Off
   id: '1606677565239'
   entities:
     switch.bedroom_humidifier:
-      node_id: 13
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594260832256'
-      power_consumption: 0
-      friendly_name: Bedroom Humidifier
-      icon: mdi:cup-water
       state: 'on'
-    zwave.humidifier_bedroom:
-      node_id: 13
-      node_name: Humidifier
-      manufacturer_name: Aeotec
-      product_name: DSC06106 Smart Energy Switch
-      query_stage: Complete
-      is_awake: true
-      is_ready: true
-      is_failed: false
-      is_info_received: true
-      max_baud_rate: 40000
-      is_zwave_plus: false
-      capabilities:
-      - beaming
-      - listening
-      - routing
-      neighbors:
-      - 34
-      - 3
-      - 35
-      - 36
-      - 6
-      - 7
-      - 9
-      - 17
-      - 19
-      - 20
-      - 22
-      - 56
-      - 28
-      sentCnt: 14
-      sentFailed: 4
-      retries: 0
-      receivedCnt: 12
-      receivedDups: 1
-      receivedUnsolicited: 0
-      sentTS: '2020-11-29 17:22:06:137 '
-      receivedTS: '2020-11-29 17:22:06:352 '
-      lastRequestRTT: 96
-      averageRequestRTT: 102
-      lastResponseRTT: 214
-      averageResponseRTT: 251
-      application_version: '1.43'
-      friendly_name: Bedroom Humidifier
-      state: ready
     group.master_bedroom_lights:
-      entity_id:
-      - light.bedroom_light_switch
-      - light.bathroom_mirror_led
-      - light.bathroom_vanity_light
-      - light.bedroom_entry_light
-      - light.bathroom_shower
-      - light.exhaust_fan
-      - light.bedroom_closet_light_switch
-      order: 7
-      friendly_name: Master Bedroom Lights
-      icon: mdi:lightbulb-multiple
       state: 'off'
     switch.mb_magic_mirror_screen:
-      friendly_name: Magic Mirror Screen
-      icon: mdi:cellphone
       state: 'off'
     fan.bedroom_exhaust_fan:
-      friendly_name: Bedroom Exhaust Fan
-      supported_features: 0
       state: 'off'
   icon: mdi:lightbulb-off
-- id: '1606678084229'
-  name: Dim Bedroom
+- name: Dim Bedroom
+  id: '1606678084229'
   entities:
     light.bedroom_entry_light:
-      brightness: 25
-      friendly_name: Bedroom Entry Light
-      supported_features: 1
+      brightness: 30
       state: 'on'
     light.bedroom_light_switch:
-      brightness: 25
-      friendly_name: Bedroom Light Switch
-      supported_features: 1
+      brightness: 30
       state: 'on'
     light.bathroom_vanity_light:
-      brightness: 25
-      friendly_name: Bathroom Vanity Light
-      supported_features: 1
+      brightness: 50
       state: 'on'
-  icon: mdi:brightness-6
