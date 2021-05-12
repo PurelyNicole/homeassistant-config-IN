@@ -36,6 +36,11 @@
                 "name": "Show Outdoor Heaters",
                 "icon": "mdi:radiator",
                 "id": "show_gutter_heaters"
+            },
+            {
+                "name": "Vacation Mode",
+                "icon": "mdi:beach",
+                "id": "vacation_mode"
             }
         ]
     }

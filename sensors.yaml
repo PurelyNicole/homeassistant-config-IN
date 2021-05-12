@@ -41,6 +41,91 @@
     - 208248
     - 208210
 
+#########################
+# History Stats Sensors #
+#########################
+#The sensors that start with 'replay' are for vacation blueprint
+- platform: history_stats
+  name: "replay_fireplace_lights_switch"
+  entity_id: switch.fireplace_lights_switch
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_table_lamps_switch"
+  entity_id: switch.table_lamps_switch
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_desk_light_switch"
+  entity_id: light.desk_light_switch
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_entryway_light_switch"
+  entity_id: switch.entryway_light_switch
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_loftfan"
+  entity_id: light.loftfan
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_guest_room_floor_lamp"
+  entity_id: light.guest_room_floor_lamp
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_bedroom_light_switch"
+  entity_id: light.bedroom_light_switch
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_kitchen_overhead_lights"
+  entity_id: light.kitchen_overhead_lights
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_dining_room_light"
+  entity_id: light.dining_room_light
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+- platform: history_stats
+  name: "replay_garage_light"
+  entity_id: light.garage_light
+  state: "on"
+  type: count
+  start: >
+    {{ as_timestamp(now()) - (7*86400) }}
+  duration: 00:00:30
+
 ################    
 # MQTT Sensors #
 ################

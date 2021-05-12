@@ -132,6 +132,11 @@
   - condition: state
     entity_id: input_select.home_mode
     state: Home
+  - condition: device
+    type: is_off
+    device_id: e972496847ec40a38c59f307434d7791
+    entity_id: remote.living_room
+    domain: remote
   action:
   - data:
       entity_id: scene.indoor_lights_on
@@ -351,6 +356,9 @@
   - platform: state
     entity_id: binary_sensor.kitchen_garage_door_sensor
     to: 'on'
+  - platform: state
+    entity_id: cover.garage_door
+    to: open
   condition: []
   action:
   - data: {}
@@ -448,7 +456,6 @@
     target:
       entity_id:
       - switch.plant_light
-      - switch.mb_magic_mirror_screen
       - switch.seed_start_light
   - type: turn_on
     device_id: 49fab7540e6fe1f69ed4e3dfac928396
@@ -507,26 +514,6 @@
   condition: []
   action:
   - scene: scene.work
-  mode: single
-- id: '1606676456455'
-  alias: Tag Goodnight Office is scanned
-  description: ''
-  trigger:
-  - platform: tag
-    tag_id: d9299984-99ae-49b1-8744-2ae89f5db8d5
-  condition: []
-  action:
-  - scene: scene.goodnight_office
-  mode: single
-- id: '1606677028890'
-  alias: Tag Goodnight Bedroom - Nicole Nightstand is scanned
-  description: ''
-  trigger:
-  - platform: tag
-    tag_id: 888ae6de-fec0-44ba-9c96-97ca9c8c55f9
-  condition: []
-  action:
-  - scene: scene.bedroom_lights_off
   mode: single
 - id: '1606677313814'
   alias: Tag Goodnight - Eric Nightstand is scanned
@@ -602,7 +589,7 @@
   use_blueprint:
     path: sbyx/wake-up-light-alarm-with-sunrise-effect.yaml
     input:
-      min_mired: '0'
+      min_mired: 0
       light_entity: light.office_rgbw
       timestamp_sensor: sensor.pixel_3a_next_alarm
       manual_time: '9:00:00'
@@ -617,5 +604,91 @@
         device_id: ca0d575e83874565b700fddd31f336c2
         entity_id: switch.office_fan_humidifier_switch
         domain: switch
-      end_brightness: '254'
+      end_brightness: 255
       start_brightness: '1'
+      check_entity: person.nicole
+- id: '1620650062311'
+  alias: Fan - Turn off bathroom fan if humidity below 55%
+  description: ''
+  trigger:
+  - type: humidity
+    platform: device
+    device_id: 5ec392fca2a6adfa94acd20dd693d6cc
+    entity_id: sensor.master_bath_humidity
+    domain: sensor
+    below: 55
+  condition:
+  - condition: state
+    entity_id: fan.bedroom_exhaust_fan
+    state: 'on'
+  action:
+  - service: fan.turn_off
+    target:
+      entity_id: fan.bedroom_exhaust_fan
+  mode: single
+- alias: Blueprint - Vacation Lighting
+  id: '1620658371768'
+  description: ''
+  use_blueprint:
+    path: timgiwo/vactaion-lighting.yaml
+    input:
+      vacation_mode_toggle: input_boolean.vacation_mode
+      default_brightness: 100
+      replay_sensor_1: sensor.replay_bedroom_light_switch
+      light_target_1: light.bedroom_light_switch
+      replay_sensor_2: sensor.replay_desk_light_switch
+      light_target_2: light.desk_light_switch
+      replay_sensor_3: sensor.replay_dining_room_light
+      light_target_3: light.dining_room_light
+      replay_sensor_4: sensor.replay_entryway_light_switch
+      light_target_4: switch.entryway_light_switch
+      replay_sensor_5: sensor.replay_fireplace_lights_switch
+      light_target_5: switch.fireplace_lights_switch
+      replay_sensor_6: sensor.replay_garage_light
+      light_target_6: light.garage_light
+      replay_sensor_7: sensor.replay_guest_room_floor_lamp
+      light_target_7: sensor.replay_guest_room_floor_lamp
+      replay_sensor_8: sensor.replay_kitchen_overhead_lights
+      light_target_8: light.kitchen_overhead_lights
+      replay_sensor_9: sensor.replay_loftfan
+      light_target_9: light.loftfan
+      replay_sensor_10: sensor.replay_table_lamps_switch
+      light_target_10: switch.table_lamps_switch
+- alias: WIP - Python Climate
+  id: '1620743373255'
+  description: When home mode, high temp, or time of day changes And vacation mode
+    is off Then call the thermostat script
+  trigger:
+  - platform: state
+    entity_id: input_select.home_mode
+  - platform: state
+    entity_id: sensor.dark_sky_daytime_high_apparent_temperature_0d
+  - platform: state
+    entity_id: binary_sensor.dusk
+  - platform: state
+    entity_id: binary_sensor.day
+  - platform: state
+    entity_id: binary_sensor.morning
+  - platform: state
+    entity_id: binary_sensor.night
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'off'
+  action:
+  - service: python_script.set_thermostat
+    data:
+      entity_id: climate.living_room
+  mode: single
+- id: '1620788500151'
+  alias: Tag Nicole Bedroom Lights Off is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: cea97663-7c03-4658-8b6a-062a54f4532e
+  condition: []
+  action:
+  - service: light.turn_off
+    target:
+      area_id: 1aeb676c20b34102adb4bb48bc826eb1
+  mode: single
