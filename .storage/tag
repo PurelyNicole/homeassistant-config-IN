@@ -7,45 +7,43 @@
                 "tag_id": "f7889a1c-a431-49da-93db-b38ef3d03cf4",
                 "name": "Listen To Music",
                 "id": "f7889a1c-a431-49da-93db-b38ef3d03cf4",
-                "last_scanned": "2020-11-29T18:51:54.923171+00:00"
+                "last_scanned": "2021-03-17T02:22:27.410032+00:00"
             },
             {
                 "tag_id": "99749d42-158d-4e32-aa3e-a5a2d08177bf",
                 "name": "Read",
                 "id": "99749d42-158d-4e32-aa3e-a5a2d08177bf",
-                "last_scanned": "2020-11-29T19:32:15.275987+00:00"
+                "last_scanned": "2021-05-07T02:00:16.214811+00:00"
             },
             {
                 "tag_id": "ddafd438-5814-4669-ae60-4852d653482d",
                 "name": "Work",
                 "id": "ddafd438-5814-4669-ae60-4852d653482d",
-                "last_scanned": "2020-11-29T19:32:28.480864+00:00"
+                "last_scanned": "2021-05-10T12:13:36.077540+00:00"
             },
             {
                 "tag_id": "d9299984-99ae-49b1-8744-2ae89f5db8d5",
                 "name": "Goodnight Office",
-                "id": "d9299984-99ae-49b1-8744-2ae89f5db8d5"
+                "id": "d9299984-99ae-49b1-8744-2ae89f5db8d5",
+                "last_scanned": "2021-03-08T04:03:14.205090+00:00"
             },
             {
                 "tag_id": "888ae6de-fec0-44ba-9c96-97ca9c8c55f9",
                 "name": "Goodnight Bedroom - Nicole Nightstand",
-                "id": "888ae6de-fec0-44ba-9c96-97ca9c8c55f9"
+                "id": "888ae6de-fec0-44ba-9c96-97ca9c8c55f9",
+                "last_scanned": "2021-05-12T02:59:37.183632+00:00"
             },
             {
                 "tag_id": "d08bfa6b-d279-4aa8-8fe1-5d7d46d1e098",
                 "name": "Goodnight - Nicole Nightstand",
-                "id": "d08bfa6b-d279-4aa8-8fe1-5d7d46d1e098"
+                "id": "d08bfa6b-d279-4aa8-8fe1-5d7d46d1e098",
+                "last_scanned": "2021-01-22T04:50:13.301322+00:00"
             },
             {
-                "tag_id": "fbd1479a-a4eb-402d-8bfa-d8a10db2341c",
-                "name": "Goodnight - Eric Nightstand",
-                "id": "fbd1479a-a4eb-402d-8bfa-d8a10db2341c",
-                "last_scanned": "2020-11-29T19:12:35.352190+00:00"
-            },
-            {
-                "tag_id": "b803ac20-0e21-448e-ac03-a0c2bc60f1b7",
-                "name": "Goodnight Bedroom - Eric Nightstand",
-                "id": "b803ac20-0e21-448e-ac03-a0c2bc60f1b7"
+                "tag_id": "cea97663-7c03-4658-8b6a-062a54f4532e",
+                "name": "Nicole Bedroom Lights Off",
+                "id": "cea97663-7c03-4658-8b6a-062a54f4532e",
+                "last_scanned": "2021-05-12T03:01:51.936716+00:00"
             }
         ]
     }

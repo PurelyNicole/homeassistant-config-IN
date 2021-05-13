@@ -44,11 +44,6 @@
                 "id": "db949e26fe1a4ee8a6f9842dc4581b88"
             },
             {
-                "url": "/hacsfiles/lovelace-roomba-vacuum-card/roomba-vacuum-card.js",
-                "type": "module",
-                "id": "8a5d4582abca42cc90dfc63c225f70c5"
-            },
-            {
                 "url": "/hacsfiles/check-button-card/check-button-card.js",
                 "type": "module",
                 "id": "94abf2a196bb48b0811e5dc864c96594"
@@ -72,6 +67,26 @@
                 "url": "/hacsfiles/ha-lovelace-elapsed-time-card/elapsed-time-card.js",
                 "type": "module",
                 "id": "91293e176292455fa7ec31706f45bd03"
+            },
+            {
+                "url": "/hacsfiles/charger-card/charger-card.js",
+                "type": "module",
+                "id": "769e64047c3646f484eb5f8a1c18a6f8"
+            },
+            {
+                "url": "/hacsfiles/light-entity-card/light-entity-card.js",
+                "type": "module",
+                "id": "bf2ef13b1a344ef39c5c7177e88658eb"
+            },
+            {
+                "url": "/hacsfiles/harmony-card/harmony-card.js",
+                "type": "module",
+                "id": "7250bccaad2144698f5b86be763c79a4"
+            },
+            {
+                "url": "/hacsfiles/battery-state-card/battery-state-card.js",
+                "type": "module",
+                "id": "c0f9a27492e049ffaa32b84858f6d281"
             }
         ]
     }

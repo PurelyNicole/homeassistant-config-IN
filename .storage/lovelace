@@ -183,29 +183,35 @@
                         },
                         {
                             "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_porch_sub",
+                            "camera_image": "camera.blueiris_porch_camera",
                             "entities": [
                                 {
-                                    "entity": "camera.blueiris_porch_sub"
+                                    "entity": "camera.blueiris_porch_camera"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_porch_camera_motion"
                                 }
                             ],
                             "title": "Porch",
                             "type": "picture-glance",
-                            "entity": "camera.blueiris_porch_sub",
+                            "entity": "camera.blueiris_porch_camera",
                             "camera_view": "live"
                         },
                         {
                             "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_driveway_sub",
+                            "camera_image": "camera.blueiris_driveway",
                             "entities": [
                                 {
-                                    "entity": "camera.blueiris_driveway_sub"
+                                    "entity": "camera.blueiris_driveway"
+                                },
+                                {
+                                    "entity": "binary_sensor.blueiris_driveway_motion"
                                 }
                             ],
-                            "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
                             "type": "picture-glance",
                             "camera_view": "live",
-                            "entity": "camera.blueiris_driveway_sub"
+                            "entity": "camera.blueiris_driveway",
+                            "title": "Driveway"
                         },
                         {
                             "type": "vertical-stack",
@@ -542,7 +548,7 @@
                                 },
                                 {
                                     "type": "custom:mod-card",
-                                    "style": "{% if (state_attr(\"sensor.chore_dog_flea_heartworm\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
+                                    "style": "{% if (state_attr(\"sensor.dog_flea_heartworm\", \"timeout_timestamp\")) >\n(as_timestamp(now()) + 259200) %}\n  ha-card {display: none}\n{% endif %}\n",
                                     "card": {
                                         "type": "custom:check-button-card",
                                         "entity": "sensor.dog_flea_heartworm",
@@ -954,47 +960,31 @@
                             "title": "Scenes"
                         },
                         {
-                            "type": "entities",
-                            "entities": [
+                            "type": "grid",
+                            "cards": [
                                 {
-                                    "entity": "light.office_rgbw"
+                                    "type": "light",
+                                    "entity": "light.office_sconce_dimme"
                                 },
                                 {
-                                    "entity": "light.office_bed_light"
-                                },
-                                {
+                                    "type": "light",
                                     "entity": "light.guest_room_floor_lamp"
                                 },
                                 {
-                                    "entity": "light.office_sconce_dimme"
+                                    "type": "light",
+                                    "entity": "light.office_bed_light"
+                                },
+                                {
+                                    "type": "light",
+                                    "entity": "light.office_rgbw"
                                 }
                             ],
-                            "title": "Office Lights",
-                            "state_color": true
+                            "columns": 4,
+                            "square": false
                         },
                         {
                             "type": "media-control",
                             "entity": "media_player.hifiberry"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.office_multi_sensor_temperature",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
-                                    "entity": "sensor.office_multi_sensor_relative_humidity",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
-                                    "entity": "switch.office_fan_humidifier_switch",
-                                    "secondary_info": "last-changed"
-                                }
-                            ],
-                            "title": "Office Climate",
-                            "show_header_toggle": false,
-                            "state_color": true
                         },
                         {
                             "cards": [
@@ -1041,6 +1031,26 @@
                             "type": "vertical-stack"
                         },
                         {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.office_multi_sensor_temperature",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "sensor.office_multi_sensor_relative_humidity",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "switch.office_fan_humidifier_switch",
+                                    "secondary_info": "last-changed"
+                                }
+                            ],
+                            "title": "Office Climate",
+                            "show_header_toggle": false,
+                            "state_color": true
+                        },
+                        {
                             "entities": [
                                 {
                                     "entity": "sensor.music_med_value"
@@ -1050,10 +1060,6 @@
                             "refresh_interval": 0,
                             "type": "history-graph",
                             "title": "Music Collection Value"
-                        },
-                        {
-                            "type": "entity",
-                            "entity": "binary_sensor.office_motion_sensor"
                         },
                         {
                             "type": "custom:atomic-calendar-revive",
@@ -1089,6 +1095,10 @@
                     ]
                 },
                 {
+                    "icon": "mdi:lightbulb-group-outline",
+                    "panel": false,
+                    "path": "lighting",
+                    "title": "Lighting",
                     "badges": [],
                     "cards": [
                         {
@@ -1364,11 +1374,7 @@
                             ],
                             "type": "conditional"
                         }
-                    ],
-                    "icon": "mdi:lightbulb-group-outline",
-                    "panel": false,
-                    "path": "lighting",
-                    "title": "Lighting"
+                    ]
                 },
                 {
                     "icon": "hass:door-closed",
@@ -1529,6 +1535,10 @@
                                     "secondary_info": "last-changed"
                                 },
                                 {
+                                    "entity": "sensor.master_bath_temperature",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
                                     "entity": "sensor.office_multi_sensor_temperature",
                                     "secondary_info": "last-changed"
                                 },
@@ -1547,6 +1557,11 @@
                                 {
                                     "entity": "sensor.utility_room_moisture_temperature",
                                     "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "sensor.ambient_temperature",
+                                    "secondary_info": "last-changed",
+                                    "name": "Garage Temperature"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -1565,6 +1580,10 @@
                                 },
                                 {
                                     "entity": "sensor.master_bedroom_humidity",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "sensor.master_bath_humidity",
                                     "secondary_info": "last-changed"
                                 },
                                 {
@@ -1859,225 +1878,221 @@
                     "title": "Outdoors"
                 },
                 {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_porch_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_porch_sub"
-                                },
-                                {
-                                    "entity": "binary_sensor.blueiris_porch_camera_motion"
-                                }
-                            ],
-                            "title": "Porch",
-                            "type": "picture-glance",
-                            "entity": "camera.blueiris_porch_sub"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_driveway_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_driveway_sub"
-                                },
-                                {
-                                    "entity": "binary_sensor.blueiris_driveway_camera_motion"
-                                }
-                            ],
-                            "title": "Driveway",
-                            "type": "picture-glance",
-                            "entity": "camera.blueiris_driveway_sub"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_westfence_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_westfence_sub"
-                                },
-                                {
-                                    "entity": "binary_sensor.blueiris_west_fence_motion"
-                                }
-                            ],
-                            "entity": "camera.blueiris_westfence_sub",
-                            "hold_action": {
-                                "action": "none"
-                            },
-                            "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
-                            "tap_action": {
-                                "action": "none"
-                            },
-                            "title": "West Fence",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_workshop_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_workshop_sub"
-                                },
-                                {
-                                    "entity": "binary_sensor.blueiris_workshop_motion"
-                                }
-                            ],
-                            "entity": "camera.blueiris_workshop_sub",
-                            "hold_action": {
-                                "action": "none"
-                            },
-                            "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
-                            "tap_action": {
-                                "action": "none"
-                            },
-                            "title": "Workshop",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_pond_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_pond_sub"
-                                },
-                                {
-                                    "entity": "binary_sensor.blueiris_pond_camera_motion"
-                                }
-                            ],
-                            "image": "c",
-                            "title": "Pond Camera",
-                            "type": "picture-glance",
-                            "entity": "camera.blueiris_pond_sub"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_backyardeast_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_backyardeast_sub"
-                                },
-                                {
-                                    "entity": "binary_sensor.blueiris_east_gate_cam_motion"
-                                }
-                            ],
-                            "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
-                            "title": "Backyard East",
-                            "type": "picture-glance",
-                            "entity": "camera.blueiris_backyardeast_sub"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_eastgate_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_eastgate_sub"
-                                },
-                                {
-                                    "entity": "binary_sensor.blueiris_east_gate_cam_motion"
-                                }
-                            ],
-                            "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
-                            "title": "East Gate",
-                            "type": "picture-glance",
-                            "entity": "camera.blueiris_eastgate_sub"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.blueiris_frontyard_sub",
-                            "entities": [
-                                {
-                                    "entity": "camera.blueiris_frontyard_sub"
-                                },
-                                {
-                                    "entity": "binary_sensor.blueiris_front_yard_reo_motion"
-                                }
-                            ],
-                            "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
-                            "title": "Front Yard",
-                            "type": "picture-glance",
-                            "entity": "camera.blueiris_frontyard_sub"
-                        }
-                    ],
                     "icon": "mdi:camera",
                     "path": "cameras",
-                    "title": "Cameras"
-                },
-                {
+                    "title": "Cameras",
+                    "panel": true,
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
+                            "type": "grid",
+                            "cards": [
                                 {
-                                    "entity": "sensor.fast_com_download"
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_porch_camera",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_porch_camera"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_porch_camera_motion"
+                                        }
+                                    ],
+                                    "title": "Porch",
+                                    "type": "picture-glance",
+                                    "entity": "camera.blueiris_porch_camera",
+                                    "camera_view": "live"
                                 },
                                 {
-                                    "entity": "sensor.speedtest_download"
-                                }
-                            ],
-                            "line_width": 3,
-                            "name": "Download Sppeds",
-                            "points_per_hour": 4,
-                            "smoothing": false,
-                            "type": "custom:mini-graph-card"
-                        },
-                        {
-                            "entities": [
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_west_fence",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_west_fence"
+                                        }
+                                    ],
+                                    "entity": "camera.blueiris_westfence_sub",
+                                    "hold_action": {
+                                        "action": "none"
+                                    },
+                                    "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
+                                    "tap_action": {
+                                        "action": "none"
+                                    },
+                                    "title": "West Fence",
+                                    "type": "picture-glance",
+                                    "camera_view": "live"
+                                },
                                 {
-                                    "entity": "sensor.emoncms_voltage"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "line_width": 3,
-                            "ponts_per_hour": 4,
-                            "smoothing": false,
-                            "type": "custom:mini-graph-card"
-                        },
-                        {
-                            "entities": [
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_east_gate_cam",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_east_gate_cam"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "title": "East Gate",
+                                    "type": "picture-glance",
+                                    "entity": "camera.blueiris_eastgate_sub",
+                                    "camera_view": "live"
+                                },
                                 {
-                                    "entity": "sensor.emoncms_kwh"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "line_width": 3,
-                            "points_per_hour": 4,
-                            "smoothing": false,
-                            "type": "custom:mini-graph-card"
-                        },
-                        {
-                            "entities": [
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_driveway",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_driveway"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_driveway_motion"
+                                        }
+                                    ],
+                                    "title": "Driveway",
+                                    "type": "picture-glance",
+                                    "entity": "camera.blueiris_driveway",
+                                    "camera_view": "live"
+                                },
                                 {
-                                    "entity": "sensor.network_rack_temperature"
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_workshop",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_workshop"
+                                        }
+                                    ],
+                                    "entity": "camera.blueiris_workshop",
+                                    "hold_action": {
+                                        "action": "none"
+                                    },
+                                    "tap_action": {
+                                        "action": "none"
+                                    },
+                                    "title": "Workshop",
+                                    "type": "picture-glance",
+                                    "camera_view": "live"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_backyard_east_reo",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_backyard_east_reo"
+                                        }
+                                    ],
+                                    "title": "Backyard East",
+                                    "type": "picture-glance",
+                                    "entity": "camera.blueiris_backyard_east_reo",
+                                    "camera_view": "live"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_front_yard_reo",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_front_yard_reo"
+                                        }
+                                    ],
+                                    "title": "Front Yard",
+                                    "type": "picture-glance",
+                                    "entity": "camera.blueiris_front_yard_reo"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_pond_camera",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_pond_camera"
+                                        }
+                                    ],
+                                    "image": "c",
+                                    "title": "Pond Camera",
+                                    "type": "picture-glance",
+                                    "entity": "camera.blueiris_pond_camera"
                                 }
                             ],
-                            "hours_to_show": 24,
-                            "line_width": 3,
-                            "ponts_per_hour": 8,
-                            "smoothing": false,
-                            "type": "custom:mini-graph-card"
+                            "square": false
                         }
-                    ],
-                    "icon": "mdi:home-analytics",
-                    "panel": false,
-                    "path": "analytics",
-                    "theme": "Backend-selected",
-                    "title": "Analytics"
+                    ]
                 },
                 {
+                    "icon": "mdi:home-analytics",
+                    "panel": true,
+                    "path": "analytics",
+                    "theme": "Backend-selected",
+                    "title": "Analytics",
                     "badges": [],
                     "cards": [
                         {
-                            "aspect_ratio": "50%",
-                            "type": "iframe",
-                            "url": "https://dashboard.ambientweather.net/devices/public/c41e664bf02b2c09e39e74dd49884adf?embed=true"
+                            "type": "grid",
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.fast_com_download"
+                                        },
+                                        {
+                                            "entity": "sensor.speedtest_download"
+                                        }
+                                    ],
+                                    "line_width": 3,
+                                    "name": "Download Sppeds",
+                                    "points_per_hour": 4,
+                                    "smoothing": false,
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.speedtest_upload"
+                                        }
+                                    ],
+                                    "line_width": 3,
+                                    "name": "Upload Sppeds",
+                                    "points_per_hour": 4,
+                                    "smoothing": false,
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.emoncms_voltage"
+                                        }
+                                    ],
+                                    "hours_to_show": 24,
+                                    "line_width": 3,
+                                    "ponts_per_hour": 4,
+                                    "smoothing": false,
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.emoncms_kwh"
+                                        }
+                                    ],
+                                    "hours_to_show": 24,
+                                    "line_width": 3,
+                                    "points_per_hour": 4,
+                                    "smoothing": false,
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.network_rack_temperature"
+                                        }
+                                    ],
+                                    "hours_to_show": 24,
+                                    "line_width": 3,
+                                    "ponts_per_hour": 8,
+                                    "smoothing": false,
+                                    "type": "custom:mini-graph-card"
+                                }
+                            ],
+                            "square": false
                         }
-                    ],
-                    "icon": "mdi:weather-partly-cloudy",
-                    "panel": true,
-                    "path": "weather",
-                    "title": "Weather"
+                    ]
                 },
                 {
                     "badges": [],
@@ -2476,94 +2491,7 @@
                             ]
                         },
                         {
-                            "type": "custom:atomic-calendar-revive",
-                            "name": "Meal Plan",
-                            "enableModeChange": true,
-                            "entities": [
-                                {
-                                    "entity": "calendar.meal_plan",
-                                    "name": "Meal Plan"
-                                }
-                            ],
-                            "firstDayOfWeek": 1,
-                            "maxDaysToShow": 7,
-                            "hideFinishedEvents": false,
-                            "showDate": true,
-                            "showEventIcon": false,
-                            "showWeekDay": true,
-                            "disableLocationLink": false,
-                            "showFullDayProgress": false,
-                            "showCurrentEventLine": false,
-                            "showMonth": false,
-                            "sortByStartTime": false,
-                            "showRelativeTime": false,
-                            "showDeclined": true,
-                            "showNoEventsForToday": false,
-                            "disableEventLink": false,
-                            "showLocation": false,
-                            "showProgressBar": false,
-                            "defaultMode": "Event",
-                            "showDescription": true,
-                            "calShowDescription": false,
-                            "dimFinishedEvents": false
-                        },
-                        {
                             "cards": [
-                                {
-                                    "entity": "sensor.vacuum",
-                                    "type": "custom:roomba-vacuum-card"
-                                },
-                                {
-                                    "entities": [
-                                        "input_boolean.vacuum_clean_workout_room",
-                                        "input_boolean.vacuum_clean_bedroom",
-                                        "input_boolean.vacuum_clean_bathroom",
-                                        "input_boolean.vacuum_clean_hall",
-                                        "input_boolean.vacuum_clean_entry",
-                                        "input_boolean.vacuum_clean_laundry",
-                                        "input_boolean.vacuum_clean_kitchen",
-                                        "input_boolean.vacuum_clean_dining",
-                                        "input_boolean.vacuum_clean_office",
-                                        {
-                                            "entity": "automation.vacuum_clean_rooms",
-                                            "lock": {
-                                                "enabled": "[[[\n  if ((states['group.vacuum_rooms'].state == \"on\") && (states['sensor.vacuum'].state == \"Ready\"))\n    return false;\n  return true;\n]]]\n",
-                                                "exemptions": []
-                                            },
-                                            "name": "Clean Rooms",
-                                            "styles": {
-                                                "card": [
-                                                    {
-                                                        "height": "50px"
-                                                    }
-                                                ]
-                                            },
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "automation.trigger",
-                                                "service_data": {
-                                                    "entity_id": "automation.vacuum_clean_rooms"
-                                                }
-                                            },
-                                            "type": "custom:button-card"
-                                        }
-                                    ],
-                                    "head": {
-                                        "label": "Selective Room Cleaning",
-                                        "type": "section"
-                                    },
-                                    "type": "custom:fold-entity-row"
-                                },
-                                {
-                                    "head": {
-                                        "label": "Schedule",
-                                        "type": "section"
-                                    },
-                                    "type": "custom:fold-entity-row",
-                                    "entities": [
-                                        "input_boolean.vacuum_schedule_1"
-                                    ]
-                                },
                                 {
                                     "entities": [
                                         {
@@ -2729,12 +2657,6 @@
                                 }
                             ],
                             "type": "vertical-stack"
-                        },
-                        {
-                            "aspect_ratio": "0%",
-                            "camera_image": "camera.roomba_i7",
-                            "entities": [],
-                            "type": "picture-glance"
                         }
                     ]
                 },
@@ -2776,6 +2698,49 @@
                         },
                         {
                             "user": "3960e44645fe4662b6ffb4d21d2151e8"
+                        }
+                    ]
+                },
+                {
+                    "title": "Transportation",
+                    "path": "transportation",
+                    "icon": "mdi:car",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.charging_status"
+                                },
+                                {
+                                    "entity": "sensor.charge_time_elapsed"
+                                },
+                                {
+                                    "entity": "sensor.usage_this_session"
+                                },
+                                {
+                                    "entity": "sensor.total_usage"
+                                },
+                                {
+                                    "entity": "sensor.rtc_temperature"
+                                },
+                                {
+                                    "entity": "sensor.ir_temperature"
+                                },
+                                {
+                                    "entity": "sensor.ambient_temperature"
+                                }
+                            ],
+                            "title": "OpenEVSE"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "lock.supra_lock",
+                                "device_tracker.supra"
+                            ],
+                            "title": "Supra"
                         }
                     ]
                 },
@@ -2858,6 +2823,9 @@
                                 },
                                 {
                                     "entity": "input_boolean.show_outdoor_heaters"
+                                },
+                                {
+                                    "entity": "input_boolean.vacation_mode"
                                 }
                             ],
                             "title": "View Components",
