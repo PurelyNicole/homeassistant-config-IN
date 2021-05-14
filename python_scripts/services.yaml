@@ -1,0 +1,8 @@
+# services.yaml
+set_thermostat:
+  name: Set Thermostat
+  description: Set the thermostat based on home mode and outside temperature
+  fields:
+    entity_id:
+      description: The thermostat to set.
+      example: climate.living_room

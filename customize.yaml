@@ -140,11 +140,17 @@ sensor.ambient_temperature:
   friendly_name: OpenEVSE Ambient Temperature
 sensor.charge_time_elapsed:
   friendly_name: OpenEVSE Charge Time Elapsed
+  icon: mdi:timer
 sensor.ir_temperature:
   friendly_name: OpenEVSE IR Temperature
 sensor.rtc_temperature:
   friendly_name: OpenEVSE RTC Temperature
 sensor.usage_this_session:
   friendly_name: OpenEVSE Usage this Session
+  icon: mdi:chart-line
 sensor.total_usage:
   friendly_name: OpenEVSE Total Usage
+  icon: mdi:chart-areaspline
+sensor.charging_status:
+  friendly_name: OpenEVSE Charging Status
+  icon: mdi:ev-station

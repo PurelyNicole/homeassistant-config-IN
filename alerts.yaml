@@ -1,6 +1,6 @@
- ##################
- # Door Left Open #
- ##################
+##################
+# Door Left Open #
+##################
 kitchen_patio_door_opened:
   name: Kitchen patio door left open.
   entity_id: binary_sensor.kitchen_patio_door_motion_sensor
@@ -17,9 +17,9 @@ kitchen_patio_door_opened:
     - notify.mobile_app_sm_g965u
     - notify.mobile_app_pixel_3a
 
- #####################
- # Moisture Detected #
- #####################
+#####################
+# Moisture Detected #
+#####################
 water_detected_utility_room:
   name: Water detected in utility room.
   entity_id: binary_sensor.utility_room_moisture_sensor

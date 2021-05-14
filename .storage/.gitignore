@@ -6,6 +6,7 @@
 /hacs*
 /hassio
 /homekit_controller-entity-map
+/icloud
 /onboarding
 /person
 /unifi_data
@@ -14,3 +15,4 @@
 .blueiris
 mobile_app
 tag
+zha.storage

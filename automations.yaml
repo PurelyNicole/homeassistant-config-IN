@@ -654,23 +654,25 @@
       light_target_9: light.loftfan
       replay_sensor_10: sensor.replay_table_lamps_switch
       light_target_10: switch.table_lamps_switch
-- alias: WIP - Python Climate
-  id: '1620743373255'
+- id: '1620743373255'
+  alias: WIP - Python Climate
   description: When home mode, high temp, or time of day changes And vacation mode
     is off Then call the thermostat script
   trigger:
   - platform: state
     entity_id: input_select.home_mode
   - platform: state
-    entity_id: sensor.dark_sky_daytime_high_apparent_temperature_0d
-  - platform: state
     entity_id: binary_sensor.dusk
+    to: 'on'
   - platform: state
     entity_id: binary_sensor.day
+    to: 'on'
   - platform: state
     entity_id: binary_sensor.morning
+    to: 'on'
   - platform: state
     entity_id: binary_sensor.night
+    to: 'on'
   condition:
   - condition: state
     entity_id: input_boolean.vacation_mode

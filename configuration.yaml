@@ -3,7 +3,6 @@
 #####################
 homeassistant:
   customize: !include customize.yaml
-  packages: !include_dir_named packages
   auth_providers:
     # - type: legacy_api_password
     #   api_password: !secret http_password

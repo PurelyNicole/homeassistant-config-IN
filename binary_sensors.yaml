@@ -40,6 +40,12 @@
   unique_id: garage_pir_sensor_2
   
 ####################
+# Snow Tire Sensor #
+####################
+- platform: snowtire
+  weather: weather.openweathermap
+
+####################
 # Template Sensors #
 ####################
 - platform: template

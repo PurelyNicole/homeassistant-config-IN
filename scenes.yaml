@@ -122,14 +122,22 @@
       color_temp: 462
       white_value: 109
       state: 'on'
-- name: Work
-  id: '1604329744138'
+- id: '1604329744138'
+  name: Work
   entities:
     light.office_bed_light:
       state: 'on'
     light.office_rgbw:
+      color_mode: rgbw
       brightness: 255
-      white_value: 255
+      rgbw_color:
+      - 0
+      - 0
+      - 0
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
       state: 'on'
     light.guest_room_floor_lamp:
       state: 'on'
