@@ -13,15 +13,6 @@
   unique_id: mailbox_pir_sensor
 - platform: mqtt
   state_topic: "tele/RFBridge/RESULT"
-  name: 'Closet PIR'
-  value_template: '{{value_json.RfReceived.Data}}'
-  payload_on: '121619'
-  payload_off: '121619off'
-  device_class: motion
-  qos: 1
-  unique_id: closet_pir_sensor
-- platform: mqtt
-  state_topic: "tele/RFBridge/RESULT"
   name: 'Garage PIR 1'
   value_template: '{{value_json.RfReceived.Data}}'
   payload_on: 'F22A20'
