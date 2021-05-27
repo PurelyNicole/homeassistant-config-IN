@@ -12,7 +12,6 @@
 .cloud
 .Trash-0
 .vscode
-.storage\tag
 appdaemon
 custom_components
 deps
@@ -36,4 +35,4 @@ google_calendars.yaml
 OZW_Log.txt
 secrets.yaml
 .omv_cookies.json
-.storage/tag
+*.storage/tag*
