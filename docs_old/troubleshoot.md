@@ -1,0 +1,1 @@
+Google calendar stops working with a 400 google: Error on device update!: https://github.com/home-assistant/core/issues/27210#issuecomment-584471544

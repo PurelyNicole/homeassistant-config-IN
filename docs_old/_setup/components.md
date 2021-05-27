@@ -16,7 +16,6 @@ Components in Home Assitant are the devices and services that control various as
 ## Camera
 * ffmpeg
 * mjpeg
-* nwsradar
 * stream
 
 ## Cover
