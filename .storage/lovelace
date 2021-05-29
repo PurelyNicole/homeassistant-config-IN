@@ -1810,6 +1810,9 @@
                             }
                         },
                         {
+                            "type": "custom:sun-card"
+                        },
+                        {
                             "entities": [
                                 {
                                     "entity": "sensor.town_run_trail_status",
@@ -1889,56 +1892,6 @@
                             "cards": [
                                 {
                                     "aspect_ratio": "0%",
-                                    "camera_image": "camera.blueiris_porch_camera",
-                                    "entities": [
-                                        {
-                                            "entity": "camera.blueiris_porch_camera"
-                                        },
-                                        {
-                                            "entity": "binary_sensor.blueiris_porch_camera_motion"
-                                        }
-                                    ],
-                                    "title": "Porch",
-                                    "type": "picture-glance",
-                                    "entity": "camera.blueiris_porch_camera",
-                                    "camera_view": "live"
-                                },
-                                {
-                                    "aspect_ratio": "0%",
-                                    "camera_image": "camera.blueiris_west_fence",
-                                    "entities": [
-                                        {
-                                            "entity": "camera.blueiris_west_fence"
-                                        }
-                                    ],
-                                    "entity": "camera.blueiris_westfence_sub",
-                                    "hold_action": {
-                                        "action": "none"
-                                    },
-                                    "image": "https://www.home-assistant.io/images/merchandise/shirt-frontpage.png",
-                                    "tap_action": {
-                                        "action": "none"
-                                    },
-                                    "title": "West Fence",
-                                    "type": "picture-glance",
-                                    "camera_view": "live"
-                                },
-                                {
-                                    "aspect_ratio": "0%",
-                                    "camera_image": "camera.blueiris_east_gate_cam",
-                                    "entities": [
-                                        {
-                                            "entity": "camera.blueiris_east_gate_cam"
-                                        }
-                                    ],
-                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
-                                    "title": "East Gate",
-                                    "type": "picture-glance",
-                                    "entity": "camera.blueiris_eastgate_sub",
-                                    "camera_view": "live"
-                                },
-                                {
-                                    "aspect_ratio": "0%",
                                     "camera_image": "camera.blueiris_driveway",
                                     "entities": [
                                         {
@@ -1951,7 +1904,29 @@
                                     "title": "Driveway",
                                     "type": "picture-glance",
                                     "entity": "camera.blueiris_driveway",
-                                    "camera_view": "live"
+                                    "camera_view": "live",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_west_fence",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_west_fence"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_west_fence_motion"
+                                        }
+                                    ],
+                                    "entity": "camera.blueiris_west_fence",
+                                    "title": "West Fence",
+                                    "type": "picture-glance",
+                                    "camera_view": "live",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
                                 },
                                 {
                                     "aspect_ratio": "0%",
@@ -1959,18 +1934,21 @@
                                     "entities": [
                                         {
                                             "entity": "camera.blueiris_workshop"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_workshop_motion"
                                         }
                                     ],
                                     "entity": "camera.blueiris_workshop",
                                     "hold_action": {
-                                        "action": "none"
-                                    },
-                                    "tap_action": {
-                                        "action": "none"
+                                        "action": "more-info"
                                     },
                                     "title": "Workshop",
                                     "type": "picture-glance",
-                                    "camera_view": "live"
+                                    "camera_view": "live",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
                                 },
                                 {
                                     "aspect_ratio": "0%",
@@ -1978,12 +1956,18 @@
                                     "entities": [
                                         {
                                             "entity": "camera.blueiris_backyard_east_reo"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_backyard_east_reo_motion"
                                         }
                                     ],
                                     "title": "Backyard East",
                                     "type": "picture-glance",
                                     "entity": "camera.blueiris_backyard_east_reo",
-                                    "camera_view": "live"
+                                    "camera_view": "live",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
                                 },
                                 {
                                     "aspect_ratio": "0%",
@@ -1991,11 +1975,18 @@
                                     "entities": [
                                         {
                                             "entity": "camera.blueiris_front_yard_reo"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_front_yard_reo_motion"
                                         }
                                     ],
                                     "title": "Front Yard",
                                     "type": "picture-glance",
-                                    "entity": "camera.blueiris_front_yard_reo"
+                                    "entity": "camera.blueiris_front_yard_reo",
+                                    "camera_view": "live",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
                                 },
                                 {
                                     "aspect_ratio": "0%",
@@ -2003,12 +1994,56 @@
                                     "entities": [
                                         {
                                             "entity": "camera.blueiris_pond_camera"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_pond_camera_motion"
                                         }
                                     ],
-                                    "image": "c",
                                     "title": "Pond Camera",
                                     "type": "picture-glance",
-                                    "entity": "camera.blueiris_pond_camera"
+                                    "entity": "camera.blueiris_pond_camera",
+                                    "camera_view": "live",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_porch_camera",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_porch_camera"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_porch_camera_motion"
+                                        }
+                                    ],
+                                    "title": "Porch",
+                                    "type": "picture-glance",
+                                    "entity": "camera.blueiris_porch_camera",
+                                    "camera_view": "live",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.blueiris_east_gate_cam",
+                                    "entities": [
+                                        {
+                                            "entity": "camera.blueiris_east_gate_cam"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.blueiris_east_gate_cam_motion"
+                                        }
+                                    ],
+                                    "title": "East Gate",
+                                    "type": "picture-glance",
+                                    "entity": "camera.blueiris_east_gate_cam",
+                                    "camera_view": "live",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
                                 }
                             ],
                             "square": false
@@ -2491,213 +2526,162 @@
                             ]
                         },
                         {
+                            "type": "vertical-stack",
+                            "title": "Roomba Maintenance",
                             "cards": [
                                 {
-                                    "entities": [
-                                        {
-                                            "style": ".text-divider {\n  padding: 0em;\n  margin: 0em;\n} h2 {\n  font-size: 1em;\n  margin-block-start: 0em;\n  margin-block-end: 0em;\n}",
-                                            "text": "Clean",
-                                            "type": "custom:text-divider-row"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_clean_brushes",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 days"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-1 days"
-                                                }
-                                            ],
-                                            "timeout": "7 days",
-                                            "title": "Brushes",
-                                            "type": "custom:check-button-card"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_clean_filter",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 days"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-10 days"
-                                                }
-                                            ],
-                                            "timeout": "7 days",
-                                            "title": "Filter & Bin",
-                                            "type": "custom:check-button-card"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_clean_wheel",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 days"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-3 days"
-                                                }
-                                            ],
-                                            "timeout": "14 days",
-                                            "title": "Wheel",
-                                            "type": "custom:check-button-card"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_clean_contacts",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 days"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-3 days"
-                                                }
-                                            ],
-                                            "timeout": "30 days",
-                                            "title": "Contacts/Sensors",
-                                            "type": "custom:check-button-card"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_clean_edge_brush",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 days"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-3 days"
-                                                }
-                                            ],
-                                            "timeout": "30 days",
-                                            "title": "Edge Brush",
-                                            "type": "custom:check-button-card"
-                                        },
-                                        {
-                                            "style": ".text-divider {\n  padding: 0em;\n  margin: 0em;\n} h2 {\n  font-size: 1em;\n  margin-block-start: 0em;\n  margin-block-end: 0em;\n}",
-                                            "text": "Replace",
-                                            "type": "custom:text-divider-row"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_replace_filter",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 months"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-1 months"
-                                                }
-                                            ],
-                                            "timeout": "2 months",
-                                            "title": "Filter",
-                                            "type": "custom:check-button-card"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_replace_brushes",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 months"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-4 months"
-                                                }
-                                            ],
-                                            "timeout": "6 months",
-                                            "title": "Brushes",
-                                            "type": "custom:check-button-card"
-                                        },
-                                        {
-                                            "color": "#40bf6a",
-                                            "due": true,
-                                            "entity": "sensor.vacuum_maint_replace_wheel",
-                                            "severity": [
-                                                {
-                                                    "color": "#bfb540",
-                                                    "value": "0 months"
-                                                },
-                                                {
-                                                    "color": "#bf4060",
-                                                    "value": "-4 months"
-                                                }
-                                            ],
-                                            "timeout": "1 years",
-                                            "title": "Wheel",
-                                            "type": "custom:check-button-card"
-                                        }
-                                    ],
-                                    "head": {
-                                        "label": "Maintenance",
-                                        "type": "section"
-                                    },
-                                    "type": "custom:fold-entity-row"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        }
-                    ]
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_select.fan_speed_select"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Test Great Room Fan",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.utility_room_moisture_general"
+                                    "text": "Clean",
+                                    "type": "custom:text-divider-row"
                                 },
                                 {
-                                    "entity": "sensor.utility_room_moisture_temperature"
+                                    "color": "#40bf6a",
+                                    "due": true,
+                                    "entity": "sensor.vacuum_maint_clean_brushes",
+                                    "severity": [
+                                        {
+                                            "color": "#bfb540",
+                                            "value": "0 days"
+                                        },
+                                        {
+                                            "color": "#bf4060",
+                                            "value": "-1 days"
+                                        }
+                                    ],
+                                    "timeout": "7 days",
+                                    "title": "Brushes",
+                                    "type": "custom:check-button-card"
+                                },
+                                {
+                                    "color": "#40bf6a",
+                                    "due": true,
+                                    "entity": "sensor.vacuum_maint_clean_filter",
+                                    "severity": [
+                                        {
+                                            "color": "#bfb540",
+                                            "value": "0 days"
+                                        },
+                                        {
+                                            "color": "#bf4060",
+                                            "value": "-10 days"
+                                        }
+                                    ],
+                                    "timeout": "7 days",
+                                    "title": "Filter & Bin",
+                                    "type": "custom:check-button-card"
+                                },
+                                {
+                                    "color": "#40bf6a",
+                                    "due": true,
+                                    "entity": "sensor.vacuum_maint_clean_wheel",
+                                    "severity": [
+                                        {
+                                            "color": "#bfb540",
+                                            "value": "0 days"
+                                        },
+                                        {
+                                            "color": "#bf4060",
+                                            "value": "-3 days"
+                                        }
+                                    ],
+                                    "timeout": "14 days",
+                                    "title": "Wheel",
+                                    "type": "custom:check-button-card"
+                                },
+                                {
+                                    "color": "#40bf6a",
+                                    "due": true,
+                                    "entity": "sensor.vacuum_maint_clean_contacts",
+                                    "severity": [
+                                        {
+                                            "color": "#bfb540",
+                                            "value": "0 days"
+                                        },
+                                        {
+                                            "color": "#bf4060",
+                                            "value": "-3 days"
+                                        }
+                                    ],
+                                    "timeout": "30 days",
+                                    "title": "Contacts/Sensors",
+                                    "type": "custom:check-button-card"
+                                },
+                                {
+                                    "color": "#40bf6a",
+                                    "due": true,
+                                    "entity": "sensor.vacuum_maint_clean_edge_brush",
+                                    "severity": [
+                                        {
+                                            "color": "#bfb540",
+                                            "value": "0 days"
+                                        },
+                                        {
+                                            "color": "#bf4060",
+                                            "value": "-3 days"
+                                        }
+                                    ],
+                                    "timeout": "30 days",
+                                    "title": "Edge Brush",
+                                    "type": "custom:check-button-card"
+                                },
+                                {
+                                    "text": "Replace",
+                                    "type": "custom:text-divider-row"
+                                },
+                                {
+                                    "color": "#40bf6a",
+                                    "due": true,
+                                    "entity": "sensor.vacuum_maint_replace_filter",
+                                    "severity": [
+                                        {
+                                            "color": "#bfb540",
+                                            "value": "0 months"
+                                        },
+                                        {
+                                            "color": "#bf4060",
+                                            "value": "-1 months"
+                                        }
+                                    ],
+                                    "timeout": "2 months",
+                                    "title": "Filter",
+                                    "type": "custom:check-button-card"
+                                },
+                                {
+                                    "color": "#40bf6a",
+                                    "due": true,
+                                    "entity": "sensor.vacuum_maint_replace_brushes",
+                                    "severity": [
+                                        {
+                                            "color": "#bfb540",
+                                            "value": "0 months"
+                                        },
+                                        {
+                                            "color": "#bf4060",
+                                            "value": "-4 months"
+                                        }
+                                    ],
+                                    "timeout": "6 months",
+                                    "title": "Brushes",
+                                    "type": "custom:check-button-card"
+                                },
+                                {
+                                    "color": "#40bf6a",
+                                    "due": true,
+                                    "entity": "sensor.vacuum_maint_replace_wheel",
+                                    "severity": [
+                                        {
+                                            "color": "#bfb540",
+                                            "value": "0 months"
+                                        },
+                                        {
+                                            "color": "#bf4060",
+                                            "value": "-4 months"
+                                        }
+                                    ],
+                                    "timeout": "1 years",
+                                    "title": "Wheel",
+                                    "type": "custom:check-button-card"
                                 }
-                            ],
-                            "title": "Utility Room",
-                            "type": "glance"
-                        }
-                    ],
-                    "panel": false,
-                    "path": "test",
-                    "title": "Test",
-                    "visible": [
-                        {
-                            "user": "0dd6426c68884f519adac238ccf98431"
-                        },
-                        {
-                            "user": "a94f20ade56d4f149ee532d5a44d66d2"
-                        },
-                        {
-                            "user": "3960e44645fe4662b6ffb4d21d2151e8"
+                            ]
                         }
                     ]
                 },
@@ -2708,39 +2692,113 @@
                     "badges": [],
                     "cards": [
                         {
-                            "type": "entities",
-                            "entities": [
+                            "type": "vertical-stack",
+                            "cards": [
                                 {
+                                    "type": "picture-glance",
+                                    "title": "Mini",
+                                    "image": "local/images/mini.png",
+                                    "entities": [
+                                        {
+                                            "entity": "lock.cooper_se_lock"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.cooper_se_windows"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.cooper_se_lights_parking"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.cooper_se_condition_based_services"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.cooper_se_check_control_messages"
+                                        },
+                                        {
+                                            "entity": "script.turn_on_mini_hvac"
+                                        }
+                                    ],
+                                    "entity": "device_tracker.cooper_se",
+                                    "tap_action": {
+                                        "action": "more-info"
+                                    }
+                                },
+                                {
+                                    "type": "grid",
+                                    "cards": [
+                                        {
+                                            "type": "gauge",
+                                            "entity": "sensor.cooper_se_charging_level_hv",
+                                            "min": 0,
+                                            "max": 100,
+                                            "name": "Mini Charge Level"
+                                        },
+                                        {
+                                            "type": "gauge",
+                                            "entity": "sensor.cooper_se_remaining_range_electric",
+                                            "min": 0,
+                                            "max": 114,
+                                            "name": "Mini Remaining Range"
+                                        },
+                                        {
+                                            "type": "entity",
+                                            "entity": "binary_sensor.cooper_se_charging_status",
+                                            "name": "Charging"
+                                        },
+                                        {
+                                            "type": "entity",
+                                            "entity": "device_tracker.cooper_se",
+                                            "name": "Location"
+                                        },
+                                        {
+                                            "type": "entity",
+                                            "entity": "sensor.cooper_se_charging_time_remaining",
+                                            "name": "To Full"
+                                        },
+                                        {
+                                            "type": "entity",
+                                            "entity": "sensor.cooper_se_mileage",
+                                            "name": "Milage"
+                                        }
+                                    ],
+                                    "columns": 3,
+                                    "square": false
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "entity",
                                     "entity": "sensor.charging_status"
                                 },
                                 {
-                                    "entity": "sensor.charge_time_elapsed"
-                                },
-                                {
-                                    "entity": "sensor.usage_this_session"
-                                },
-                                {
-                                    "entity": "sensor.total_usage"
-                                },
-                                {
-                                    "entity": "sensor.rtc_temperature"
-                                },
-                                {
-                                    "entity": "sensor.ir_temperature"
-                                },
-                                {
-                                    "entity": "sensor.ambient_temperature"
+                                    "type": "grid",
+                                    "cards": [
+                                        {
+                                            "type": "entity",
+                                            "entity": "sensor.charge_time_elapsed",
+                                            "name": "Elapsed"
+                                        },
+                                        {
+                                            "type": "custom:mini-graph-card",
+                                            "name": "This Session",
+                                            "entities": [
+                                                "sensor.usage_this_session"
+                                            ]
+                                        },
+                                        {
+                                            "type": "custom:mini-graph-card",
+                                            "name": "Total",
+                                            "entities": [
+                                                "sensor.total_usage"
+                                            ]
+                                        }
+                                    ],
+                                    "square": false
                                 }
-                            ],
-                            "title": "OpenEVSE"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "lock.supra_lock",
-                                "device_tracker.supra"
-                            ],
-                            "title": "Supra"
+                            ]
                         }
                     ]
                 },
@@ -2838,6 +2896,62 @@
                     "path": "system",
                     "theme": "default",
                     "title": "System"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_select.fan_speed_select"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Test Great Room Fan",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.utility_room_moisture_general"
+                                },
+                                {
+                                    "entity": "sensor.utility_room_moisture_temperature"
+                                }
+                            ],
+                            "title": "Utility Room",
+                            "type": "glance"
+                        }
+                    ],
+                    "panel": false,
+                    "path": "test",
+                    "title": "Test",
+                    "visible": [
+                        {
+                            "user": "0dd6426c68884f519adac238ccf98431"
+                        },
+                        {
+                            "user": "a94f20ade56d4f149ee532d5a44d66d2"
+                        },
+                        {
+                            "user": "3960e44645fe4662b6ffb4d21d2151e8"
+                        }
+                    ]
+                },
+                {
+                    "title": "Media",
+                    "path": "media",
+                    "icon": "mdi:music",
+                    "visible": [
+                        {
+                            "user": "3960e44645fe4662b6ffb4d21d2151e8"
+                        },
+                        {
+                            "user": "0dd6426c68884f519adac238ccf98431"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": []
                 }
             ]
         }

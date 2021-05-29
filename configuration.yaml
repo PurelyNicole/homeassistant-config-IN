@@ -24,6 +24,7 @@ history: !include history.yaml
 logbook: !include logbook.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
+script secret: !include scripts_secret.yaml
 
 ##############
 # Automation #

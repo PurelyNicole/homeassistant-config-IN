@@ -74,20 +74,21 @@
       option: Home
     service: input_select.select_option
   mode: single
-- alias: Home Mode - Set To Sleep At 02:00 If Anyone Is Home
+- id: '1522931845172'
+  alias: Home Mode - Set To Sleep At 02:00 If Anyone Is Home
+  trigger:
+  - at: 02:00:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Home
   action:
   - data:
       entity_id: input_select.home_mode
       option: Sleep
     service: input_select.select_option
-  condition:
-  - condition: state
-    entity_id: input_select.home_mode
-    state: Home
-  id: '1522931845172'
-  trigger:
-  - at: 02:00:00
-    platform: time
+  mode: single
 - alias: Kitchen - Unlock Kitchen Door When Someone Arrives Home
   id: '1522931995271'
   trigger:
@@ -224,7 +225,7 @@
       entity_id: input_text.fish_last_fed
       value: '{{states(''sensor.date_time'')}}'
 - id: '1577839778680'
-  alias: Fish - Send notification when fish need fed
+  alias: Notification - Send notification when fish need fed
   description: ''
   trigger:
   - platform: template
@@ -233,9 +234,11 @@
       %H:%M''))|float > 2880 * 60 }}'
   condition: []
   action:
-  - data:
-      message: Fish have not been fed in two days.
-    service: notify.mobile_app_erics_iphone
+  - device_id: ee2c1187bcccea0a0f1cd88d3c848c24
+    domain: mobile_app
+    type: notify
+    title: Feed Fish.
+    message: Fish have not been fed in two days.
   mode: single
 - id: '1578081825952'
   alias: Notification - Notify Eric Door Open
@@ -254,30 +257,12 @@
     entity_id: person.eric
     state: home
   action:
-  - data:
-      message: Door left open.
-    service: notify.mobile_app_erics_iphone
+  - device_id: ee2c1187bcccea0a0f1cd88d3c848c24
+    domain: mobile_app
+    type: notify
+    title: Door Open!
+    message: The door has been left open.
   mode: single
-- alias: Notification - Notify Nicole Door Open
-  id: '1578081825953'
-  description: ''
-  trigger:
-  - entity_id: binary_sensor.kitchen_patio_door_motion_sensor
-    for: 00:00:30
-    platform: state
-    to: 'on'
-  - entity_id: binary_sensor.living_room_door_sensor
-    for: 00:00:30
-    platform: state
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: person.nicole
-    state: home
-  action:
-  - data:
-      message: Door left open.
-    service: notify.mobile_app_pixel_3a
 - alias: Notification - Dismiss alert after fish fed
   id: '1579891708175'
   description: ''
@@ -342,9 +327,12 @@
     to: 'off'
   condition: []
   action:
-  - data:
-      message: Print complete.
-    service: notify.mobile_app_pixel_3a
+  - device_id: 4bf8cabb4db816ca42e11e3ae06c01b3
+    domain: mobile_app
+    type: notify
+    title: Print Complete!
+    message: 3D Print is complete.
+  mode: single
 - id: '1600964645726'
   alias: Garage - Turn garage light on with door open
   description: Turn on the garage light when either door to the garage is opened.
@@ -393,23 +381,25 @@
     domain: light
   mode: single
 - id: '1603114369121'
-  alias: Notify - Check if GFI Tripped
+  alias: Notification - Check if GFI Tripped
   description: If the Shield tablet isn't plugged in, it's likely because the GFI
     has tripped. Notify on that condition.
   trigger:
-  - type: not_plugged_in
-    platform: device
-    device_id: a79348a9f549481a999840a336e6d7b0
-    entity_id: binary_sensor.shield_tablet_k1_is_charging
-    domain: binary_sensor
+  - platform: state
+    entity_id: switch.table_lamps_switch
+    to: Unavailable
   condition: []
   action:
-  - service: notify.mobile_app_pixel_3a
-    data:
-      message: Check if GFI tripped.
-  - service: notify.mobile_app_erics_iphone
-    data:
-      message: Check if GFI tripped.
+  - device_id: ee2c1187bcccea0a0f1cd88d3c848c24
+    domain: mobile_app
+    type: notify
+    title: Check GFI
+    message: Check if GFI has tripped.
+  - device_id: ee2c1187bcccea0a0f1cd88d3c848c24
+    domain: mobile_app
+    type: notify
+    title: Check GFI
+    message: Check if GFI has tripped.
   mode: single
 - id: '1603310291699'
   alias: Is it time to open the blinds?
@@ -525,16 +515,6 @@
   action:
   - scene: scene.sleep
   mode: single
-- id: '1606677325949'
-  alias: Tag Goodnight - Nicole Nightstand is scanned
-  description: ''
-  trigger:
-  - platform: tag
-    tag_id: d08bfa6b-d279-4aa8-8fe1-5d7d46d1e098
-  condition: []
-  action:
-  - scene: scene.sleep
-  mode: single
 - id: '1606677698755'
   alias: Tag Goodnight Bedroom - Eric Nightstand is scanned
   description: ''
@@ -552,6 +532,9 @@
   - platform: state
     entity_id: person.eric
     from: BCC
+  - platform: state
+    entity_id: person.eric
+    from: Work
   condition:
   - condition: time
     after: 04:00
@@ -626,8 +609,8 @@
     target:
       entity_id: fan.bedroom_exhaust_fan
   mode: single
-- alias: Blueprint - Vacation Lighting
-  id: '1620658371768'
+- id: '1620658371768'
+  alias: Vacation Mode - Vacation Lighting
   description: ''
   use_blueprint:
     path: timgiwo/vactaion-lighting.yaml
@@ -655,9 +638,9 @@
       replay_sensor_10: sensor.replay_table_lamps_switch
       light_target_10: switch.table_lamps_switch
 - id: '1620743373255'
-  alias: WIP - Python Climate
-  description: When home mode, high temp, or time of day changes And vacation mode
-    is off Then call the thermostat script
+  alias: Climate - Call python script
+  description: When home mode or time of day changes And vacation mode is off Then
+    call the thermostat script
   trigger:
   - platform: state
     entity_id: input_select.home_mode
@@ -693,4 +676,88 @@
   - service: light.turn_off
     target:
       area_id: 1aeb676c20b34102adb4bb48bc826eb1
+  mode: single
+- id: '1621949697077'
+  alias: Notification - Notify when it starts to rain and Mini windows are open
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.openweathermap_precipitation_kind
+    from: None
+  condition:
+  - type: is_open
+    condition: device
+    device_id: 323989ec9271ec4853cf6990d4a70472
+    entity_id: binary_sensor.cooper_se_windows
+    domain: binary_sensor
+  - condition: device
+    device_id: 323989ec9271ec4853cf6990d4a70472
+    domain: device_tracker
+    entity_id: device_tracker.cooper_se
+    type: is_not_home
+  action:
+  - device_id: 4bf8cabb4db816ca42e11e3ae06c01b3
+    domain: mobile_app
+    type: notify
+    title: Windows are down!
+    message: It is raining and the windows on the Mini are down.
+  mode: single
+- id: '1621951958353'
+  alias: Vacation Mode - HVAC
+  description: Set mode to ECO when Vacation Mode is on.
+  trigger:
+  - platform: state
+    entity_id: input_boolean.vacation_mode
+    to: 'on'
+  condition: []
+  action:
+  - device_id: 715ef382de38445b91848aee1c3edcae
+    domain: climate
+    entity_id: climate.living_room
+    type: set_preset_mode
+    preset_mode: eco
+  mode: single
+- id: '1621952023897'
+  alias: Vacation Mode - HVAC Restore
+  description: Set mode to none when Vacation Mode is turned off.
+  trigger:
+  - platform: state
+    entity_id: input_boolean.vacation_mode
+    to: 'off'
+    from: 'on'
+  condition: []
+  action:
+  - device_id: 715ef382de38445b91848aee1c3edcae
+    domain: climate
+    entity_id: climate.living_room
+    type: set_preset_mode
+    preset_mode: none
+  mode: single
+- id: '1622224158578'
+  alias: Mini - Pre-cool car for Nicole after work
+  description: ''
+  trigger:
+  - platform: time
+    at: '15:45:00'
+  condition:
+  - condition: state
+    entity_id: person.nicole
+    state: Work
+  - condition: state
+    entity_id: device_tracker.cooper_se
+    state: Work
+  action:
+  - service: script.turn_on_mini_hvac
+  mode: single
+- id: '1622224215039'
+  alias: Mini - Pre-cool car after ride
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: device_tracker.cooper_se
+    to: Town Run
+    for: 00:30
+  condition: []
+  action:
+  - service: script.turn_on_mini_hvac
   mode: single

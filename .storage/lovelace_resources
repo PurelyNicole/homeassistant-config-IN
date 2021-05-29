@@ -49,11 +49,6 @@
                 "id": "94abf2a196bb48b0811e5dc864c96594"
             },
             {
-                "url": "/hacsfiles/lovelace-fold-entity-row/fold-entity-row.js",
-                "type": "module",
-                "id": "d0ddcad91e754f81b8b516c5d72c4149"
-            },
-            {
                 "url": "/hacsfiles/text-divider-row/text-divider-row.js",
                 "type": "module",
                 "id": "cef58a3e58c14b84bd51a9bef4874a6b"
@@ -69,11 +64,6 @@
                 "id": "91293e176292455fa7ec31706f45bd03"
             },
             {
-                "url": "/hacsfiles/charger-card/charger-card.js",
-                "type": "module",
-                "id": "769e64047c3646f484eb5f8a1c18a6f8"
-            },
-            {
                 "url": "/hacsfiles/light-entity-card/light-entity-card.js",
                 "type": "module",
                 "id": "bf2ef13b1a344ef39c5c7177e88658eb"
@@ -87,6 +77,16 @@
                 "url": "/hacsfiles/battery-state-card/battery-state-card.js",
                 "type": "module",
                 "id": "c0f9a27492e049ffaa32b84858f6d281"
+            },
+            {
+                "url": "/hacsfiles/home-assistant-sun-card/home-assistant-sun-card.js",
+                "type": "module",
+                "id": "6ddde034ac96498890ed9dcfc10ff53b"
+            },
+            {
+                "url": "/hacsfiles/spotify-card/spotify-card.js",
+                "type": "module",
+                "id": "00805e8f45c544848a5cc882c99793fd"
             }
         ]
     }
