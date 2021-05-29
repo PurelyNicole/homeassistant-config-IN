@@ -1,6 +1,6 @@
 # Add-Ons
 
-Home Assistant can be expanded with offical add-ons and community add-ons. I am utilizing the following:
+Home Assistant can be expanded with offical add-ons and community add-ons. These add system functionality that is not built into the Home Assistant default installation.
 
 ## Offical
 * Check Home Assistant Configuration
@@ -11,9 +11,10 @@ Home Assistant can be expanded with offical add-ons and community add-ons. I am 
 * SSH Server
 
 ## Community
+* AirCast
 * AppDaemon
+* ESPHome
 * Grafana
-* Home Panel
 * Influx DB
 * Node-RED
 * TasmoAdmin
