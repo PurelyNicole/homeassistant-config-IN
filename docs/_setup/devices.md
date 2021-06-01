@@ -8,53 +8,95 @@ These are the physical devices that make my smart home, smart. We started with m
 * [Unifi Security Gateway](https://amzn.to/3yLcSjh)
 * [Unifi Lite Access Point](https://amzn.to/3uwUmrf)
 * [Unifi Long Range Access Point](https://amzn.to/3wEyRqg)
-* Garage? 
-* [OpenMediaVault](https://www.openmediavault.org/)
+* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
+* [Blue Iris NVR](https://blueirissoftware.com/)
 
-## Wall Switches
-* [Martin Jerry MJ-S01 Wifi Switch](https://amzn.to/34r70h1) (x9)
-* [Martin Jerry MJ-SD01 Wifi Dimmer](https://amzn.to/34oUoaa) (x6)
-* Moes 3-Way Wifi Switch
-* Kuled Smart Switch (x2)
-* Kitchen 3-Way?
-* [GE Z-Wave Paddle Switch](https://amzn.to/2SwBM5A) (x6)
+## Car
+* [Mini Cooper SE](https://www.miniusa.com/model/electric-hardtop.html) ☁️
+* [OpenEVSE](https://www.openevse.com/)
+
+## Cover
+* [OpenGarage](https://opengarage.io/)
+
+## Climate
+* [Sonoff iFan03](https://amzn.to/2S4JB2e)
+* Nest 2nd Generation (Discontinued) ☁️
+
+## Irrigation
+* [Rachio 2nd Generation 16 Zone](https://amzn.to/34CUtY4) ☁️
 
 ## Lights
-* Sumaote Wifi RGBW Controller
-
-## Wall Outlets
-* [GE Z-Wave Wall Receptacle](https://amzn.to/2QWUcf9) (x2)
-
-## Plugs
-One change we would make is to use plugs instead of wall outlets where possible. The wall outlets are nice, because they offer a seamless look. But the plugs are easier to fix if something goes wrong. And by wrong, I mean when I do something like upgrade the firmware out of order.
-
-* Aeon Labs Smart Energy Switch
-* Monoprice Z-Wave Plus Wall Socket with USB
-* Sonoff S31 Smart Plug (x4)
 
 ## Locks
 * [Schlage Z-Wave Connect Century](https://amzn.to/34rrgz7)
 * [Kwikset Z-Wave 910 Contemporary](https://amzn.to/3vAo68i)
 * [Kwikset Z-Wave 910](https://amzn.to/3p0fEfN)
 
-## Audio/Visual
-* HifiBerry DAC
-* Harmony Ultimate ☁️
-* Chromecast Audio ☁️
-* Roku Streaming Stick ☁️
+## Media Players
+* Chromecast Audio (Discontinued) ☁️
+* [HifiBerry DAC](https://www.hifiberry.com/shop/bundles/hifiberry-dac-bundle-4/)
+* [Spotify](https://www.spotify.com/us/home/) ☁️
+* [YAMAHA R-N303BL](https://amzn.to/2RcxXCf)
+* [Yamaha WXC-50](https://amzn.to/2S0BWSK)
 
-## Climate
-* Nest 2nd Generation ☁️
-* Sonoff iFan03
+## Phones
+* [iPhone 12](https://www.apple.com/iphone-12/)
+* Pixel 3a (Discontinued)
 
-## Weather
-* Ambient Weather Station ☁️
-
-## Shades
-* ESP8266 Shades
+## Remote
+* Harmony Ultimate Home (Discontinued) ☁️
 
 ## Sensors
+### Climate
+* [Aqara Temperature and Humidity Sensor](https://cloudfree.shop/product/aqara-temperature-and-humidity-sensor/)
+### Doors
+* [Monoprice Z-Wave Plus Door/Window Sensor](https://www.monoprice.com/product?p_id=15270) (x5)
+### Motion
+* [Sonoff SNZB-03](https://www.aliexpress.com/i/4001287072430.html)
+### Multi-Sensor
+* [Monoprice Z-Wave Plus PIR Multi Sensor](https://www.monoprice.com/product?p_id=15902)
+### Water
+* [Fibaro Flood/Water Leak Detector ](https://amzn.to/34BjMJZ)
+
+## Switches
+### Plugs
+* [Aeon Labs Smart Energy Switch](https://amzn.to/3fDlBMB)
+* Monoprice Z-Wave Plus Wall Socket with USB (x2) (Discontinued)
+* [Sonoff S31 Smart Plug](https://amzn.to/3fBv5YW) (x4)
+### Wall Outlets
+* [GE Z-Wave Wall Receptacle](https://amzn.to/2QWUcf9) (x2)
+### Wall Switches
+* [Martin Jerry MJ-S01 Wifi Switch](https://amzn.to/34r70h1) (x9)
+* [Martin Jerry MJ-SD01 Wifi Dimmer](https://amzn.to/34oUoaa) (x6)
+* [Moes 3-Way Wifi Switch](https://amzn.to/3c703WC)
+* [GE Z-Wave Paddle Switch](https://amzn.to/2SwBM5A) (x6)
+
+## System Monitor
+* [Octoprint](https://octoprint.org/)
+* [OpenMediaVault](https://www.openmediavault.org/)
+* [Samsung ProXpress SL-M2230ND](https://amzn.to/3vGDT5o)
+
+## Weather
+
+## Need Info
+* Garage Unifi Point
+* WLED
+* RGBW LED Light Strips with Sumaote Wifi RGBW Controller (check if all 3)
+* Cameras
+* Fish Feeder
+* Ambient Weather Station ☁️
+* Office Dimmer
+* ESP8266 Shades
 * Bedroom Temp/Humidity/CO2
-* Monoprice Z-Wave Plus Door/Window Sensor (x4)
-* Different style of Monoprice Z-Wave Plus Door/Window Sensor
-* Monoprice Z-Wave Plus PIR Multi Sensor
+* Loft Climate
+* Crawlspace Climate
+* Mirror Switch
+* Pool Control
+* Music Cast Remote
+* Loft Temps
+* Fish Tank Light
+* Pond Temperature
+* Network Rack Fan
+* Kitchen 3-Way?
+* Kuled Smart Switch (x2)
+* Energy Monitor
