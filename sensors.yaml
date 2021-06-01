@@ -175,11 +175,6 @@
   value_template: '{{value_json[0]["lastData"]["feelsLikein"]}}'
   scan_interval: 180
 
-# - platform: mqtt_room
-#   device_id: 2f234454cf6d4a0fadf2f4911ba9ffa6-1986-6891
-#   away_timeout: 30
-#   name: 'Example iBeacon'
-
 ##########################
 # System Monitor Sensors #
 ##########################

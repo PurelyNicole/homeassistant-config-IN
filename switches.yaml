@@ -67,12 +67,6 @@
   retain: true
   optimistic: false
   unique_id: 1921681107switch
-  # Roomba Switch
-- platform: mqtt
-  name: "Loft Roomba"
-  command_topic: "roomba/commands"
-  payload_on: "start"
-  payload_off: "stop"
 - platform: mqtt
   name: "Main Water Valve"
   state_topic: "stat/Main_Water_Valve/POWER"

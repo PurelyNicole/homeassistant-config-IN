@@ -984,7 +984,7 @@
                         },
                         {
                             "type": "media-control",
-                            "entity": "media_player.hifiberry"
+                            "entity": "media_player.office_music"
                         },
                         {
                             "cards": [
@@ -2791,6 +2791,7 @@
                                         {
                                             "type": "custom:mini-graph-card",
                                             "name": "Total",
+                                            "hours_to_show": 72,
                                             "entities": [
                                                 "sensor.total_usage"
                                             ]
@@ -2921,6 +2922,20 @@
                             ],
                             "title": "Utility Room",
                             "type": "glance"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.mailbox_motion"
+                                },
+                                {
+                                    "entity": "binary_sensor.garage_motion_east"
+                                },
+                                {
+                                    "entity": "binary_sensor.garage_motion_west"
+                                }
+                            ]
                         }
                     ],
                     "panel": false,
@@ -2951,7 +2966,18 @@
                         }
                     ],
                     "badges": [],
-                    "cards": []
+                    "cards": [
+                        {
+                            "type": "custom:mini-media-player",
+                            "group": false,
+                            "entity": "media_player.spotify_nicole_zeckner",
+                            "replace_mute": "play_pause",
+                            "artwork": "cover",
+                            "source": "full",
+                            "sound_mode": "full",
+                            "info": "scroll"
+                        }
+                    ]
                 }
             ]
         }

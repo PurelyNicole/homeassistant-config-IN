@@ -14,5 +14,7 @@
 /http
 .blueiris
 mobile_app
-*tag*
 zha.storage
+.storage/tag
+/tag
+tag

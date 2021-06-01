@@ -1,35 +1,3 @@
-################
-# MQTT Sensors #
-################
-# rf bridge PIR
-- platform: mqtt
-  state_topic: "tele/RFBridge/RESULT"
-  name: 'Mailbox'
-  value_template: '{{value_json.RfReceived.Data}}'
-  payload_on: '9B1620'
-  payload_off: '9B1620off'
-  device_class: motion
-  qos: 1
-  unique_id: mailbox_pir_sensor
-- platform: mqtt
-  state_topic: "tele/RFBridge/RESULT"
-  name: 'Garage PIR 1'
-  value_template: '{{value_json.RfReceived.Data}}'
-  payload_on: 'F22A20'
-  payload_off: 'F22A20off'
-  device_class: motion
-  qos: 1
-  unique_id: garage_pir_sensor_1
-- platform: mqtt
-  state_topic: "tele/RFBridge/RESULT"
-  name: 'Garage PIR 2'
-  value_template: '{{value_json.RfReceived.Data}}'
-  payload_on: '937860'
-  payload_off: '937860off'
-  device_class: motion
-  qos: 1
-  unique_id: garage_pir_sensor_2
-  
 ####################
 # Snow Tire Sensor #
 ####################

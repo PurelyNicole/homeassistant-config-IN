@@ -59,11 +59,6 @@
                 "id": "ecab3142074b43a3a7bede7b114aa1c7"
             },
             {
-                "url": "/hacsfiles/ha-lovelace-elapsed-time-card/elapsed-time-card.js",
-                "type": "module",
-                "id": "91293e176292455fa7ec31706f45bd03"
-            },
-            {
                 "url": "/hacsfiles/light-entity-card/light-entity-card.js",
                 "type": "module",
                 "id": "bf2ef13b1a344ef39c5c7177e88658eb"
@@ -87,6 +82,11 @@
                 "url": "/hacsfiles/spotify-card/spotify-card.js",
                 "type": "module",
                 "id": "00805e8f45c544848a5cc882c99793fd"
+            },
+            {
+                "url": "/hacsfiles/mini-media-player/mini-media-player-bundle.js",
+                "type": "module",
+                "id": "9cba64b1e7bc48eb8e564a18495ac685"
             }
         ]
     }
