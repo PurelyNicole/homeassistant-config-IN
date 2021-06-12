@@ -57,18 +57,8 @@
                                     "type": "glance"
                                 },
                                 {
-                                    "cards": [
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "binary_sensor.mailbox",
-                                                    "secondary_info": "last-changed"
-                                                }
-                                            ],
-                                            "type": "entities"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
+                                    "type": "entity",
+                                    "entity": "remote.living_room"
                                 }
                             ],
                             "type": "vertical-stack"
@@ -2064,10 +2054,10 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "sensor.fast_com_download"
+                                            "entity": "sensor.speedtest_download"
                                         },
                                         {
-                                            "entity": "sensor.speedtest_download"
+                                            "entity": "sensor.fast_com_download"
                                         }
                                     ],
                                     "line_width": 3,
@@ -2759,6 +2749,21 @@
                                             "type": "entity",
                                             "entity": "sensor.cooper_se_mileage",
                                             "name": "Milage"
+                                        },
+                                        {
+                                            "type": "entity",
+                                            "entity": "sensor.cooper_se_last_trip_total_consumption_value",
+                                            "name": "Last Trip Energy Use"
+                                        },
+                                        {
+                                            "type": "entity",
+                                            "entity": "sensor.cooper_se_last_trip_average_electric_consumption",
+                                            "name": "Last Trip Milage"
+                                        },
+                                        {
+                                            "type": "entity",
+                                            "entity": "sensor.cooper_se_last_trip_average_recuperation",
+                                            "name": "Last Trip Regen"
                                         }
                                     ],
                                     "columns": 3,
@@ -2936,6 +2941,12 @@
                                     "entity": "binary_sensor.garage_motion_west"
                                 }
                             ]
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "sensor.erics_iphone_activity"
+                            ]
                         }
                     ],
                     "panel": false,
@@ -2975,7 +2986,26 @@
                             "artwork": "cover",
                             "source": "full",
                             "sound_mode": "full",
-                            "info": "scroll"
+                            "info": "scroll",
+                            "name": "Nicole Spotify"
+                        },
+                        {
+                            "type": "custom:mini-media-player",
+                            "group": false,
+                            "entity": "media_player.spotify_ezeckner",
+                            "replace_mute": "play_pause",
+                            "artwork": "cover",
+                            "source": "full",
+                            "sound_mode": "full",
+                            "info": "scroll",
+                            "name": "Eric Spotify"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "remote.living_room"
+                            ],
+                            "show_header_toggle": false
                         }
                     ]
                 }

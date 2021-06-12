@@ -4,11 +4,6 @@
     "data": {
         "items": [
             {
-                "id": "260f9678554646deb54b9eaa378ea968",
-                "type": "module",
-                "url": "/hacsfiles/lovelace-slider-entity-row/slider-entity-row.js"
-            },
-            {
                 "id": "1bed803e347c4ac7ba17868b4935faa8",
                 "type": "module",
                 "url": "/hacsfiles/simple-thermostat/simple-thermostat.js"
@@ -22,11 +17,6 @@
                 "id": "1f45bbcf3839416cbe1e4158d569c159",
                 "type": "module",
                 "url": "/hacsfiles/lovelace-card-tools/card-tools.js"
-            },
-            {
-                "id": "d4367b10434543098c2dfb83d5fee540",
-                "type": "module",
-                "url": "/hacsfiles/lovelace-gap-card/gap-card.js"
             },
             {
                 "id": "a0cc51512b894ae8adf3b7856fb96231",
@@ -54,39 +44,19 @@
                 "id": "cef58a3e58c14b84bd51a9bef4874a6b"
             },
             {
-                "url": "/hacsfiles/button-card/button-card.js",
-                "type": "module",
-                "id": "ecab3142074b43a3a7bede7b114aa1c7"
-            },
-            {
-                "url": "/hacsfiles/light-entity-card/light-entity-card.js",
-                "type": "module",
-                "id": "bf2ef13b1a344ef39c5c7177e88658eb"
-            },
-            {
-                "url": "/hacsfiles/harmony-card/harmony-card.js",
-                "type": "module",
-                "id": "7250bccaad2144698f5b86be763c79a4"
-            },
-            {
-                "url": "/hacsfiles/battery-state-card/battery-state-card.js",
-                "type": "module",
-                "id": "c0f9a27492e049ffaa32b84858f6d281"
-            },
-            {
                 "url": "/hacsfiles/home-assistant-sun-card/home-assistant-sun-card.js",
                 "type": "module",
                 "id": "6ddde034ac96498890ed9dcfc10ff53b"
             },
             {
-                "url": "/hacsfiles/spotify-card/spotify-card.js",
-                "type": "module",
-                "id": "00805e8f45c544848a5cc882c99793fd"
-            },
-            {
                 "url": "/hacsfiles/mini-media-player/mini-media-player-bundle.js",
                 "type": "module",
                 "id": "9cba64b1e7bc48eb8e564a18495ac685"
+            },
+            {
+                "url": "/hacsfiles/harmony-card/harmony-card.js",
+                "type": "module",
+                "id": "528e1ec4668640d1b590887cc535c79c"
             }
         ]
     }
