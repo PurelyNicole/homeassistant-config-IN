@@ -58,12 +58,6 @@ cover: !include cover.yaml
 ########
 config:
 
-##########
-# Health #
-##########
-iqvia:
-  zip_code: !secret pollen_zip_code
-  
 ######################
 # History Components #
 ######################
