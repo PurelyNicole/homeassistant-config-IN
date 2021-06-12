@@ -393,24 +393,6 @@
     data: {}
     entity_id: input_boolean.time_to_open_blinds
   mode: single
-- id: '1605414468654'
-  alias: Notification - Motion detected on porch
-  description: ''
-  trigger:
-  - type: motion
-    platform: device
-    device_id: 7d8f11cc13f111eba8a2950e966cf104
-    entity_id: binary_sensor.blueiris_porch_camera_motion
-    domain: binary_sensor
-  condition: []
-  action:
-  - service: notify.mobile_app_pixel_3a
-    data:
-      message: Motion detected on porch.
-  - service: notify.mobile_app_erics_iphone
-    data:
-      message: Motion detected on porch.
-  mode: single
 - id: '1605810437212'
   alias: Good Morning Bedroom
   description: When the blinds open, turn on the plant lights and magic mirror. Turn
@@ -571,7 +553,7 @@
       start_brightness: '1'
       check_entity: person.nicole
 - id: '1620650062311'
-  alias: Fan - Turn off bathroom fan if humidity below 55%
+  alias: Fan - Turn off bathroom fan if humidity below 60%
   description: ''
   trigger:
   - type: humidity
@@ -579,7 +561,7 @@
     device_id: 5ec392fca2a6adfa94acd20dd693d6cc
     entity_id: sensor.master_bath_humidity
     domain: sensor
-    below: 55
+    below: 60
   condition:
   - condition: state
     entity_id: fan.bedroom_exhaust_fan
@@ -658,7 +640,7 @@
       area_id: 1aeb676c20b34102adb4bb48bc826eb1
   mode: single
 - id: '1621949697077'
-  alias: Notification - Notify when it starts to rain and Mini windows are open
+  alias: Mini - Notify when it starts to rain and Mini windows are open
   description: ''
   trigger:
   - platform: state
@@ -730,13 +712,22 @@
   - service: script.turn_on_mini_hvac
   mode: single
 - id: '1622224215039'
-  alias: Mini - Pre-cool car after ride
-  description: ''
+  alias: Mini - Pre-cool car after workout
+  description: Cools the car when it's been at LA Fitness, Town Run, or Ft Harrison
+    for 30 minutes
   trigger:
   - platform: state
     entity_id: device_tracker.cooper_se
     to: Town Run
     for: 00:30
+  - platform: state
+    entity_id: device_tracker.cooper_se
+    to: LA Fitness
+    for: 0:30:00
+  - platform: state
+    entity_id: device_tracker.cooper_se
+    to: Ft. Harrison State Park
+    for: 0:30:00
   condition: []
   action:
   - service: script.turn_on_mini_hvac
