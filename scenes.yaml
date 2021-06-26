@@ -282,3 +282,17 @@
     light.bathroom_vanity_light:
       brightness: 50
       state: 'on'
+- id: '1623508996329'
+  name: Open Garage Door
+  entities:
+    cover.garage_door:
+      door_state: open
+      state: open
+  icon: mdi:garage-open
+- id: '1623509086510'
+  name: Close Garage Door
+  entities:
+    cover.garage_door:
+      door_state: closed
+      state: closed
+  icon: mdi:garage
