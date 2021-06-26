@@ -121,6 +121,9 @@ group: !include groups.yaml
 #########
 api:
 http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.30.33.9
 
 ###########
 # Sensor #
@@ -141,13 +144,6 @@ light: !include lights.yaml
 fastdotcom:
   scan_interval:
     minutes: 60
-speedtestdotnet:
-  scan_interval:
-    minutes: 65
-  monitored_conditions:
-    - ping
-    - download
-    - upload
 
 ###########
 # Utility #
