@@ -409,6 +409,7 @@
       entity_id:
       - switch.plant_light
       - switch.seed_start_light
+      - switch.mb_magic_mirror_screen
   - type: turn_on
     device_id: 49fab7540e6fe1f69ed4e3dfac928396
     entity_id: switch.hall_plant_lights
@@ -638,6 +639,10 @@
   - service: light.turn_off
     target:
       area_id: 1aeb676c20b34102adb4bb48bc826eb1
+  - type: turn_off
+    device_id: 1eba791778da4958ae3614c34da66ac7
+    entity_id: switch.mb_magic_mirror_screen
+    domain: switch
   mode: single
 - id: '1621949697077'
   alias: Mini - Notify when it starts to rain and Mini windows are open
@@ -789,3 +794,34 @@
     target:
       entity_id: light.bedroom_closet_light_switch
   mode: restart
+- id: '1624910055038'
+  alias: Vacation Mode - Roomba
+  description: Have vacuum run daily at 9:00am in vacation mode.
+  trigger:
+  - platform: time
+    at: '9:00'
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'on'
+  action:
+  - service: vacuum.start
+    target:
+      entity_id: vacuum.roomba
+  mode: single
+- id: '1624973697660'
+  alias: Vacation Mode - Mop
+  description: Have mop run after vacuum when vacation mode is on.
+  trigger:
+  - platform: state
+    entity_id: vacuum.roomba
+    to: Docked
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'on'
+  action:
+  - service: vacuum.start
+    target:
+      entity_id: vacuum.dum_dum
+  mode: single
