@@ -40,17 +40,10 @@
       state: 'on'
     switch.globe_lamp_switch:
       state: 'on'
-    light.bar_rgb:
-      brightness: 255
-      rgb_color:
-      - 255
-      - 145
-      - 36
-      state: 'on'
     light.living_room_cd_rgbw:
+      color_mode: color_temp
       brightness: 255
-      color_temp: 433
-      white_value: 255
+      color_temp: 432
       state: 'on'
 - name: Sleep
   id: 33bbe74c95a24b1a901f785a056edd70
@@ -107,42 +100,41 @@
     switch.globe_lamp_switch:
       state: 'off'
     light.bar_rgbw:
+      color_mode: hs
       brightness: 128
+      hs_color:
+      - 29.531
+      - 100
       rgb_color:
       - 255
-      - 127
+      - 125
       - 0
+      xy_color:
+      - 0.615
+      - 0.372
       state: 'on'
     light.under_cabinet_lights_switch:
       state: 'on'
     light.living_room_cd_rgbw:
-      min_mireds: 153
-      max_mireds: 500
-      brightness: 109
+      color_mode: color_temp
+      brightness: 110
       color_temp: 462
-      white_value: 109
       state: 'on'
-- id: '1604329744138'
-  name: Work
+- name: Work
+  id: '1604329744138'
   entities:
     light.office_bed_light:
       state: 'on'
     light.office_rgbw:
-      color_mode: rgbw
+      color_mode: white
       brightness: 255
-      rgbw_color:
-      - 0
-      - 0
-      - 0
-      - 255
-      xy_color:
-      - 0.323
-      - 0.329
+      effect: None
       state: 'on'
     light.guest_room_floor_lamp:
       state: 'on'
     light.office_sconce_dimme:
       brightness: 255
+      friendly_name: Office Wall Sconce Dimmer
       state: 'on'
   icon: fas:laptop-code
 - name: Read
@@ -151,15 +143,23 @@
     light.office_bed_light:
       state: 'off'
     light.office_rgbw:
-      brightness: 142.8
+      color_mode: hs
+      brightness: 130.05
+      hs_color:
+      - 30
+      - 86
       rgb_color:
       - 255
-      - 142
-      - 33
+      - 145
+      - 35
+      xy_color:
+      - 0.582
+      - 0.388
       state: 'on'
     light.guest_room_floor_lamp:
       state: 'on'
     light.office_sconce_dimme:
+      color_mode: brightness
       brightness: 127.5
       state: 'on'
   icon: fas:book-reader
@@ -167,79 +167,28 @@
   id: '1604329940512'
   entities:
     light.office_bed_light:
-      friendly_name: Office Bed Light
-      supported_features: 0
       state: 'off'
     light.office_rgbw:
-      brightness: 147
+      color_mode: hs
+      brightness: 153
+      hs_color:
+      - 30
+      - 100
       rgb_color:
       - 255
       - 127
       - 0
+      xy_color:
+      - 0.612
+      - 0.374
       state: 'on'
     light.guest_room_floor_lamp:
-      friendly_name: Guest Room Floor Lamp
-      supported_features: 0
       state: 'on'
     switch.office_fan_humidifier_switch:
-      node_id: 2
-      value_index: 0
-      value_instance: 1
-      value_id: '72057594076282880'
-      power_consumption: 22.985
-      friendly_name: Office Fan/Humidifier Switch
-      icon: hass:fan
       state: 'off'
-    zwave.office_outlet:
-      node_id: 2
-      node_name: HKZW-SO01 Smart Plug
-      manufacturer_name: Hank
-      product_name: HKZW-SO01 Smart Plug
-      query_stage: Complete
-      is_awake: true
-      is_ready: true
-      is_failed: false
-      is_info_received: true
-      max_baud_rate: 40000
-      is_zwave_plus: true
-      capabilities:
-      - routing
-      - zwave_plus
-      - beaming
-      - listening
-      neighbors:
-      - 34
-      - 3
-      - 36
-      - 7
-      - 9
-      - 19
-      - 20
-      - 22
-      - 54
-      - 56
-      - 28
-      - 62
-      - 63
-      sentCnt: 1274
-      sentFailed: 2
-      retries: 4
-      receivedCnt: 1299
-      receivedDups: 38
-      receivedUnsolicited: 6
-      sentTS: '2021-01-26 22:06:44:544 '
-      receivedTS: '2021-01-26 22:06:44:823 '
-      lastRequestRTT: 150
-      averageRequestRTT: 152
-      lastResponseRTT: 279
-      averageResponseRTT: 280
-      application_version: '1.05'
-      friendly_name: Office Fan/Humidifier
-      state: ready
     light.office_sconce_dimme:
-      brightness: 168.3
-      friendly_name: Office Sconce Dimme
-      supported_features: 33
+      color_mode: brightness
+      brightness: 191.25
       state: 'on'
   icon: mdi:record-player
 - name: Goodnight Office
@@ -282,15 +231,15 @@
     light.bathroom_vanity_light:
       brightness: 50
       state: 'on'
-- id: '1623508996329'
-  name: Open Garage Door
+- name: Open Garage Door
+  id: '1623508996329'
   entities:
     cover.garage_door:
       door_state: open
       state: open
   icon: mdi:garage-open
-- id: '1623509086510'
-  name: Close Garage Door
+- name: Close Garage Door
+  id: '1623509086510'
   entities:
     cover.garage_door:
       door_state: closed

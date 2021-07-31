@@ -31,15 +31,15 @@
 ##################
 # Energy Sensors #
 ##################
-- platform: emoncms
-  api_key: !secret openenergy_api
-  url: https://emoncms.org
-  id: 1
-  unit_of_measurement: "W"
-  include_only_feed_id:
-    - 208205
-    - 208248
-    - 208210
+# - platform: emoncms
+#   api_key: !secret openenergy_api
+#   url: https://emoncms.org
+#   id: 1
+#   unit_of_measurement: "W"
+#   include_only_feed_id:
+#     - 208205
+#     - 208248
+#     - 208210
 
 #########################
 # History Stats Sensors #

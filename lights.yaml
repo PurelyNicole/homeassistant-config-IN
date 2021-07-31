@@ -232,7 +232,7 @@
 - platform: mqtt
   name: "Pier Lights"
   state_topic: "stat/pierlights/POWER"
-  value_template: "{{ value_json.POWER }}"
+  state_value_template: "{{ value_json.POWER }}"
   command_topic: "cmnd/pierlights/POWER"
   availability_topic: "tele/pierlights/LWT"
   qos: 1
