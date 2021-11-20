@@ -30,6 +30,9 @@
   - entity_id: person.eric
     platform: state
     to: home
+  - platform: state
+    entity_id: device_tracker.cooper_se
+    to: home
   condition:
   - condition: state
     entity_id: input_select.home_mode
@@ -163,17 +166,6 @@
       entity_id: scene.indoor_lights_on
     service: scene.turn_on
   mode: single
-- alias: System - Check for new snapshots daily
-  id: '1543376445848'
-  trigger:
-  - at: 03:00:00
-    platform: time
-  action:
-  - data:
-      addon: 7be23ff5_dropbox_sync
-      input:
-        command: upload
-    service: rest_command.google_backup
 - alias: Bedroom - Turn On Main Light With Entry Switch
   id: '1548980303353'
   trigger:
@@ -198,20 +190,6 @@
   - data:
       entity_id: light.bedroom_light_switch
     service: light.turn_off
-- alias: System - Weekly Backup
-  id: '1573827443988'
-  description: Create a weekly backup of HA
-  trigger:
-  - at: 02:00:00
-    platform: time
-  condition:
-    condition: time
-    weekday:
-    - mon
-  action:
-  - service: hassio.snapshot_full
-    data_template:
-      name: Hassio ({{now().strftime('%d.%m.%y')}})
 - alias: Fish - Set Fed Time
   id: '1678657997296'
   trigger:
@@ -733,6 +711,10 @@
     entity_id: device_tracker.cooper_se
     to: Ft. Harrison State Park
     for: 0:30:00
+  - platform: state
+    entity_id: device_tracker.cooper_se
+    to: Town Run
+    for: 01:00
   condition: []
   action:
   - service: script.turn_on_mini_hvac
@@ -824,4 +806,43 @@
   - service: vacuum.start
     target:
       entity_id: vacuum.dum_dum
+  mode: single
+- id: '1626887385191'
+  alias: Mini - Pre-cool car for Eric after work
+  description: ''
+  trigger:
+  - platform: time
+    at: '16:45:00'
+  condition:
+  - condition: state
+    entity_id: person.eric
+    state: Work
+  - condition: state
+    entity_id: device_tracker.cooper_se
+    state: Work
+  action:
+  - service: script.turn_on_mini_hvac
+  mode: single
+- id: '1628191122685'
+  alias: 'Open UV: Update OpenUV every 30 minutes during the daytime'
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /30
+  condition:
+  - condition: sun
+    before: sunset
+    after: sunrise
+  action:
+  - service: openuv.update_data
+  mode: single
+- id: '1628191438850'
+  alias: 'Open UV: Update OpenUV protection window once a day'
+  description: ''
+  trigger:
+  - platform: time
+    at: 02:12:00
+  condition: []
+  action:
+  - service: openuv.update_protection_data
   mode: single

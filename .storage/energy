@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "key": "energy",
+    "data": {
+        "energy_sources": [],
+        "device_consumption": [
+            {
+                "stat_consumption": "sensor.hall_plant_lights_energy_total"
+            },
+            {
+                "stat_consumption": "sensor.office_bed_light_energy_total"
+            },
+            {
+                "stat_consumption": "sensor.office_sconce_dimme_energy_total"
+            }
+        ]
+    }
+}

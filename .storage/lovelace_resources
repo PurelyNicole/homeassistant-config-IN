@@ -29,7 +29,7 @@
                 "url": "/hacsfiles/lovelace-template-entity-row/template-entity-row.js?hacstag=231674882130"
             },
             {
-                "url": "/hacsfiles/atomic-calendar-revive/atomic-calendar-revive.js?hacstag=246549747450",
+                "url": "/hacsfiles/atomic-calendar-revive/atomic-calendar-revive.js?hacstag=2465497474111",
                 "type": "module",
                 "id": "db949e26fe1a4ee8a6f9842dc4581b88"
             },
@@ -44,7 +44,7 @@
                 "id": "6ddde034ac96498890ed9dcfc10ff53b"
             },
             {
-                "url": "/hacsfiles/mini-media-player/mini-media-player-bundle.js",
+                "url": "/hacsfiles/mini-media-player/mini-media-player-bundle.js?hacstag=1485208381130",
                 "type": "module",
                 "id": "9cba64b1e7bc48eb8e564a18495ac685"
             },

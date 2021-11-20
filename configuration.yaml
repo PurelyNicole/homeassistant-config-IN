@@ -117,6 +117,7 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 172.30.33.9
+    - 172.30.33.6
 
 ###########
 # Sensor #

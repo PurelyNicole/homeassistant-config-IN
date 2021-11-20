@@ -5,6 +5,7 @@
 /frontend*
 /hacs*
 /hassio
+/homekit*
 /homekit_controller-entity-map
 /icloud
 /onboarding

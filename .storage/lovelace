@@ -62,7 +62,7 @@
                                 },
                                 {
                                     "type": "media-control",
-                                    "entity": "media_player.living_room_music_main"
+                                    "entity": "media_player.living_room_music"
                                 }
                             ],
                             "type": "vertical-stack"
@@ -460,7 +460,7 @@
                             "state_color": true
                         },
                         {
-                            "entity": "media_player.living_room_music_main",
+                            "entity": "media_player.living_room_music",
                             "type": "media-control"
                         },
                         {
@@ -706,9 +706,6 @@
                                     "entity": "light.gym_light_switch"
                                 },
                                 {
-                                    "entity": "switch.seed_start_light"
-                                },
-                                {
                                     "type": "divider"
                                 },
                                 {
@@ -852,15 +849,6 @@
                                     "entity": "switch.deck_flood_lights_switch"
                                 },
                                 {
-                                    "entity": "light.flood_light_1"
-                                },
-                                {
-                                    "entity": "light.flood_light_2"
-                                },
-                                {
-                                    "entity": "light.flood_light_3"
-                                },
-                                {
                                     "entity": "switch.garage_flood_lights_switch"
                                 },
                                 {
@@ -868,9 +856,6 @@
                                 },
                                 {
                                     "entity": "switch.pergola_fan"
-                                },
-                                {
-                                    "entity": "light.pond_light"
                                 },
                                 {
                                     "entity": "light.porch_light"
@@ -1081,10 +1066,6 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.ambient_weather_indoor_temp",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
                                     "entity": "sensor.living_room_thermostat_temperature",
                                     "secondary_info": "last-changed"
                                 },
@@ -1128,10 +1109,6 @@
                         },
                         {
                             "entities": [
-                                {
-                                    "entity": "sensor.ambient_weather_indoor_humidity",
-                                    "secondary_info": "last-changed"
-                                },
                                 {
                                     "entity": "sensor.living_room_thermostat_humidity",
                                     "secondary_info": "last-changed"
@@ -1371,38 +1348,30 @@
                             "type": "custom:sun-card"
                         },
                         {
-                            "entities": [
+                            "type": "grid",
+                            "cards": [
                                 {
-                                    "entity": "sensor.town_run_trail_status",
-                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
+                                    "type": "gauge",
+                                    "entity": "sensor.airnow_aqi",
+                                    "min": 0,
+                                    "max": 500,
+                                    "name": "Air Quality"
                                 },
                                 {
-                                    "entity": "sensor.town_run_last_update"
+                                    "type": "gauge",
+                                    "entity": "sensor.allergy_index_today",
+                                    "min": 0,
+                                    "max": 12,
+                                    "name": "Allergy Index"
                                 },
                                 {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "sensor.fort_harrison_trail_status",
-                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
-                                },
-                                {
-                                    "entity": "sensor.fort_harrison_last_update"
-                                },
-                                {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "sensor.flat_fork_trail_status",
-                                    "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
-                                },
-                                {
-                                    "entity": "sensor.flat_fork_last_update"
+                                    "type": "gauge",
+                                    "entity": "sensor.openweathermap_uv_index",
+                                    "min": 0,
+                                    "max": 11,
+                                    "name": "UV Index"
                                 }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Trail Status",
-                            "type": "entities"
+                            ]
                         },
                         {
                             "entities": [
@@ -1421,6 +1390,50 @@
                             ],
                             "title": "Pool",
                             "type": "entities"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.town_run_trail_status",
+                                            "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
+                                        },
+                                        {
+                                            "entity": "sensor.town_run_last_update"
+                                        },
+                                        {
+                                            "type": "divider"
+                                        },
+                                        {
+                                            "entity": "sensor.fort_harrison_trail_status",
+                                            "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
+                                        },
+                                        {
+                                            "entity": "sensor.fort_harrison_last_update"
+                                        },
+                                        {
+                                            "type": "divider"
+                                        },
+                                        {
+                                            "entity": "sensor.flat_fork_trail_status",
+                                            "style": ":host {\n  --paper-item-icon-color:\n    {% if is_state(config.entity, \"Red\") -%}\n      red\n    {% elif is_state(config.entity, \"Yellow\") -%}\n      #fdd835\n    {% else %}\n      green\n    {% endif %}\n};\n"
+                                        },
+                                        {
+                                            "entity": "sensor.flat_fork_last_update"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Trail Status",
+                                    "type": "entities"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "binary_sensor.protection_window",
+                            "name": "Do You Need Suncreen?"
                         },
                         {
                             "entities": [
@@ -1642,30 +1655,6 @@
                                     ],
                                     "line_width": 3,
                                     "name": "Upload Sppeds",
-                                    "points_per_hour": 4,
-                                    "smoothing": false,
-                                    "type": "custom:mini-graph-card"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.emoncms_voltage"
-                                        }
-                                    ],
-                                    "hours_to_show": 24,
-                                    "line_width": 3,
-                                    "ponts_per_hour": 4,
-                                    "smoothing": false,
-                                    "type": "custom:mini-graph-card"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.emoncms_kwh"
-                                        }
-                                    ],
-                                    "hours_to_show": 24,
-                                    "line_width": 3,
                                     "points_per_hour": 4,
                                     "smoothing": false,
                                     "type": "custom:mini-graph-card"
@@ -2001,6 +1990,12 @@
                             "type": "entities",
                             "state_color": true,
                             "show_header_toggle": false
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "sensor.cert_expiry_timestamp_zeckner_duckdns_org"
+                            ]
                         }
                     ],
                     "icon": "mdi:cogs",
